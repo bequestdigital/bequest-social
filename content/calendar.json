@@ -1,0 +1,476 @@
+{
+  "source": "bequest-social-calendar-q3.md",
+  "parsed_at": "2026-07-18T11:40:18.624Z",
+  "title": "Bequest Digital — 90-Day Organic Social Calendar (v2)",
+  "run": "Monday, July 20 – Friday, October 16, 2026 (13 weeks)",
+  "meta": {
+    "headerLines": [
+      "**Run:** Monday, July 20 – Friday, October 16, 2026 (13 weeks)",
+      "**Cadence:** Mon / Wed / Fri — all posts to FB + IG; X gets the same post trimmed or threaded",
+      "**Post types:** WHY (purpose/Golden Circle) · TIP (tactical) · POV (commentary/contrarian) · PROOF (credibility) · ASK (direct CTA)",
+      "**Audience:** Churches, Christian businesses, small-to-mid nonprofits, small business owners who'd rather build than market. Sensibility: mission-driven, stewardship-minded, skeptical of corporate marketing slop and Big Tech dependence. Values ownership, craftsmanship, permanence, and plain speech. Faith woven in naturally — never performative, never preachy.",
+      "**Framing spine:** Sinek's Golden Circle (Why → How → What) as the strategic frame, StoryBrand as the messaging frame. The two stack: your *why* is the story; your customer is the hero; clarity carries both. Mission-driven organizations have the strongest \"why\" in the room — most just bury it under a \"what\" website.",
+      "**Asset rule:** Every post must be fully producible by AI — text + generated graphics only (quote cards, tip cards, carousels, diagrams, stat graphics). No photos, video, screen recordings, or anything requiring a human behind a camera."
+    ],
+    "standingNotes": "- **Voice:** Plain, direct, conviction without preachiness. Faith references natural and occasional — stewardship, calling, service, permanence — never forced into every post. Write like a craftsman, not a marketer. No hype vocabulary (\"unlock,\" \"supercharge,\" \"game-changing\").\n- **Audience register:** Comfortable with ownership/anti-dependence framing (rented land, your list is yours, built to last), skeptical of corporate slop, respects competence and finished work. Never partisan, never culture-war bait — the sensibility shows in tone, not topics.\n- **Golden Circle thread:** WHY posts bookend the quarter (Weeks 1 and 12); Why → How → What ordering appears in audits and frameworks throughout. Sinek and StoryBrand are cited by name where useful — familiar authorities for this audience.\n- **Asset production (100% AI-generatable):** Five repeatable Poaster templates cover everything — quote card, tip/checklist card, carousel frame, diagram/wireframe, stat graphic. No photos, video, or screen captures anywhere in the plan.\n- **X versions:** Hook + one supporting line; carousels become single strong lines or short threads. The ownership/craftsmanship posts (9/14, 8/19, 9/25) will travel furthest on X — prioritize those.\n- **Hashtags:** 3–5 on IG (#churchmarketing #nonprofitmarketing #christianbusiness #smallbusinessmarketing base set), one or none on X, none on FB.\n- **Engagement rule:** Reply to every comment within 24 hours.\n- **Permission checks:** Weeks 10 and 12 PROOF posts use real client data/quotes — confirm with Tyler and clients before those slots lock.\n- **Filler bank (swap-ins):** \"Marketing terms in one sentence\" series · platform-change reactions · one-post book summaries (Start With Why, Building a StoryBrand, Ogilvy) · \"questions we get from churches\" mini-series."
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "dateRange": "Jul 20–24",
+      "theme": "Start With Why"
+    },
+    {
+      "week": 2,
+      "dateRange": "Jul 27–31",
+      "theme": "StoryBrand (Why Meets Message)"
+    },
+    {
+      "week": 3,
+      "dateRange": "Aug 3–7",
+      "theme": "Conversion (Stewarding the Traffic You Have)"
+    },
+    {
+      "week": 4,
+      "dateRange": "Aug 10–14",
+      "theme": "Should You Run Google Ads?"
+    },
+    {
+      "week": 5,
+      "dateRange": "Aug 17–21",
+      "theme": "Setting Your Marketing Budget"
+    },
+    {
+      "week": 6,
+      "dateRange": "Aug 24–28",
+      "theme": "Why an Agency in an AI Age"
+    },
+    {
+      "week": 7,
+      "dateRange": "Aug 31–Sep 4",
+      "theme": "Integrating AI Without Losing Your Soul"
+    },
+    {
+      "week": 8,
+      "dateRange": "Sep 7–11",
+      "theme": "Brand, Logo, and Permanence"
+    },
+    {
+      "week": 9,
+      "dateRange": "Sep 14–18",
+      "theme": "Email Is the House You Own"
+    },
+    {
+      "week": 10,
+      "dateRange": "Sep 21–25",
+      "theme": "What Makes a Campaign Work"
+    },
+    {
+      "week": 11,
+      "dateRange": "Sep 28–Oct 2",
+      "theme": "Local Visibility"
+    },
+    {
+      "week": 12,
+      "dateRange": "Oct 5–9",
+      "theme": "Trust Is the Currency"
+    },
+    {
+      "week": 13,
+      "dateRange": "Oct 12–16",
+      "theme": "Year-End (Speak Directly to the Niche)"
+    }
+  ],
+  "posts": [
+    {
+      "id": "2026-07-20",
+      "date": "2026-07-20",
+      "weekday": "Mon",
+      "week": 1,
+      "weekTheme": "Start With Why",
+      "type": "WHY",
+      "hook": "People don't give to what you do. They give to why you do it.",
+      "direction": "Open the 90 days with the Golden Circle applied to mission-driven orgs. Sinek's insight lands harder for churches and nonprofits than anyone: your why *is* the offer. Most websites lead with programs and services (the what) and bury the mission. Graphic: Golden Circle diagram, Bequest brand colors."
+    },
+    {
+      "id": "2026-07-22",
+      "date": "2026-07-22",
+      "weekday": "Wed",
+      "week": 1,
+      "weekTheme": "Start With Why",
+      "type": "POV",
+      "hook": "Your organization has a stronger 'why' than any Fortune 500 brand. Your marketing should act like it.",
+      "direction": "Corporations invent purpose; ministries and mission-driven businesses have one. Yet their marketing is often the most timid in the room. Flip the frame: conviction is a competitive advantage."
+    },
+    {
+      "id": "2026-07-24",
+      "date": "2026-07-24",
+      "weekday": "Fri",
+      "week": 1,
+      "weekTheme": "Start With Why",
+      "type": "TIP",
+      "hook": "The 5-second test: can a stranger tell why you exist, how you're different, and what to do next?",
+      "direction": "Homepage self-audit ordered Why → How → What. If a first-time visitor can't find the mission in 5 seconds, the site is a directory, not a message. Graphic: side-by-side wireframe, \"what-first\" vs. \"why-first\" homepage."
+    },
+    {
+      "id": "2026-07-27",
+      "date": "2026-07-27",
+      "weekday": "Mon",
+      "week": 2,
+      "weekTheme": "StoryBrand (Why Meets Message)",
+      "type": "POV",
+      "hook": "Your donor is the hero. Your church is the guide. Get those backwards and the story falls apart.",
+      "direction": "StoryBrand premise contextualized: the organization that positions itself as the hero of its own website loses the reader. Guides equip heroes. This is also just good theology of service — serve the person in front of you. Keep that note light."
+    },
+    {
+      "id": "2026-07-29",
+      "date": "2026-07-29",
+      "weekday": "Wed",
+      "week": 2,
+      "weekTheme": "StoryBrand (Why Meets Message)",
+      "type": "TIP",
+      "hook": "Stop saying what you do. Start saying what changes because you exist.",
+      "direction": "Rewrite exercise, mission-flavored: \"We provide community programs\" → \"Families in our city find help and hope.\" \"Full-service marketing\" → \"Your mission reaches the people it was meant for.\" Carousel: 3 before/after rewrites (church, nonprofit, Christian business)."
+    },
+    {
+      "id": "2026-07-31",
+      "date": "2026-07-31",
+      "weekday": "Fri",
+      "week": 2,
+      "weekTheme": "StoryBrand (Why Meets Message)",
+      "type": "TIP",
+      "hook": "Every clear message answers 3 questions: Why do you exist? How does that help me? What do I do next?",
+      "direction": "Golden Circle and StoryBrand merged into one one-liner framework. Prompt readers to draft theirs in the comments. Engagement play. Graphic: 3-question template card."
+    },
+    {
+      "id": "2026-08-03",
+      "date": "2026-08-03",
+      "weekday": "Mon",
+      "week": 3,
+      "weekTheme": "Conversion (Stewarding the Traffic You Have)",
+      "type": "POV",
+      "hook": "You don't have a traffic problem. You have a stewardship problem.",
+      "direction": "Reframe conversion as stewardship — a category this audience already thinks in. Doubling your conversion rate doubles results from attention you already earned, without spending another dollar. Wasting existing visitors is the leak to fix first."
+    },
+    {
+      "id": "2026-08-05",
+      "date": "2026-08-05",
+      "weekday": "Wed",
+      "week": 3,
+      "weekTheme": "Conversion (Stewarding the Traffic You Have)",
+      "type": "TIP",
+      "hook": "7 conversion killers hiding on your website right now.",
+      "direction": "Carousel, one killer + fix per slide: slow load, buried CTA (or buried \"Plan Your Visit\"), insider jargon, no proof, mobile neglect, generic stock imagery, forms that interrogate. Examples alternate between business and church/nonprofit contexts."
+    },
+    {
+      "id": "2026-08-07",
+      "date": "2026-08-07",
+      "weekday": "Fri",
+      "week": 3,
+      "weekTheme": "Conversion (Stewarding the Traffic You Have)",
+      "type": "ASK",
+      "hook": "Want a free 10-minute written teardown of your homepage?",
+      "direction": "First direct CTA. Offer a written homepage audit (delivered as a doc — AI-producible, no video) for the first several responders. Low-friction lead gen."
+    },
+    {
+      "id": "2026-08-10",
+      "date": "2026-08-10",
+      "weekday": "Mon",
+      "week": 4,
+      "weekTheme": "Should You Run Google Ads?",
+      "type": "POV",
+      "hook": "Honest answer from an agency that sells ads: some of you shouldn't buy them.",
+      "direction": "Trust anchor of the quarter. If your site doesn't convert, ads pour donor money into a leaky bucket — and mission-driven orgs answer for every dollar. Fix the funnel first. Honesty *is* the pitch."
+    },
+    {
+      "id": "2026-08-12",
+      "date": "2026-08-12",
+      "weekday": "Wed",
+      "week": 4,
+      "weekTheme": "Should You Run Google Ads?",
+      "type": "TIP",
+      "hook": "The 3-question test before you spend a dime on ads.",
+      "direction": "(1) Are people already searching for what you offer? (2) Can the budget survive your niche's cost-per-click? (3) Does the landing page convert? Two noes = wait. Note the Google Ad Grant for eligible nonprofits — $10K/month most never claim properly."
+    },
+    {
+      "id": "2026-08-14",
+      "date": "2026-08-14",
+      "weekday": "Fri",
+      "week": 4,
+      "weekTheme": "Should You Run Google Ads?",
+      "type": "TIP",
+      "hook": "Search ads catch demand. Social ads create it. Know which one your mission needs.",
+      "direction": "Education post: Google captures existing intent (people searching \"church near me,\" \"counseling in York\"); Meta builds awareness for causes nobody knows to search for. Diagram graphic."
+    },
+    {
+      "id": "2026-08-17",
+      "date": "2026-08-17",
+      "weekday": "Mon",
+      "week": 5,
+      "weekTheme": "Setting Your Marketing Budget",
+      "type": "TIP",
+      "hook": "How much should a church, nonprofit, or small business actually spend on marketing? Here's the math.",
+      "direction": "Benchmarks by org type: businesses 5–10% of revenue to maintain, 10%+ to grow; nonprofits framed as cost-to-raise-a-dollar; churches framed as percentage of budget toward outreach. Concrete numbers, screenshot-able stat card."
+    },
+    {
+      "id": "2026-08-19",
+      "date": "2026-08-19",
+      "weekday": "Wed",
+      "week": 5,
+      "weekTheme": "Setting Your Marketing Budget",
+      "type": "POV",
+      "hook": "The most expensive marketing is the cheap kind you have to redo.",
+      "direction": "The volunteer-built website, the DIY logo, the intern's ad account. Buy once, cry once — this audience already believes in paying for quality tools and finishing work properly. Costs run double: the redo plus every opportunity missed in between."
+    },
+    {
+      "id": "2026-08-21",
+      "date": "2026-08-21",
+      "weekday": "Fri",
+      "week": 5,
+      "weekTheme": "Setting Your Marketing Budget",
+      "type": "TIP",
+      "hook": "Where your first $1,000/month should go (in order).",
+      "direction": "Priority stack: 1) a website that converts, 2) your email list, 3) Google Business Profile / local visibility, 4) paid ads last. Counterintuitive ordering earns saves. Numbered-list graphic."
+    },
+    {
+      "id": "2026-08-24",
+      "date": "2026-08-24",
+      "weekday": "Mon",
+      "week": 6,
+      "weekTheme": "Why an Agency in an AI Age",
+      "type": "POV",
+      "hook": "AI made content cheap. It made judgment expensive.",
+      "direction": "Anyone can generate 100 posts. Knowing which one serves your mission, your people, and your reputation — that didn't get automated. Wisdom over volume: a distinction this audience feels in its bones."
+    },
+    {
+      "id": "2026-08-26",
+      "date": "2026-08-26",
+      "weekday": "Wed",
+      "week": 6,
+      "weekTheme": "Why an Agency in an AI Age",
+      "type": "POV",
+      "hook": "'Can't ChatGPT just do our marketing?' Fair question. Here's our honest answer.",
+      "direction": "AI drafts; it doesn't know your congregation, own your results, or notice the ad account quietly burning money on a Saturday night. Tools need operators. We use AI heavily ourselves — openly — which is exactly why we know where it stops."
+    },
+    {
+      "id": "2026-08-28",
+      "date": "2026-08-28",
+      "weekday": "Fri",
+      "week": 6,
+      "weekTheme": "Why an Agency in an AI Age",
+      "type": "PROOF",
+      "hook": "Big agency: 6 layers between you and the person doing the work. Bequest: you talk to the owners.",
+      "direction": "Comparison graphic (AI-generated diagram): big-agency org chart vs. two names. Small, direct, accountable — no account-manager telephone game. Craftsmanship over bureaucracy."
+    },
+    {
+      "id": "2026-08-31",
+      "date": "2026-08-31",
+      "weekday": "Mon",
+      "week": 7,
+      "weekTheme": "Integrating AI Without Losing Your Soul",
+      "type": "TIP",
+      "hook": "5 places AI belongs in your organization's marketing — and 3 places it never should.",
+      "direction": "Belongs: research, first drafts, repurposing sermons/content into posts, data analysis, testing variants. Never: pastoral or donor correspondence, your final voice, anything published without human review. Carousel."
+    },
+    {
+      "id": "2026-09-02",
+      "date": "2026-09-02",
+      "weekday": "Wed",
+      "week": 7,
+      "weekTheme": "Integrating AI Without Losing Your Soul",
+      "type": "TIP",
+      "hook": "Automate the repeatable. Keep the relational.",
+      "direction": "The dividing line for churches and ministries: machines handle reporting, formatting, scheduling; humans keep the phone calls, the visits, the thank-you notes. Efficiency in service of presence, not instead of it."
+    },
+    {
+      "id": "2026-09-04",
+      "date": "2026-09-04",
+      "weekday": "Fri",
+      "week": 7,
+      "weekTheme": "Integrating AI Without Losing Your Soul",
+      "type": "ASK",
+      "hook": "We build AI-assisted marketing systems for organizations that don't have time to figure this out alone.",
+      "direction": "Direct pitch riding the week's theme. You've seen our take on where AI belongs — we'll build that line into your operation. CTA: book a call."
+    },
+    {
+      "id": "2026-09-07",
+      "date": "2026-09-07",
+      "weekday": "Mon",
+      "week": 8,
+      "weekTheme": "Brand, Logo, and Permanence",
+      "type": "POV",
+      "hook": "Your logo is not your brand. Your brand is what people say about you when you leave the room.",
+      "direction": "Logo = symbol; brand = reputation, promise, consistency. Orgs polish the mark and neglect the message. For a church, the \"brand\" is the community's testimony — protect that first."
+    },
+    {
+      "id": "2026-09-09",
+      "date": "2026-09-09",
+      "weekday": "Wed",
+      "week": 8,
+      "weekTheme": "Brand, Logo, and Permanence",
+      "type": "TIP",
+      "hook": "4 marks of a logo that will outlive the trend cycle.",
+      "direction": "Simple at small sizes, works in one color, distinct in your space, not chasing fads. This audience respects things built to last — cathedrals, not pop-ups. Graphic: timeless vs. trendy comparison (AI-generated abstract examples, no real trademarks)."
+    },
+    {
+      "id": "2026-09-11",
+      "date": "2026-09-11",
+      "weekday": "Fri",
+      "week": 8,
+      "weekTheme": "Brand, Logo, and Permanence",
+      "type": "TIP",
+      "hook": "Consistency beats brilliance. A B+ brand applied everywhere outperforms an A+ brand applied nowhere.",
+      "direction": "Audit prompt: do your website, email, bulletin, and social look like the same organization? Faithfulness in small things — the principle transfers. Checklist graphic."
+    },
+    {
+      "id": "2026-09-14",
+      "date": "2026-09-14",
+      "weekday": "Mon",
+      "week": 9,
+      "weekTheme": "Email Is the House You Own",
+      "type": "POV",
+      "hook": "Social media is rented land. The algorithm is your landlord. Email is the house you own.",
+      "direction": "Ownership over dependence — this line was made for this audience. Platforms throttle reach and change rules overnight; nobody can take your list. ROI stat (~$36 per $1) as the kicker. Quote card."
+    },
+    {
+      "id": "2026-09-16",
+      "date": "2026-09-16",
+      "weekday": "Wed",
+      "week": 9,
+      "weekTheme": "Email Is the House You Own",
+      "type": "TIP",
+      "hook": "Your welcome email gets 4x the opens of anything else you'll ever send. Most orgs waste it.",
+      "direction": "Anatomy of a welcome sequence for a donor, visitor, or customer: deliver what you promised, tell them why you exist (the why again), give one next step. Template-outline graphic."
+    },
+    {
+      "id": "2026-09-18",
+      "date": "2026-09-18",
+      "weekday": "Fri",
+      "week": 9,
+      "weekTheme": "Email Is the House You Own",
+      "type": "TIP",
+      "hook": "Subject lines that get opened — without clickbait.",
+      "direction": "5 formulas with mission-flavored examples: specific number (\"3 families housed this month\"), question, curiosity gap, how-to, plain benefit. Clickbait spikes opens once and spends trust you can't buy back."
+    },
+    {
+      "id": "2026-09-21",
+      "date": "2026-09-21",
+      "weekday": "Mon",
+      "week": 10,
+      "weekTheme": "What Makes a Campaign Work",
+      "type": "TIP",
+      "hook": "Every campaign that works has 4 parts. Most that fail are missing #3.",
+      "direction": "Offer, audience, message, follow-up. #3 — message-audience fit — is the usual failure: the right cause pitched in the wrong words. Framework graphic, save-worthy."
+    },
+    {
+      "id": "2026-09-23",
+      "date": "2026-09-23",
+      "weekday": "Wed",
+      "week": 10,
+      "weekTheme": "What Makes a Campaign Work",
+      "type": "PROOF",
+      "hook": "Anatomy of a campaign: the numbers behind one that worked.",
+      "direction": "Anonymized stat-graphic walkthrough of real client results (permission-cleared): the goal, the sequence, the outcome, and one thing we'd change. All rendered as an AI-generated data graphic — no screenshots needed. Honesty about the weak spot builds more trust than a highlight reel."
+    },
+    {
+      "id": "2026-09-25",
+      "date": "2026-09-25",
+      "weekday": "Fri",
+      "week": 10,
+      "weekTheme": "What Makes a Campaign Work",
+      "type": "POV",
+      "hook": "One campaign finished beats five campaigns started.",
+      "direction": "Against spray-and-pray. Focus, frequency, follow-through — and the discipline to complete what you begin. Ties to why stretched-thin orgs need a partner who finishes."
+    },
+    {
+      "id": "2026-09-28",
+      "date": "2026-09-28",
+      "weekday": "Mon",
+      "week": 11,
+      "weekTheme": "Local Visibility",
+      "type": "TIP",
+      "hook": "The free channel most churches and local businesses ignore: your Google Business Profile.",
+      "direction": "GBP checklist: categories, service areas, weekly posts, review responses. \"Church near me\" and \"plumber in [town]\" are won or lost in the map pack, not on page one. Checklist graphic."
+    },
+    {
+      "id": "2026-09-30",
+      "date": "2026-09-30",
+      "weekday": "Wed",
+      "week": 11,
+      "weekTheme": "Local Visibility",
+      "type": "TIP",
+      "hook": "Reviews are the new word of mouth. Here's how to get more without begging.",
+      "direction": "Simple system: ask at the moment of gratitude, send the direct link, make it a 60-second task. One review a week compounds into local dominance. For churches: Google reviews are the new front door."
+    },
+    {
+      "id": "2026-10-02",
+      "date": "2026-10-02",
+      "weekday": "Fri",
+      "week": 11,
+      "weekTheme": "Local Visibility",
+      "type": "ASK",
+      "hook": "October is planning season. If 2027 is going to look different, the plan gets made now.",
+      "direction": "Seasonal urgency, no hype. Businesses set budgets; ministries plan year-end. CTA: strategy call before the calendar fills."
+    },
+    {
+      "id": "2026-10-05",
+      "date": "2026-10-05",
+      "weekday": "Mon",
+      "week": 12,
+      "weekTheme": "Trust Is the Currency",
+      "type": "WHY",
+      "hook": "People don't buy from businesses or give to organizations. They trust people. Everything else is a tiebreaker.",
+      "direction": "Close the loop with the why: trust is built by clarity, consistency, proof, and follow-through — and it's the one asset that compounds. Return to the Golden Circle: people trust organizations whose why is legible."
+    },
+    {
+      "id": "2026-10-07",
+      "date": "2026-10-07",
+      "weekday": "Wed",
+      "week": 12,
+      "weekTheme": "Trust Is the Currency",
+      "type": "TIP",
+      "hook": "Put testimonials next to the ask — not on a testimonials page nobody visits.",
+      "direction": "Social proof placement: beside donate buttons, on pricing, in signup flows. Proof answers the doubt at the exact moment it forms. Before/after wireframe graphic."
+    },
+    {
+      "id": "2026-10-09",
+      "date": "2026-10-09",
+      "weekday": "Fri",
+      "week": 12,
+      "weekTheme": "Trust Is the Currency",
+      "type": "PROOF",
+      "hook": "Their words, not ours.",
+      "direction": "Client testimonial rendered as a designed quote card (text only — fully AI-producible). Pull permission-cleared quotes. Minimal caption; let the quote work."
+    },
+    {
+      "id": "2026-10-12",
+      "date": "2026-10-12",
+      "weekday": "Mon",
+      "week": 13,
+      "weekTheme": "Year-End (Speak Directly to the Niche)",
+      "type": "TIP",
+      "hook": "Nearly a third of annual giving happens in December. Your year-end campaign starts now — not Thanksgiving week.",
+      "direction": "Year-end giving timeline for ministries and nonprofits: October = plan and segment, November = warm the list with impact stories, December = the ask series. Timeline graphic."
+    },
+    {
+      "id": "2026-10-14",
+      "date": "2026-10-14",
+      "weekday": "Wed",
+      "week": 13,
+      "weekTheme": "Year-End (Speak Directly to the Niche)",
+      "type": "TIP",
+      "hook": "The year-end email sequence that outperforms one big appeal.",
+      "direction": "The 5-email arc: story → impact → ask → deadline → last call. Each email one job. Outline graphic — actionable enough to steal, which is the point."
+    },
+    {
+      "id": "2026-10-16",
+      "date": "2026-10-16",
+      "weekday": "Fri",
+      "week": 13,
+      "weekTheme": "Year-End (Speak Directly to the Niche)",
+      "type": "ASK",
+      "hook": "We have room for 2 more clients before year-end. If your mission deserves marketing that finally works, let's talk.",
+      "direction": "True scarcity (two-man shop, real capacity). Close the 90 days where they began: your why is your strongest asset — we make sure people can see it. CTA: contact link."
+    }
+  ]
+}

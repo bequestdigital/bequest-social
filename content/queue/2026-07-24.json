@@ -1,0 +1,64 @@
+{
+  "id": "2026-07-24",
+  "date": "2026-07-24",
+  "week": 1,
+  "weekTheme": "Start With Why",
+  "type": "TIP",
+  "hook": "The 5-second test: can a stranger tell why you exist, how you're different, and what to do next?",
+  "direction": "Homepage self-audit ordered Why → How → What. If a first-time visitor can't find the mission in 5 seconds, the site is a directory, not a message. Graphic: side-by-side wireframe, \"what-first\" vs. \"why-first\" homepage.",
+  "facebook": {
+    "text": "The 5-second test: can a stranger tell why you exist, how you're different, and what to do next?\n\nOpen your homepage and count. If the mission doesn't surface in five seconds, the problem isn't hiding somewhere deep in the site. It's on page one.\n\nOrder matters. Why at the top: the reason you exist. How in the middle: what makes you different. What last: the programs, the services, the details.\n\nMost homepages run that order in reverse. That's a directory, not a message. Run the test this week — it costs nothing to find out where you stand."
+  },
+  "instagram": {
+    "text": "The 5-second test: can a stranger tell why you exist, how you're different, and what to do next?\n\nOpen your homepage and count. If the mission doesn't surface in five seconds, the problem is on page one.\n\nOrder matters: Why at the top, How in the middle, What last. Most homepages run it in reverse — a directory, not a message.\n\nRun the test this week. It costs nothing to find out where you stand.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "smallbusinessmarketing",
+      "churchcommunications"
+    ]
+  },
+  "x": {
+    "posts": [
+      "The 5-second test: can a stranger tell why you exist, how you're different, and what to do next?\n\nIf the mission doesn't surface in 5 seconds, your homepage is a directory, not a message.\n\nWhy first. Then how. Then what."
+    ]
+  },
+  "image": {
+    "template": "diagram",
+    "data": {
+      "mode": "columns",
+      "eyebrow": "Start With Why",
+      "title": "The 5-second homepage test",
+      "columns": {
+        "left": {
+          "label": "What-first",
+          "items": [
+            "Stock-photo slider",
+            "Programs & departments",
+            "News and announcements",
+            "Mission buried on the About page"
+          ]
+        },
+        "right": {
+          "label": "Why-first",
+          "items": [
+            "Mission in the headline",
+            "How you're different",
+            "One clear next step",
+            "Proof it works"
+          ]
+        }
+      }
+    },
+    "alt": "Side-by-side comparison of a what-first homepage versus a why-first homepage, with the why-first column highlighted in dark green.",
+    "files": [
+      "2026-07-24.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-07-18T11:41:17.645Z",
+    "model": "claude-fable-5 (local dry run — live runs use the API via generate.js)",
+    "generator": "dry-run-local"
+  }
+}

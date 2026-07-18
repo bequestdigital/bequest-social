@@ -1,0 +1,44 @@
+{
+  "id": "2026-07-22",
+  "date": "2026-07-22",
+  "week": 1,
+  "weekTheme": "Start With Why",
+  "type": "POV",
+  "hook": "Your organization has a stronger 'why' than any Fortune 500 brand. Your marketing should act like it.",
+  "direction": "Corporations invent purpose; ministries and mission-driven businesses have one. Yet their marketing is often the most timid in the room. Flip the frame: conviction is a competitive advantage.",
+  "facebook": {
+    "text": "Corporations spend millions inventing a purpose. Mission statements workshopped in conference rooms, values printed on break-room posters.\n\nYour organization never had that problem. The purpose came first. Everything else followed.\n\nSo it's strange that mission-driven marketing is often the most timid marketing in the room. Hedged language, borrowed templates, apology in the tone.\n\nConviction is a competitive advantage. You hold something worth saying plainly. Say it plainly."
+  },
+  "instagram": {
+    "text": "Corporations spend millions inventing a purpose. Your organization never had that problem — the purpose came first, and everything else followed.\n\nSo why is mission-driven marketing so often the most timid in the room? Hedged language, borrowed templates, apology in the tone.\n\nConviction is a competitive advantage. You hold something worth saying plainly. Say it plainly.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "christianbusiness",
+      "faithbasedbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Corporations invent purpose. Ministries and mission-driven businesses are built on one.\n\nSo why is their marketing usually the most timid in the room?\n\nConviction is a competitive advantage. Act like it."
+    ]
+  },
+  "image": {
+    "template": "quote-card",
+    "data": {
+      "eyebrow": "Start With Why",
+      "quote": "Your organization has a stronger 'why' than any Fortune 500 brand. Your marketing should act like it.",
+      "attribution": null
+    },
+    "alt": "Quote card on a dark green background reading: Your organization has a stronger why than any Fortune 500 brand. Your marketing should act like it.",
+    "files": [
+      "2026-07-22.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-07-18T11:41:17.644Z",
+    "model": "claude-fable-5 (local dry run — live runs use the API via generate.js)",
+    "generator": "dry-run-local"
+  }
+}

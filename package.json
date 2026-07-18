@@ -1,0 +1,19 @@
+{
+  "name": "bequest-social",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "parse": "node src/parse-calendar.js",
+    "generate": "node src/generate.js",
+    "render": "node src/generate-image.js",
+    "publish:today": "node src/publish.js",
+    "summary": "node src/notify.js summary"
+  },
+  "dependencies": {
+    "puppeteer-core": "^23.11.1",
+    "twitter-api-v2": "^1.19.0"
+  }
+}

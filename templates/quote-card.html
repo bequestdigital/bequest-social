@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+{{FONTS}}
+{{BRAND_CSS}}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1080px; overflow: hidden; }
+body {
+  font-family: var(--sans);
+  background: radial-gradient(120% 120% at 20% 0%, var(--forest) 0%, var(--forest-dark) 62%);
+  color: var(--cream);
+}
+.canvas { position: relative; width: 1080px; height: 1080px; padding: 110px 96px 96px; display: flex; flex-direction: column; }
+.frame { position: absolute; inset: 34px; border: 1px solid rgba(203, 168, 77, 0.4); pointer-events: none; }
+.eyebrow { font-size: 21px; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-muted); }
+.qmark { font-family: var(--serif); font-weight: 700; font-size: 190px; line-height: 0.6; color: var(--gold); margin-top: 56px; height: 96px; }
+.quote-wrap { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.quote { font-family: var(--serif); font-weight: 600; line-height: 1.16; color: var(--cream); }
+.quote.q-xl { font-size: 88px; }
+.quote.q-lg { font-size: 74px; }
+.quote.q-md { font-size: 62px; }
+.quote.q-sm { font-size: 52px; }
+.attribution { margin-top: 36px; font-size: 27px; color: var(--gold-light); }
+.attribution:empty { display: none; }
+.footer { display: flex; align-items: center; gap: 24px; }
+.rule { width: 64px; height: 2px; background: var(--gold); }
+.wordmark { font-size: 21px; font-weight: 600; letter-spacing: 0.34em; color: var(--gold); }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="frame"></div>
+    <div class="eyebrow">{{EYEBROW}}</div>
+    <div class="qmark">&ldquo;</div>
+    <div class="quote-wrap">
+      <div class="quote {{SIZE_CLASS}}">{{QUOTE}}</div>
+      <div class="attribution">{{ATTRIBUTION}}</div>
+    </div>
+    <div class="footer"><div class="rule"></div><div class="wordmark">{{WORDMARK}}</div></div>
+  </div>
+</body>
+</html>

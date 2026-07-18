@@ -1,0 +1,58 @@
+{
+  "id": "2026-07-20",
+  "date": "2026-07-20",
+  "week": 1,
+  "weekTheme": "Start With Why",
+  "type": "WHY",
+  "hook": "People don't give to what you do. They give to why you do it.",
+  "direction": "Open the 90 days with the Golden Circle applied to mission-driven orgs. Sinek's insight lands harder for churches and nonprofits than anyone: your why *is* the offer. Most websites lead with programs and services (the what) and bury the mission. Graphic: Golden Circle diagram, Bequest brand colors.",
+  "facebook": {
+    "text": "People don't give to what you do. They give to why you do it.\n\nSimon Sinek built a career on that observation, and it lands harder for churches and nonprofits than for anyone selling software. A corporation has to invent its purpose. You already have one.\n\nYet open most ministry websites and the mission is buried under programs, service times, and department pages. The what is everywhere. The why takes three clicks to find.\n\nOver the next 90 days we're walking through what mission-first marketing looks like in practice, starting where Sinek starts: Why, then How, then What. Your why is the offer. Lead with it."
+  },
+  "instagram": {
+    "text": "People don't give to what you do. They give to why you do it.\n\nSimon Sinek's Golden Circle lands harder for churches and nonprofits than for anyone else: a corporation has to invent its purpose. You already have one.\n\nYet most ministry websites bury the mission under programs and department pages. The what is everywhere. The why takes three clicks to find.\n\nWhy, then How, then What. Your why is the offer. Lead with it.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "ministrymarketing",
+      "christianbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "People don't give to what you do. They give to why you do it.\n\nMost ministry websites bury the mission under programs and service times. The what is everywhere; the why takes three clicks to find.\n\nLead with the why. It's the offer."
+    ]
+  },
+  "image": {
+    "template": "diagram",
+    "data": {
+      "mode": "circles",
+      "eyebrow": "Start With Why",
+      "title": "People give to Why. Most websites lead with What.",
+      "circles": [
+        {
+          "label": "WHY",
+          "sub": "The mission"
+        },
+        {
+          "label": "HOW",
+          "sub": "The way you serve"
+        },
+        {
+          "label": "WHAT",
+          "sub": "Programs & services"
+        }
+      ]
+    },
+    "alt": "Golden Circle diagram with three concentric rings labeled Why, How, and What in Bequest Digital brand colors.",
+    "files": [
+      "2026-07-20.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-07-18T11:41:17.644Z",
+    "model": "claude-fable-5 (local dry run — live runs use the API via generate.js)",
+    "generator": "dry-run-local"
+  }
+}
