@@ -1,0 +1,26 @@
+# Weekly Meta token health check: opens an issue if the long-lived Page token
+# is dead or expires within 14 days (they last ~60 days).
+name: Meta token check
+
+on:
+  schedule:
+    - cron: '0 15 * * 2' # Tuesdays ~10/11am ET; exact hour doesn't matter here
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check token
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node src/check-token.js
