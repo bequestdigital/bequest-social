@@ -352,8 +352,21 @@ async function main() {
     { key: 'li', name: 'LinkedIn', env: ['LINKEDIN_ACCESS_TOKEN', 'LINKEDIN_ORG_ID'], fn: () => publishLinkedIn(pkg, imagePaths) },
   ].filter((p) => opts.only.includes(p.key));
 
+  // Skip any platform whose credentials aren't configured yet (e.g. LinkedIn
+  // while its API approval is pending) — it's not a failure, it just isn't
+  // wired up. It auto-joins the moment its secrets exist. Explicitly requesting
+  // a single unconfigured platform (--only li) still surfaces as an error below.
+  const ready = platforms.filter((p) => {
+    const missing = p.env.filter((e) => !process.env[e]);
+    if (missing.length && opts.only.length > 1) {
+      console.log(`${p.name}: not configured (missing ${missing.join(', ')}) — skipping`);
+      return false;
+    }
+    return true;
+  });
+
   const failures = [];
-  for (const platform of platforms) {
+  for (const platform of ready) {
     if (pkg.results[platform.key]?.ok) {
       console.log(`${platform.name}: already published (${pkg.results[platform.key].id}) — skipping`);
       continue;
@@ -378,7 +391,7 @@ async function main() {
 
   if (opts.dryRun) return;
 
-  const allOk = platforms.every((p) => pkg.results[p.key]?.ok);
+  const allOk = ready.length > 0 && ready.every((p) => pkg.results[p.key]?.ok);
   if (allOk) {
     fs.mkdirSync(PUBLISHED, { recursive: true });
     pkg.meta.status = 'published';
