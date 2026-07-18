@@ -40,5 +40,22 @@
     "generated_at": "2026-07-18T17:40:05.654Z",
     "model": "human-authored (ad-hoc quiz promo)",
     "generator": "quiz-promo"
+  },
+  "results": {
+    "fb": {
+      "ok": true,
+      "id": "996611156867180_122122979703264758",
+      "at": "2026-07-18T17:42:35.255Z"
+    },
+    "ig": {
+      "ok": false,
+      "error": "Request with GET/HEAD method cannot have body.",
+      "at": "2026-07-18T17:42:51.478Z"
+    },
+    "x": {
+      "ok": false,
+      "error": "Request failed with code 402",
+      "at": "2026-07-18T17:42:57.859Z"
+    }
   }
 }
