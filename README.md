@@ -64,32 +64,22 @@ GitHub repo → **Settings → Secrets and variables → Actions → New reposit
 | `IG_BUSINESS_ACCOUNT_ID` | Numeric ID of the linked IG Business account | ✅ **set** (`17841480682376611`) |
 | `X_API_KEY` / `X_API_SECRET` | X app consumer key + secret | ✅ **set** (verified auth as @bequestdigital) |
 | `X_ACCESS_TOKEN` / `X_ACCESS_TOKEN_SECRET` | X access token + secret (read+write) | ✅ **set** (verified) |
-| `ANTHROPIC_API_KEY` | Anthropic API key (step 3) | ⬜ you add |
-| `META_ACCESS_TOKEN` | Non-expiring Facebook **Page** token (step 4) | ⬜ you add (one command) |
+| `ANTHROPIC_API_KEY` | Anthropic API key | ✅ **set** (verified — 9 models visible) |
+| `META_ACCESS_TOKEN` | Non-expiring Meta token (step 4) | ✅ **set** (system-user token, never expires) |
+
+**All eight secrets are set. The pipeline is fully wired.**
 
 ### 3. Anthropic key
 
 [console.anthropic.com](https://console.anthropic.com) → API Keys → Create Key. Generation uses `claude-sonnet-4-6` at low temperature with retry (3 attempts, exponential backoff) and a hard token budget per run (`TOKEN_BUDGET` env, default 150k tokens ≈ well under $1/week).
 
-### 4. Meta (Facebook Page + Instagram Business)
+### 4. Meta (Facebook Page + Instagram Business) — done ✅
 
-**Most of this is already done.** The Meta developer app **Bequest Social Publisher** (App ID `2015359832423958`) has been created under the Bequest Digital LLC business portfolio, with the Instagram + Pages content use cases and their permissions enabled, and the app authorized against the Bequest Digital Page and @mybequestdigital Instagram account. These three GitHub secrets are already set: `FB_PAGE_ID` (`996611156867180`), `IG_BUSINESS_ACCOUNT_ID` (`17841480682376611`), and the Page↔Instagram link is verified. An app that acts on your own assets never needs App Review.
+Fully set up. The Meta developer app **Bequest Social Publisher** (App ID `2015359832423958`) was created under the Bequest Digital LLC business portfolio with the Instagram + Pages content use cases and permissions, and authorized against the Bequest Digital Page (`FB_PAGE_ID` `996611156867180`) and @mybequestdigital (`IG_BUSINESS_ACCOUNT_ID` `17841480682376611`).
 
-**The one remaining step is minting the durable `META_ACCESS_TOKEN`** — this couldn't be automated because revealing the App secret requires re-entering your Facebook password. Do it once:
+`META_ACCESS_TOKEN` is a **Business Manager system-user token** (system user "Bequest Publisher"), which is the right tool for automated posting: it **never expires** (`expires_at: 0`) and carries `pages_manage_posts`, `pages_read_engagement`, `pages_show_list`, `instagram_basic`, `instagram_content_publish`, and `business_management` on the Page and Instagram account. This avoids the App-secret / 60-day-refresh dance entirely. At publish time, `src/publish.js` derives the Page access token from it (`resolvePageToken()`) and uses that for both Facebook and Instagram. All of this was verified against the live Graph API.
 
-1. **Reveal the App secret**: [App settings → Basic](https://developers.facebook.com/apps/2015359832423958/settings/basic/) → App secret → **Show** (enter your Facebook password). Copy it.
-2. **Generate a short-lived token**: [Graph API Explorer](https://developers.facebook.com/tools/explorer/2015359832423958/) → the app is preselected → **Generate Access Token** (the permissions are already granted, so just approve). Copy the token.
-3. **Run the helper** (from the repo) — it exchanges the short token for a long-lived one and derives the non-expiring Page token:
-   ```bash
-   APP_SECRET=<secret from step 1> SHORT_TOKEN=<token from step 2> node src/meta-longlived-token.js
-   ```
-4. **Store it**: the script prints the Page token. Save it as the secret:
-   ```bash
-   APP_SECRET=... SHORT_TOKEN=... node src/meta-longlived-token.js | tail -1 | tr -d '\n' | gh secret set META_ACCESS_TOKEN
-   ```
-   (or paste it into Settings → Secrets and variables → Actions → `META_ACCESS_TOKEN`).
-
-A Page token derived from a long-lived user token this way **does not expire**. `token-check.yml` still pings it every Tuesday and opens a GitHub issue if it ever goes dead — to refresh, just repeat steps 2–4.
+**To rotate the token if ever needed** (it shouldn't expire): [Business Settings → Users → System users](https://business.facebook.com/settings/system-users?business_id=1991840145009413) → **Bequest Publisher** → **Generate token** → app *Bequest Social Publisher* → expiration **Never** → select the six permissions above → copy it into the `META_ACCESS_TOKEN` secret. `src/meta-longlived-token.js` remains as an alternative (App-secret-based) path if you ever prefer a plain Page token.
 
 ### 5. X (Twitter) — done ✅
 

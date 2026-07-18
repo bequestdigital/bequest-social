@@ -78,6 +78,25 @@ async function graphCall(pathname, params, { method = 'POST', form } = {}) {
   return data;
 }
 
+// Resolve the Page access token used for both Facebook posting and Instagram
+// content publishing. META_ACCESS_TOKEN may be stored as a Page token (used
+// directly) or as a system-user / user token (in which case we derive the
+// non-expiring Page token for FB_PAGE_ID). Both surfaces post with this token.
+async function resolvePageToken() {
+  const tok = process.env.META_ACCESS_TOKEN;
+  const pageId = process.env.FB_PAGE_ID;
+  if (!tok || !pageId) return tok;
+  try {
+    const qs = new URLSearchParams({ fields: 'id,access_token', access_token: tok });
+    const data = await fetch(`${GRAPH}/me/accounts?${qs}`).then((r) => r.json());
+    const page = (data.data || []).find((p) => p.id === pageId);
+    if (page?.access_token) return page.access_token;
+  } catch {
+    /* token is likely already a Page token — fall through and use it as-is */
+  }
+  return tok;
+}
+
 // ---- Facebook: direct binary upload; multi-image posts use unpublished photos ----
 async function publishFacebook(pkg, imagePaths) {
   const pageId = process.env.FB_PAGE_ID;
@@ -204,6 +223,12 @@ async function main() {
   const errors = validate(pkg, imagePaths, opts);
   if (errors.length) {
     throw new Error('Pre-publish validation failed:\n  ' + errors.join('\n  '));
+  }
+
+  // Meta posting (FB + IG) uses the Page token; derive it from META_ACCESS_TOKEN
+  // if a system-user/user token was stored. X doesn't use it.
+  if (!opts.dryRun && (opts.only.includes('fb') || opts.only.includes('ig')) && process.env.META_ACCESS_TOKEN) {
+    process.env.META_ACCESS_TOKEN = await resolvePageToken();
   }
 
   pkg.results = pkg.results || {};
