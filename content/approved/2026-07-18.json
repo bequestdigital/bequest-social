@@ -1,0 +1,44 @@
+{
+  "id": "2026-07-18",
+  "date": "2026-07-18",
+  "week": 0,
+  "weekTheme": "Marketing Diagnostic",
+  "type": "ASK",
+  "hook": "Not sure what marketing help you need? Take the 5-minute diagnostic.",
+  "direction": "Ad-hoc promo for the Marketing Diagnostic quiz at mybequestdigital.com/quiz.",
+  "facebook": {
+    "text": "Most leaders don't have time to become marketing experts. And most marketing advice doesn't help. It just hands you a longer list of things to do.\n\nWe built a 5-minute diagnostic that does the opposite. Answer a few honest questions about your brand, your website, your leads, and your time, and you'll get a clear recommendation on what to fix first, and what to ignore.\n\nNo pitch. No obligation. A straight answer you can act on, whether you work with us or not.\n\nTake the Marketing Diagnostic: https://mybequestdigital.com/quiz"
+  },
+  "instagram": {
+    "text": "Most leaders don't have time to become marketing experts. And most marketing advice just hands you a longer list of things to do.\n\nWe built a 5-minute diagnostic that does the opposite. Answer a few honest questions about your brand, website, leads, and time, and you'll get a clear recommendation on what to fix first, and what to ignore.\n\nNo pitch. No obligation. A straight answer you can act on, whether you work with us or not.\n\nTake the Marketing Diagnostic — link in bio, or mybequestdigital.com/quiz",
+    "hashtags": [
+      "smallbusinessmarketing",
+      "churchmarketing",
+      "nonprofitmarketing",
+      "christianbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Most marketing advice just hands you a longer to-do list.\n\nOur 5-minute Marketing Diagnostic does the opposite: it tells you what to fix first, and what to ignore. No pitch, just a clear recommendation.\n\nhttps://mybequestdigital.com/quiz"
+    ]
+  },
+  "image": {
+    "template": "quote-card",
+    "data": {
+      "eyebrow": "Marketing Diagnostic",
+      "quote": "You don't need more marketing. You need the right marketing.",
+      "attribution": null
+    },
+    "alt": "Quote card on a dark green background reading: You don't need more marketing. You need the right marketing. Bequest Digital logo below.",
+    "files": [
+      "2026-07-18.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-07-18T17:40:05.654Z",
+    "model": "human-authored (ad-hoc quiz promo)",
+    "generator": "quiz-promo"
+  }
+}
