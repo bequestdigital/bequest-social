@@ -48,14 +48,14 @@
       "at": "2026-07-18T17:42:35.255Z"
     },
     "ig": {
-      "ok": false,
-      "error": "Request with GET/HEAD method cannot have body.",
-      "at": "2026-07-18T17:42:51.478Z"
+      "ok": true,
+      "id": "18086389097638257",
+      "at": "2026-07-18T17:46:20.721Z"
     },
     "x": {
       "ok": false,
       "error": "Request failed with code 402",
-      "at": "2026-07-18T17:42:57.859Z"
+      "at": "2026-07-18T17:46:26.945Z"
     }
   }
 }
