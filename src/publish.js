@@ -61,6 +61,10 @@ async function graphCall(pathname, params, { method = 'POST', form } = {}) {
   let res;
   if (form) {
     res = await fetch(`${GRAPH}${pathname}`, { method, body: form });
+  } else if (method === 'GET') {
+    // GET requests carry params in the query string; a body is invalid on GET.
+    const qs = new URLSearchParams({ ...params, access_token: process.env.META_ACCESS_TOKEN });
+    res = await fetch(`${GRAPH}${pathname}?${qs}`, { method });
   } else {
     const qs = new URLSearchParams({ ...params, access_token: process.env.META_ACCESS_TOKEN });
     res = await fetch(`${GRAPH}${pathname}`, {
@@ -166,11 +170,26 @@ async function publishX(pkg, imagePaths) {
     accessSecret: process.env.X_ACCESS_TOKEN_SECRET,
   });
 
+  // Media upload uses the X API v1.1 endpoints, which the free tier does not
+  // include (returns 402/403). If that happens, fall back to a text-only post
+  // so the content and link still go out, rather than dropping X entirely.
   const mediaIds = [];
+  let mediaSkipped = null;
   for (const p of imagePaths.slice(0, 4)) {
-    const id = await client.v1.uploadMedia(p);
-    if (pkg.image.alt) await client.v1.createMediaMetadata(id, { alt_text: { text: pkg.image.alt.slice(0, 1000) } });
-    mediaIds.push(id);
+    try {
+      const id = await client.v1.uploadMedia(p);
+      if (pkg.image.alt) await client.v1.createMediaMetadata(id, { alt_text: { text: pkg.image.alt.slice(0, 1000) } });
+      mediaIds.push(id);
+    } catch (e) {
+      const code = e?.code || e?.data?.status;
+      if (code === 402 || code === 403) {
+        mediaSkipped = `media upload not available on this X API tier (HTTP ${code}) — posted text-only`;
+        console.warn(`X: ${mediaSkipped}`);
+        mediaIds.length = 0;
+        break;
+      }
+      throw e;
+    }
   }
 
   const ids = [];
@@ -183,7 +202,7 @@ async function publishX(pkg, imagePaths) {
     replyTo = res.data.id;
     ids.push(res.data.id);
   }
-  return { id: ids[0], thread_ids: ids };
+  return { id: ids[0], thread_ids: ids, ...(mediaSkipped ? { note: mediaSkipped } : {}) };
 }
 
 // ---- validation before anything posts ----
