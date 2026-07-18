@@ -1,0 +1,37 @@
+# Merging the weekly PR is the approval step: when queue files land on main,
+# move them to content/approved/ so publish.yml will pick them up.
+name: Approve merged posts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/queue/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: approve
+  cancel-in-progress: false
+
+jobs:
+  move-to-approved:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Move queue -> approved
+        run: |
+          shopt -s nullglob
+          files=(content/queue/*.json content/queue/*.jpg content/queue/*.png)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "Queue is empty — nothing to approve."
+            exit 0
+          fi
+          mkdir -p content/approved
+          git mv "${files[@]}" content/approved/
+          git config user.name "bequest-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git commit -m "Approve posts: queue -> approved [skip ci]"
+          git push
