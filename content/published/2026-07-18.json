@@ -36,7 +36,7 @@
     ]
   },
   "meta": {
-    "status": "queued",
+    "status": "published",
     "generated_at": "2026-07-18T17:40:05.654Z",
     "model": "human-authored (ad-hoc quiz promo)",
     "generator": "quiz-promo"
@@ -53,9 +53,12 @@
       "at": "2026-07-18T17:46:20.721Z"
     },
     "x": {
-      "ok": false,
-      "error": "Request failed with code 402",
-      "at": "2026-07-18T18:42:10.800Z"
+      "ok": true,
+      "id": "2078558463211327627",
+      "thread_ids": [
+        "2078558463211327627"
+      ],
+      "at": "2026-07-18T19:12:10.327Z"
     }
   }
 }
