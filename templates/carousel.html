@@ -15,6 +15,7 @@ body { font-family: var(--sans); }
 .brandline { display: flex; align-items: center; gap: 24px; }
 .rule { width: 64px; height: 2px; background: var(--gold); }
 .wordmark { font-size: 21px; font-weight: 600; letter-spacing: 0.34em; }
+.logo { height: 44px; }
 .dots { display: flex; gap: 12px; }
 .dot { width: 12px; height: 12px; border-radius: 50%; }
 
@@ -50,7 +51,7 @@ body.item .dot.on { background: var(--gold); }
     <div class="eyebrow">{{EYEBROW}}</div>
     {{SLIDE_CONTENT}}
     <div class="footer">
-      <div class="brandline"><div class="rule"></div><div class="wordmark">{{WORDMARK}}</div></div>
+      {{BRANDMARK}}
       <div class="dots">{{DOTS}}</div>
     </div>
   </div>

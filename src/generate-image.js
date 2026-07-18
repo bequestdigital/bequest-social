@@ -22,12 +22,28 @@ function brandCss() {
 }`;
 }
 
+let logoUriCache;
+function logoUri() {
+  if (!logoUriCache) {
+    const p = path.join(TPL_DIR, 'assets', 'bequest-logo.png');
+    logoUriCache = 'data:image/png;base64,' + fs.readFileSync(p).toString('base64');
+  }
+  return logoUriCache;
+}
+
+// The real logo (white script + gold shield, from mybequestdigital.com) reads
+// on dark canvases; light canvases get a typeset forest-green wordmark.
+const LOGO_IMG = () => `<img class="logo" src="${logoUri()}" alt="">`;
+const WORDMARK_TEXT = () =>
+  `<div class="brandline"><div class="rule"></div><div class="wordmark">${esc(brand.wordmark)}</div></div>`;
+
 function fill(templateName, tokens) {
   let html = fs.readFileSync(path.join(TPL_DIR, `${templateName}.html`), 'utf8');
   const all = {
     FONTS: `@import url('${brand.fonts.googleImport}');`,
     BRAND_CSS: brandCss(),
     WORDMARK: esc(brand.wordmark),
+    LOGO_URI: logoUri(),
     ...tokens,
   };
   return html.replace(/\{\{(\w+)\}\}/g, (_, key) => all[key] ?? '');
@@ -89,6 +105,7 @@ const builders = {
       html: fill('carousel', {
         MODE: 'cover',
         EYEBROW: eyebrow,
+        BRANDMARK: LOGO_IMG(),
         DOTS: dotsHtml(total, 0),
         SLIDE_CONTENT: `<div class="cover-main"><div class="cover-title">${esc(d.cover.title)}</div><div class="cover-sub">${esc(d.cover.subtitle || '')}</div><div class="swipe">Swipe &rarr;</div></div>`,
       }),
@@ -99,6 +116,7 @@ const builders = {
         html: fill('carousel', {
           MODE: 'item',
           EYEBROW: eyebrow,
+          BRANDMARK: WORDMARK_TEXT(),
           DOTS: dotsHtml(total, i + 1),
           SLIDE_CONTENT: `<div class="slide-num">${String(i + 1).padStart(2, '0')}</div><div class="slide-main"><div class="slide-title">${esc(s.title)}</div><div class="slide-body">${esc(s.body || '')}</div></div>`,
         }),
@@ -109,6 +127,7 @@ const builders = {
       html: fill('carousel', {
         MODE: 'end',
         EYEBROW: eyebrow,
+        BRANDMARK: LOGO_IMG(),
         DOTS: dotsHtml(total, total - 1),
         SLIDE_CONTENT: `<div class="end-main"><div class="end-title">${esc(d.end?.title || 'Your mission deserves marketing that works.')}</div><div class="end-sub">${esc(d.end?.subtitle || brand.url.replace('https://', ''))}</div></div>`,
       }),
@@ -139,7 +158,13 @@ const builders = {
     return [
       {
         suffix: '',
-        html: fill('diagram', { MODE: d.mode, EYEBROW: eyebrow, TITLE: esc(d.title || ''), DIAGRAM_CONTENT: content }),
+        html: fill('diagram', {
+          MODE: d.mode,
+          EYEBROW: eyebrow,
+          TITLE: esc(d.title || ''),
+          BRANDMARK: d.mode === 'circles' ? LOGO_IMG() : WORDMARK_TEXT(),
+          DIAGRAM_CONTENT: content,
+        }),
       },
     ];
   },

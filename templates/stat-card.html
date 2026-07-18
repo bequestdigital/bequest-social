@@ -23,8 +23,7 @@ body {
 .label { font-family: var(--serif); font-weight: 600; font-size: 48px; color: var(--cream); margin-top: 26px; line-height: 1.15; }
 .context { font-size: 30px; color: var(--cream-dark); margin-top: 30px; line-height: 1.5; max-width: 800px; }
 .footer { display: flex; align-items: center; gap: 24px; }
-.rule { width: 64px; height: 2px; background: var(--gold); }
-.wordmark { font-size: 21px; font-weight: 600; letter-spacing: 0.34em; color: var(--gold); }
+.logo { height: 48px; }
 </style>
 </head>
 <body>
@@ -36,7 +35,7 @@ body {
       <div class="label">{{LABEL}}</div>
       <div class="context">{{CONTEXT}}</div>
     </div>
-    <div class="footer"><div class="rule"></div><div class="wordmark">{{WORDMARK}}</div></div>
+    <div class="footer"><img class="logo" src="{{LOGO_URI}}" alt=""></div>
   </div>
 </body>
 </html>

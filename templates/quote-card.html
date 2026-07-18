@@ -25,8 +25,7 @@ body {
 .attribution { margin-top: 36px; font-size: 27px; color: var(--gold-light); }
 .attribution:empty { display: none; }
 .footer { display: flex; align-items: center; gap: 24px; }
-.rule { width: 64px; height: 2px; background: var(--gold); }
-.wordmark { font-size: 21px; font-weight: 600; letter-spacing: 0.34em; color: var(--gold); }
+.logo { height: 48px; }
 </style>
 </head>
 <body>
@@ -38,7 +37,7 @@ body {
       <div class="quote {{SIZE_CLASS}}">{{QUOTE}}</div>
       <div class="attribution">{{ATTRIBUTION}}</div>
     </div>
-    <div class="footer"><div class="rule"></div><div class="wordmark">{{WORDMARK}}</div></div>
+    <div class="footer"><img class="logo" src="{{LOGO_URI}}" alt=""></div>
   </div>
 </body>
 </html>

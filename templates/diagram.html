@@ -12,8 +12,10 @@ body { font-family: var(--sans); }
 .eyebrow { font-size: 21px; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-muted); }
 .title { font-family: var(--serif); font-weight: 600; font-size: 54px; line-height: 1.1; margin: 22px 0 40px; }
 .footer { display: flex; align-items: center; gap: 24px; }
+.brandline { display: flex; align-items: center; gap: 24px; }
 .rule { width: 64px; height: 2px; background: var(--gold); }
 .wordmark { font-size: 21px; font-weight: 600; letter-spacing: 0.34em; }
+.logo { height: 44px; }
 
 /* ---- columns mode: side-by-side comparison on light canvas ---- */
 body.columns { background: var(--ivory); color: var(--forest); }
@@ -56,7 +58,7 @@ body.circles .wordmark { color: var(--gold); }
     <div class="eyebrow">{{EYEBROW}}</div>
     <div class="title">{{TITLE}}</div>
     {{DIAGRAM_CONTENT}}
-    <div class="footer"><div class="rule"></div><div class="wordmark">{{WORDMARK}}</div></div>
+    <div class="footer">{{BRANDMARK}}</div>
   </div>
 </body>
 </html>
