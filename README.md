@@ -62,10 +62,10 @@ GitHub repo → **Settings → Secrets and variables → Actions → New reposit
 |---|---|---|
 | `FB_PAGE_ID` | Numeric ID of the Bequest Facebook Page | ✅ **set** (`996611156867180`) |
 | `IG_BUSINESS_ACCOUNT_ID` | Numeric ID of the linked IG Business account | ✅ **set** (`17841480682376611`) |
+| `X_API_KEY` / `X_API_SECRET` | X app consumer key + secret | ✅ **set** (verified auth as @bequestdigital) |
+| `X_ACCESS_TOKEN` / `X_ACCESS_TOKEN_SECRET` | X access token + secret (read+write) | ✅ **set** (verified) |
 | `ANTHROPIC_API_KEY` | Anthropic API key (step 3) | ⬜ you add |
 | `META_ACCESS_TOKEN` | Non-expiring Facebook **Page** token (step 4) | ⬜ you add (one command) |
-| `X_API_KEY` / `X_API_SECRET` | X app consumer key + secret (step 5) | ⬜ you add |
-| `X_ACCESS_TOKEN` / `X_ACCESS_TOKEN_SECRET` | X account access token + secret (step 5) | ⬜ you add |
 
 ### 3. Anthropic key
 
@@ -91,15 +91,11 @@ GitHub repo → **Settings → Secrets and variables → Actions → New reposit
 
 A Page token derived from a long-lived user token this way **does not expire**. `token-check.yml` still pings it every Tuesday and opens a GitHub issue if it ever goes dead — to refresh, just repeat steps 2–4.
 
-### 5. X (Twitter)
+### 5. X (Twitter) — done ✅
 
-**This one needs you** — X's developer signup requires accepting their Developer Agreement and Policy (three legal checkboxes) and writing a use-case description. Accepting legal terms on your behalf isn't something an assistant should do, so it's left for you. It takes about five minutes:
+The X Free-tier developer account is enrolled under **@bequestdigital**, with app **Bequest Digital Social Publisher** (app id `33211736`) set to **Read and write** ("Web App, Automated App or Bot" type). All four OAuth 1.0a secrets (`X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_TOKEN_SECRET`) are set and were verified authenticating as @bequestdigital.
 
-1. Apply at [developer.x.com](https://developer.x.com) while signed in as the Bequest account (@AJKocman is signed in on this machine). Sign up for the **Free** tier (Free allows ~500 writes/month; we use ~26). For the use-case box, something like: *"Automated organic posting of our agency's own marketing content on a Mon/Wed/Fri schedule via the X API v2."* Then tick the three agreement boxes and submit.
-2. In the developer portal a default Project + App is created. Open the app's **Settings → User authentication set up**: enable **Read and write** permissions (type: "Web App, Automated App or Bot"; callback URL can be `https://mybequestdigital.com` — it isn't used).
-3. **Keys and tokens** tab: copy the **API Key and Secret** (`X_API_KEY`, `X_API_SECRET`), then generate **Access Token and Secret** (`X_ACCESS_TOKEN`, `X_ACCESS_TOKEN_SECRET`). If you generated the access token *before* enabling read-write, regenerate it after. Set all four as GitHub secrets (`echo -n '<value>' | gh secret set X_API_KEY`, etc.).
-
-Publishing uses API v2 for posts (threads become reply chains) and v1.1 for media upload + alt text — both covered by these same keys.
+Publishing uses API v2 for posts (threads become reply chains) and v1.1 for media upload + alt text — both covered by these keys. Free tier allows ~500 writes/month; we use ~26. If you ever rotate a key in the X developer portal, update the matching GitHub secret (`printf '%s' '<value>' | gh secret set X_API_KEY`, etc.).
 
 ---
 
