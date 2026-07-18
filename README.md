@@ -56,16 +56,16 @@ gh repo create bequest-social --public --source . --push
 
 ### 2. Add repository secrets
 
-GitHub repo → **Settings → Secrets and variables → Actions → New repository secret**:
+GitHub repo → **Settings → Secrets and variables → Actions → New repository secret**. Status as of the automated setup:
 
-| Secret | What it is |
-|---|---|
-| `ANTHROPIC_API_KEY` | Anthropic API key (step 3) |
-| `META_ACCESS_TOKEN` | Long-lived Facebook **Page** token (step 4) |
-| `FB_PAGE_ID` | Numeric ID of the Bequest Facebook Page (step 4) |
-| `IG_BUSINESS_ACCOUNT_ID` | Numeric ID of the linked IG Business account (step 4) |
-| `X_API_KEY` / `X_API_SECRET` | X app consumer key + secret (step 5) |
-| `X_ACCESS_TOKEN` / `X_ACCESS_TOKEN_SECRET` | X account access token + secret (step 5) |
+| Secret | What it is | Status |
+|---|---|---|
+| `FB_PAGE_ID` | Numeric ID of the Bequest Facebook Page | ✅ **set** (`996611156867180`) |
+| `IG_BUSINESS_ACCOUNT_ID` | Numeric ID of the linked IG Business account | ✅ **set** (`17841480682376611`) |
+| `ANTHROPIC_API_KEY` | Anthropic API key (step 3) | ⬜ you add |
+| `META_ACCESS_TOKEN` | Non-expiring Facebook **Page** token (step 4) | ⬜ you add (one command) |
+| `X_API_KEY` / `X_API_SECRET` | X app consumer key + secret (step 5) | ⬜ you add |
+| `X_ACCESS_TOKEN` / `X_ACCESS_TOKEN_SECRET` | X account access token + secret (step 5) | ⬜ you add |
 
 ### 3. Anthropic key
 
@@ -73,28 +73,31 @@ GitHub repo → **Settings → Secrets and variables → Actions → New reposit
 
 ### 4. Meta (Facebook Page + Instagram Business)
 
-You need admin on the Page and the linked IG Business account (you have this). What you're creating is a Meta developer app that acts on your own assets — it never needs App Review for that.
+**Most of this is already done.** The Meta developer app **Bequest Social Publisher** (App ID `2015359832423958`) has been created under the Bequest Digital LLC business portfolio, with the Instagram + Pages content use cases and their permissions enabled, and the app authorized against the Bequest Digital Page and @mybequestdigital Instagram account. These three GitHub secrets are already set: `FB_PAGE_ID` (`996611156867180`), `IG_BUSINESS_ACCOUNT_ID` (`17841480682376611`), and the Page↔Instagram link is verified. An app that acts on your own assets never needs App Review.
 
-1. **Create the app**: [developers.facebook.com](https://developers.facebook.com) → My Apps → Create App → type **Business**. Name it e.g. `Bequest Social Publisher`.
-2. **Get IDs**: In [Meta Business Suite](https://business.facebook.com) → Settings → Business assets: note the Facebook **Page ID** (`FB_PAGE_ID`) and the **Instagram account ID** (`IG_BUSINESS_ACCOUNT_ID`). (Or fetch later via `GET /me/accounts` and `GET /{page-id}?fields=instagram_business_account`.)
-3. **Get a short-lived token**: open the [Graph API Explorer](https://developers.facebook.com/tools/explorer), select your app, click **Generate Access Token**, and grant these permissions: `pages_manage_posts`, `pages_read_engagement`, `instagram_basic`, `instagram_content_publish`, `business_management`.
-4. **Exchange for a long-lived user token** (~60 days):
-   ```
-   curl "https://graph.facebook.com/v21.0/oauth/access_token?grant_type=fb_exchange_token&client_id=APP_ID&client_secret=APP_SECRET&fb_exchange_token=SHORT_LIVED_TOKEN"
-   ```
-5. **Get the long-lived Page token** (this is what goes in `META_ACCESS_TOKEN`):
-   ```
-   curl "https://graph.facebook.com/v21.0/me/accounts?access_token=LONG_LIVED_USER_TOKEN"
-   ```
-   Copy the `access_token` for the Bequest page from the response. Page tokens obtained from a long-lived user token generally **do not expire**, but treat them as ~60-day tokens to be safe.
+**The one remaining step is minting the durable `META_ACCESS_TOKEN`** — this couldn't be automated because revealing the App secret requires re-entering your Facebook password. Do it once:
 
-**Token refresh**: the `token-check.yml` workflow pings the token every Tuesday and opens a GitHub issue if it's dead or expiring within 14 days. To refresh: repeat steps 3–5 (short-lived → exchange → page token) and update the `META_ACCESS_TOKEN` secret. Five minutes, from a phone browser if needed.
+1. **Reveal the App secret**: [App settings → Basic](https://developers.facebook.com/apps/2015359832423958/settings/basic/) → App secret → **Show** (enter your Facebook password). Copy it.
+2. **Generate a short-lived token**: [Graph API Explorer](https://developers.facebook.com/tools/explorer/2015359832423958/) → the app is preselected → **Generate Access Token** (the permissions are already granted, so just approve). Copy the token.
+3. **Run the helper** (from the repo) — it exchanges the short token for a long-lived one and derives the non-expiring Page token:
+   ```bash
+   APP_SECRET=<secret from step 1> SHORT_TOKEN=<token from step 2> node src/meta-longlived-token.js
+   ```
+4. **Store it**: the script prints the Page token. Save it as the secret:
+   ```bash
+   APP_SECRET=... SHORT_TOKEN=... node src/meta-longlived-token.js | tail -1 | tr -d '\n' | gh secret set META_ACCESS_TOKEN
+   ```
+   (or paste it into Settings → Secrets and variables → Actions → `META_ACCESS_TOKEN`).
+
+A Page token derived from a long-lived user token this way **does not expire**. `token-check.yml` still pings it every Tuesday and opens a GitHub issue if it ever goes dead — to refresh, just repeat steps 2–4.
 
 ### 5. X (Twitter)
 
-1. Apply at [developer.x.com](https://developer.x.com) → sign up for the **Free** tier with the Bequest account (Free allows ~500 writes/month; we use ~26).
-2. In the developer portal, a default Project + App is created. Open the app's **Settings → User authentication set up**: enable **Read and write** permissions (type: "Web App, Automated App or Bot"; callback URL can be `https://mybequestdigital.com`, it isn't used).
-3. **Keys and tokens** tab: copy the **API Key and Secret** (`X_API_KEY`, `X_API_SECRET`), then generate **Access Token and Secret** (`X_ACCESS_TOKEN`, `X_ACCESS_TOKEN_SECRET`). If you generated the access token *before* enabling read-write, regenerate it after.
+**This one needs you** — X's developer signup requires accepting their Developer Agreement and Policy (three legal checkboxes) and writing a use-case description. Accepting legal terms on your behalf isn't something an assistant should do, so it's left for you. It takes about five minutes:
+
+1. Apply at [developer.x.com](https://developer.x.com) while signed in as the Bequest account (@AJKocman is signed in on this machine). Sign up for the **Free** tier (Free allows ~500 writes/month; we use ~26). For the use-case box, something like: *"Automated organic posting of our agency's own marketing content on a Mon/Wed/Fri schedule via the X API v2."* Then tick the three agreement boxes and submit.
+2. In the developer portal a default Project + App is created. Open the app's **Settings → User authentication set up**: enable **Read and write** permissions (type: "Web App, Automated App or Bot"; callback URL can be `https://mybequestdigital.com` — it isn't used).
+3. **Keys and tokens** tab: copy the **API Key and Secret** (`X_API_KEY`, `X_API_SECRET`), then generate **Access Token and Secret** (`X_ACCESS_TOKEN`, `X_ACCESS_TOKEN_SECRET`). If you generated the access token *before* enabling read-write, regenerate it after. Set all four as GitHub secrets (`echo -n '<value>' | gh secret set X_API_KEY`, etc.).
 
 Publishing uses API v2 for posts (threads become reply chains) and v1.1 for media upload + alt text — both covered by these same keys.
 
