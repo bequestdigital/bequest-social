@@ -1,0 +1,105 @@
+# Sundays 6:00am ET: generate the coming week's posts and open a review PR.
+# Cron is UTC and can't follow DST, so this fires at both candidate UTC hours
+# and a gate step lets only the run where it's actually 6am in New York proceed.
+name: Generate weekly posts
+
+on:
+  schedule:
+    - cron: '0 10 * * 0' # 6am EDT
+    - cron: '0 11 * * 0' # 6am EST
+  workflow_dispatch:
+    inputs:
+      week_of:
+        description: 'Generate posts falling in the 7 days after this date (YYYY-MM-DD). Empty = today.'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: generate-weekly
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: DST gate — proceed only at 6am ET (or manual dispatch)
+        id: gate
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(TZ=America/New_York date +%H)" = "06" ]; then
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Not 6am ET — this is the other DST candidate slot. Exiting."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.go == 'true'
+
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.go == 'true'
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.gate.outputs.go == 'true'
+        run: npm ci
+
+      - name: Parse calendar
+        if: steps.gate.outputs.go == 'true'
+        run: node src/parse-calendar.js 2>&1 | tee run.log
+
+      - name: Generate posts + render images
+        if: steps.gate.outputs.go == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node src/generate.js --week-of "${{ inputs.week_of }}" --manifest manifest.json 2>&1 | tee -a run.log
+
+      - name: Open review PR
+        if: steps.gate.outputs.go == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          WEEK=$(node -p "require('./manifest.json').week_of || ''")
+          if [ -z "$WEEK" ]; then
+            echo "No posts generated for this window — nothing to open a PR for."
+            exit 0
+          fi
+          BRANCH="posts/week-of-$WEEK"
+          git config user.name "bequest-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add content/
+          git commit -m "Generate posts for week of $WEEK"
+          git push -f origin "$BRANCH"
+          GITHUB_REPOSITORY="${{ github.repository }}" BRANCH="$BRANCH" node src/pr-body.js manifest.json > pr-body.md
+          gh pr create \
+            --title "Posts for week of $WEEK" \
+            --body-file pr-body.md \
+            --base main \
+            --head "$BRANCH" || \
+          gh pr edit "$BRANCH" --body-file pr-body.md
+
+      - name: Open issue on failure
+        if: failure()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node src/notify.js issue \
+            --title "Weekly generation failed ($(date +%Y-%m-%d))" \
+            --body "The Sunday generation run failed. Check the run log: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} — re-run with: gh workflow run generate-weekly.yml" || true
+
+      - name: Upload run log
+        if: always() && steps.gate.outputs.go == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: generate-log-${{ github.run_id }}
+          path: |
+            run.log
+            manifest.json
+          if-no-files-found: ignore
