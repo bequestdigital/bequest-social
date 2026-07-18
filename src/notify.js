@@ -43,7 +43,7 @@ async function weeklySummary() {
     for (const f of files) {
       const pkg = JSON.parse(fs.readFileSync(path.join(PUBLISHED, f), 'utf8'));
       lines.push(`### ${pkg.date} — ${pkg.type}: ${pkg.hook}`);
-      for (const [key, name] of [['fb', 'Facebook'], ['ig', 'Instagram'], ['x', 'X']]) {
+      for (const [key, name] of [['fb', 'Facebook'], ['ig', 'Instagram'], ['x', 'X'], ['li', 'LinkedIn']]) {
         const r = pkg.results?.[key];
         lines.push(`- ${name}: ${r?.ok ? `✅ \`${r.id}\`` : r ? `❌ ${r.error}` : '— not attempted'}`);
       }

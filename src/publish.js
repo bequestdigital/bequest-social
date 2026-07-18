@@ -3,7 +3,7 @@
 // Usage:
 //   node src/publish.js                          # publish content/approved/{today-ET}.json
 //   node src/publish.js --date 2026-07-20        # explicit date
-//   node src/publish.js --date ... --only ig,x   # retry specific platforms (fb|ig|x)
+//   node src/publish.js --date ... --only ig,li  # retry specific platforms (fb|ig|x|li)
 //   node src/publish.js --dry-run                # validate + log, post nothing
 //
 // Behavior:
@@ -17,6 +17,7 @@
 //
 // Env: META_ACCESS_TOKEN, FB_PAGE_ID, IG_BUSINESS_ACCOUNT_ID,
 //      X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_TOKEN_SECRET,
+//      LINKEDIN_ACCESS_TOKEN, LINKEDIN_ORG_ID,
 //      IMAGE_BASE_URL (optional override for the public image host IG fetches from),
 //      GITHUB_TOKEN + GITHUB_REPOSITORY (for failure issues; optional locally)
 import fs from 'node:fs';
@@ -29,7 +30,7 @@ const GRAPH = 'https://graph.facebook.com/v21.0';
 
 function parseArgs() {
   const a = process.argv.slice(2);
-  const out = { only: ['fb', 'ig', 'x'], dryRun: false, force: false };
+  const out = { only: ['fb', 'ig', 'x', 'li'], dryRun: false, force: false };
   for (let i = 0; i < a.length; i++) {
     if (a[i] === '--date' && a[i + 1]) out.date = a[++i];
     else if (a[i] === '--only' && a[i + 1]) out.only = a[++i].split(',').map((s) => s.trim()).filter(Boolean);
@@ -220,6 +221,82 @@ async function publishX(pkg, imagePaths) {
   return { id: ids[0], thread_ids: ids, ...(mediaSkipped ? { note: mediaSkipped } : {}) };
 }
 
+// ---- LinkedIn: company-page post via the REST Posts + Images API ----
+const LINKEDIN_VERSION = process.env.LINKEDIN_VERSION || '202409';
+const LI_BASE = 'https://api.linkedin.com/rest';
+
+function liHeaders(extra = {}) {
+  return {
+    authorization: `Bearer ${process.env.LINKEDIN_ACCESS_TOKEN}`,
+    'linkedin-version': LINKEDIN_VERSION,
+    'x-restli-protocol-version': '2.0.0',
+    ...extra,
+  };
+}
+
+// Upload one image to LinkedIn for the given org, returning its image URN.
+async function liUploadImage(orgUrn, imgPath) {
+  const initRes = await fetch(`${LI_BASE}/images?action=initializeUpload`, {
+    method: 'POST',
+    headers: liHeaders({ 'content-type': 'application/json' }),
+    body: JSON.stringify({ initializeUploadRequest: { owner: orgUrn } }),
+  });
+  const init = await initRes.json().catch(() => ({}));
+  if (!initRes.ok) throw new Error(`LinkedIn image init ${initRes.status}: ${JSON.stringify(init).slice(0, 300)}`);
+  const { uploadUrl, image } = init.value || {};
+  if (!uploadUrl || !image) throw new Error('LinkedIn image init returned no uploadUrl/image URN');
+
+  const put = await fetch(uploadUrl, {
+    method: 'PUT',
+    headers: { authorization: `Bearer ${process.env.LINKEDIN_ACCESS_TOKEN}` },
+    body: fs.readFileSync(imgPath),
+  });
+  if (!put.ok) throw new Error(`LinkedIn image upload ${put.status}: ${(await put.text()).slice(0, 200)}`);
+  return image;
+}
+
+async function publishLinkedIn(pkg, imagePaths) {
+  const orgId = process.env.LINKEDIN_ORG_ID;
+  const orgUrn = `urn:li:organization:${orgId}`;
+  // LinkedIn is a professional feed: reuse the (hashtag-free, link-friendly)
+  // Facebook copy unless a dedicated linkedin.text is supplied.
+  const commentary = (pkg.linkedin?.text || pkg.facebook.text)
+    // LinkedIn commentary requires these characters be escaped.
+    .replace(/([\\()<>@[\]{}|~*_])/g, '\\$1');
+
+  const alt = pkg.image?.alt?.slice(0, 4000) || '';
+  const urns = [];
+  for (const p of imagePaths) urns.push(await liUploadImage(orgUrn, p));
+
+  const post = {
+    author: orgUrn,
+    commentary,
+    visibility: 'PUBLIC',
+    distribution: { feedDistribution: 'MAIN_FEED', targetEntities: [], thirdPartyDistributionChannels: [] },
+    lifecycleState: 'PUBLISHED',
+    isReshareDisabledByAuthor: false,
+  };
+  if (urns.length === 1) {
+    post.content = { media: { id: urns[0], altText: alt } };
+  } else if (urns.length > 1) {
+    post.content = { multiImage: { images: urns.map((id) => ({ id, altText: alt })) } };
+  }
+
+  const res = await fetch(`${LI_BASE}/posts`, {
+    method: 'POST',
+    headers: liHeaders({ 'content-type': 'application/json' }),
+    body: JSON.stringify(post),
+  });
+  if (!res.ok) {
+    const body = await res.text();
+    const err = new Error(`LinkedIn post ${res.status}: ${body.slice(0, 400)}`);
+    err.retryable = res.status >= 500 || res.status === 429;
+    throw err;
+  }
+  const id = res.headers.get('x-restli-id') || res.headers.get('x-linkedin-id') || 'posted';
+  return { id };
+}
+
 // ---- validation before anything posts ----
 function validate(pkg, imagePaths, opts) {
   const errors = [];
@@ -238,6 +315,8 @@ function validate(pkg, imagePaths, opts) {
   pkg.x.posts.forEach((p, i) => {
     if (xLength(p) > 280) errors.push(`X post ${i + 1} is ${xLength(p)} chars (max 280)`);
   });
+  const liText = pkg.linkedin?.text || pkg.facebook.text;
+  if (liText.length > 3000) errors.push('LinkedIn commentary over 3,000 chars');
   return errors;
 }
 
@@ -270,6 +349,7 @@ async function main() {
     { key: 'fb', name: 'Facebook', env: ['META_ACCESS_TOKEN', 'FB_PAGE_ID'], fn: () => publishFacebook(pkg, imagePaths) },
     { key: 'ig', name: 'Instagram', env: ['META_ACCESS_TOKEN', 'IG_BUSINESS_ACCOUNT_ID'], fn: () => publishInstagram(pkg, imageFiles) },
     { key: 'x', name: 'X', env: ['X_API_KEY'], fn: () => publishX(pkg, imagePaths) },
+    { key: 'li', name: 'LinkedIn', env: ['LINKEDIN_ACCESS_TOKEN', 'LINKEDIN_ORG_ID'], fn: () => publishLinkedIn(pkg, imagePaths) },
   ].filter((p) => opts.only.includes(p.key));
 
   const failures = [];
