@@ -198,7 +198,22 @@ async function publishX(pkg, imagePaths) {
     const body = { text: pkg.x.posts[i] };
     if (i === 0 && mediaIds.length) body.media = { media_ids: mediaIds };
     if (replyTo) body.reply = { in_reply_to_tweet_id: replyTo };
-    const res = await client.v2.tweet(body);
+    let res;
+    try {
+      res = await client.v2.tweet(body);
+    } catch (e) {
+      // If the tweet is rejected for a tier/payment reason while it carries
+      // media, retry text-only — the image, not the post, may be what's gated.
+      const code = e?.code || e?.data?.status;
+      if ((code === 402 || code === 403) && body.media) {
+        mediaSkipped = `image dropped on X (HTTP ${code} with media) — posted text-only`;
+        console.warn(`X: ${mediaSkipped}`);
+        delete body.media;
+        res = await client.v2.tweet(body);
+      } else {
+        throw e;
+      }
+    }
     replyTo = res.data.id;
     ids.push(res.data.id);
   }
