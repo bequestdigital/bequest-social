@@ -1,4 +1,5 @@
-# Sundays 6:00am ET: generate the coming week's posts and open a review PR.
+# Sundays 6:00am ET: generate the coming week's posts and auto-approve them
+# (zero-touch — committed straight to content/approved/, no PR/merge needed).
 # Cron is UTC and can't follow DST, so this fires at both candidate UTC hours
 # and a gate step lets only the run where it's actually 6am in New York proceed.
 name: Generate weekly posts
@@ -60,30 +61,34 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node src/generate.js --week-of "${{ inputs.week_of }}" --manifest manifest.json 2>&1 | tee -a run.log
 
-      - name: Open review PR
+      # Zero-touch: auto-approve by committing the generated posts straight to
+      # content/approved/ on main (no PR, no merge). publish.yml picks them up
+      # on their Mon/Wed/Fri slots. An FYI issue is opened so you can see — and
+      # veto — the week's posts, but nothing is required for them to run.
+      - name: Auto-approve posts + heads-up
         if: steps.gate.outputs.go == 'true'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           WEEK=$(node -p "require('./manifest.json').week_of || ''")
           if [ -z "$WEEK" ]; then
-            echo "No posts generated for this window — nothing to open a PR for."
+            echo "No posts generated for this window — nothing to approve."
             exit 0
           fi
-          BRANCH="posts/week-of-$WEEK"
+          # Build the FYI body while packages are still in content/queue/ (image
+          # URLs point at content/approved/ where they'll live after the commit).
+          IMG_REF=main IMG_DIR=content/approved GITHUB_REPOSITORY="${{ github.repository }}" \
+            node src/pr-body.js manifest.json > week-body.md
+          mkdir -p content/approved
+          shopt -s nullglob
+          files=(content/queue/*.json content/queue/*.jpg content/queue/*.png)
+          [ ${#files[@]} -gt 0 ] && git mv "${files[@]}" content/approved/
           git config user.name "bequest-bot"
           git config user.email "actions@users.noreply.github.com"
-          git checkout -b "$BRANCH"
-          git add content/
-          git commit -m "Generate posts for week of $WEEK"
-          git push -f origin "$BRANCH"
-          GITHUB_REPOSITORY="${{ github.repository }}" BRANCH="$BRANCH" node src/pr-body.js manifest.json > pr-body.md
-          gh pr create \
-            --title "Posts for week of $WEEK" \
-            --body-file pr-body.md \
-            --base main \
-            --head "$BRANCH" || \
-          gh pr edit "$BRANCH" --body-file pr-body.md
+          git add -A content/
+          git commit -m "Auto-approve posts for week of $WEEK [skip ci]"
+          git push
+          node src/notify.js issue --title "Posts scheduled for week of $WEEK (auto-approved)" --body-file week-body.md || true
 
       - name: Open issue on failure
         if: failure()

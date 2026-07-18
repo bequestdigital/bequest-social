@@ -1,18 +1,22 @@
-// Build the weekly review PR body from a generation manifest: full copy for
-// every platform plus embedded images, so approval happens entirely in the PR.
+// Build the weekly heads-up body (full copy for every platform + embedded
+// images). In zero-touch mode this is posted as an FYI GitHub issue so you can
+// see — and veto — the week's posts, but no action is required for them to run.
 //
-// Usage: BRANCH=posts/week-of-X node src/pr-body.js manifest.json > pr-body.md
+// Usage: GITHUB_REPOSITORY=owner/repo [IMG_REF=main] [IMG_DIR=content/approved] \
+//          node src/pr-body.js manifest.json > week-body.md
 import path from 'node:path';
 import { ROOT, readJSON } from './util.js';
 
 const manifest = readJSON(path.resolve(process.argv[2]));
 const repo = process.env.GITHUB_REPOSITORY || 'OWNER/REPO';
-const branch = process.env.BRANCH || 'main';
+// Where the committed images live (branch/ref + directory) for <img> previews.
+const imgRef = process.env.IMG_REF || 'main';
+const imgDir = process.env.IMG_DIR || 'content/approved';
 
 const out = [];
-out.push(`Generated posts for the week of **${manifest.week_of}** (Week ${manifest.week} — ${manifest.theme}).`);
+out.push(`Auto-approved posts for the week of **${manifest.week_of}** (Week ${manifest.week} — ${manifest.theme}).`);
 out.push('');
-out.push('**Merging this PR approves all posts below.** To edit copy, edit the JSON file in this branch. To reject a single slot, delete its JSON + image files from the branch before merging.');
+out.push('**No action needed — these publish automatically** on their Mon/Wed/Fri 9am ET slots. To pull or edit one, delete or edit its file under `content/approved/` before its publish day.');
 out.push('');
 
 for (const rel of manifest.files) {
@@ -21,7 +25,7 @@ for (const rel of manifest.files) {
   out.push(`## ${pkg.date} — ${pkg.type}: ${pkg.hook}`);
   out.push('');
   for (const img of pkg.image.files || []) {
-    out.push(`<img src="https://github.com/${repo}/blob/${branch}/content/queue/${img}?raw=true" width="420" alt="${(pkg.image.alt || '').replace(/"/g, '&quot;')}">`);
+    out.push(`<img src="https://raw.githubusercontent.com/${repo}/${imgRef}/${imgDir}/${img}" width="420" alt="${(pkg.image.alt || '').replace(/"/g, '&quot;')}">`);
   }
   out.push('');
   out.push('### Facebook');
