@@ -50,10 +50,30 @@
     ]
   },
   "meta": {
-    "status": "queued",
+    "status": "published",
     "generated_at": "2026-07-18T11:41:17.644Z",
-    "model": "claude-fable-5 (local dry run \u2014 live runs use the API via generate.js)",
+    "model": "claude-fable-5 (local dry run — live runs use the API via generate.js)",
     "generator": "dry-run-local",
     "rescheduled_from": "2026-07-20"
+  },
+  "results": {
+    "fb": {
+      "ok": true,
+      "id": "996611156867180_122123582967264758",
+      "at": "2026-07-25T13:11:28.774Z"
+    },
+    "ig": {
+      "ok": true,
+      "id": "18131075566619450",
+      "at": "2026-07-25T13:11:41.968Z"
+    },
+    "x": {
+      "ok": true,
+      "id": "2081004466015445329",
+      "thread_ids": [
+        "2081004466015445329"
+      ],
+      "at": "2026-07-25T13:11:42.754Z"
+    }
   }
 }
