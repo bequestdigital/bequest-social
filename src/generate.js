@@ -10,6 +10,7 @@
 // Env: ANTHROPIC_API_KEY (required), MODEL (default claude-sonnet-4-6),
 //      TOKEN_BUDGET (max input+output tokens for the whole run, default 150000)
 import path from 'node:path';
+import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import brand from '../brand.config.js';
 import { CONTENT, QUEUE, ROOT, readJSON, writeJSON, todayET, addDays, retry, xLength } from './util.js';
@@ -222,6 +223,17 @@ async function main() {
     const end = addDays(base, 7);
     targets = calendar.posts.filter((p) => p.date > base && p.date <= end);
   }
+  // Idempotency: never regenerate a date that already has a package anywhere in
+  // the pipeline (queue/approved/published) — a manual dispatch followed by the
+  // Sunday cron would otherwise produce duplicates and break the approve step.
+  const hasPackage = (d) =>
+    ['queue', 'approved', 'published'].some((dir) => fs.existsSync(path.join(CONTENT, dir, `${d}.json`)));
+  const skipped = targets.filter((t) => hasPackage(t.date));
+  targets = targets.filter((t) => !hasPackage(t.date));
+  if (skipped.length) {
+    console.log(`Skipping already-generated date(s): ${skipped.map((t) => t.date).join(', ')}`);
+  }
+
   if (!targets.length) {
     console.log('No calendar entries in the target window — nothing to generate.');
     if (opts.manifest) writeJSON(opts.manifest, { week_of: null, files: [] });
