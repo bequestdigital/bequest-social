@@ -1,6 +1,6 @@
 {
-  "id": "2026-07-20",
-  "date": "2026-07-20",
+  "id": "2026-07-25",
+  "date": "2026-07-25",
   "week": 1,
   "weekTheme": "Start With Why",
   "type": "WHY",
@@ -46,13 +46,14 @@
     },
     "alt": "Golden Circle diagram with three concentric rings labeled Why, How, and What in Bequest Digital brand colors.",
     "files": [
-      "2026-07-20.jpg"
+      "2026-07-25.jpg"
     ]
   },
   "meta": {
     "status": "queued",
     "generated_at": "2026-07-18T11:41:17.644Z",
-    "model": "claude-fable-5 (local dry run — live runs use the API via generate.js)",
-    "generator": "dry-run-local"
+    "model": "claude-fable-5 (local dry run \u2014 live runs use the API via generate.js)",
+    "generator": "dry-run-local",
+    "rescheduled_from": "2026-07-20"
   }
 }
