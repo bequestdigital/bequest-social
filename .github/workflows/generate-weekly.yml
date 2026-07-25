@@ -1,7 +1,10 @@
 # Sundays 6:00am ET: generate the coming week's posts and auto-approve them
 # (zero-touch — committed straight to content/approved/, no PR/merge needed).
 # Cron is UTC and can't follow DST, so this fires at both candidate UTC hours
-# and a gate step lets only the run where it's actually 6am in New York proceed.
+# and a gate step lets only the cron slot matching the current DST offset
+# proceed. The gate keys off WHICH cron fired (github.event.schedule), not the
+# wall-clock hour at run time — GitHub cron routinely starts 30-90+ min late,
+# so an hour check would skip every run.
 name: Generate weekly posts
 
 on:
@@ -28,13 +31,17 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - name: DST gate — proceed only at 6am ET (or manual dispatch)
+      - name: DST gate — proceed only for the cron slot matching current ET offset
         id: gate
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(TZ=America/New_York date +%H)" = "06" ]; then
+          ZONE=$(TZ=America/New_York date +%Z)
+          SCHED="${{ github.event.schedule }}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] \
+            || { [ "$ZONE" = "EDT" ] && [ "$SCHED" = "0 10 * * 0" ]; } \
+            || { [ "$ZONE" = "EST" ] && [ "$SCHED" = "0 11 * * 0" ]; }; then
             echo "go=true" >> "$GITHUB_OUTPUT"
           else
-            echo "Not 6am ET — this is the other DST candidate slot. Exiting."
+            echo "Cron slot '$SCHED' doesn't match current zone $ZONE — the other DST candidate will run. Exiting."
             echo "go=false" >> "$GITHUB_OUTPUT"
           fi
 
