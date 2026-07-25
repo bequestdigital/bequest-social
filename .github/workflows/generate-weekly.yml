@@ -89,7 +89,9 @@ jobs:
           mkdir -p content/approved
           shopt -s nullglob
           files=(content/queue/*.json content/queue/*.jpg content/queue/*.png)
-          [ ${#files[@]} -gt 0 ] && git mv "${files[@]}" content/approved/
+          # Plain mv, not git mv: these files were just generated in this run
+          # and are untracked, so git mv fails. git add -A below stages them.
+          [ ${#files[@]} -gt 0 ] && mv "${files[@]}" content/approved/
           git config user.name "bequest-bot"
           git config user.email "actions@users.noreply.github.com"
           git add -A content/
