@@ -1,0 +1,64 @@
+{
+  "id": "2026-07-27",
+  "date": "2026-07-27",
+  "week": 2,
+  "weekTheme": "StoryBrand (Why Meets Message)",
+  "type": "POV",
+  "hook": "Your donor is the hero. Your church is the guide. Get those backwards and the story falls apart.",
+  "direction": "StoryBrand premise contextualized: the organization that positions itself as the hero of its own website loses the reader. Guides equip heroes. This is also just good theology of service — serve the person in front of you. Keep that note light.",
+  "facebook": {
+    "text": "Your donor is the hero. Your church is the guide. Get those backwards and the story falls apart.\n\nMost church and nonprofit websites lead with the organization — its history, its programs, its vision. That's understandable. You're proud of the work. But the person reading your page isn't looking for a hero to admire. They're looking for a guide who can help them do something that matters.\n\nDonald Miller calls this StoryBrand. Good theology calls it service. Either way, the principle is the same: your job is to equip the person in front of you, not to impress them."
+  },
+  "instagram": {
+    "text": "Your donor is the hero. Your church is the guide. Get those backwards and the story falls apart.\n\nMost websites lead with the organization — its history, its programs, its vision. But the person reading your page isn't looking for a hero to admire. They're looking for a guide who can help them do something meaningful.\n\nDonald Miller calls this StoryBrand. Good theology calls it service. The principle is the same either way: equip the person in front of you. That's it.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "ministrymarketing",
+      "churchcommunications",
+      "nonprofitleadership"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Your donor is the hero. Your church is the guide. Get those backwards and the story falls apart. (StoryBrand premise — and honestly, just good theology of service.)"
+    ]
+  },
+  "image": {
+    "template": "diagram",
+    "data": {
+      "mode": "columns",
+      "title": "Who Plays Which Role?",
+      "columns": {
+        "left": {
+          "label": "The Hero",
+          "items": [
+            "Your donor",
+            "Your volunteer",
+            "Your neighbor",
+            "The person you serve"
+          ]
+        },
+        "right": {
+          "label": "The Guide",
+          "items": [
+            "Your church",
+            "Your nonprofit",
+            "Your ministry",
+            "You"
+          ]
+        }
+      }
+    },
+    "alt": "A two-column diagram contrasting the hero role (donor, volunteer, neighbor) with the guide role (church, nonprofit, ministry), illustrating the StoryBrand principle.",
+    "files": [
+      "2026-07-27.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-07-25T12:11:54.938Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

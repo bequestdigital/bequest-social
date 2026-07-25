@@ -1,0 +1,67 @@
+{
+  "id": "2026-07-29",
+  "date": "2026-07-29",
+  "week": 2,
+  "weekTheme": "StoryBrand (Why Meets Message)",
+  "type": "TIP",
+  "hook": "Stop saying what you do. Start saying what changes because you exist.",
+  "direction": "Rewrite exercise, mission-flavored: \"We provide community programs\" → \"Families in our city find help and hope.\" \"Full-service marketing\" → \"Your mission reaches the people it was meant for.\" Carousel: 3 before/after rewrites (church, nonprofit, Christian business).",
+  "facebook": {
+    "text": "Stop saying what you do. Start saying what changes because you exist.\n\nMost organizations describe their activity. The people they serve are looking for a result.\n\n\"We provide community programs\" is about you. \"Families in our city find help and hope\" is about them.\n\n\"Full-service marketing agency\" is about you. \"Your mission reaches the people it was meant for\" is about them.\n\nThat shift is the whole game. When you put the person you serve at the center of your message, they recognize themselves in it — and they respond.\n\nSwipe through the carousel for three before-and-after rewrites: a church, a nonprofit, and a Christian business. Try it with your own language."
+  },
+  "instagram": {
+    "text": "Stop saying what you do. Start saying what changes because you exist.\n\nMost organizations describe their activity. The people they serve are looking for a result.\n\nThree rewrites — church, nonprofit, Christian business — to show you what that shift looks like in practice. Save this one.",
+    "hashtags": [
+      "churchcommunications",
+      "nonprofitmarketing",
+      "christianbusiness",
+      "ministrymarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "\"We provide community programs\" → \"Families in our city find help and hope.\"\n\nStop describing your activity. Describe what changes. Your audience is looking for themselves in your message — give them that. #nonprofitmarketing"
+    ]
+  },
+  "image": {
+    "template": "carousel",
+    "data": {
+      "cover": {
+        "title": "Say What Changes",
+        "subtitle": "3 rewrites that put the people you serve at the center"
+      },
+      "slides": [
+        {
+          "title": "Church",
+          "body": "Before: \"We offer Sunday services, small groups, and community outreach.\"\n\nAfter: \"People in this city find belonging, purpose, and a place to grow.\""
+        },
+        {
+          "title": "Nonprofit",
+          "body": "Before: \"We provide community programs and wraparound services.\"\n\nAfter: \"Families in our city find help and hope when they need it most.\""
+        },
+        {
+          "title": "Christian Business",
+          "body": "Before: \"We're a full-service marketing agency.\"\n\nAfter: \"Your mission reaches the people it was meant for.\""
+        }
+      ],
+      "end": {
+        "title": "Now try yours.",
+        "subtitle": "Who are you serving — and what changes for them because you exist?"
+      }
+    },
+    "alt": "A four-slide carousel showing before-and-after message rewrites for a church, a nonprofit, and a Christian business, with a closing prompt asking the viewer to try the exercise themselves.",
+    "files": [
+      "2026-07-29-1.jpg",
+      "2026-07-29-2.jpg",
+      "2026-07-29-3.jpg",
+      "2026-07-29-4.jpg",
+      "2026-07-29-5.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-07-25T12:12:07.327Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

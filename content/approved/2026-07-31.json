@@ -1,0 +1,52 @@
+{
+  "id": "2026-07-31",
+  "date": "2026-07-31",
+  "week": 2,
+  "weekTheme": "StoryBrand (Why Meets Message)",
+  "type": "TIP",
+  "hook": "Every clear message answers 3 questions: Why do you exist? How does that help me? What do I do next?",
+  "direction": "Golden Circle and StoryBrand merged into one one-liner framework. Prompt readers to draft theirs in the comments. Engagement play. Graphic: 3-question template card.",
+  "facebook": {
+    "text": "Every clear message answers 3 questions: Why do you exist? How does that help me? What do I do next?\n\nThat's it. Simon Sinek's Golden Circle and the StoryBrand framework both point to the same truth — people don't engage with what you do until they understand why it matters to them and what step to take.\n\nDraft your organization's one-liner in the comments using this template:\n\n\"We exist to [WHY]. We do that by [HOW]. Start by [WHAT].\"\n\nThree sentences. One clear message. See what comes out."
+  },
+  "instagram": {
+    "text": "Every clear message answers 3 questions.\n\n1. Why do you exist?\n2. How does that help me?\n3. What do I do next?\n\nSinek's Golden Circle and StoryBrand both land here. Your audience isn't looking for your history — they're looking for a reason to care and a next step.\n\nTry it in the comments:\n\"We exist to [WHY]. We do that by [HOW]. Start by [WHAT].\"\n\nThree lines. One message. Drop yours below.",
+    "hashtags": [
+      "churchcommunications",
+      "nonprofitmarketing",
+      "christianbusiness",
+      "ministrymarketing",
+      "smallbusinessmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Every clear message answers 3 questions:\n1. Why do you exist?\n2. How does that help me?\n3. What do I do next?\n\nDraft your org's one-liner in the replies: \"We exist to _. We do that by _. Start by _.\""
+    ]
+  },
+  "image": {
+    "template": "tip-card",
+    "data": {
+      "eyebrow": "StoryBrand + Golden Circle",
+      "title": "Every clear message answers 3 questions",
+      "items": [
+        "1. Why do you exist?",
+        "2. How does that help me?",
+        "3. What do I do next?",
+        "Template: \"We exist to [WHY].\"",
+        "\"We do that by [HOW].\"",
+        "\"Start by [WHAT].\""
+      ]
+    },
+    "alt": "A three-question template card showing the merged Golden Circle and StoryBrand framework with fill-in-the-blank prompts for WHY, HOW, and WHAT.",
+    "files": [
+      "2026-07-31.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-07-25T12:12:17.139Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
