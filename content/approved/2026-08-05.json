@@ -1,0 +1,88 @@
+{
+  "id": "2026-08-05",
+  "date": "2026-08-05",
+  "week": 3,
+  "weekTheme": "Conversion (Stewarding the Traffic You Have)",
+  "type": "TIP",
+  "hook": "7 conversion killers hiding on your website right now.",
+  "direction": "Carousel, one killer + fix per slide: slow load, buried CTA (or buried \"Plan Your Visit\"), insider jargon, no proof, mobile neglect, generic stock imagery, forms that interrogate. Examples alternate between business and church/nonprofit contexts.",
+  "facebook": {
+    "text": "7 conversion killers hiding on your website right now.\n\nYou worked hard to get people there. Don't lose them to a fixable problem.\n\n1. Slow load — visitors leave in 3 seconds\n2. Buried CTA — if they have to hunt for \"Give\" or \"Plan Your Visit,\" most won't\n3. Insider jargon — your acronyms mean nothing to a first-timer\n4. No proof — no testimonials, no stories, no reason to trust you\n5. Mobile neglect — over half your traffic is on a phone\n6. Generic stock photos — nobody believes the handshake photo\n7. Forms that interrogate — asking for too much kills follow-through\n\nOne or two of these are probably costing you right now. Fix the worst one this week."
+  },
+  "instagram": {
+    "text": "7 conversion killers hiding on your website right now.\n\nSwipe through — one problem, one fix per slide. Examples from both business and church/nonprofit contexts.\n\nYou don't need more traffic. You need the traffic you already have to actually do something.\n\nFix one this week.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "smallbusinessmarketing",
+      "churchcommunications",
+      "ministrymarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "7 conversion killers hiding on your website right now: slow load, buried CTA, insider jargon, no proof, mobile neglect, stock photos nobody believes, forms that interrogate. You don't need more traffic — you need to stop losing what you have."
+    ]
+  },
+  "image": {
+    "template": "carousel",
+    "data": {
+      "cover": {
+        "title": "7 Conversion Killers",
+        "subtitle": "Hiding on your website right now — one problem, one fix."
+      },
+      "slides": [
+        {
+          "title": "1. Slow Load",
+          "body": "Business: A 3-second delay cuts conversions in half. Compress images, cut bloated plugins. Church: Visitors checking service times on Sunday morning won't wait."
+        },
+        {
+          "title": "2. Buried CTA",
+          "body": "Business: \"Contact Us\" shouldn't require scrolling. Put the next step above the fold. Church: \"Plan Your Visit\" belongs at the top — not buried in a dropdown."
+        },
+        {
+          "title": "3. Insider Jargon",
+          "body": "Church: \"Join us for Midweek Equipping\" means nothing to a newcomer. Say what it is. Business: Drop the industry acronyms. Write for the person who just found you."
+        },
+        {
+          "title": "4. No Proof",
+          "body": "Business: No reviews, no case studies — no reason to trust you. Add one real testimonial. Nonprofit: A single donor story does more than a page of statistics."
+        },
+        {
+          "title": "5. Mobile Neglect",
+          "body": "Church: Most people check your site on a phone before they visit. Test it. Business: Tiny buttons and pinch-to-zoom forms lose customers before they start."
+        },
+        {
+          "title": "6. Generic Stock Photos",
+          "body": "Business: The handshake photo signals nothing real. Use actual photos of your work. Church: Real people from your congregation beat a smiling stock family every time."
+        },
+        {
+          "title": "7. Forms That Interrogate",
+          "body": "Nonprofit: Asking for phone, address, and employer before someone can volunteer? Cut it. Business: Name and email is enough to start. Ask for more later."
+        }
+      ],
+      "end": {
+        "title": "Fix One This Week",
+        "subtitle": "You don't need more traffic. You need to stop losing what you have."
+      }
+    },
+    "alt": "A seven-slide carousel listing common website conversion problems — slow load, buried CTA, insider jargon, no proof, mobile neglect, stock imagery, and long forms — each with a practical fix drawn from business and church or nonprofit contexts.",
+    "files": [
+      "2026-08-05-1.jpg",
+      "2026-08-05-2.jpg",
+      "2026-08-05-3.jpg",
+      "2026-08-05-4.jpg",
+      "2026-08-05-5.jpg",
+      "2026-08-05-6.jpg",
+      "2026-08-05-7.jpg",
+      "2026-08-05-8.jpg",
+      "2026-08-05-9.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-08-02T11:21:06.279Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

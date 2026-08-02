@@ -1,0 +1,50 @@
+{
+  "id": "2026-08-07",
+  "date": "2026-08-07",
+  "week": 3,
+  "weekTheme": "Conversion (Stewarding the Traffic You Have)",
+  "type": "ASK",
+  "hook": "Want a free 10-minute written teardown of your homepage?",
+  "direction": "First direct CTA. Offer a written homepage audit (delivered as a doc — AI-producible, no video) for the first several responders. Low-friction lead gen.",
+  "facebook": {
+    "text": "Want a free 10-minute written teardown of your homepage?\n\nWe'll look at your headline, your call to action, and whether a first-time visitor can figure out what you do and what to do next — then write it up in a plain doc you can act on.\n\nNo video call. No sales pitch. Just honest feedback.\n\nThe first several people who comment \"AUDIT\" or send us a message get one. That's it."
+  },
+  "instagram": {
+    "text": "Want a free 10-minute written teardown of your homepage?\n\nWe'll look at your headline, your call to action, and whether a first-time visitor can figure out what you do and what to do next.\n\nYou get a plain written doc — specific, honest, no fluff.\n\nFirst several to comment AUDIT or DM us get one. No strings.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "christianbusiness",
+      "smallbusinessmarketing",
+      "ministrymarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Want a free written teardown of your homepage? We'll audit your headline, CTA, and clarity — delivered as a plain doc. First few to reply AUDIT get one. No call required."
+    ]
+  },
+  "image": {
+    "template": "tip-card",
+    "data": {
+      "eyebrow": "Free Homepage Audit",
+      "title": "What we'll look at in your teardown",
+      "items": [
+        "Your headline — does it say what you do?",
+        "Your call to action — is it clear and easy to find?",
+        "First-visit clarity — would a stranger know what to do next?",
+        "Delivered as a plain written doc — no video, no call"
+      ]
+    },
+    "alt": "Tip card listing the four things Bequest checks in a free homepage audit, with a prompt to comment AUDIT to claim one.",
+    "files": [
+      "2026-08-07.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-08-02T11:21:16.664Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "2026-08-03",
+  "date": "2026-08-03",
+  "week": 3,
+  "weekTheme": "Conversion (Stewarding the Traffic You Have)",
+  "type": "POV",
+  "hook": "You don't have a traffic problem. You have a stewardship problem.",
+  "direction": "Reframe conversion as stewardship — a category this audience already thinks in. Doubling your conversion rate doubles results from attention you already earned, without spending another dollar. Wasting existing visitors is the leak to fix first.",
+  "facebook": {
+    "text": "You don't have a traffic problem. You have a stewardship problem.\n\nMost churches, nonprofits, and small businesses spend money driving people to their website — then let those visitors walk away without doing anything.\n\nDoubling your conversion rate doubles your results from attention you already earned. No ad spend. No new content. No algorithm to chase.\n\nThe leak isn't at the top of the funnel. It's in the middle, where real visitors are landing on pages that don't ask, don't guide, and don't convert.\n\nFix the leak first. That's stewardship."
+  },
+  "instagram": {
+    "text": "You don't have a traffic problem. You have a stewardship problem.\n\nPeople are already finding you. The question is what happens next.\n\nDoubling your conversion rate doubles your results — from the same visitors, the same pages, the same attention you already earned.\n\nWasting that is the leak worth fixing first. Before the next campaign. Before the next post. Before you spend another dollar on reach.\n\nSteward what you have.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "faithbasedbusiness",
+      "smallbusinessmarketing",
+      "ministrymarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "You don't have a traffic problem. You have a stewardship problem.\n\nDouble your conversion rate and you double results from attention you already earned — no extra spend required.\n\nFix the leak before you fill the bucket."
+    ]
+  },
+  "image": {
+    "template": "quote-card",
+    "data": {
+      "quote": "You don't have a traffic problem. You have a stewardship problem.",
+      "attribution": null,
+      "eyebrow": "Conversion & Stewardship"
+    },
+    "alt": "Quote card with the text 'You don't have a traffic problem. You have a stewardship problem.' on a clean, minimal background with the Bequest Digital brand.",
+    "files": [
+      "2026-08-03.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-08-02T11:20:47.383Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
