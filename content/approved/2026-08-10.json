@@ -1,0 +1,44 @@
+{
+  "id": "2026-08-10",
+  "date": "2026-08-10",
+  "week": 4,
+  "weekTheme": "Should You Run Google Ads?",
+  "type": "POV",
+  "hook": "Honest answer from an agency that sells ads: some of you shouldn't buy them.",
+  "direction": "Trust anchor of the quarter. If your site doesn't convert, ads pour donor money into a leaky bucket — and mission-driven orgs answer for every dollar. Fix the funnel first. Honesty *is* the pitch.",
+  "facebook": {
+    "text": "Honest answer from an agency that sells ads: some of you shouldn't buy them.\n\nIf your website doesn't convert visitors into donors, volunteers, or customers, running Google Ads just means spending more money to fill a leaky bucket faster. Mission-driven organizations answer for every dollar. That's not a small thing.\n\nFix the funnel first. Make sure your site is clear, your ask is obvious, and people actually do something when they land there. Then ads make sense.\n\nWe'd rather tell you that now than take your money and deliver disappointing results. That's the only way we know how to work."
+  },
+  "instagram": {
+    "text": "Honest answer from an agency that sells ads: some of you shouldn't buy them.\n\nIf your site doesn't convert, ads just move the leak upstream. You spend more to lose more — and mission-driven orgs answer for every dollar.\n\nFix the funnel first. Clear site. Obvious ask. Real action. Then ads do what they're supposed to do.\n\nWe'd rather say that upfront than take your budget and shrug at the numbers.",
+    "hashtags": [
+      "nonprofitmarketing",
+      "churchmarketing",
+      "ministrymarketing",
+      "faithbasedbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Honest answer from an agency that sells ads: some of you shouldn't buy them. If your site doesn't convert, ads just fill a leaky bucket faster. Fix the funnel first. Then we can talk."
+    ]
+  },
+  "image": {
+    "template": "quote-card",
+    "data": {
+      "quote": "If your site doesn't convert, ads just fill a leaky bucket. Fix the funnel first.",
+      "attribution": "Bequest Digital",
+      "eyebrow": "Should You Run Google Ads?"
+    },
+    "alt": "Quote card with the text: 'If your site doesn't convert, ads just fill a leaky bucket. Fix the funnel first.' attributed to Bequest Digital, on a clean, minimal background.",
+    "files": [
+      "2026-08-10.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-08-09T10:40:53.354Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

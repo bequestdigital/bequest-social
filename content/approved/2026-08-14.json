@@ -1,0 +1,65 @@
+{
+  "id": "2026-08-14",
+  "date": "2026-08-14",
+  "week": 4,
+  "weekTheme": "Should You Run Google Ads?",
+  "type": "TIP",
+  "hook": "Search ads catch demand. Social ads create it. Know which one your mission needs.",
+  "direction": "Education post: Google captures existing intent (people searching \"church near me,\" \"counseling in York\"); Meta builds awareness for causes nobody knows to search for. Diagram graphic.",
+  "facebook": {
+    "text": "Search ads catch demand. Social ads create it. Know which one your mission needs.\n\nGoogle Ads work because someone is already looking. When a person types \"church near me\" or \"counseling in York,\" they have intent. Your ad meets them at the moment they're ready.\n\nMeta Ads work differently. Nobody searches for a cause they've never heard of. Social ads build awareness first — they introduce your ministry, your nonprofit, your business to people who didn't know they needed you.\n\nNeither is better. They solve different problems. The question is which problem you actually have right now."
+  },
+  "instagram": {
+    "text": "Search ads catch demand. Social ads create it. Know which one your mission needs.\n\nGoogle Ads work because someone is already searching — \"church near me,\" \"counseling in York.\" Intent is there. Your ad just shows up.\n\nMeta Ads work when nobody knows to search for you yet. They build awareness before the need is named.\n\nDifferent tools. Different jobs. Knowing the difference saves real money.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "ministrymarketing",
+      "smallbusinessmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Google Ads catch people already searching. Meta Ads reach people who don't know you exist yet. One captures demand. One builds it. Wrong choice wastes budget fast."
+    ]
+  },
+  "image": {
+    "template": "diagram",
+    "data": {
+      "mode": "columns",
+      "title": "Two Tools. Two Different Jobs.",
+      "columns": {
+        "left": {
+          "label": "Google Ads",
+          "items": [
+            "Captures existing intent",
+            "People already searching",
+            "\"Church near me\"",
+            "\"Counseling in York\"",
+            "Best when demand exists"
+          ]
+        },
+        "right": {
+          "label": "Meta Ads",
+          "items": [
+            "Builds awareness first",
+            "Reaches the unaware",
+            "Introduces your cause",
+            "Nobody searches for unknown",
+            "Best when demand is absent"
+          ]
+        }
+      }
+    },
+    "alt": "A two-column comparison diagram contrasting Google Ads (captures existing search intent) on the left with Meta Ads (builds awareness for unknown causes) on the right.",
+    "files": [
+      "2026-08-14.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-08-09T10:41:15.888Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

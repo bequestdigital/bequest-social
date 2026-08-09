@@ -1,0 +1,51 @@
+{
+  "id": "2026-08-12",
+  "date": "2026-08-12",
+  "week": 4,
+  "weekTheme": "Should You Run Google Ads?",
+  "type": "TIP",
+  "hook": "The 3-question test before you spend a dime on ads.",
+  "direction": "(1) Are people already searching for what you offer? (2) Can the budget survive your niche's cost-per-click? (3) Does the landing page convert? Two noes = wait. Note the Google Ad Grant for eligible nonprofits — $10K/month most never claim properly.",
+  "facebook": {
+    "text": "Before you spend a dime on Google Ads, answer three questions honestly.\n\n1. Are people already searching for what you offer? If there's no search demand, ads won't create it.\n2. Can your budget survive the cost-per-click in your niche? Some industries run $15–40 per click. Do the math before you commit.\n3. Does your landing page actually convert? Sending paid traffic to a weak page is just paying to lose faster.\n\nTwo no's means wait. Fix the foundation first.\n\nOne note for nonprofits: Google's Ad Grant offers up to $10,000/month in free search advertising to eligible organizations. Most never claim it properly. If that's you, it's worth a serious look."
+  },
+  "instagram": {
+    "text": "Three questions before you run Google Ads.\n\n1. Are people searching for what you offer?\n2. Can your budget handle the cost-per-click in your niche?\n3. Does your landing page convert?\n\nTwo no's means wait. Ads amplify what's already working — they don't fix what isn't.\n\nAnd if you're a nonprofit: Google's Ad Grant gives eligible organizations up to $10K/month in free search ads. Most never claim it correctly. Worth looking into.",
+    "hashtags": [
+      "nonprofitmarketing",
+      "smallbusinessmarketing",
+      "ministrymarketing",
+      "nonprofitleadership",
+      "christianbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "3 questions before you run Google Ads:\n1. Is there search demand?\n2. Can your budget survive the cost-per-click?\n3. Does your landing page convert?\n\nTwo no's = wait. Also: nonprofits, the $10K/month Ad Grant exists. Most never claim it right."
+    ]
+  },
+  "image": {
+    "template": "tip-card",
+    "data": {
+      "eyebrow": "Should You Run Google Ads?",
+      "title": "3 Questions Before You Spend a Dime",
+      "items": [
+        "1. Are people searching for what you offer?",
+        "2. Can your budget survive the cost-per-click?",
+        "3. Does your landing page convert?",
+        "Two no's = wait. Fix the foundation first.",
+        "Nonprofits: Google Ad Grant = $10K/mo. Most never claim it properly."
+      ]
+    },
+    "alt": "A tip card listing three yes-or-no questions to answer before running Google Ads, with a note about the Google Ad Grant for nonprofits.",
+    "files": [
+      "2026-08-12.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-08-09T10:41:04.249Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
