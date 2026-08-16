@@ -1,0 +1,44 @@
+{
+  "id": "2026-08-19",
+  "date": "2026-08-19",
+  "week": 5,
+  "weekTheme": "Setting Your Marketing Budget",
+  "type": "POV",
+  "hook": "The most expensive marketing is the cheap kind you have to redo.",
+  "direction": "The volunteer-built website, the DIY logo, the intern's ad account. Buy once, cry once — this audience already believes in paying for quality tools and finishing work properly. Costs run double: the redo plus every opportunity missed in between.",
+  "facebook": {
+    "text": "The most expensive marketing is the cheap kind you have to redo.\n\nThe volunteer-built website. The DIY logo. The intern who set up the ad account and then graduated.\n\nNone of it was free. You paid in time, in missed opportunities, and eventually in the cost of doing it right anyway.\n\nPeople who build things well already know this. You buy quality lumber once. You don't reroof a building twice if you can help it.\n\nMarketing works the same way. The real cost isn't the invoice. It's the invoice plus everything you lost while the wrong version was out there representing you."
+  },
+  "instagram": {
+    "text": "The most expensive marketing is the cheap kind you have to redo.\n\nThe volunteer-built website. The DIY logo. The intern's ad account.\n\nNone of it was actually free. You paid in time, in lost trust, and eventually in the cost of doing it right anyway — plus everything you missed in between.\n\nIf you already believe in paying for quality tools and finishing work properly, this isn't a new idea. It just applies here too.",
+    "hashtags": [
+      "smallbusinessmarketing",
+      "christianbusiness",
+      "nonprofitleadership",
+      "faithbasedbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "The most expensive marketing is the cheap kind you have to redo. The DIY logo, the volunteer site, the intern's ad account. You pay twice: the redo, plus every opportunity lost while the wrong version was out there."
+    ]
+  },
+  "image": {
+    "template": "quote-card",
+    "data": {
+      "quote": "The most expensive marketing is the cheap kind you have to redo.",
+      "attribution": null,
+      "eyebrow": "Setting Your Marketing Budget"
+    },
+    "alt": "Quote card with the text 'The most expensive marketing is the cheap kind you have to redo' on a clean, minimal background with the Bequest Digital wordmark.",
+    "files": [
+      "2026-08-19.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-08-16T10:28:56.781Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

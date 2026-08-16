@@ -1,0 +1,46 @@
+{
+  "id": "2026-08-17",
+  "date": "2026-08-17",
+  "week": 5,
+  "weekTheme": "Setting Your Marketing Budget",
+  "type": "TIP",
+  "hook": "How much should a church, nonprofit, or small business actually spend on marketing? Here's the math.",
+  "direction": "Benchmarks by org type: businesses 5–10% of revenue to maintain, 10%+ to grow; nonprofits framed as cost-to-raise-a-dollar; churches framed as percentage of budget toward outreach. Concrete numbers, screenshot-able stat card.",
+  "facebook": {
+    "text": "How much should a church, nonprofit, or small business actually spend on marketing? Here's the math.\n\nFor businesses: 5–10% of revenue to maintain your position, 10% or more if you're trying to grow.\n\nFor nonprofits: the right question isn't percentage — it's cost-to-raise-a-dollar. If you're spending $0.25 or less to raise $1.00, you're in healthy range. Above $0.50, something needs to change.\n\nFor churches: think in terms of outreach as a share of total budget. Most healthy churches land between 2–5% dedicated to communications and community reach.\n\nThese aren't magic numbers. They're starting points for an honest conversation about what your mission actually costs to sustain."
+  },
+  "instagram": {
+    "text": "How much should you actually spend on marketing? Here's the math by org type.\n\nBusinesses: 5–10% of revenue to hold your ground. 10%+ to grow.\n\nNonprofits: track cost-to-raise-a-dollar. Healthy is $0.25 or under. Above $0.50 is a warning sign.\n\nChurches: 2–5% of total budget toward outreach and communications is a reasonable benchmark.\n\nThese numbers won't make every decision for you, but they give you something solid to stand on when it's time to plan.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "smallbusinessmarketing",
+      "ministrymarketing",
+      "nonprofitleadership"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Marketing budget benchmarks by org type:\n\nBusiness → 5–10% of revenue to maintain, 10%+ to grow\nNonprofit → aim for $0.25 or less per dollar raised\nChurch → 2–5% of total budget toward outreach\n\nSolid starting points for an honest planning conversation."
+    ]
+  },
+  "image": {
+    "template": "stat-card",
+    "data": {
+      "eyebrow": "Marketing Budget Benchmarks",
+      "stat": "$0.25",
+      "label": "Healthy cost-to-raise-a-dollar for nonprofits",
+      "context": "Businesses: 5–10% of revenue to maintain, 10%+ to grow. Churches: 2–5% of budget toward outreach. Nonprofits: keep it at $0.25 or under per dollar raised."
+    },
+    "alt": "Stat card showing $0.25 as the healthy nonprofit cost-to-raise-a-dollar benchmark, with supporting figures for businesses and churches.",
+    "files": [
+      "2026-08-17.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-08-16T10:28:47.799Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

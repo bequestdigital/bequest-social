@@ -1,0 +1,49 @@
+{
+  "id": "2026-08-21",
+  "date": "2026-08-21",
+  "week": 5,
+  "weekTheme": "Setting Your Marketing Budget",
+  "type": "TIP",
+  "hook": "Where your first $1,000/month should go (in order).",
+  "direction": "Priority stack: 1) a website that converts, 2) your email list, 3) Google Business Profile / local visibility, 4) paid ads last. Counterintuitive ordering earns saves. Numbered-list graphic.",
+  "facebook": {
+    "text": "Where your first $1,000/month should go (in order).\n\n1. A website that actually converts visitors into contacts or customers.\n2. Your email list — you own it, no algorithm can take it away.\n3. Google Business Profile and local visibility — free to claim, costly to ignore.\n4. Paid ads — last, not first.\n\nMost people start at the bottom of that list and wonder why nothing sticks. Build the foundation before you buy the traffic. The order matters more than the amount."
+  },
+  "instagram": {
+    "text": "Where your first $1,000/month should go (in order).\n\n1. A website that converts\n2. Your email list\n3. Google Business Profile\n4. Paid ads — last\n\nMost organizations flip this stack and pay for traffic that has nowhere good to land. Fix the foundation first. The order matters more than the budget.",
+    "hashtags": [
+      "smallbusinessmarketing",
+      "nonprofitmarketing",
+      "christianbusiness",
+      "ministrymarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Where your first $1,000/month should go:\n\n1. Website that converts\n2. Email list you own\n3. Google Business Profile\n4. Paid ads — last\n\nMost people start at #4. That's why it doesn't work."
+    ]
+  },
+  "image": {
+    "template": "tip-card",
+    "data": {
+      "eyebrow": "Setting Your Marketing Budget",
+      "title": "Where your first $1,000/mo should go",
+      "items": [
+        "1. A website that converts",
+        "2. Your email list (you own it)",
+        "3. Google Business Profile",
+        "4. Paid ads — last, not first"
+      ]
+    },
+    "alt": "A numbered tip card listing the priority order for spending a $1,000 monthly marketing budget: website, email list, Google Business Profile, then paid ads.",
+    "files": [
+      "2026-08-21.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-08-16T10:29:05.510Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
