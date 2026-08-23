@@ -1,0 +1,44 @@
+{
+  "id": "2026-08-24",
+  "date": "2026-08-24",
+  "week": 6,
+  "weekTheme": "Why an Agency in an AI Age",
+  "type": "POV",
+  "hook": "AI made content cheap. It made judgment expensive.",
+  "direction": "Anyone can generate 100 posts. Knowing which one serves your mission, your people, and your reputation — that didn't get automated. Wisdom over volume: a distinction this audience feels in its bones.",
+  "facebook": {
+    "text": "AI made content cheap. It made judgment expensive.\n\nAnyone can generate a hundred posts in an afternoon. The hard part was never production. It was knowing which post serves your people, fits your mission, and protects your reputation.\n\nThat kind of judgment comes from understanding who you are, who you serve, and what you're actually trying to build. No prompt produces that. It has to be earned.\n\nVolume was never the goal. Faithfulness to the work is."
+  },
+  "instagram": {
+    "text": "AI made content cheap. It made judgment expensive.\n\nAnyone can generate a hundred posts. The hard part is knowing which one actually serves your people, fits your mission, and protects what you've built.\n\nThat didn't get automated. It has to be earned — through understanding, experience, and care for the work.\n\nVolume was never the goal.",
+    "hashtags": [
+      "churchcommunications",
+      "nonprofitleadership",
+      "faithbasedbusiness",
+      "ministrymarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "AI made content cheap. It made judgment expensive. Anyone can generate 100 posts. Knowing which one serves your mission and your people — that didn't get automated."
+    ]
+  },
+  "image": {
+    "template": "quote-card",
+    "data": {
+      "quote": "AI made content cheap. It made judgment expensive.",
+      "attribution": null,
+      "eyebrow": "Why an Agency in an AI Age"
+    },
+    "alt": "Quote card with the text 'AI made content cheap. It made judgment expensive.' on a dark, minimal background with the Bequest Digital brand mark.",
+    "files": [
+      "2026-08-24.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-08-23T10:30:08.397Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

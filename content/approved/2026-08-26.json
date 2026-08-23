@@ -1,0 +1,65 @@
+{
+  "id": "2026-08-26",
+  "date": "2026-08-26",
+  "week": 6,
+  "weekTheme": "Why an Agency in an AI Age",
+  "type": "POV",
+  "hook": "'Can't ChatGPT just do our marketing?' Fair question. Here's our honest answer.",
+  "direction": "AI drafts; it doesn't know your congregation, own your results, or notice the ad account quietly burning money on a Saturday night. Tools need operators. We use AI heavily ourselves — openly — which is exactly why we know where it stops.",
+  "facebook": {
+    "text": "'Can't ChatGPT just do our marketing?' Fair question. Here's our honest answer.\n\nYes, we use AI. Heavily. Openly. It drafts fast, it iterates, it saves hours.\n\nBut AI doesn't know your congregation. It doesn't own your results. And it won't notice your ad account quietly burning money on a Saturday night.\n\nTools need operators. Someone still has to set the strategy, read the numbers, catch the problems, and make judgment calls. That's the work. AI just changes what the work looks like — it doesn't replace the person doing it."
+  },
+  "instagram": {
+    "text": "'Can't ChatGPT just do our marketing?' Fair question. Here's our honest answer.\n\nWe use AI. Heavily. Openly. It drafts fast and saves real hours.\n\nBut AI doesn't know your congregation. It doesn't own your results. And it won't notice your ad account quietly burning money on a Saturday night.\n\nTools need operators. Someone still has to set the strategy, read the numbers, and make the calls. That's the work. AI changes what the work looks like — it doesn't replace the person doing it.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "christianbusiness",
+      "ministrymarketing",
+      "smallbusinessmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "\"Can't ChatGPT just do our marketing?\" Fair question. We use AI heavily ourselves — which is exactly why we know where it stops. It drafts. It doesn't know your people, own your results, or catch the ad account burning money Saturday night. Tools need operators.",
+      "We're the operators."
+    ]
+  },
+  "image": {
+    "template": "diagram",
+    "data": {
+      "mode": "columns",
+      "title": "AI Does Some Things. Not Everything.",
+      "columns": {
+        "left": {
+          "label": "AI Can",
+          "items": [
+            "Draft copy quickly",
+            "Generate variations",
+            "Speed up research",
+            "Format and edit"
+          ]
+        },
+        "right": {
+          "label": "AI Can't",
+          "items": [
+            "Know your congregation",
+            "Own your results",
+            "Catch a bleeding ad account",
+            "Make judgment calls"
+          ]
+        }
+      }
+    },
+    "alt": "A two-column diagram contrasting what AI can do for marketing versus what still requires a human operator.",
+    "files": [
+      "2026-08-26.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-08-23T10:30:18.577Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

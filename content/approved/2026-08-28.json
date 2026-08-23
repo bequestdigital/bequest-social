@@ -1,0 +1,64 @@
+{
+  "id": "2026-08-28",
+  "date": "2026-08-28",
+  "week": 6,
+  "weekTheme": "Why an Agency in an AI Age",
+  "type": "PROOF",
+  "hook": "Big agency: 6 layers between you and the person doing the work. Bequest: you talk to the owners.",
+  "direction": "Comparison graphic (AI-generated diagram): big-agency org chart vs. two names. Small, direct, accountable — no account-manager telephone game. Craftsmanship over bureaucracy.",
+  "facebook": {
+    "text": "Big agency: 6 layers between you and the person doing the work. Bequest: you talk to the owners.\n\nAt a large agency, your project passes through a sales rep, an account manager, a project manager, a strategist, a creative director, and finally — maybe — the person who actually builds the thing. Every handoff is a place for your vision to get lost.\n\nAt Bequest, there are two of us. You call us. We answer. We do the work. If something's off, you tell us directly and we fix it. No telephone game. No billable hours spent on internal meetings about your project.\n\nSmall and direct isn't a limitation. It's the point."
+  },
+  "instagram": {
+    "text": "Big agency: 6 layers between you and the person doing the work. Bequest: you talk to the owners.\n\nYour project shouldn't have to survive a game of telephone before anyone touches it.\n\nAt a large agency, your vision passes through sales, account management, project management, strategy, creative direction — and then, finally, someone builds it.\n\nAt Bequest, there are two of us. We take the call. We do the work. We're accountable by name.\n\nThat's not a workaround. That's the whole model.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "smallbusinessmarketing",
+      "faithbasedbusiness",
+      "christianbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Big agency: 6 layers between you and the person doing the work.\n\nBequest: you talk to the owners. Two names. Direct line. No account-manager telephone game.\n\nSmall on purpose."
+    ]
+  },
+  "image": {
+    "template": "diagram",
+    "data": {
+      "mode": "columns",
+      "title": "Who Actually Does Your Work?",
+      "columns": {
+        "left": {
+          "label": "Big Agency",
+          "items": [
+            "Sales rep",
+            "Account manager",
+            "Project manager",
+            "Strategist",
+            "Creative director",
+            "The person doing the work"
+          ]
+        },
+        "right": {
+          "label": "Bequest Digital",
+          "items": [
+            "Ryan",
+            "Caleb"
+          ]
+        }
+      }
+    },
+    "alt": "Side-by-side org chart comparing a large agency's six-layer hierarchy to Bequest Digital's two-person team, illustrating direct access and accountability.",
+    "files": [
+      "2026-08-28.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-08-23T10:30:30.194Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
