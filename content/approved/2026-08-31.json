@@ -1,0 +1,88 @@
+{
+  "id": "2026-08-31",
+  "date": "2026-08-31",
+  "week": 7,
+  "weekTheme": "Integrating AI Without Losing Your Soul",
+  "type": "TIP",
+  "hook": "5 places AI belongs in your organization's marketing — and 3 places it never should.",
+  "direction": "Belongs: research, first drafts, repurposing sermons/content into posts, data analysis, testing variants. Never: pastoral or donor correspondence, your final voice, anything published without human review. Carousel.",
+  "facebook": {
+    "text": "5 places AI belongs in your organization's marketing — and 3 places it never should.\n\nBelongs:\n1. Research — finding what your audience is actually asking\n2. First drafts — getting words on the page faster\n3. Repurposing sermons or long content into social posts\n4. Data analysis — spotting what's working\n5. Testing variants — subject lines, headlines, calls to action\n\nNever:\n1. Pastoral or donor correspondence — those relationships require a real person\n2. Your final voice — AI doesn't know your mission the way you do\n3. Anything published without a human reading it first\n\nAI is a capable assistant. It is not a steward of your organization's trust."
+  },
+  "instagram": {
+    "text": "5 places AI belongs in your marketing — and 3 places it never should.\n\nSwipe through. The line matters more than most people draw it.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "ministrymarketing",
+      "churchcommunications",
+      "faithbasedbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "AI belongs in your research, first drafts, content repurposing, data analysis, and variant testing. It does not belong in donor letters, pastoral care, or anything that goes out without a human reading it first."
+    ]
+  },
+  "image": {
+    "template": "carousel",
+    "data": {
+      "cover": {
+        "title": "AI: Where It Helps. Where It Doesn't.",
+        "subtitle": "5 places it belongs. 3 places it never should."
+      },
+      "slides": [
+        {
+          "title": "✓ Research",
+          "body": "Use AI to find what your audience is searching for and asking. It surfaces patterns faster than manual digging."
+        },
+        {
+          "title": "✓ First Drafts",
+          "body": "AI gets words on the page. Your team shapes them into something true to your voice and mission."
+        },
+        {
+          "title": "✓ Repurposing Content",
+          "body": "Turn a sermon, report, or long article into social posts, emails, or summaries — without starting from scratch."
+        },
+        {
+          "title": "✓ Data & Testing",
+          "body": "Analyze what's working. Test subject lines and headlines. Let AI handle the numbers so you can act on them."
+        },
+        {
+          "title": "✗ Donor & Pastoral Correspondence",
+          "body": "These relationships run on trust. A real person must write them. Every time."
+        },
+        {
+          "title": "✗ Your Final Voice",
+          "body": "AI doesn't carry your history, your values, or your calling. It can draft. It cannot speak for you."
+        },
+        {
+          "title": "✗ Anything Unreviewed",
+          "body": "Nothing goes out without a human reading it first. That's not a suggestion — it's stewardship."
+        }
+      ],
+      "end": {
+        "title": "AI is a tool. You are the steward.",
+        "subtitle": "Bequest Digital — built for mission-driven organizations."
+      }
+    },
+    "alt": "A seven-slide carousel listing five appropriate uses of AI in marketing and three places it should never replace human judgment, ending with a stewardship-focused closing card.",
+    "files": [
+      "2026-08-31-1.jpg",
+      "2026-08-31-2.jpg",
+      "2026-08-31-3.jpg",
+      "2026-08-31-4.jpg",
+      "2026-08-31-5.jpg",
+      "2026-08-31-6.jpg",
+      "2026-08-31-7.jpg",
+      "2026-08-31-8.jpg",
+      "2026-08-31-9.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-08-30T14:45:41.138Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

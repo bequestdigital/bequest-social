@@ -1,0 +1,45 @@
+{
+  "id": "2026-09-04",
+  "date": "2026-09-04",
+  "week": 7,
+  "weekTheme": "Integrating AI Without Losing Your Soul",
+  "type": "ASK",
+  "hook": "We build AI-assisted marketing systems for organizations that don't have time to figure this out alone.",
+  "direction": "Direct pitch riding the week's theme. You've seen our take on where AI belongs — we'll build that line into your operation. CTA: book a call.",
+  "facebook": {
+    "text": "We build AI-assisted marketing systems for organizations that don't have time to figure this out alone.\n\nAll week we've talked about where AI belongs in your work — and where it doesn't. The short version: it belongs in the hands of people who know what they're building toward.\n\nWe help churches, nonprofits, and mission-driven businesses put the right tools in place without handing over their voice or their judgment.\n\nIf that sounds like what you need, let's talk. Book a call and we'll show you exactly how it works."
+  },
+  "instagram": {
+    "text": "We build AI-assisted marketing systems for organizations that don't have time to figure this out alone.\n\nAll week we've laid out our thinking on where AI belongs — and where it doesn't. The line matters. Your voice, your mission, your judgment stay yours. The repetitive work gets handled.\n\nWe set that up for you. No guesswork, no wasted months, no tools you'll abandon in six weeks.\n\nBook a call. Link in bio.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "christianbusiness",
+      "ministrymarketing",
+      "faithbasedbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "We build AI-assisted marketing systems for orgs that don't have time to figure this out alone. Your voice stays yours. The repetitive work gets handled. Book a call. #smallbusinessmarketing"
+    ]
+  },
+  "image": {
+    "template": "quote-card",
+    "data": {
+      "quote": "Your voice stays yours. The repetitive work gets handled. We build the system.",
+      "attribution": "Bequest Digital LLC",
+      "eyebrow": "AI Without Losing Your Soul"
+    },
+    "alt": "Quote card with the text 'Your voice stays yours. The repetitive work gets handled. We build the system.' attributed to Bequest Digital LLC, on a clean, craft-forward background.",
+    "files": [
+      "2026-09-04.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-08-30T14:45:58.817Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

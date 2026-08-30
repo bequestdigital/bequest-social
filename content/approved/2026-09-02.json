@@ -1,0 +1,63 @@
+{
+  "id": "2026-09-02",
+  "date": "2026-09-02",
+  "week": 7,
+  "weekTheme": "Integrating AI Without Losing Your Soul",
+  "type": "TIP",
+  "hook": "Automate the repeatable. Keep the relational.",
+  "direction": "The dividing line for churches and ministries: machines handle reporting, formatting, scheduling; humans keep the phone calls, the visits, the thank-you notes. Efficiency in service of presence, not instead of it.",
+  "facebook": {
+    "text": "Automate the repeatable. Keep the relational.\n\nFor churches and ministries, the line is pretty clear: let machines handle the reporting, the formatting, the scheduling. Let people handle the phone calls, the visits, the handwritten thank-you notes.\n\nAI is a good tool for clearing the desk. It is a poor substitute for showing up. Efficiency should create more room for presence, not replace it."
+  },
+  "instagram": {
+    "text": "Automate the repeatable. Keep the relational.\n\nFor churches and ministries, the line is clear: let machines handle reporting, formatting, and scheduling. Let people handle the phone calls, the visits, the thank-you notes.\n\nAI clears the desk. It doesn't replace showing up. Efficiency should make more room for presence — not stand in for it.",
+    "hashtags": [
+      "churchcommunications",
+      "ministrymarketing",
+      "nonprofitleadership",
+      "faithbasedbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Automate the repeatable. Keep the relational. Machines handle reporting, formatting, scheduling. Humans keep the calls, the visits, the thank-you notes. Efficiency in service of presence — not instead of it."
+    ]
+  },
+  "image": {
+    "template": "diagram",
+    "data": {
+      "mode": "columns",
+      "title": "Where AI Helps — and Where It Stops",
+      "columns": {
+        "left": {
+          "label": "Automate This",
+          "items": [
+            "Reporting & data entry",
+            "Email formatting",
+            "Social scheduling",
+            "Reminders & follow-up queues"
+          ]
+        },
+        "right": {
+          "label": "Keep This Human",
+          "items": [
+            "Phone calls & pastoral visits",
+            "Handwritten thank-you notes",
+            "Donor & member conversations",
+            "Crisis care & prayer"
+          ]
+        }
+      }
+    },
+    "alt": "Two-column diagram contrasting tasks suited for automation on the left with relational tasks that should stay human on the right.",
+    "files": [
+      "2026-09-02.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-08-30T14:45:49.902Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
