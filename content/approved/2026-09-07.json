@@ -1,0 +1,63 @@
+{
+  "id": "2026-09-07",
+  "date": "2026-09-07",
+  "week": 8,
+  "weekTheme": "Brand, Logo, and Permanence",
+  "type": "POV",
+  "hook": "Your logo is not your brand. Your brand is what people say about you when you leave the room.",
+  "direction": "Logo = symbol; brand = reputation, promise, consistency. Orgs polish the mark and neglect the message. For a church, the \"brand\" is the community's testimony — protect that first.",
+  "facebook": {
+    "text": "Your logo is not your brand. Your brand is what people say about you when you leave the room.\n\nA logo is a symbol. Your brand is your reputation — the promise you make and whether you keep it, consistently, over time.\n\nA lot of organizations spend real money polishing the mark and almost nothing protecting the message. For a church, that's backwards. The most powerful thing you have isn't your wordmark. It's the testimony of your community. Guard that first. Let the logo follow."
+  },
+  "instagram": {
+    "text": "Your logo is not your brand. Your brand is what people say about you when you leave the room.\n\nA logo is a symbol. Your brand is your reputation — the promise you make and whether you keep it.\n\nOrganizations spend real money polishing the mark and almost nothing protecting the message. For a church, that's backwards. The most powerful thing you have isn't your wordmark. It's the testimony of your community.\n\nGuard that first. Let the logo follow.",
+    "hashtags": [
+      "churchmarketing",
+      "churchcommunications",
+      "ministrymarketing",
+      "faithbasedbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Your logo is not your brand. Your brand is what people say about you when you leave the room. Polish the mark all you want — if the reputation isn't there, the symbol means nothing."
+    ]
+  },
+  "image": {
+    "template": "diagram",
+    "data": {
+      "mode": "columns",
+      "title": "Logo vs. Brand",
+      "columns": {
+        "left": {
+          "label": "Logo",
+          "items": [
+            "A symbol",
+            "Designed once",
+            "Seen by the eye",
+            "Can be updated"
+          ]
+        },
+        "right": {
+          "label": "Brand",
+          "items": [
+            "Your reputation",
+            "Built over time",
+            "Felt by people",
+            "Earned, not made"
+          ]
+        }
+      }
+    },
+    "alt": "A two-column diagram contrasting Logo on the left with Brand on the right, showing that a logo is a symbol while a brand is a reputation built over time.",
+    "files": [
+      "2026-09-07.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-09-06T13:30:33.660Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "2026-09-11",
+  "date": "2026-09-11",
+  "week": 8,
+  "weekTheme": "Brand, Logo, and Permanence",
+  "type": "TIP",
+  "hook": "Consistency beats brilliance. A B+ brand applied everywhere outperforms an A+ brand applied nowhere.",
+  "direction": "Audit prompt: do your website, email, bulletin, and social look like the same organization? Faithfulness in small things — the principle transfers. Checklist graphic.",
+  "facebook": {
+    "text": "Consistency beats brilliance. A B+ brand applied everywhere outperforms an A+ brand applied nowhere.\n\nQuick audit: pull up your website, your last email, your bulletin, and your social profile side by side. Do they look like the same organization? Same colors, same fonts, same tone?\n\nIf someone has to guess whether they belong together, the answer is no.\n\nFaithfulness in small things matters. That principle holds in ministry, in business, and in how you show up visually every single week. The checklist is simple. The discipline is the hard part."
+  },
+  "instagram": {
+    "text": "Consistency beats brilliance. A B+ brand applied everywhere outperforms an A+ brand applied nowhere.\n\nRun this quick audit right now:\n\n✓ Website\n✓ Email newsletter\n✓ Printed bulletin or handout\n✓ Social media profile and posts\n\nDo they look like the same organization? Same colors. Same fonts. Same voice.\n\nIf you have to think about it, they probably don't.\n\nFaithfulness in small things. The principle transfers.",
+    "hashtags": [
+      "churchcommunications",
+      "nonprofitmarketing",
+      "christianbusiness",
+      "ministrymarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "A B+ brand applied everywhere beats an A+ brand applied nowhere. Pull up your website, email, bulletin, and social side by side. Do they look like the same org? Faithfulness in small things. It transfers."
+    ]
+  },
+  "image": {
+    "template": "tip-card",
+    "data": {
+      "eyebrow": "Brand Consistency Audit",
+      "title": "Does your brand look the same everywhere?",
+      "items": [
+        "Website — colors, fonts, logo placement",
+        "Email — header, tone, visual style",
+        "Bulletin or print — matches digital look",
+        "Social profiles — bio, imagery, voice",
+        "All four feel like one organization"
+      ]
+    },
+    "alt": "A tip card listing a five-point brand consistency checklist covering website, email, print, and social media.",
+    "files": [
+      "2026-09-11.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-09-06T13:30:53.640Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

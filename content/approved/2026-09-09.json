@@ -1,0 +1,63 @@
+{
+  "id": "2026-09-09",
+  "date": "2026-09-09",
+  "week": 8,
+  "weekTheme": "Brand, Logo, and Permanence",
+  "type": "TIP",
+  "hook": "4 marks of a logo that will outlive the trend cycle.",
+  "direction": "Simple at small sizes, works in one color, distinct in your space, not chasing fads. This audience respects things built to last — cathedrals, not pop-ups. Graphic: timeless vs. trendy comparison (AI-generated abstract examples, no real trademarks).",
+  "facebook": {
+    "text": "4 marks of a logo that will outlive the trend cycle.\n\n1. It reads clearly at small sizes — a favicon, a business card, a shirt pocket.\n2. It works in one color. If it falls apart without gradients or effects, it isn't finished.\n3. It's distinct in your specific space. Not just \"clean\" — recognizable among your actual competitors.\n4. It isn't chasing what's fashionable right now.\n\nCathedrals weren't built to be current. They were built to stand. Your logo should work the same way."
+  },
+  "instagram": {
+    "text": "4 marks of a logo that will outlive the trend cycle.\n\n1. Reads clearly at small sizes.\n2. Works in one color.\n3. Distinct in your specific space — not just generic \"clean.\"\n4. Not chasing what's fashionable this year.\n\nCathedrals weren't designed to feel current. They were designed to last. That's the standard worth building to.",
+    "hashtags": [
+      "churchmarketing",
+      "christianbusiness",
+      "smallbusinessmarketing",
+      "faithbasedbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "4 marks of a logo built to last: reads at small sizes, works in one color, distinct in your space, not chasing fads. Cathedrals weren't built to feel current. Neither should your brand."
+    ]
+  },
+  "image": {
+    "template": "diagram",
+    "data": {
+      "mode": "columns",
+      "title": "Logo Built to Last vs. Built for Now",
+      "columns": {
+        "left": {
+          "label": "Timeless",
+          "items": [
+            "Clear at any size",
+            "Works in one color",
+            "Distinct in its space",
+            "Ignores the trend cycle"
+          ]
+        },
+        "right": {
+          "label": "Trendy",
+          "items": [
+            "Needs scale to read",
+            "Depends on gradients",
+            "Looks like everyone else",
+            "Dated in 3 years"
+          ]
+        }
+      }
+    },
+    "alt": "A two-column diagram comparing the traits of a timeless logo on the left against the traits of a trend-chasing logo on the right, using abstract AI-generated shapes as visual examples.",
+    "files": [
+      "2026-09-09.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-09-06T13:30:43.949Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
