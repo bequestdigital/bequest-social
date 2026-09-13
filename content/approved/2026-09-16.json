@@ -1,0 +1,50 @@
+{
+  "id": "2026-09-16",
+  "date": "2026-09-16",
+  "week": 9,
+  "weekTheme": "Email Is the House You Own",
+  "type": "TIP",
+  "hook": "Your welcome email gets 4x the opens of anything else you'll ever send. Most orgs waste it.",
+  "direction": "Anatomy of a welcome sequence for a donor, visitor, or customer: deliver what you promised, tell them why you exist (the why again), give one next step. Template-outline graphic.",
+  "facebook": {
+    "text": "Your welcome email gets 4x the opens of anything else you'll ever send. Most orgs waste it.\n\nHere's what a good welcome sequence actually does:\n\n1. Deliver what you promised. If someone signed up for a resource, lead with it. No detours.\n2. Tell them why you exist. Not your history — your purpose. Why does your work matter to the people you serve?\n3. Give one next step. One. Not five links, not a newsletter archive. One clear door.\n\nThat's it. Three emails, maybe two. Done well, this sequence turns a stranger into someone who trusts you. Done poorly — or skipped entirely — it's a warm lead you let go cold."
+  },
+  "instagram": {
+    "text": "Your welcome email gets 4x the opens of anything else you'll ever send.\n\nMost orgs waste it.\n\nA welcome sequence doesn't need to be complicated. It needs to do three things:\n\n① Deliver what you promised\n② Tell them why you exist\n③ Give one next step\n\nThat's the whole outline. Swipe to see how it maps out — whether you're welcoming a donor, a first-time visitor, or a new customer.",
+    "hashtags": [
+      "nonprofitmarketing",
+      "churchcommunications",
+      "ministrymarketing",
+      "smallbusinessmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Your welcome email gets 4x the opens of anything else you'll send. Most orgs waste it.\n\nThe anatomy: deliver what you promised → say why you exist → give ONE next step.\n\nThree moves. That's the whole sequence."
+    ]
+  },
+  "image": {
+    "template": "tip-card",
+    "data": {
+      "eyebrow": "Email Is the House You Own",
+      "title": "The Welcome Sequence: 3-Email Outline",
+      "items": [
+        "Email 1 — Deliver: Give them exactly what you promised",
+        "Email 1 — Why: One sentence on why your work matters",
+        "Email 2 — Story: Who you serve and how you help them",
+        "Email 2 — Why (deeper): Your mission in their words",
+        "Email 3 — Next Step: One clear action, nothing else"
+      ]
+    },
+    "alt": "A tip card outlining a three-email welcome sequence with steps for delivering on your promise, sharing your why, and giving one clear next step.",
+    "files": [
+      "2026-09-16.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-09-13T14:12:56.709Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

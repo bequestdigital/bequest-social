@@ -1,0 +1,45 @@
+{
+  "id": "2026-09-14",
+  "date": "2026-09-14",
+  "week": 9,
+  "weekTheme": "Email Is the House You Own",
+  "type": "POV",
+  "hook": "Social media is rented land. The algorithm is your landlord. Email is the house you own.",
+  "direction": "Ownership over dependence — this line was made for this audience. Platforms throttle reach and change rules overnight; nobody can take your list. ROI stat (~$36 per $1) as the kicker. Quote card.",
+  "facebook": {
+    "text": "Social media is rented land. The algorithm is your landlord. Email is the house you own.\n\nPlatforms throttle your reach without warning. They change the rules overnight. They can shut your account down and there is nothing you can do about it.\n\nYour email list is different. Nobody can take it from you. Nobody can hide it from the people who asked to hear from you.\n\nAnd the numbers back it up: email returns around $36 for every $1 spent. That is not a rounding error. That is the most reliable channel in digital marketing — and you own it outright.\n\nStop building on borrowed ground."
+  },
+  "instagram": {
+    "text": "Social media is rented land. The algorithm is your landlord. Email is the house you own.\n\nPlatforms change the rules. Reach gets throttled. Accounts get restricted. And there is nothing you can do about any of it — because you do not own any of it.\n\nYour email list is yours. The people on it asked to hear from you. No platform can get between you and them.\n\nEmail returns roughly $36 for every $1 spent. Build on ground you own.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "christianbusiness",
+      "smallbusinessmarketing",
+      "ministrymarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Social media is rented land. The algorithm is your landlord. Email is the house you own.\n\nNo throttled reach. No rule changes overnight. No one can take your list.\n\n~$36 return per $1 spent. Build on ground you own."
+    ]
+  },
+  "image": {
+    "template": "quote-card",
+    "data": {
+      "quote": "Social media is rented land. The algorithm is your landlord. Email is the house you own.",
+      "attribution": null,
+      "eyebrow": "Email Is the House You Own"
+    },
+    "alt": "Quote card with the text 'Social media is rented land. The algorithm is your landlord. Email is the house you own.' on a clean, minimal background with the Bequest Digital brand treatment.",
+    "files": [
+      "2026-09-14.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-09-13T14:12:45.105Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
