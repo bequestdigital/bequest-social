@@ -59,7 +59,7 @@ function card({ pkg, status, dir }) {
       : `<span class="badge done">Published &middot; ${prettyDate(pkg.date)}</span>`;
   const text = pkg.facebook?.text || pkg.linkedin?.text || '';
   return `<div class="card${status === 'published' ? ' pub' : ''}">
-    ${imgUrl ? `<a href="${imgUrl}" target="_blank"><img loading="lazy" src="${imgUrl}" alt="${esc(pkg.image?.alt || '')}"></a>` : ''}
+    ${imgUrl ? `<a href="${imgUrl}" target="_blank"><img src="${imgUrl}" alt="${esc(pkg.image?.alt || '')}"></a>` : ''}
     <div class="body">
       <div class="meta">${badge}<span class="plats">${chips(pkg).join(' &middot; ')}</span></div>
       <p>${esc(text).replace(/\n/g, '<br>')}</p>
