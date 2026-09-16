@@ -97,7 +97,7 @@ jobs:
           git config user.name "bequest-bot"
           git config user.email "actions@users.noreply.github.com"
           git add -A content/
-          git diff --cached --quiet || (git pull --rebase origin main && git commit -m "Publish state $(TZ=America/New_York date +%Y-%m-%d) [skip ci]" && git push)
+          git diff --cached --quiet || (git commit -m "Publish state $(TZ=America/New_York date +%Y-%m-%d) [skip ci]" && git push)
 
       # Friday runs: post the weekly summary issue after publishing.
       - name: Weekly summary (Fridays)
@@ -174,7 +174,7 @@ jobs:
           git config user.name "bequest-bot"
           git config user.email "actions@users.noreply.github.com"
           git add -A content/
-          git diff --cached --quiet || (git pull --rebase origin main && git commit -m "FGC publish state $(TZ=America/New_York date +%Y-%m-%d) [skip ci]" && git push)
+          git diff --cached --quiet || (git commit -m "FGC publish state $(TZ=America/New_York date +%Y-%m-%d) [skip ci]" && git push)
 
       # Warn (once per title) when the seeded FGC queue is nearly dry — whether
       # to continue past the seeded window is a business call (buyout watch).
