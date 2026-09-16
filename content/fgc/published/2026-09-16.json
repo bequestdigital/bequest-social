@@ -1,0 +1,26 @@
+{
+  "id": "2026-09-16",
+  "date": "2026-09-16",
+  "facebook": {
+    "text": "[connectivity re-test — unpublished] Florida Glass autonomous publisher check #2."
+  },
+  "image": {
+    "files": [
+      "2026-09-16.jpg"
+    ],
+    "alt": "test"
+  },
+  "meta": {
+    "brand": "fgc",
+    "status": "published",
+    "unpublished_test": true
+  },
+  "results": {
+    "fb": {
+      "ok": true,
+      "id": "1104436922178971",
+      "note": "unpublished test — not visible on feed",
+      "at": "2026-09-16T09:24:27.203Z"
+    }
+  }
+}
