@@ -94,7 +94,8 @@ jobs:
           [ ${#files[@]} -gt 0 ] && mv "${files[@]}" content/approved/
           git config user.name "bequest-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add -A content/
+          node src/build-preview.js || true
+          git add -A content/ docs/
           git commit -m "Auto-approve posts for week of $WEEK [skip ci]"
           git push
           node src/notify.js issue --title "Posts scheduled for week of $WEEK (auto-approved)" --body-file week-body.md || true
