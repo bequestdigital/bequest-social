@@ -2,18 +2,18 @@
   "id": "2026-10-12",
   "date": "2026-10-12",
   "facebook": {
-    "text": "Most of our new customers come from an old customer's recommendation. That's the standard we measure ourselves against on every install \u2014 showers, mirrors, doors, and everything in between. floridaglassco.com/contact-us/"
+    "text": "\"Company was very professional and timely. Highly recommend.\" \u2014 Marlene Miller, 5-star review\n\nProfessional and on time isn't a bonus \u2014 it's the job. Showers, mirrors, doors, and everything in between. floridaglassco.com/contact-us/"
   },
   "image": {
     "files": [
       "2026-10-12.jpg"
     ],
-    "alt": "Dark-grid tiled shower, 'Why neighbors send us their neighbors.'"
+    "alt": "Five-star review card: 'Company was very professional and timely. Highly recommend.' \u2014 Marlene Miller, over a dark-grid tiled shower"
   },
   "meta": {
     "brand": "fgc",
     "status": "approved",
-    "source": "batch-v2 (Tyler photos, 9/15)",
+    "source": "batch-v2 + real site/Google testimonials (9/16)",
     "generator": "claude-session"
   }
 }
