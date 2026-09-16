@@ -50,9 +50,9 @@ function chips(pkg) {
 }
 
 function card({ pkg, status, dir }) {
-  const sub = status === 'scheduled' ? 'approved' : 'published';
+  // dir already includes the approved/ or published/ leaf (set by loadDir's caller)
   const img = (pkg.image?.files || [])[0];
-  const imgUrl = img ? `${RAW}/${dir}/${sub}/${img}` : null;
+  const imgUrl = img ? `${RAW}/${dir}/${img}` : null;
   const badge =
     status === 'scheduled'
       ? `<span class="badge up">Scheduled &middot; ${weekday(pkg.date)} ${prettyDate(pkg.date)}</span>`
