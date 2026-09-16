@@ -23,7 +23,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { TwitterApi } from 'twitter-api-v2';
-import { APPROVED, PUBLISHED, ROOT, readJSON, writeJSON, todayET, retry, xLength } from './util.js';
+import { APPROVED, PUBLISHED, ROOT, BRAND, readJSON, writeJSON, todayET, retry, xLength } from './util.js';
 import { openIssue } from './notify.js';
 
 const GRAPH = 'https://graph.facebook.com/v21.0';
@@ -55,7 +55,8 @@ function publicImageUrl(file) {
   }
   const repo = process.env.GITHUB_REPOSITORY;
   if (!repo) throw new Error('Set GITHUB_REPOSITORY or IMAGE_BASE_URL so Instagram can fetch images');
-  return `https://raw.githubusercontent.com/${repo}/main/content/approved/${file}`;
+  const rel = path.relative(ROOT, APPROVED).split(path.sep).join('/');
+  return `https://raw.githubusercontent.com/${repo}/main/${rel}/${file}`;
 }
 
 async function graphCall(pathname, params, { method = 'POST', form } = {}) {
@@ -114,9 +115,12 @@ async function publishFacebook(pkg, imagePaths) {
     return graphCall(`/${pageId}/photos`, null, { form });
   };
 
+  // meta.unpublished_test lets a connectivity check exercise auth + upload
+  // without anything appearing on the page's feed.
+  const visible = pkg.meta?.unpublished_test !== true;
   if (imagePaths.length === 1) {
-    const res = await uploadPhoto(imagePaths[0], true, pkg.facebook.text);
-    return { id: res.post_id || res.id };
+    const res = await uploadPhoto(imagePaths[0], visible, pkg.facebook.text);
+    return { id: res.post_id || res.id, ...(visible ? {} : { note: 'unpublished test — not visible on feed' }) };
   }
   const mediaIds = [];
   for (const p of imagePaths) mediaIds.push((await uploadPhoto(p, false)).id);
@@ -309,13 +313,18 @@ function validate(pkg, imagePaths, opts) {
   for (const p of imagePaths) {
     if (!fs.existsSync(p)) errors.push(`image missing: ${p}`);
   }
-  if (pkg.facebook.text.length > 63206) errors.push('FB caption over 63,206 chars');
-  const igCaption = pkg.instagram.text + '\n\n' + pkg.instagram.hashtags.map((t) => '#' + t).join(' ');
-  if (igCaption.length > 2200) errors.push('IG caption over 2,200 chars');
-  pkg.x.posts.forEach((p, i) => {
+  // Channel sections are optional per brand (e.g. FGC is Facebook-only) —
+  // validate only what the package carries.
+  if (!pkg.facebook?.text) errors.push('package has no facebook.text');
+  else if (pkg.facebook.text.length > 63206) errors.push('FB caption over 63,206 chars');
+  if (pkg.instagram) {
+    const igCaption = pkg.instagram.text + '\n\n' + (pkg.instagram.hashtags || []).map((t) => '#' + t).join(' ');
+    if (igCaption.length > 2200) errors.push('IG caption over 2,200 chars');
+  }
+  (pkg.x?.posts || []).forEach((p, i) => {
     if (xLength(p) > 280) errors.push(`X post ${i + 1} is ${xLength(p)} chars (max 280)`);
   });
-  const liText = pkg.linkedin?.text || pkg.facebook.text;
+  const liText = pkg.linkedin?.text || pkg.facebook?.text || '';
   if (liText.length > 3000) errors.push('LinkedIn commentary over 3,000 chars');
   return errors;
 }
@@ -343,6 +352,12 @@ async function main() {
   if (!opts.dryRun && (opts.only.includes('fb') || opts.only.includes('ig')) && process.env.META_ACCESS_TOKEN) {
     process.env.META_ACCESS_TOKEN = await resolvePageToken();
   }
+
+  // Brands without a channel section skip that platform entirely.
+  const brandOnly = opts.only.filter((k) =>
+    (k === 'fb' && pkg.facebook) || (k === 'ig' && pkg.instagram) || (k === 'x' && pkg.x) || (k === 'li' && (pkg.linkedin || pkg.facebook))
+  );
+  opts.only = brandOnly;
 
   pkg.results = pkg.results || {};
   const platforms = [
@@ -408,7 +423,7 @@ async function main() {
       '',
       'Retry just the failed platforms:',
       '```',
-      `gh workflow run publish.yml -f date=${pkg.date} -f only=${failedKeys}`,
+      `gh workflow run publish.yml -f date=${pkg.date} -f only=${failedKeys}${BRAND !== 'bequest' ? ` -f brand=${BRAND}` : ''}`,
       '```',
       `(or locally: \`node src/publish.js --date ${pkg.date} --only ${failedKeys} --force\`)`,
     ].join('\n');

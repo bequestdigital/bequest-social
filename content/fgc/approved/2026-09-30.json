@@ -1,0 +1,19 @@
+{
+  "id": "2026-09-30",
+  "date": "2026-09-30",
+  "facebook": {
+    "text": "Same bathroom. One afternoon. A custom glass enclosure is the single fastest way to modernize a bathroom without moving a single tile. floridaglassco.com/services/glass-shower/"
+  },
+  "image": {
+    "files": [
+      "2026-09-30.jpg"
+    ],
+    "alt": "Text card: Same bathroom. One afternoon. Before and after theme"
+  },
+  "meta": {
+    "brand": "fgc",
+    "status": "approved",
+    "source": "batch-v2 (Tyler photos, 9/15)",
+    "generator": "claude-session"
+  }
+}

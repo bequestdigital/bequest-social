@@ -1,0 +1,19 @@
+{
+  "id": "2026-10-12",
+  "date": "2026-10-12",
+  "facebook": {
+    "text": "Most of our new customers come from an old customer's recommendation. That's the standard we measure ourselves against on every install \u2014 showers, mirrors, doors, and everything in between. floridaglassco.com/contact-us/"
+  },
+  "image": {
+    "files": [
+      "2026-10-12.jpg"
+    ],
+    "alt": "Dark-grid tiled shower, 'Why neighbors send us their neighbors.'"
+  },
+  "meta": {
+    "brand": "fgc",
+    "status": "approved",
+    "source": "batch-v2 (Tyler photos, 9/15)",
+    "generator": "claude-session"
+  }
+}

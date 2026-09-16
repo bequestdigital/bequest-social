@@ -19,8 +19,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Check token
+      - name: Check token (Bequest)
         env:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node src/check-token.js
+      - name: Check token (Florida Glass)
+        if: always()
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.FGC_META_ACCESS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node src/check-token.js

@@ -4,7 +4,11 @@ import { execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-export const CONTENT = path.join(ROOT, 'content');
+// Multi-brand: BRAND=bequest (default) uses the legacy content/ root so the
+// original pipeline is untouched; any other brand (e.g. fgc) nests under
+// content/<brand>/. Same queue/approved/published lifecycle either way.
+export const BRAND = (process.env.BRAND || 'bequest').toLowerCase();
+export const CONTENT = BRAND === 'bequest' ? path.join(ROOT, 'content') : path.join(ROOT, 'content', BRAND);
 export const QUEUE = path.join(CONTENT, 'queue');
 export const APPROVED = path.join(CONTENT, 'approved');
 export const PUBLISHED = path.join(CONTENT, 'published');

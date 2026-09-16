@@ -1,0 +1,19 @@
+{
+  "id": "2026-09-21",
+  "date": "2026-09-21",
+  "facebook": {
+    "text": "Your bathroom is the first room you see every morning. A frameless glass shower makes it feel bigger, brighter, and easier to clean \u2014 no metal frame collecting grime, no curtain to wash. Custom-measured and installed for SW Florida homes. See what's possible: floridaglassco.com/services/glass-shower/"
+  },
+  "image": {
+    "files": [
+      "2026-09-21.jpg"
+    ],
+    "alt": "Frameless glass shower with black rain-head fixtures, Florida Glass Company branding"
+  },
+  "meta": {
+    "brand": "fgc",
+    "status": "approved",
+    "source": "batch-v2 (Tyler photos, 9/15)",
+    "generator": "claude-session"
+  }
+}

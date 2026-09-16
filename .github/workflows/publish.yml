@@ -1,6 +1,8 @@
-# Daily 9:00am ET: publish content/approved/{today}.json if it exists.
-# (Daily, not just Mon/Wed/Fri, so off-cadence makeup posts fire too — days
+# Daily 9:00am ET: publish each brand's content/<brand>/approved/{today}.json if it exists.
+# (Daily, not just the posting cadence, so off-cadence makeup posts fire too — days
 # with no approved file exit quietly.)
+# Brands: bequest (legacy content/ root, FB+IG+X+LI) then fgc (content/fgc/, FB only).
+# Jobs run serially so their state commits never race.
 # Fires at both DST candidate UTC hours; a gate step lets only the cron slot
 # matching the current DST offset proceed. The gate keys off WHICH cron fired
 # (github.event.schedule), not the wall-clock hour at run time — GitHub cron
@@ -18,9 +20,13 @@ on:
         required: false
         default: ''
       only:
-        description: 'Comma-separated platforms to publish (fb,ig,x). Empty = all.'
+        description: 'Comma-separated platforms to publish (fb,ig,x,li). Empty = all.'
         required: false
         default: ''
+      brand:
+        description: 'Which brand to publish (bequest | fgc | all)'
+        required: false
+        default: 'all'
 
 permissions:
   contents: write
@@ -33,6 +39,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || inputs.brand == 'bequest' || inputs.brand == 'all' || inputs.brand == ''
     steps:
       - name: DST gate — proceed only for the cron slot matching current ET offset
         id: gate
@@ -90,7 +97,7 @@ jobs:
           git config user.name "bequest-bot"
           git config user.email "actions@users.noreply.github.com"
           git add -A content/
-          git diff --cached --quiet || (git commit -m "Publish state $(TZ=America/New_York date +%Y-%m-%d) [skip ci]" && git push)
+          git diff --cached --quiet || (git pull --rebase origin main && git commit -m "Publish state $(TZ=America/New_York date +%Y-%m-%d) [skip ci]" && git push)
 
       # Friday runs: post the weekly summary issue after publishing.
       - name: Weekly summary (Fridays)
@@ -108,4 +115,88 @@ jobs:
         with:
           name: publish-log-${{ github.run_id }}
           path: publish.log
+          if-no-files-found: ignore
+
+  publish-fgc:
+    runs-on: ubuntu-latest
+    needs: publish
+    # Runs after the bequest job (serialized state commits), even if bequest
+    # failed or was skipped by brand selection.
+    if: >-
+      always() && (
+        github.event_name == 'schedule' ||
+        inputs.brand == 'fgc' || inputs.brand == 'all' || inputs.brand == ''
+      )
+    steps:
+      - name: DST gate — proceed only for the cron slot matching current ET offset
+        id: gate
+        run: |
+          ZONE=$(TZ=America/New_York date +%Z)
+          SCHED="${{ github.event.schedule }}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] \
+            || { [ "$ZONE" = "EDT" ] && [ "$SCHED" = "0 13 * * *" ]; } \
+            || { [ "$ZONE" = "EST" ] && [ "$SCHED" = "0 14 * * *" ]; }; then
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.go == 'true'
+
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.go == 'true'
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.gate.outputs.go == 'true'
+        run: npm ci
+
+      - name: Publish (Florida Glass — Facebook only)
+        id: publish
+        if: steps.gate.outputs.go == 'true'
+        env:
+          BRAND: fgc
+          META_ACCESS_TOKEN: ${{ secrets.FGC_META_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FGC_PAGE_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ARGS="--only fb"
+          [ -n "${{ inputs.date }}" ] && ARGS="$ARGS --date ${{ inputs.date }} --force"
+          node src/publish.js $ARGS 2>&1 | tee publish-fgc.log
+          exit ${PIPESTATUS[0]}
+
+      - name: Commit publish state
+        if: always() && steps.gate.outputs.go == 'true'
+        run: |
+          git config user.name "bequest-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A content/
+          git diff --cached --quiet || (git pull --rebase origin main && git commit -m "FGC publish state $(TZ=America/New_York date +%Y-%m-%d) [skip ci]" && git push)
+
+      # Warn (once per title) when the seeded FGC queue is nearly dry — whether
+      # to continue past the seeded window is a business call (buyout watch).
+      - name: FGC queue-low check
+        if: steps.gate.outputs.go == 'true' && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TODAY=$(TZ=America/New_York date +%Y-%m-%d)
+          LEFT=$(ls content/fgc/approved/*.json 2>/dev/null | xargs -n1 basename 2>/dev/null | sed 's/\.json//' | awk -v t="$TODAY" '$0 >= t' | wc -l | tr -d ' ')
+          echo "FGC posts remaining (today or later): $LEFT"
+          if [ "$LEFT" -le 3 ]; then
+            TITLE="FGC queue low: $LEFT scheduled posts remain"
+            if [ -z "$(gh issue list --state open --search "\"$TITLE\" in:title" --json number --jq '.[].number')" ]; then
+              gh issue create --title "$TITLE" --body "The Florida Glass approved queue is nearly empty. Decide whether to build the next batch (buyout status permitting) — see ClickUp task 86e38bd1m and ~/Downloads/bequest-social-cards-generator.py." || true
+            fi
+          fi
+
+      - name: Upload run log
+        if: always() && steps.gate.outputs.go == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-fgc-log-${{ github.run_id }}
+          path: publish-fgc.log
           if-no-files-found: ignore

@@ -1,0 +1,19 @@
+{
+  "id": "2026-10-30",
+  "date": "2026-10-30",
+  "facebook": {
+    "text": "Happy Halloween from the Florida Glass family! \ud83c\udf83 Have a safe and fun weekend, SW Florida."
+  },
+  "image": {
+    "files": [
+      "2026-10-30.jpg"
+    ],
+    "alt": "Happy Halloween card, Florida Glass Company"
+  },
+  "meta": {
+    "brand": "fgc",
+    "status": "approved",
+    "source": "batch-v2 (Tyler photos, 9/15)",
+    "generator": "claude-session"
+  }
+}
