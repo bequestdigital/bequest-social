@@ -2,18 +2,18 @@
   "id": "2026-10-12",
   "date": "2026-10-12",
   "facebook": {
-    "text": "\"Company was very professional and timely. Highly recommend.\" \u2014 Marlene Miller, 5-star review\n\nProfessional and on time isn't a bonus \u2014 it's the job. Showers, mirrors, doors, and everything in between. floridaglassco.com/contact-us/"
+    "text": "\"Hiram and crew did a great job installing 4 mirrors and 2 shower doors. Paid attention to detail and explained everything. Very professional, and we were very pleased. Highly recommend!\" \u2014 Joyce Hatfield\n\nShowers, mirrors, doors, and everything in between. floridaglassco.com/contact-us/"
   },
   "image": {
     "files": [
       "2026-10-12.jpg"
     ],
-    "alt": "Five-star review card: 'Company was very professional and timely. Highly recommend.' \u2014 Marlene Miller, over a dark-grid tiled shower"
+    "alt": "Five-star review card: 'Paid attention to detail and explained everything. Very professional, and we were very pleased.' \u2014 Joyce Hatfield, over a dark-grid tiled shower"
   },
   "meta": {
     "brand": "fgc",
     "status": "approved",
-    "source": "batch-v2 + real site/Google testimonials (9/16)",
+    "source": "approved testimonial set (Alex, 9/17)",
     "generator": "claude-session"
   }
 }

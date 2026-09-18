@@ -13,7 +13,7 @@ import path from 'node:path';
 import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import brand from '../brand.config.js';
-import { CONTENT, QUEUE, ROOT, readJSON, writeJSON, todayET, addDays, retry, xLength } from './util.js';
+import { CONTENT, QUEUE, ROOT, readJSON, writeJSON, todayET, addDays, retry, xLength, fixNumberedLists } from './util.js';
 
 const MODEL = process.env.MODEL || 'claude-sonnet-4-6';
 const TOKEN_BUDGET = Number(process.env.TOKEN_BUDGET || 150000);
@@ -182,9 +182,9 @@ async function generateOne(entry) {
     type: entry.type,
     hook: entry.hook,
     direction: entry.direction,
-    facebook: body.facebook,
-    instagram: body.instagram,
-    x: body.x,
+    facebook: body.facebook && { ...body.facebook, text: fixNumberedLists(body.facebook.text) },
+    instagram: body.instagram && { ...body.instagram, text: fixNumberedLists(body.instagram.text) },
+    x: body.x && { ...body.x, posts: (body.x.posts || []).map(fixNumberedLists) },
     image: body.image,
     meta: {
       status: 'queued',

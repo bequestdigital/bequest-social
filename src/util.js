@@ -75,6 +75,26 @@ export async function retry(fn, { attempts = 3, baseMs = 2000, label = 'operatio
   throw last;
 }
 
+// Normalize numbered lists in social copy so every platform renders them
+// literally: "N." at line start becomes "N)" (never auto-formatted/renumbered
+// by any client), and each contiguous list block is renumbered 1..n so a
+// generation slip can't ship 1,2,2,4 or a list starting at 3.
+export function fixNumberedLists(text) {
+  if (!text) return text;
+  const lines = String(text).split('\n');
+  let counter = 0;
+  for (let i = 0; i < lines.length; i++) {
+    const m = lines[i].match(/^(\s*)\d+[.)]\s+(.*)$/);
+    if (m) {
+      counter += 1;
+      lines[i] = `${m[1]}${counter}) ${m[2]}`;
+    } else if (lines[i].trim() !== '') {
+      counter = 0; // non-blank, non-list line ends the block (blank lines don't)
+    }
+  }
+  return lines.join('\n');
+}
+
 export function esc(s) {
   return String(s ?? '')
     .replace(/&/g, '&amp;')
