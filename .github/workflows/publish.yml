@@ -98,7 +98,7 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           node src/build-preview.js || true
           git add -A content/ docs/
-          git diff --cached --quiet || (git commit -m "Publish state $(TZ=America/New_York date +%Y-%m-%d) [skip ci]" && git push)
+          git diff --cached --quiet || (git commit -m "Publish state $(TZ=America/New_York date +%Y-%m-%d) [skip ci]" && (git push || (git pull --rebase origin main && git push)))
 
       # Friday runs: post the weekly summary issue after publishing.
       - name: Weekly summary (Fridays)
@@ -176,7 +176,7 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           node src/build-preview.js || true
           git add -A content/ docs/
-          git diff --cached --quiet || (git commit -m "FGC publish state $(TZ=America/New_York date +%Y-%m-%d) [skip ci]" && git push)
+          git diff --cached --quiet || (git commit -m "FGC publish state $(TZ=America/New_York date +%Y-%m-%d) [skip ci]" && (git push || (git pull --rebase origin main && git push)))
 
       # Warn (once per title) when the seeded FGC queue is nearly dry — whether
       # to continue past the seeded window is a business call (buyout watch).

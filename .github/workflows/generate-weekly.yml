@@ -97,7 +97,7 @@ jobs:
           node src/build-preview.js || true
           git add -A content/ docs/
           git commit -m "Auto-approve posts for week of $WEEK [skip ci]"
-          git push
+          git push || (git pull --rebase origin main && git push)
           node src/notify.js issue --title "Posts scheduled for week of $WEEK (auto-approved)" --body-file week-body.md || true
 
       - name: Open issue on failure
