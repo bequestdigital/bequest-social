@@ -1,0 +1,45 @@
+{
+  "id": "2026-09-23",
+  "date": "2026-09-23",
+  "week": 10,
+  "weekTheme": "What Makes a Campaign Work",
+  "type": "PROOF",
+  "hook": "Anatomy of a campaign: the numbers behind one that worked.",
+  "direction": "Anonymized stat-graphic walkthrough of real client results (permission-cleared): the goal, the sequence, the outcome, and one thing we'd change. All rendered as an AI-generated data graphic — no screenshots needed. Honesty about the weak spot builds more trust than a highlight reel.",
+  "facebook": {
+    "text": "Anatomy of a campaign: the numbers behind one that worked.\n\nA nonprofit client came to us with a clear goal: raise awareness for a year-end giving push and convert email subscribers into donors. Here's what the sequence looked like — and where it fell short.\n\nGoal: 15% increase in first-time donors over 6 weeks.\nSequence: 4-email nurture series, 2 social pushes, 1 landing page.\nOutcome: 22% lift in first-time donors. Open rates averaged 41%.\nWhat we'd change: The second email was too long. We lost readers before the ask.\n\nNo highlight reel. That's the honest version."
+  },
+  "instagram": {
+    "text": "Anatomy of a campaign: the numbers behind one that worked.\n\nA nonprofit client. A 6-week giving push. A clear goal and a sequence we can actually walk you through.\n\nGoal: 15% lift in first-time donors.\nSequence: 4 emails, 2 social posts, 1 landing page.\nOutcome: 22% lift. 41% average open rate.\nWhat we'd change: Email 2 was too long. People dropped before the ask.\n\nHonesty about the weak spot matters more than a clean highlight reel. Swipe through the graphic for the full breakdown.",
+    "hashtags": [
+      "nonprofitmarketing",
+      "ministrymarketing",
+      "nonprofitleadership",
+      "faithbasedbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Anatomy of a campaign that worked — and one thing we'd fix.\n\nGoal: +15% first-time donors. Outcome: +22%, 41% avg open rate.\nWeak spot: Email 2 was too long. Lost readers before the ask.\n\nHonest breakdown > highlight reel."
+    ]
+  },
+  "image": {
+    "template": "stat-card",
+    "data": {
+      "eyebrow": "Real Campaign Results",
+      "stat": "+22%",
+      "label": "Lift in first-time donors over 6 weeks",
+      "context": "Goal was 15%. 4-email sequence, 2 social pushes, 1 landing page. Avg open rate: 41%. Weak spot: Email 2 ran too long."
+    },
+    "alt": "Stat card showing a nonprofit campaign achieved a 22% lift in first-time donors against a 15% goal, with a note that the second email was too long.",
+    "files": [
+      "2026-09-23.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-09-20T14:03:50.860Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

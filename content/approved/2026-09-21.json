@@ -1,0 +1,51 @@
+{
+  "id": "2026-09-21",
+  "date": "2026-09-21",
+  "week": 10,
+  "weekTheme": "What Makes a Campaign Work",
+  "type": "TIP",
+  "hook": "Every campaign that works has 4 parts. Most that fail are missing #3.",
+  "direction": "Offer, audience, message, follow-up. #3 — message-audience fit — is the usual failure: the right cause pitched in the wrong words. Framework graphic, save-worthy.",
+  "facebook": {
+    "text": "Every campaign that works has 4 parts. Most that fail are missing #3.\n\nHere they are:\n1) Offer — what you're asking people to do\n2) Audience — who you're asking\n3) Message-audience fit — the right cause in the right words for that specific person\n4) Follow-up — what happens after they respond\n\nNumber 3 is where most campaigns quietly die. The cause is good. The offer is real. But the words land wrong because they were written for the wrong person. Save this and check your next campaign against it."
+  },
+  "instagram": {
+    "text": "Every campaign that works has 4 parts. Most that fail are missing #3.\n\n1) Offer\n2) Audience\n3) Message-audience fit\n4) Follow-up\n\nNumber 3 is the quiet killer. The cause is worthy. The offer is solid. But the words were written for the wrong person — or the right person in the wrong language.\n\nSave this. Run your next campaign through it before you launch.",
+    "hashtags": [
+      "nonprofitmarketing",
+      "churchmarketing",
+      "ministrymarketing",
+      "christianbusiness",
+      "smallbusinessmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Every campaign that works has 4 parts: offer, audience, message-audience fit, follow-up. Most failures happen at #3 — the right cause pitched in the wrong words to the right people. Check before you launch."
+    ]
+  },
+  "image": {
+    "template": "tip-card",
+    "data": {
+      "eyebrow": "What Makes a Campaign Work",
+      "title": "4 Parts Every Working Campaign Has",
+      "items": [
+        "1. Offer — what you're asking people to do",
+        "2. Audience — who you're asking",
+        "3. Message-audience fit — right words for that person",
+        "4. Follow-up — what happens after they respond",
+        "Most failures? Missing #3."
+      ]
+    },
+    "alt": "A numbered tip card listing the four parts of a working campaign — offer, audience, message-audience fit, and follow-up — with a note that missing number three is the most common reason campaigns fail.",
+    "files": [
+      "2026-09-21.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-09-20T14:03:38.586Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

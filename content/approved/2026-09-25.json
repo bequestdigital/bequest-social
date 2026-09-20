@@ -1,0 +1,44 @@
+{
+  "id": "2026-09-25",
+  "date": "2026-09-25",
+  "week": 10,
+  "weekTheme": "What Makes a Campaign Work",
+  "type": "POV",
+  "hook": "One campaign finished beats five campaigns started.",
+  "direction": "Against spray-and-pray. Focus, frequency, follow-through — and the discipline to complete what you begin. Ties to why stretched-thin orgs need a partner who finishes.",
+  "facebook": {
+    "text": "One campaign finished beats five campaigns started.\n\nMost stretched-thin organizations don't have a strategy problem. They have a follow-through problem. A good idea gets launched, life gets busy, and the campaign quietly dies halfway through.\n\nFocus, frequency, follow-through. That's what makes a campaign actually work. Not the concept — the completion.\n\nIf your team doesn't have the bandwidth to finish what you start, that's not a character flaw. It's a capacity problem. And a partner who finishes is worth more than a plan that stalls."
+  },
+  "instagram": {
+    "text": "One campaign finished beats five campaigns started.\n\nMost orgs don't fail for lack of ideas. They fail for lack of follow-through.\n\nA campaign that runs halfway does half the work — and usually less, because it never builds the frequency people need to actually respond.\n\nFocus on one thing. See it through. That discipline is what separates campaigns that move people from campaigns that just get posted.\n\nIf your team is stretched too thin to finish, that's what a good partner is for.",
+    "hashtags": [
+      "nonprofitmarketing",
+      "churchcommunications",
+      "ministrymarketing",
+      "smallbusinessmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "One campaign finished beats five campaigns started. Focus, frequency, follow-through — that's what makes a campaign work. The concept is never the hard part. Completion is."
+    ]
+  },
+  "image": {
+    "template": "quote-card",
+    "data": {
+      "quote": "One campaign finished beats five campaigns started.",
+      "attribution": null,
+      "eyebrow": "What Makes a Campaign Work"
+    },
+    "alt": "Quote card with the text 'One campaign finished beats five campaigns started' on a clean, minimal background with the week theme label above.",
+    "files": [
+      "2026-09-25.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-09-20T14:04:01.626Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
