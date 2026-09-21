@@ -2,7 +2,7 @@
   "id": "2026-09-21",
   "date": "2026-09-21",
   "facebook": {
-    "text": "Your bathroom is the first room you see every morning. A frameless glass shower makes it feel bigger, brighter, and easier to clean \u2014 no metal frame collecting grime, no curtain to wash. Custom-measured and installed for SW Florida homes. See what's possible: floridaglassco.com/services/glass-shower/"
+    "text": "Your bathroom is the first room you see every morning. A frameless glass shower makes it feel bigger, brighter, and easier to clean — no metal frame collecting grime, no curtain to wash. Custom-measured and installed for SW Florida homes. See what's possible: floridaglassco.com/services/glass-shower/"
   },
   "image": {
     "files": [
@@ -15,5 +15,12 @@
     "status": "approved",
     "source": "batch-v2 (Tyler photos, 9/15)",
     "generator": "claude-session"
+  },
+  "results": {
+    "fb": {
+      "ok": false,
+      "error": "Graph API /105187522086021/photos: {\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"ApwlFz1kRrk4nO88-2On6TB\"}",
+      "at": "2026-09-21T18:23:57.026Z"
+    }
   }
 }
