@@ -19,8 +19,8 @@
   "results": {
     "fb": {
       "ok": false,
-      "error": "Graph API /105187522086021/photos: {\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"ApwlFz1kRrk4nO88-2On6TB\"}",
-      "at": "2026-09-21T18:23:57.026Z"
+      "error": "Graph API /105187522086021/photos: {\"message\":\"(#200) Subject does not have permission to post photos on this page\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AVCI-2bHDqJ_DGoMRsAAWnL\"}",
+      "at": "2026-09-22T01:40:51.870Z"
     }
   }
 }
