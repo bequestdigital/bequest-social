@@ -23,7 +23,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { TwitterApi } from 'twitter-api-v2';
-import { APPROVED, PUBLISHED, ROOT, BRAND, readJSON, writeJSON, todayET, retry, xLength } from './util.js';
+import { APPROVED, PUBLISHED, ROOT, BRAND, readJSON, writeJSON, todayET, addDays, retry, xLength } from './util.js';
 import { openIssue } from './notify.js';
 
 const GRAPH = 'https://graph.facebook.com/v21.0';
@@ -34,6 +34,7 @@ function parseArgs() {
   for (let i = 0; i < a.length; i++) {
     if (a[i] === '--date' && a[i + 1]) out.date = a[++i];
     else if (a[i] === '--only' && a[i + 1]) out.only = a[++i].split(',').map((s) => s.trim()).filter(Boolean);
+    else if (a[i] === '--catch-up' && a[i + 1]) out.catchUp = parseInt(a[++i], 10) || 0;
     else if (a[i] === '--dry-run') out.dryRun = true;
     else if (a[i] === '--force') out.force = true;
   }
@@ -329,12 +330,11 @@ function validate(pkg, imagePaths, opts) {
   return errors;
 }
 
-async function main() {
-  const opts = parseArgs();
-  const file = path.join(APPROVED, `${opts.date}.json`);
+async function publishOne(date, opts) {
+  const file = path.join(APPROVED, `${date}.json`);
 
   if (!fs.existsSync(file)) {
-    console.log(`No approved post for ${opts.date} (${path.relative(ROOT, file)} absent) — nothing to publish.`);
+    console.log(`No approved post for ${date} (${path.relative(ROOT, file)} absent) — nothing to publish.`);
     return;
   }
 
@@ -434,6 +434,31 @@ async function main() {
     }
     throw new Error(`Publish incomplete for ${pkg.date}: ${failures.map((f) => f.platform).join(', ')} failed`);
   }
+}
+
+// Publish any missed recent days first (oldest→newest), then today. A day that
+// failed (dead token, outage) self-heals on the next scheduled run instead of
+// silently staying in approved/ forever.
+async function main() {
+  const opts = parseArgs();
+  const dates = [];
+  for (let i = opts.catchUp || 0; i >= 1; i--) {
+    const d = addDays(opts.date, -i);
+    if (fs.existsSync(path.join(APPROVED, `${d}.json`))) dates.push({ d, catchUp: true });
+  }
+  dates.push({ d: opts.date, catchUp: false });
+
+  const failures = [];
+  for (const { d, catchUp } of dates) {
+    if (catchUp) console.log(`[catch-up] ${d} is approved but was never fully published — publishing now.`);
+    try {
+      await publishOne(d, catchUp ? { ...opts, force: true } : opts);
+    } catch (e) {
+      failures.push(`${d}: ${e.message}`);
+      console.error(`Publish for ${d} failed — continuing with remaining dates.`);
+    }
+  }
+  if (failures.length) throw new Error(failures.join('\n'));
 }
 
 main().catch((e) => {

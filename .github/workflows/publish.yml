@@ -68,6 +68,14 @@ jobs:
         if: steps.gate.outputs.go == 'true'
         run: npm ci
 
+      - name: Meta token preflight
+        if: steps.gate.outputs.go == 'true'
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+        run: |
+          R=$(curl -s "https://graph.facebook.com/v21.0/me?access_token=$META_ACCESS_TOKEN")
+          echo "$R" | grep -q '"id"' || { echo "::error::Bequest Meta token is DEAD or blocked — fix the token before anything can post. Response: $R"; exit 1; }
+
       - name: Publish
         id: publish
         if: steps.gate.outputs.go == 'true'
@@ -83,7 +91,7 @@ jobs:
           LINKEDIN_ORG_ID: ${{ secrets.LINKEDIN_ORG_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          ARGS=""
+          ARGS="--catch-up 3"
           [ -n "${{ inputs.date }}" ] && ARGS="$ARGS --date ${{ inputs.date }} --force"
           [ -n "${{ inputs.only }}" ] && ARGS="$ARGS --only ${{ inputs.only }}"
           node src/publish.js $ARGS 2>&1 | tee publish.log
@@ -155,6 +163,14 @@ jobs:
         if: steps.gate.outputs.go == 'true'
         run: npm ci
 
+      - name: Meta token preflight
+        if: steps.gate.outputs.go == 'true'
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+        run: |
+          R=$(curl -s "https://graph.facebook.com/v21.0/me?access_token=$META_ACCESS_TOKEN")
+          echo "$R" | grep -q '"id"' || { echo "::error::Meta token is DEAD or blocked — FGC cannot post. Response: $R"; exit 1; }
+
       - name: Publish (Florida Glass — Facebook only)
         id: publish
         if: steps.gate.outputs.go == 'true'
@@ -167,7 +183,7 @@ jobs:
           FB_PAGE_ID: ${{ secrets.FGC_PAGE_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          ARGS="--only fb"
+          ARGS="--only fb --catch-up 3"
           [ -n "${{ inputs.date }}" ] && ARGS="$ARGS --date ${{ inputs.date }} --force"
           node src/publish.js $ARGS 2>&1 | tee publish-fgc.log
           exit ${PIPESTATUS[0]}
