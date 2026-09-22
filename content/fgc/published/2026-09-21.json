@@ -12,15 +12,15 @@
   },
   "meta": {
     "brand": "fgc",
-    "status": "approved",
+    "status": "published",
     "source": "batch-v2 (Tyler photos, 9/15)",
     "generator": "claude-session"
   },
   "results": {
     "fb": {
-      "ok": false,
-      "error": "Graph API /105187522086021/photos: {\"message\":\"(#200) Subject does not have permission to post photos on this page\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AVCI-2bHDqJ_DGoMRsAAWnL\"}",
-      "at": "2026-09-22T01:40:51.870Z"
+      "ok": true,
+      "id": "105187522086021_1109587594997237",
+      "at": "2026-09-22T08:51:06.565Z"
     }
   }
 }
