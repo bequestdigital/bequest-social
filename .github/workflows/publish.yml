@@ -160,7 +160,10 @@ jobs:
         if: steps.gate.outputs.go == 'true'
         env:
           BRAND: fgc
-          META_ACCESS_TOKEN: ${{ secrets.FGC_META_ACCESS_TOKEN }}
+          # The dedicated FGC app got "API access blocked" by Meta on 9/21 —
+          # both brands now post via the established Bequest system-user token
+          # (the FGC page lives in the same business portfolio).
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           FB_PAGE_ID: ${{ secrets.FGC_PAGE_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
