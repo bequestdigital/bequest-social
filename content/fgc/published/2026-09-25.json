@@ -1,0 +1,26 @@
+{
+  "id": "2026-09-25",
+  "date": "2026-09-25",
+  "facebook": {
+    "text": "A well-placed custom mirror does what a renovation does — doubles the light, opens the room — at a fraction of the cost. Cut to size, framed or frameless, installed right. floridaglassco.com/services/mirrors/"
+  },
+  "image": {
+    "files": [
+      "2026-09-25.jpg"
+    ],
+    "alt": "Double vanity mirrors with sconce lighting, Florida Glass Company branding"
+  },
+  "meta": {
+    "brand": "fgc",
+    "status": "published",
+    "source": "batch-v2 (Tyler photos, 9/15)",
+    "generator": "claude-session"
+  },
+  "results": {
+    "fb": {
+      "ok": true,
+      "id": "105187522086021_1112682804687716",
+      "at": "2026-09-25T17:38:32.675Z"
+    }
+  }
+}
