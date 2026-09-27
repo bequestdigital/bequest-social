@@ -55,11 +55,12 @@
         "alreadyGone": true
       },
       "ig": {
-        "ok": false,
+        "ok": true,
         "id": "18030465764899231",
         "manual": true,
-        "permalink": null,
-        "error": "Instagram API cannot delete published media — delete by hand"
+        "already_gone": true,
+        "verified_at": "2026-09-27",
+        "note": "Not deleted by this run — the IG media was already absent from the @mybequestdigital grid (no tile between 09-18 and 09-14) when checked on 9/27, and the Facebook copy also returned already-gone. Both were removed before this session, presumably by Alex after the 9/26 audit report. Only the X copy was still outstanding."
       },
       "x": [
         {
@@ -67,7 +68,8 @@
           "ok": true
         }
       ]
-    }
+    },
+    "already_removed_before_retraction": "fb+ig"
   },
   "results": {
     "fb": {
