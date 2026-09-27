@@ -78,6 +78,22 @@ jobs:
         run: |
           git config user.name "bequest-bot"
           git config user.email "actions@users.noreply.github.com"
+          # Commit content/ ALONE first. docs/index.html is generated, so two
+          # concurrent runs always rewrite the same lines and the rebase dies
+          # with a conflict — which silently loses the whole retraction record
+          # while the posts are already deleted on the platforms. Content files
+          # are per-date and don't collide.
+          git add -A content/
+          if ! git diff --cached --quiet; then
+            git commit -m "Retract ${{ inputs.date }} [skip ci]"
+            git push || (git pull --rebase origin main && git push)
+          fi
+          # Rebuild the preview from whatever state won the race, and never let
+          # a conflict here throw away the content commit above.
+          git pull --rebase origin main || git rebase --abort || true
           node src/build-preview.js || true
-          git add -A content/ docs/
-          git diff --cached --quiet || (git commit -m "Retract ${{ inputs.date }} [skip ci]" && (git push || (git pull --rebase origin main && git push)))
+          git add -A docs/
+          if ! git diff --cached --quiet; then
+            git commit -m "Rebuild preview after retracting ${{ inputs.date }} [skip ci]"
+            git push || (git checkout --theirs docs/index.html 2>/dev/null; git pull --rebase -X theirs origin main && node src/build-preview.js && git add -A docs/ && (git diff --cached --quiet || git commit -m "Rebuild preview [skip ci]") && git push) || echo "::warning::Preview rebuild not pushed; content state is committed. Next run will refresh it."
+          fi
