@@ -301,18 +301,38 @@ async function main() {
 
   console.log(`Generating ${targets.length} post(s): ${targets.map((t) => t.date).join(', ')}`);
   const files = [];
+  const failures = [];
   for (const entry of targets) {
-    const pkg = await generateOne(entry);
+    // One date that can't satisfy validation must not take the rest of the
+    // week down with it. Record it, keep going, and only fail the run if
+    // nothing at all generated — a two-post week beats a zero-post week plus
+    // a job-failure email.
+    let pkg;
+    try {
+      pkg = await generateOne(entry);
+    } catch (e) {
+      failures.push({ date: entry.date, message: e.message });
+      console.log(`::warning title=Post not generated::${entry.date} failed after retries — ${e.message}`);
+      continue;
+    }
     const file = path.join(QUEUE, `${entry.date}.json`);
     writeJSON(file, pkg);
     files.push(path.relative(ROOT, file));
     console.log(`  wrote ${path.relative(ROOT, file)} (${pkg.image.template}) — tokens so far: ${tokensUsed}`);
   }
 
+  if (failures.length && !files.length) {
+    throw new Error(
+      `Every target date failed to generate: ${failures.map((f) => `${f.date} (${f.message})`).join(' | ')}`
+    );
+  }
+
   // Render images for everything just generated.
-  execFileSync('node', [path.join(ROOT, 'src', 'generate-image.js'), ...files.map((f) => path.join(ROOT, f))], {
-    stdio: 'inherit',
-  });
+  if (files.length) {
+    execFileSync('node', [path.join(ROOT, 'src', 'generate-image.js'), ...files.map((f) => path.join(ROOT, f))], {
+      stdio: 'inherit',
+    });
+  }
 
   if (opts.manifest) {
     writeJSON(opts.manifest, {
@@ -320,6 +340,10 @@ async function main() {
       week: targets[0].week,
       theme: targets[0].weekTheme,
       files,
+      // Surfaced in the weekly FYI issue so a quietly-skipped date is visible
+      // rather than just missing.
+      failures,
+      blocked_proof_dates: ungated.map((t) => t.date),
       tokens_used: tokensUsed,
     });
   }
