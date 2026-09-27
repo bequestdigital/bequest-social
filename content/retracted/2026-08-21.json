@@ -41,10 +41,31 @@
     ]
   },
   "meta": {
-    "status": "published",
+    "status": "retracted",
     "generated_at": "2026-08-16T10:29:05.510Z",
     "model": "claude-sonnet-4-6",
-    "generator": "api"
+    "generator": "api",
+    "retracted_reason": "Doubled numbering on the tip-card: the template renders its own 1..n column and the item text also carried '1.', so the graphic read '1  1. ...'. Alex's call to pull.",
+    "retracted_at": "2026-09-27T11:34:20.533Z",
+    "retraction_results": {
+      "fb": {
+        "ok": true,
+        "id": "996611156867180_122126394903264758"
+      },
+      "ig": {
+        "ok": false,
+        "id": "18188733622401939",
+        "manual": true,
+        "permalink": "https://www.instagram.com/p/DcTdkqnm7Eq/",
+        "error": "Instagram API cannot delete published media — delete by hand"
+      },
+      "x": [
+        {
+          "id": "2090795520134725967",
+          "ok": true
+        }
+      ]
+    }
   },
   "results": {
     "fb": {
