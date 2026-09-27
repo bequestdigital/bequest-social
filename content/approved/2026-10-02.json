@@ -1,0 +1,44 @@
+{
+  "id": "2026-10-02",
+  "date": "2026-10-02",
+  "week": 11,
+  "weekTheme": "Local Visibility",
+  "type": "ASK",
+  "hook": "October is planning season. If 2027 is going to look different, the plan gets made now.",
+  "direction": "Seasonal urgency, no hype. Businesses set budgets; ministries plan year-end. CTA: strategy call before the calendar fills.",
+  "facebook": {
+    "text": "October is planning season. If 2027 is going to look different, the plan gets made now.\n\nBudgets get set this month. Ministry calendars get built. The organizations that show up strong in January started the work in October — not December.\n\nIf your local visibility, website, or digital presence needs attention next year, now is the time to talk. We have a limited number of strategy calls available before the calendar fills.\n\nReach out and let's figure out what 2027 should look like for you."
+  },
+  "instagram": {
+    "text": "October is planning season. If 2027 is going to look different, the plan gets made now.\n\nBudgets get finalized. Ministry calendars take shape. The organizations that hit the ground running in January did the planning work in Q4 — not at the last minute.\n\nWe're taking strategy calls now, before the schedule fills up. If your digital presence needs to be in a different place next year, this is the window.\n\nLink in bio to get on the calendar.",
+    "hashtags": [
+      "smallbusinessmarketing",
+      "nonprofitleadership",
+      "ministrymarketing",
+      "christianbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "October is planning season. If 2027 is going to look different, the plan gets made now — not in December. We're taking strategy calls before the calendar fills. Reach out."
+    ]
+  },
+  "image": {
+    "template": "quote-card",
+    "data": {
+      "quote": "If 2027 is going to look different, the plan gets made now.",
+      "attribution": null,
+      "eyebrow": "Local Visibility"
+    },
+    "alt": "Quote card with the text 'If 2027 is going to look different, the plan gets made now.' on a simple, bold background with the Bequest Digital brand.",
+    "files": [
+      "2026-10-02.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-09-27T15:04:37.957Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

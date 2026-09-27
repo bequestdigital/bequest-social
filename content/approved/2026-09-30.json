@@ -1,0 +1,51 @@
+{
+  "id": "2026-09-30",
+  "date": "2026-09-30",
+  "week": 11,
+  "weekTheme": "Local Visibility",
+  "type": "TIP",
+  "hook": "Reviews are the new word of mouth. Here's how to get more without begging.",
+  "direction": "Simple system: ask at the moment of gratitude, send the direct link, make it a 60-second task. One review a week compounds into local dominance. For churches: Google reviews are the new front door.",
+  "facebook": {
+    "text": "Reviews are the new word of mouth. Here's how to get more without begging.\n\nThe system is simple: ask at the moment of gratitude — right after someone thanks you, completes a project, or walks out of a great service. Send them a direct link to your Google review page. Make it a 60-second task.\n\nOne review a week. That's it. Over a year, that compounds into the kind of local credibility money can't buy.\n\nFor churches especially: your Google listing is the new front door. People search before they visit. What they find matters."
+  },
+  "instagram": {
+    "text": "Reviews are the new word of mouth. Here's how to get more without begging.\n\nThe system:\n→ Ask at the moment of gratitude\n→ Send the direct link (no hunting required)\n→ Make it a 60-second task\n\nOne review a week compounds. Over a year, that's local credibility that's hard to compete with.\n\nFor churches: your Google listing is the new front door. People search before they visit. What they find when they do matters more than you think.",
+    "hashtags": [
+      "churchmarketing",
+      "smallbusinessmarketing",
+      "faithbasedbusiness",
+      "churchcommunications",
+      "ministrymarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Reviews are the new word of mouth. The system: ask at the moment of gratitude, send the direct link, make it 60 seconds. One review a week compounds into local dominance. For churches — Google is the new front door."
+    ]
+  },
+  "image": {
+    "template": "tip-card",
+    "data": {
+      "eyebrow": "Local Visibility",
+      "title": "Get More Reviews Without Begging",
+      "items": [
+        "Ask at the moment of gratitude",
+        "Send a direct link — no hunting",
+        "Make it a 60-second task",
+        "One review a week compounds fast",
+        "For churches: Google is your front door"
+      ]
+    },
+    "alt": "Tip card listing a five-step system for getting more Google reviews consistently, on a clean branded background.",
+    "files": [
+      "2026-09-30.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-09-27T15:04:28.030Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
