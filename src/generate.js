@@ -106,11 +106,49 @@ export function validatePackage(pkg, entry) {
       else if (!['columns', 'circles'].includes(data.mode)) errors.push('diagram needs mode columns|circles');
     }
     if (tmpl === 'stat-card' && (!data.stat || !data.context)) errors.push('stat-card needs data.stat and data.context');
+
+    // Copy must not promise an interaction the asset can't deliver. Only the
+    // carousel template renders multiple frames; every other template is one
+    // image, so "swipe through the graphic" points the reader at nothing.
+    if (tmpl !== 'carousel') {
+      const copy = [pkg?.facebook?.text, pkg?.instagram?.text, ...(pkg?.x?.posts || [])].join('\n');
+      const m = copy.match(/\b(swipe|tap through|next slide|slide \d|first slide|last slide)\b/i);
+      if (m) {
+        errors.push(
+          `copy says "${m[1]}" but image.template is ${tmpl} (single frame) — use carousel or drop the swipe language`
+        );
+      }
+    }
+
+    // tip-card numbers every row it is given, so a title promising "4 Parts"
+    // beside 5 rendered rows reads as a miscount on the graphic.
+    if (tmpl === 'tip-card' && Array.isArray(data.items)) {
+      const n = String(data.title || '').match(/\b(\d+)\b/);
+      if (n && Number(n[1]) !== data.items.length) {
+        errors.push(
+          `tip-card title says ${n[1]} but data.items has ${data.items.length} rows (every row gets a number)`
+        );
+      }
+    }
   }
   if (!pkg?.image?.alt) errors.push('image.alt missing');
 
   if (entry && pkg?.date && pkg.date !== entry.date) errors.push(`package date ${pkg.date} != calendar date ${entry.date}`);
   return errors;
+}
+
+// ---- evidence gate ----
+// PROOF posts make factual claims about real clients — results, figures,
+// testimonial quotes. The model has no source for those, so left ungated it
+// invents plausible ones and the zero-touch pipeline publishes them (this is
+// exactly what shipped on 2026-09-23: a "+22% lift, 41% open rate" nonprofit
+// campaign that never existed). A PROOF date only generates when a human has
+// dropped its verified facts in content/evidence/<date>.json.
+export const EVIDENCE = path.join(CONTENT, 'evidence');
+
+export function readEvidence(date) {
+  const f = path.join(EVIDENCE, `${date}.json`);
+  return fs.existsSync(f) ? readJSON(f) : null;
 }
 
 // ---- Anthropic call ----
@@ -130,6 +168,12 @@ ${JSON.stringify(entry, null, 2)}
 Approved IG hashtag list: ${JSON.stringify(brand.hashtags)}
 
 ${SCHEMA_INSTRUCTIONS}`;
+  const evidence = readEvidence(entry.date);
+  if (evidence) {
+    user += `\n\nVerified evidence for this post (human-supplied, permission-cleared). Every figure, quote, client
+reference and outcome in your copy must come from this object verbatim. Do not add, round, embellish or
+infer any other number or quotation:\n${JSON.stringify(evidence, null, 2)}`;
+  }
   if (previousErrors?.length) {
     user += `\n\nYour previous attempt failed validation with these errors — fix them:\n- ${previousErrors.join('\n- ')}`;
   }
@@ -232,6 +276,21 @@ async function main() {
   targets = targets.filter((t) => !hasPackage(t.date));
   if (skipped.length) {
     console.log(`Skipping already-generated date(s): ${skipped.map((t) => t.date).join(', ')}`);
+  }
+
+  // Evidence gate: a PROOF slot with no verified facts on disk does not get
+  // generated. Skipping leaves a hole in the calendar; generating would put
+  // invented client results on three public channels. The hole is the cheaper
+  // failure, and ::error makes it loud in the run log.
+  const ungated = targets.filter((t) => t.type === 'PROOF' && !readEvidence(t.date));
+  if (ungated.length) {
+    targets = targets.filter((t) => !ungated.includes(t));
+    for (const t of ungated) {
+      console.log(
+        `::error title=PROOF post blocked::${t.date} is a PROOF slot with no content/evidence/${t.date}.json. ` +
+          `Add the permission-cleared figures/quotes and re-run, or the date stays empty. Hook: "${t.hook}"`
+      );
+    }
   }
 
   if (!targets.length) {

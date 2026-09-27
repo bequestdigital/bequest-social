@@ -95,6 +95,15 @@ export function fixNumberedLists(text) {
   return lines.join('\n');
 }
 
+// Card templates that auto-number their rows (tip-card) must receive bare item
+// text. The model routinely writes "1. Offer — ..." anyway, which renders as
+// "1  1. Offer — ..." on the graphic. Strip any leading ordinal so the template
+// is the single source of numbering. Leaves "3 families housed" alone — only a
+// digit followed by . or ) and whitespace counts as an ordinal marker.
+export function stripLeadingOrdinal(text) {
+  return String(text ?? '').replace(/^\s*\d+[.)]\s+/, '');
+}
+
 export function esc(s) {
   return String(s ?? '')
     .replace(/&/g, '&amp;')

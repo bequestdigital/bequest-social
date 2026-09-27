@@ -8,7 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import puppeteer from 'puppeteer-core';
 import brand from '../brand.config.js';
-import { ROOT, QUEUE, readJSON, writeJSON, esc, findChrome } from './util.js';
+import { ROOT, QUEUE, readJSON, writeJSON, esc, findChrome, stripLeadingOrdinal } from './util.js';
 
 const TPL_DIR = path.join(ROOT, 'templates');
 
@@ -78,8 +78,13 @@ const builders = {
 
   'tip-card'(pkg) {
     const d = pkg.image.data;
+    // The .num column IS the numbering — strip any ordinal the model wrote into
+    // the item text or the card renders "1  1. Offer — ...".
     const items = d.items
-      .map((t, i) => `<div class="item"><div class="num">${i + 1}</div><div class="text">${esc(t)}</div></div>`)
+      .map(
+        (t, i) =>
+          `<div class="item"><div class="num">${i + 1}</div><div class="text">${esc(stripLeadingOrdinal(t))}</div></div>`
+      )
       .join('');
     return [
       {
