@@ -1,0 +1,77 @@
+# Manual takedown: delete a published post from the platforms it went out on.
+#
+# The undo for the zero-touch pipeline. Runs here rather than locally so the
+# platform tokens stay in CI. Deletes by the post ids recorded in the package's
+# results block, then moves the package to content/<brand>/retracted/ with the
+# reason, and rebuilds the preview page so it stops showing a dead post.
+name: Retract
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Date of the published post to take down (YYYY-MM-DD)'
+        required: true
+      reason:
+        description: 'Why it is coming down — written into the retraction record'
+        required: true
+      only:
+        description: 'Comma-separated platforms (fb,ig,x). Empty = all channels it posted to.'
+        required: false
+        default: ''
+      brand:
+        description: 'Which brand (bequest | fgc)'
+        required: false
+        default: 'bequest'
+      dry_run:
+        description: 'Print what would be deleted and change nothing'
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish # never race a publish run's state commit
+  cancel-in-progress: false
+
+jobs:
+  retract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Retract
+        env:
+          BRAND: ${{ inputs.brand }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ inputs.brand == 'fgc' && secrets.FGC_PAGE_ID || secrets.FB_PAGE_ID }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+        run: |
+          ARGS="--date ${{ inputs.date }} --reason ${{ toJSON(inputs.reason) }}"
+          [ -n "${{ inputs.only }}" ] && ARGS="$ARGS --only ${{ inputs.only }}"
+          [ "${{ inputs.dry_run }}" = "true" ] && ARGS="$ARGS --dry-run"
+          node src/retract.js $ARGS
+
+      # Commit even on failure: any channel that DID delete must be recorded,
+      # or a retry would report a post as live when it is already gone.
+      - name: Commit retraction state
+        if: always() && inputs.dry_run != true
+        run: |
+          git config user.name "bequest-bot"
+          git config user.email "actions@users.noreply.github.com"
+          node src/build-preview.js || true
+          git add -A content/ docs/
+          git diff --cached --quiet || (git commit -m "Retract ${{ inputs.date }} [skip ci]" && (git push || (git pull --rebase origin main && git push)))
