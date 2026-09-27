@@ -50,6 +50,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Inputs go through env, never interpolated into the command line — the
+      # reason is free text and would otherwise break the shell (or inject).
       - name: Retract
         env:
           BRAND: ${{ inputs.brand }}
@@ -59,11 +61,15 @@ jobs:
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          IN_DATE: ${{ inputs.date }}
+          IN_REASON: ${{ inputs.reason }}
+          IN_ONLY: ${{ inputs.only }}
+          IN_DRY: ${{ inputs.dry_run }}
         run: |
-          ARGS="--date ${{ inputs.date }} --reason ${{ toJSON(inputs.reason) }}"
-          [ -n "${{ inputs.only }}" ] && ARGS="$ARGS --only ${{ inputs.only }}"
-          [ "${{ inputs.dry_run }}" = "true" ] && ARGS="$ARGS --dry-run"
-          node src/retract.js $ARGS
+          set -- --date "$IN_DATE" --reason "$IN_REASON"
+          [ -n "$IN_ONLY" ] && set -- "$@" --only "$IN_ONLY"
+          [ "$IN_DRY" = "true" ] && set -- "$@" --dry-run
+          node src/retract.js "$@"
 
       # Commit even on failure: any channel that DID delete must be recorded,
       # or a retry would report a post as live when it is already gone.
