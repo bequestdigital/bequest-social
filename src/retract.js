@@ -134,7 +134,7 @@ async function main() {
       const permalink = await igPermalink(id, token);
       outcome.ig = { ok: false, id, manual: true, permalink, error: 'Instagram API cannot delete published media — delete by hand' };
       console.log(
-        `::error title=Instagram takedown is manual::The IG Graph API cannot delete published media. ` +
+        `::notice title=Instagram takedown is manual::The IG Graph API cannot delete published media. ` +
           `Delete this post by hand in the Instagram app or on the web: ${permalink || `media id ${id}`}`
       );
       continue;
@@ -178,11 +178,33 @@ async function main() {
   }
   console.log(`Moved package + assets to ${path.relative(ROOT, RETRACTED)}/`);
 
-  const failed = Object.entries(outcome).some(([, v]) => (Array.isArray(v) ? v.some((t) => !t.ok) : !v.ok));
-  if (failed) {
-    console.log('::error title=Manual takedown needed::At least one channel did not delete — remove it by hand.');
+  // Instagram can NEVER be deleted through the API, so counting it as a failure
+  // marks every single retraction run red and mails a "job failed" notice for
+  // work that actually succeeded. A known-manual channel is an expected
+  // outcome, not an error. Only a genuine surprise — FB or X refusing — fails
+  // the run and earns an email.
+  const manual = [];
+  const broken = [];
+  for (const [key, v] of Object.entries(outcome)) {
+    const entries = Array.isArray(v) ? v : [v];
+    for (const t of entries) {
+      if (t.ok) continue;
+      (t.manual ? manual : broken).push(`${key} ${t.id}`);
+    }
+  }
+
+  if (manual.length) {
+    // ::notice, not ::error — shows in the run log without turning the job red.
+    console.log(
+      `::notice title=Delete these on Instagram by hand::${manual.join(', ')} — ` +
+        `${outcome.ig?.permalink || 'open the post on @mybequestdigital'}`
+    );
+  }
+  if (broken.length) {
+    console.log(`::error title=Retract incomplete::${broken.join(', ')} did not delete — remove by hand.`);
     process.exit(1);
   }
+  console.log(manual.length ? 'Done — API channels retracted; Instagram needs a manual delete.' : 'Done — all channels retracted.');
 }
 
 main().catch((e) => {
