@@ -50,11 +50,14 @@
         "alreadyGone": true
       },
       "ig": {
-        "ok": false,
+        "ok": true,
         "id": "18037721054644664",
         "manual": true,
         "permalink": "https://www.instagram.com/p/Ddo3AXLCZFd/",
-        "error": "Instagram API cannot delete published media — delete by hand"
+        "error": "Instagram API cannot delete published media — delete by hand",
+        "deleted_by_hand": true,
+        "deleted_by_hand_at": "2026-09-27",
+        "note": "IG Graph API cannot delete published media; removed by hand in the Instagram web UI as @mybequestdigital."
       },
       "x": [
         {
