@@ -66,6 +66,17 @@ async function graphDelete(id, token) {
   return { ok: true };
 }
 
+// Best-effort permalink so the manual IG takedown is one click, not a hunt.
+async function igPermalink(id, token) {
+  try {
+    const qs = new URLSearchParams({ fields: 'permalink', access_token: token });
+    const data = await fetch(`${GRAPH}/${id}?${qs}`).then((r) => r.json());
+    return data?.permalink || null;
+  } catch {
+    return null;
+  }
+}
+
 async function deleteX(ids) {
   const client = new TwitterApi({
     appKey: process.env.X_API_KEY,
@@ -89,8 +100,13 @@ async function deleteX(ids) {
 
 async function main() {
   const opts = parseArgs();
-  const pkgPath = path.join(PUBLISHED, `${opts.date}.json`);
-  if (!fs.existsSync(pkgPath)) throw new Error(`No published package at ${path.relative(ROOT, pkgPath)}`);
+  // A partial retraction (e.g. FB+X down, IG still up) already moved the
+  // package to retracted/, so re-running to finish the job must still find it.
+  let pkgPath = path.join(PUBLISHED, `${opts.date}.json`);
+  if (!fs.existsSync(pkgPath)) pkgPath = path.join(RETRACTED, `${opts.date}.json`);
+  if (!fs.existsSync(pkgPath)) {
+    throw new Error(`No package for ${opts.date} in published/ or retracted/`);
+  }
   const pkg = readJSON(pkgPath);
   const results = pkg.results || {};
 
@@ -109,6 +125,20 @@ async function main() {
   const outcome = {};
 
   for (const [key, id] of plan) {
+    // Instagram's Graph API has no delete endpoint for published media — only
+    // comments can be deleted. No token or scope changes that; it always comes
+    // back as "(#10) Insufficient permissions". IG takedown is manual, so print
+    // the permalink and tell the operator plainly instead of pretending it's a
+    // permissions problem they can fix.
+    if (key === 'ig') {
+      const permalink = await igPermalink(id, token);
+      outcome.ig = { ok: false, id, manual: true, permalink, error: 'Instagram API cannot delete published media — delete by hand' };
+      console.log(
+        `::error title=Instagram takedown is manual::The IG Graph API cannot delete published media. ` +
+          `Delete this post by hand in the Instagram app or on the web: ${permalink || `media id ${id}`}`
+      );
+      continue;
+    }
     try {
       const r = await retry(() => graphDelete(id, token), { label: `delete ${key} ${id}` });
       outcome[key] = { ok: true, id, ...r };
@@ -135,10 +165,13 @@ async function main() {
     status: 'retracted',
     retracted_reason: opts.reason,
     retracted_at: new Date().toISOString(),
-    retraction_results: outcome,
+    // Merge, don't replace: a re-run with --only ig must not erase the record
+    // that fb and x already came down.
+    retraction_results: { ...(pkg.meta?.retraction_results || {}), ...outcome },
   };
-  writeJSON(path.join(RETRACTED, `${opts.date}.json`), pkg);
-  fs.rmSync(pkgPath);
+  const dest = path.join(RETRACTED, `${opts.date}.json`);
+  writeJSON(dest, pkg);
+  if (path.resolve(pkgPath) !== path.resolve(dest)) fs.rmSync(pkgPath);
   for (const f of pkg.image?.files || []) {
     const img = path.join(PUBLISHED, f);
     if (fs.existsSync(img)) fs.renameSync(img, path.join(RETRACTED, f));
