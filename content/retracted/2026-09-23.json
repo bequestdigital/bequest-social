@@ -41,12 +41,13 @@
     "generated_at": "2026-09-20T14:03:50.860Z",
     "model": "claude-sonnet-4-6",
     "generator": "api",
-    "retracted_reason": "Finish partial retraction — recover IG permalink for manual takedown",
-    "retracted_at": "2026-09-27T03:33:48.419Z",
+    "retracted_reason": "Verification pass — confirm FB and X are actually gone",
+    "retracted_at": "2026-09-27T03:34:42.928Z",
     "retraction_results": {
       "fb": {
         "ok": true,
-        "id": "996611156867180_122129120139264758"
+        "id": "996611156867180_122129120139264758",
+        "alreadyGone": true
       },
       "ig": {
         "ok": false,
