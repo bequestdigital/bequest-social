@@ -42,10 +42,32 @@
     ]
   },
   "meta": {
-    "status": "published",
+    "status": "retracted",
     "generated_at": "2026-09-13T14:12:56.709Z",
     "model": "claude-sonnet-4-6",
-    "generator": "api"
+    "generator": "api",
+    "retracted_reason": "Caption promised 'Swipe to see how it maps out' on a single-frame tip-card, and the card itself miscounts: titled '3-Email Outline' but renders five gold-numbered rows whose Email 1/1/2/2/3 labels fight the numbering.",
+    "retracted_at": "2026-09-27T11:51:51.622Z",
+    "retraction_results": {
+      "fb": {
+        "ok": true,
+        "id": "996611156867180_122128465377264758",
+        "alreadyGone": true
+      },
+      "ig": {
+        "ok": false,
+        "id": "18030465764899231",
+        "manual": true,
+        "permalink": null,
+        "error": "Instagram API cannot delete published media — delete by hand"
+      },
+      "x": [
+        {
+          "id": "2100274359160000617",
+          "ok": true
+        }
+      ]
+    }
   },
   "results": {
     "fb": {
