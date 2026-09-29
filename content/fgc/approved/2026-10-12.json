@@ -2,18 +2,23 @@
   "id": "2026-10-12",
   "date": "2026-10-12",
   "facebook": {
-    "text": "\"Hiram and crew did a great job installing 4 mirrors and 2 shower doors. Paid attention to detail and explained everything. Very professional, and we were very pleased. Highly recommend!\" \u2014 Joyce Hatfield\n\nShowers, mirrors, doors, and everything in between. floridaglassco.com/contact-us/"
+    "text": "\"Hiram and crew did a great job installing 4 mirrors and 2 shower doors. Paid attention to detail and explained everything. Very professional, and we were very pleased. Highly recommend!\" — Joyce Hatfield\n\nShowers, mirrors, and doors across SW Florida. floridaglassco.com/contact-us/"
   },
   "image": {
     "files": [
       "2026-10-12.jpg"
     ],
-    "alt": "Five-star review card: 'Paid attention to detail and explained everything. Very professional, and we were very pleased.' \u2014 Joyce Hatfield, over a dark-grid tiled shower"
+    "alt": "Five-star review card: 'Paid attention to detail and explained everything. Very professional, and we were very pleased.' — Joyce Hatfield, over a dark-grid tiled shower"
   },
   "meta": {
     "brand": "fgc",
     "status": "approved",
     "source": "approved testimonial set (Alex, 9/17)",
-    "generator": "claude-session"
+    "generator": "claude-session",
+    "copy_qc": {
+      "date": "2026-09-27",
+      "pass": "claude editorial + chatgpt humanizing pass, diffed",
+      "changes": "removed body em dashes, broke rule-of-three cadence, loosened aphoristic closers"
+    }
   }
 }

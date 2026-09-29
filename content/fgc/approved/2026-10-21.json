@@ -2,7 +2,7 @@
   "id": "2026-10-21",
   "date": "2026-10-21",
   "facebook": {
-    "text": "Clear, low-iron, frosted, or textured? Clear is classic. Low-iron is truly colorless \u2014 no green tint. Frosted buys privacy without losing light. Your enclosure, your call \u2014 we'll show you samples. floridaglassco.com/services/glass-shower/"
+    "text": "Clear, low-iron, frosted, or textured? Clear is the classic. Low-iron has no green tint at all. Frosted gives you privacy without blocking the light. Come look at samples before you decide. floridaglassco.com/services/glass-shower/"
   },
   "image": {
     "files": [
@@ -14,6 +14,11 @@
     "brand": "fgc",
     "status": "approved",
     "source": "batch-v2 (Tyler photos, 9/15)",
-    "generator": "claude-session"
+    "generator": "claude-session",
+    "copy_qc": {
+      "date": "2026-09-27",
+      "pass": "claude editorial + chatgpt humanizing pass, diffed",
+      "changes": "removed body em dashes, broke rule-of-three cadence, loosened aphoristic closers"
+    }
   }
 }

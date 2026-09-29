@@ -2,7 +2,7 @@
   "id": "2026-10-16",
   "date": "2026-10-16",
   "facebook": {
-    "text": "Sliding glass doors take a beating in SW Florida \u2014 sun, salt, daily use. Whether it's fogged panels or a full replacement, we handle glass doors too: floridaglassco.com/services/glass-door/"
+    "text": "Sliding glass doors take a beating in SW Florida. Sun and salt, plus everyday use, add up fast. Fogged panels or a full replacement, we handle glass doors too: floridaglassco.com/services/glass-door/"
   },
   "image": {
     "files": [
@@ -14,6 +14,11 @@
     "brand": "fgc",
     "status": "approved",
     "source": "batch-v2 (Tyler photos, 9/15)",
-    "generator": "claude-session"
+    "generator": "claude-session",
+    "copy_qc": {
+      "date": "2026-09-27",
+      "pass": "claude editorial + chatgpt humanizing pass, diffed",
+      "changes": "removed body em dashes, broke rule-of-three cadence, loosened aphoristic closers"
+    }
   }
 }

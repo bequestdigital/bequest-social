@@ -2,7 +2,7 @@
   "id": "2026-10-14",
   "date": "2026-10-14",
   "facebook": {
-    "text": "The curtain came down. If your bathroom still has a curtain or a 1990s framed slider, this is your sign. floridaglassco.com/services/glass-shower/"
+    "text": "The curtain came down. If your bathroom still has a curtain or a 1990s framed slider, maybe it's time for a change. floridaglassco.com/services/glass-shower/"
   },
   "image": {
     "files": [
@@ -14,6 +14,11 @@
     "brand": "fgc",
     "status": "approved",
     "source": "batch-v2 (Tyler photos, 9/15)",
-    "generator": "claude-session"
+    "generator": "claude-session",
+    "copy_qc": {
+      "date": "2026-09-27",
+      "pass": "claude editorial + chatgpt humanizing pass, diffed",
+      "changes": "removed body em dashes, broke rule-of-three cadence, loosened aphoristic closers"
+    }
   }
 }

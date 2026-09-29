@@ -2,7 +2,7 @@
   "id": "2026-10-19",
   "date": "2026-10-19",
   "facebook": {
-    "text": "You've redone the vanity. Picked the tile. And the shower enclosure is the one thing still making the room feel dated. That's the piece we handle \u2014 custom glass, measured to your space, installed clean. floridaglassco.com/services/glass-shower/"
+    "text": "You've redone the vanity. Picked the tile. And the shower enclosure is still making the room feel dated. We can take care of that part. Custom glass, measured to your space and installed clean. floridaglassco.com/services/glass-shower/"
   },
   "image": {
     "files": [
@@ -14,6 +14,11 @@
     "brand": "fgc",
     "status": "approved",
     "source": "batch-v2 (Tyler photos, 9/15)",
-    "generator": "claude-session"
+    "generator": "claude-session",
+    "copy_qc": {
+      "date": "2026-09-27",
+      "pass": "claude editorial + chatgpt humanizing pass, diffed",
+      "changes": "removed body em dashes, broke rule-of-three cadence, loosened aphoristic closers"
+    }
   }
 }

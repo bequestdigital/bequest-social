@@ -2,7 +2,7 @@
   "id": "2026-11-04",
   "date": "2026-11-04",
   "facebook": {
-    "text": "Not sure what your bathroom needs? That's normal \u2014 most people buy one shower enclosure in their life. We do it every week. Send us a photo of your bathroom and we'll tell you exactly what your options are. floridaglassco.com/contact-us/"
+    "text": "Not sure what your bathroom needs? That's normal. Most people buy one shower enclosure in their life. We install them every week. Send us a photo and we'll tell you what your options are. floridaglassco.com/contact-us/"
   },
   "image": {
     "files": [
@@ -14,6 +14,11 @@
     "brand": "fgc",
     "status": "approved",
     "source": "batch-v2 (Tyler photos, 9/15)",
-    "generator": "claude-session"
+    "generator": "claude-session",
+    "copy_qc": {
+      "date": "2026-09-27",
+      "pass": "claude editorial + chatgpt humanizing pass, diffed",
+      "changes": "removed body em dashes, broke rule-of-three cadence, loosened aphoristic closers"
+    }
   }
 }

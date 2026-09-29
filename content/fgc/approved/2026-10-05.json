@@ -2,7 +2,7 @@
   "id": "2026-10-05",
   "date": "2026-10-05",
   "facebook": {
-    "text": "Fresh install: every enclosure is measured, cut, and fitted to the inch \u2014 because no two bathrooms (and no two tile jobs) are the same. Thinking about yours? floridaglassco.com/services/glass-shower/"
+    "text": "Fresh install. Every enclosure is measured and fitted to the inch because no two bathrooms, or tile jobs, are exactly alike. Thinking about yours? floridaglassco.com/services/glass-shower/"
   },
   "image": {
     "files": [
@@ -14,6 +14,11 @@
     "brand": "fgc",
     "status": "approved",
     "source": "batch-v2 (Tyler photos, 9/15)",
-    "generator": "claude-session"
+    "generator": "claude-session",
+    "copy_qc": {
+      "date": "2026-09-27",
+      "pass": "claude editorial + chatgpt humanizing pass, diffed",
+      "changes": "removed body em dashes, broke rule-of-three cadence, loosened aphoristic closers"
+    }
   }
 }

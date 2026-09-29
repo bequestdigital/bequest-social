@@ -2,7 +2,7 @@
   "id": "2026-10-02",
   "date": "2026-10-02",
   "facebook": {
-    "text": "Salt air is hard on glass. Our guide to keeping yours crystal-clear in Florida's coastal climate \u2014 what to use, what to skip, and how often: floridaglassco.com/maintain-glass-florida-coastal-climate/"
+    "text": "Salt air is hard on glass. Our guide to keeping yours clear in Florida's coastal climate covers what to use, what to skip, and how often: floridaglassco.com/maintain-glass-florida-coastal-climate/"
   },
   "image": {
     "files": [
@@ -14,6 +14,11 @@
     "brand": "fgc",
     "status": "approved",
     "source": "batch-v2 (Tyler photos, 9/15)",
-    "generator": "claude-session"
+    "generator": "claude-session",
+    "copy_qc": {
+      "date": "2026-09-27",
+      "pass": "claude editorial + chatgpt humanizing pass, diffed",
+      "changes": "removed body em dashes, broke rule-of-three cadence, loosened aphoristic closers"
+    }
   }
 }

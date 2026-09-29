@@ -2,18 +2,23 @@
   "id": "2026-11-02",
   "date": "2026-11-02",
   "facebook": {
-    "text": "\"We got quotes from multiple companies to do all our shower enclosures and mirrors, and Florida Glass Company had the best prices, turnaround time, and quality. The owner made sure every part of the project met our expectations. Very good workmanship and an awesome company to work with!\" \u2014 Gabriel Cruz\n\nFort Myers to Naples, we're grateful for every referral \u2014 and we work to earn the next one on every job. floridaglassco.com/contact-us/"
+    "text": "\"We got quotes from multiple companies to do all our shower enclosures and mirrors, and Florida Glass Company had the best prices, turnaround time, and quality. The owner made sure every part of the project met our expectations. Very good workmanship and an awesome company to work with!\" — Gabriel Cruz\n\nFort Myers to Naples, we're grateful for every referral. We try to earn the next one on every job. floridaglassco.com/contact-us/"
   },
   "image": {
     "files": [
       "2026-11-02.jpg"
     ],
-    "alt": "Five-star review card: 'Florida Glass Company had the best prices, turnaround time, and quality.' \u2014 Gabriel Cruz, over a sliding shower door install"
+    "alt": "Five-star review card: 'Florida Glass Company had the best prices, turnaround time, and quality.' — Gabriel Cruz, over a sliding shower door install"
   },
   "meta": {
     "brand": "fgc",
     "status": "approved",
     "source": "approved testimonial set (Alex, 9/17)",
-    "generator": "claude-session"
+    "generator": "claude-session",
+    "copy_qc": {
+      "date": "2026-09-27",
+      "pass": "claude editorial + chatgpt humanizing pass, diffed",
+      "changes": "removed body em dashes, broke rule-of-three cadence, loosened aphoristic closers"
+    }
   }
 }
