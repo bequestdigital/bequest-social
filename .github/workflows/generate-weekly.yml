@@ -94,10 +94,17 @@ jobs:
           [ ${#files[@]} -gt 0 ] && mv "${files[@]}" content/approved/
           git config user.name "bequest-bot"
           git config user.email "actions@users.noreply.github.com"
-          node src/build-preview.js || true
-          git add -A content/ docs/
+          # Content first, alone — the new week's packages must land even if the
+          # generated docs/index.html (wall-clock timestamp inside) conflicts
+          # under checkout replication lag. Same split as publish.yml/retract.yml.
+          git add -A content/
           git commit -m "Auto-approve posts for week of $WEEK [skip ci]"
           git push || (git pull --rebase origin main && git push)
+          git pull --rebase origin main || git rebase --abort || true
+          node src/build-preview.js || true
+          git add -A docs/
+          git diff --cached --quiet || git commit -m "Rebuild preview [skip ci]"
+          git push || (git pull --rebase -X theirs origin main && node src/build-preview.js && git add -A docs/ && (git diff --cached --quiet || git commit -m "Rebuild preview [skip ci]") && git push) || echo "::warning::Preview push failed; queue is committed. Next publish refreshes the page."
           node src/notify.js issue --title "Posts scheduled for week of $WEEK (auto-approved)" --body-file week-body.md || true
 
       - name: Open issue on failure

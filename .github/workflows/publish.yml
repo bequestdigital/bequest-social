@@ -99,14 +99,32 @@ jobs:
 
       # Commit state even when a platform failed — successful post IDs must be
       # recorded so a retry never double-posts.
+      #
+      # Content commits ALONE and FIRST — it carries the published post ids,
+      # and losing it means tomorrow's --catch-up republishes (double post).
+      # docs/index.html is generated with a wall-clock timestamp, so it (a)
+      # diffs on every run even when nothing published and (b) conflicts under
+      # GitHub's checkout replication lag (a checkout seconds after the prior
+      # push can still be stale — hit 9/29). No content change → commit
+      # nothing: the timestamp-only push is what caused the 9/29 red run.
       - name: Commit publish state
         if: always() && steps.gate.outputs.go == 'true'
         run: |
           git config user.name "bequest-bot"
           git config user.email "actions@users.noreply.github.com"
+          git add -A content/
+          if git diff --cached --quiet; then
+            echo "No content changes — nothing published; skipping state commit and preview rebuild."
+            exit 0
+          fi
+          git commit -m "Publish state $(TZ=America/New_York date +%Y-%m-%d) [skip ci]"
+          git push || (git pull --rebase origin main && git push)
+          # Preview second, non-fatal: a stale page is recoverable, a red job is not signal.
+          git pull --rebase origin main || git rebase --abort || true
           node src/build-preview.js || true
-          git add -A content/ docs/
-          git diff --cached --quiet || (git commit -m "Publish state $(TZ=America/New_York date +%Y-%m-%d) [skip ci]" && (git push || (git pull --rebase origin main && git push)))
+          git add -A docs/
+          git diff --cached --quiet || git commit -m "Rebuild preview [skip ci]"
+          git push || (git pull --rebase -X theirs origin main && node src/build-preview.js && git add -A docs/ && (git diff --cached --quiet || git commit -m "Rebuild preview [skip ci]") && git push) || echo "::warning::Preview push failed; content state is committed. Next publish refreshes the page."
 
       # Friday runs: post the weekly summary issue after publishing.
       - name: Weekly summary (Fridays)
@@ -188,14 +206,25 @@ jobs:
           node src/publish.js $ARGS 2>&1 | tee publish-fgc.log
           exit ${PIPESTATUS[0]}
 
+      # Same split as the bequest job: content alone first (post ids must
+      # survive), preview second and non-fatal, nothing at all on no-post days.
       - name: Commit publish state
         if: always() && steps.gate.outputs.go == 'true'
         run: |
           git config user.name "bequest-bot"
           git config user.email "actions@users.noreply.github.com"
+          git add -A content/
+          if git diff --cached --quiet; then
+            echo "No content changes — nothing published; skipping state commit and preview rebuild."
+            exit 0
+          fi
+          git commit -m "FGC publish state $(TZ=America/New_York date +%Y-%m-%d) [skip ci]"
+          git push || (git pull --rebase origin main && git push)
+          git pull --rebase origin main || git rebase --abort || true
           node src/build-preview.js || true
-          git add -A content/ docs/
-          git diff --cached --quiet || (git commit -m "FGC publish state $(TZ=America/New_York date +%Y-%m-%d) [skip ci]" && (git push || (git pull --rebase origin main && git push)))
+          git add -A docs/
+          git diff --cached --quiet || git commit -m "Rebuild preview [skip ci]"
+          git push || (git pull --rebase -X theirs origin main && node src/build-preview.js && git add -A docs/ && (git diff --cached --quiet || git commit -m "Rebuild preview [skip ci]") && git push) || echo "::warning::Preview push failed; content state is committed. Next publish refreshes the page."
 
       # Warn (once per title) when the seeded FGC queue is nearly dry — whether
       # to continue past the seeded window is a business call (buyout watch).
