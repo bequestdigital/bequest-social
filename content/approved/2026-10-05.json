@@ -1,0 +1,57 @@
+{
+  "id": "2026-10-05",
+  "date": "2026-10-05",
+  "week": 12,
+  "weekTheme": "Trust Is the Currency",
+  "type": "WHY",
+  "hook": "People don't buy from businesses or give to organizations. They trust people. Everything else is a tiebreaker.",
+  "direction": "Close the loop with the why: trust is built by clarity, consistency, proof, and follow-through — and it's the one asset that compounds. Return to the Golden Circle: people trust organizations whose why is legible.",
+  "facebook": {
+    "text": "People don't buy from businesses or give to organizations. They trust people. Everything else is a tiebreaker.\n\nTrust isn't built by a good logo or a clever tagline. It's built by clarity — knowing what you stand for and saying it plainly. By consistency — showing up the same way, week after week. By proof — doing what you said you'd do. And by follow-through — finishing.\n\nSimon Sinek's Golden Circle puts it simply: people don't respond to what you do, they respond to why you do it. When your why is legible, trust has somewhere to land. And trust, unlike attention, compounds over time."
+  },
+  "instagram": {
+    "text": "People don't buy from businesses or give to organizations. They trust people. Everything else is a tiebreaker.\n\nTrust is built four ways: clarity, consistency, proof, and follow-through. Miss any one of them and the whole thing leaks.\n\nSinek's Golden Circle gets at this. When your why is legible — when people can see the conviction behind what you do — trust has somewhere to land. And unlike reach or impressions, trust compounds. It's the one asset worth building slowly.",
+    "hashtags": [
+      "christianbusiness",
+      "nonprofitleadership",
+      "faithbasedbusiness",
+      "ministrymarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "People don't give to organizations. They trust people. Everything else is a tiebreaker.\n\nClarity. Consistency. Proof. Follow-through. That's how trust is built — and it's the one asset that compounds. #faithbasedbusiness"
+    ]
+  },
+  "image": {
+    "template": "diagram",
+    "data": {
+      "mode": "circles",
+      "title": "Trust Starts With Why",
+      "circles": [
+        {
+          "label": "WHY",
+          "sub": "Your conviction — legible and plain"
+        },
+        {
+          "label": "HOW",
+          "sub": "Clarity, consistency, follow-through"
+        },
+        {
+          "label": "WHAT",
+          "sub": "The work people can see and verify"
+        }
+      ]
+    },
+    "alt": "A Golden Circle diagram with three concentric rings labeled WHY, HOW, and WHAT, illustrating that trust is built from the inside out — starting with a clear, legible conviction.",
+    "files": [
+      "2026-10-05.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-10-04T15:13:04.282Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

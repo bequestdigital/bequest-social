@@ -1,0 +1,63 @@
+{
+  "id": "2026-10-07",
+  "date": "2026-10-07",
+  "week": 12,
+  "weekTheme": "Trust Is the Currency",
+  "type": "TIP",
+  "hook": "Put testimonials next to the ask — not on a testimonials page nobody visits.",
+  "direction": "Social proof placement: beside donate buttons, on pricing, in signup flows. Proof answers the doubt at the exact moment it forms. Before/after wireframe graphic.",
+  "facebook": {
+    "text": "Put testimonials next to the ask — not on a testimonials page nobody visits.\n\nWhen someone hovers over your donate button, that's the moment doubt shows up. \"Will this actually matter? Can I trust these people?\" A testimonial sitting right there answers it before they click away.\n\nSame goes for your pricing page, your volunteer signup, your newsletter form. Proof works where the decision is being made. Move it there."
+  },
+  "instagram": {
+    "text": "Put testimonials next to the ask — not on a testimonials page nobody visits.\n\nThe doubt forms at the donate button. At the signup form. At the pricing page. That's where your proof needs to be standing.\n\nA dedicated testimonials page is better than nothing. But it's not where decisions happen. Place the right words at the right moment and you stop losing people who were already close to yes.",
+    "hashtags": [
+      "nonprofitmarketing",
+      "churchmarketing",
+      "ministrymarketing",
+      "faithbasedbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Your testimonials page gets skipped. Put social proof next to the donate button, the signup form, the pricing — wherever the doubt actually forms. That's where it does its job. #nonprofitmarketing"
+    ]
+  },
+  "image": {
+    "template": "diagram",
+    "data": {
+      "mode": "columns",
+      "title": "Where to Put Your Social Proof",
+      "columns": {
+        "left": {
+          "label": "Where Most Put It",
+          "items": [
+            "Dedicated testimonials page",
+            "About page footer",
+            "Buried in long copy",
+            "Nowhere near the ask"
+          ]
+        },
+        "right": {
+          "label": "Where It Actually Works",
+          "items": [
+            "Beside the donate button",
+            "On the pricing page",
+            "Inside the signup flow",
+            "At the moment doubt forms"
+          ]
+        }
+      }
+    },
+    "alt": "A two-column before-and-after diagram showing testimonial placement: the left column shows common but ineffective locations like a standalone testimonials page, and the right column shows high-impact placements beside donate buttons, pricing, and signup forms.",
+    "files": [
+      "2026-10-07.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-10-04T15:13:14.577Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
