@@ -7,12 +7,20 @@
 # matching the current DST offset proceed. The gate keys off WHICH cron fired
 # (github.event.schedule), not the wall-clock hour at run time — GitHub cron
 # routinely starts 30-90+ min late, so an hour check would skip every run.
+# A second pair of crons at 1pm ET is a same-day retry: on 10/5/26 GitHub never
+# assigned a hosted runner to the morning run ("job was not acquired by Runner
+# of type hosted"), both jobs were cancelled with zero steps, and the day's posts
+# only went out via --catch-up the next afternoon. The retry slot republishes
+# anything still sitting in approved/ a few hours later instead of a day later;
+# on a normal day it finds nothing to do and commits nothing.
 name: Publish
 
 on:
   schedule:
     - cron: '0 13 * * *' # 9am EDT
     - cron: '0 14 * * *' # 9am EST
+    - cron: '0 17 * * *' # 1pm EDT — same-day retry if the morning run was dropped
+    - cron: '0 18 * * *' # 1pm EST — same-day retry
   workflow_dispatch:
     inputs:
       date:
@@ -47,9 +55,15 @@ jobs:
           ZONE=$(TZ=America/New_York date +%Z)
           SCHED="${{ github.event.schedule }}"
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] \
-            || { [ "$ZONE" = "EDT" ] && [ "$SCHED" = "0 13 * * *" ]; } \
-            || { [ "$ZONE" = "EST" ] && [ "$SCHED" = "0 14 * * *" ]; }; then
+            || { [ "$ZONE" = "EDT" ] && { [ "$SCHED" = "0 13 * * *" ] || [ "$SCHED" = "0 17 * * *" ]; }; } \
+            || { [ "$ZONE" = "EST" ] && { [ "$SCHED" = "0 14 * * *" ] || [ "$SCHED" = "0 18 * * *" ]; }; }; then
             echo "go=true" >> "$GITHUB_OUTPUT"
+            # Once-a-day extras (Friday summary, queue-low check) run on the morning
+            # slot only; the 1pm slot exists purely to republish what the morning missed.
+            case "$SCHED" in
+              "0 13 * * *"|"0 14 * * *") echo "primary=true" >> "$GITHUB_OUTPUT" ;;
+              *) echo "primary=false" >> "$GITHUB_OUTPUT" ;;
+            esac
           else
             echo "Cron slot '$SCHED' doesn't match current zone $ZONE — the other DST candidate will run. Exiting."
             echo "go=false" >> "$GITHUB_OUTPUT"
@@ -128,7 +142,7 @@ jobs:
 
       # Friday runs: post the weekly summary issue after publishing.
       - name: Weekly summary (Fridays)
-        if: steps.gate.outputs.go == 'true' && github.event_name == 'schedule'
+        if: steps.gate.outputs.go == 'true' && steps.gate.outputs.primary == 'true' && github.event_name == 'schedule'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -161,9 +175,15 @@ jobs:
           ZONE=$(TZ=America/New_York date +%Z)
           SCHED="${{ github.event.schedule }}"
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] \
-            || { [ "$ZONE" = "EDT" ] && [ "$SCHED" = "0 13 * * *" ]; } \
-            || { [ "$ZONE" = "EST" ] && [ "$SCHED" = "0 14 * * *" ]; }; then
+            || { [ "$ZONE" = "EDT" ] && { [ "$SCHED" = "0 13 * * *" ] || [ "$SCHED" = "0 17 * * *" ]; }; } \
+            || { [ "$ZONE" = "EST" ] && { [ "$SCHED" = "0 14 * * *" ] || [ "$SCHED" = "0 18 * * *" ]; }; }; then
             echo "go=true" >> "$GITHUB_OUTPUT"
+            # Once-a-day extras (Friday summary, queue-low check) run on the morning
+            # slot only; the 1pm slot exists purely to republish what the morning missed.
+            case "$SCHED" in
+              "0 13 * * *"|"0 14 * * *") echo "primary=true" >> "$GITHUB_OUTPUT" ;;
+              *) echo "primary=false" >> "$GITHUB_OUTPUT" ;;
+            esac
           else
             echo "go=false" >> "$GITHUB_OUTPUT"
           fi
@@ -229,7 +249,7 @@ jobs:
       # Warn (once per title) when the seeded FGC queue is nearly dry — whether
       # to continue past the seeded window is a business call (buyout watch).
       - name: FGC queue-low check
-        if: steps.gate.outputs.go == 'true' && github.event_name == 'schedule'
+        if: steps.gate.outputs.go == 'true' && steps.gate.outputs.primary == 'true' && github.event_name == 'schedule'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
