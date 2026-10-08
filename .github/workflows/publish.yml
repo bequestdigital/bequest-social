@@ -87,8 +87,21 @@ jobs:
         env:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
         run: |
-          R=$(curl -s "https://graph.facebook.com/v21.0/me?access_token=$META_ACCESS_TOKEN")
-          echo "$R" | grep -q '"id"' || { echo "::error::Bequest Meta token is DEAD or blocked — fix the token before anything can post. Response: $R"; exit 1; }
+          # Meta sometimes answers with a transient "retry later" (code 2, is_transient:true)
+          # — hit 10/8/26 while the same token passed in the next job 15s later. Retry a
+          # few times; a transient failure after retries is a warning, not a dead token
+          # (publish.js has its own error handling and --catch-up covers any miss).
+          for i in 1 2 3 4; do
+            R=$(curl -s --max-time 20 "https://graph.facebook.com/v21.0/me?access_token=$META_ACCESS_TOKEN")
+            echo "$R" | grep -q '"id"' && { echo "Meta token OK"; exit 0; }
+            echo "Preflight attempt $i failed: $R"
+            [ "$i" -lt 4 ] && sleep 20
+          done
+          if echo "$R" | grep -Eq '"is_transient":true|"code":(1|2)[,}]'; then
+            echo "::warning::Meta is returning a transient error, not a token problem — proceeding. Last response: $R"
+            exit 0
+          fi
+          echo "::error::Bequest Meta token is DEAD or blocked — fix the token before anything can post. Response: $R"; exit 1
 
       - name: Publish
         id: publish
@@ -206,8 +219,21 @@ jobs:
         env:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
         run: |
-          R=$(curl -s "https://graph.facebook.com/v21.0/me?access_token=$META_ACCESS_TOKEN")
-          echo "$R" | grep -q '"id"' || { echo "::error::Meta token is DEAD or blocked — FGC cannot post. Response: $R"; exit 1; }
+          # Meta sometimes answers with a transient "retry later" (code 2, is_transient:true)
+          # — hit 10/8/26 while the same token passed in the next job 15s later. Retry a
+          # few times; a transient failure after retries is a warning, not a dead token
+          # (publish.js has its own error handling and --catch-up covers any miss).
+          for i in 1 2 3 4; do
+            R=$(curl -s --max-time 20 "https://graph.facebook.com/v21.0/me?access_token=$META_ACCESS_TOKEN")
+            echo "$R" | grep -q '"id"' && { echo "Meta token OK"; exit 0; }
+            echo "Preflight attempt $i failed: $R"
+            [ "$i" -lt 4 ] && sleep 20
+          done
+          if echo "$R" | grep -Eq '"is_transient":true|"code":(1|2)[,}]'; then
+            echo "::warning::Meta is returning a transient error, not a token problem — proceeding. Last response: $R"
+            exit 0
+          fi
+          echo "::error::Meta token is DEAD or blocked — FGC cannot post. Response: $R"; exit 1
 
       - name: Publish (Florida Glass — Facebook only)
         id: publish
