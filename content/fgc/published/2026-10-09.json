@@ -12,13 +12,20 @@
   },
   "meta": {
     "brand": "fgc",
-    "status": "approved",
+    "status": "published",
     "source": "batch-v2 (Tyler photos, 9/15)",
     "generator": "claude-session",
     "copy_qc": {
       "date": "2026-09-27",
       "pass": "claude editorial + chatgpt humanizing pass, diffed",
       "changes": "removed body em dashes, broke rule-of-three cadence, loosened aphoristic closers"
+    }
+  },
+  "results": {
+    "fb": {
+      "ok": true,
+      "id": "105187522086021_1125919180030745",
+      "at": "2026-10-09T18:36:17.992Z"
     }
   }
 }
