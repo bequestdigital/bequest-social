@@ -1,0 +1,66 @@
+{
+  "id": "2026-10-14",
+  "date": "2026-10-14",
+  "week": 13,
+  "weekTheme": "Year-End (Speak Directly to the Niche)",
+  "type": "TIP",
+  "hook": "The year-end email sequence that outperforms one big appeal.",
+  "direction": "The 5-email arc: story → impact → ask → deadline → last call. Each email one job. Outline graphic — actionable enough to steal, which is the point.",
+  "facebook": {
+    "text": "The year-end email sequence that outperforms one big appeal.\n\nMost organizations send one email in December and wonder why results are flat. The fix is a five-email arc, and each email has exactly one job.\n\n1) Story — open with a real person your work changed.\n2) Impact — show what that change cost and what it produced.\n3) Ask — make the direct request, nothing else.\n4) Deadline — name the date. Urgency without drama.\n5) Last Call — short, plain, sent the morning it ends.\n\nSteal this. Run it. The sequence works because it respects your reader's attention instead of burning it all in one shot."
+  },
+  "instagram": {
+    "text": "The year-end email sequence that outperforms one big appeal.\n\nOne email in December is not a strategy. Five emails, each with one job, is.\n\nThe arc:\n① Story\n② Impact\n③ Ask\n④ Deadline\n⑤ Last Call\n\nSave this graphic. The outline is yours to use.",
+    "hashtags": [
+      "nonprofitmarketing",
+      "churchcommunications",
+      "ministrymarketing",
+      "nonprofitleadership"
+    ]
+  },
+  "x": {
+    "posts": [
+      "One year-end email gets ignored. Five emails — each with one job — get results.\n\nStory → Impact → Ask → Deadline → Last Call\n\nThat's the arc. Steal it.",
+      "Each email does one thing only. No cramming. No hedging. One job per send — that's what keeps readers opening through the whole sequence. #nonprofitmarketing"
+    ]
+  },
+  "image": {
+    "template": "diagram",
+    "data": {
+      "mode": "columns",
+      "title": "The 5-Email Year-End Arc",
+      "columns": {
+        "left": {
+          "label": "Email",
+          "items": [
+            "1 — Story",
+            "2 — Impact",
+            "3 — Ask",
+            "4 — Deadline",
+            "5 — Last Call"
+          ]
+        },
+        "right": {
+          "label": "One Job",
+          "items": [
+            "Introduce a real person",
+            "Show cost + outcome",
+            "Make the direct request",
+            "Name the date, hold it",
+            "Short. Plain. Final."
+          ]
+        }
+      }
+    },
+    "alt": "A two-column diagram listing the five year-end emails on the left and each email's single job on the right.",
+    "files": [
+      "2026-10-14.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-10-11T16:13:06.174Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

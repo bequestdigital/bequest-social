@@ -1,0 +1,45 @@
+{
+  "id": "2026-10-16",
+  "date": "2026-10-16",
+  "week": 13,
+  "weekTheme": "Year-End (Speak Directly to the Niche)",
+  "type": "ASK",
+  "hook": "We have room for 2 more clients before year-end. If your mission deserves marketing that finally works, let's talk.",
+  "direction": "True scarcity (two-man shop, real capacity). Close the 90 days where they began: your why is your strongest asset — we make sure people can see it. CTA: contact link.",
+  "facebook": {
+    "text": "We have room for 2 more clients before year-end. If your mission deserves marketing that finally works, let's talk.\n\nBequest is a two-man shop. That's not a limitation — it's why our clients get real attention instead of a junior account manager and a template.\n\nWe started this quarter talking about your why. Here's the truth we've seen hold up: organizations that know why they exist have the strongest foundation for marketing. Our job is to make sure the people you're trying to reach can actually see it.\n\nTwo spots. Real capacity. If that's you, reach out at bequestdigital.com."
+  },
+  "instagram": {
+    "text": "We have room for 2 more clients before year-end. If your mission deserves marketing that finally works, let's talk.\n\nBequest is two people. That means two spots is a real number, not a sales line.\n\nWe've spent this quarter saying the same thing: your why is your strongest asset. Churches, nonprofits, mission-driven businesses — the ones that know why they exist have something most marketing agencies can't manufacture.\n\nWe don't manufacture it. We make sure people can see it.\n\nTwo spots left before year-end. Link in bio.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "ministrymarketing",
+      "faithbasedbusiness",
+      "christianbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "We have room for 2 more clients before year-end. Two-man shop — that's a real number. Your why is your strongest asset. We make sure people can see it. bequestdigital.com"
+    ]
+  },
+  "image": {
+    "template": "quote-card",
+    "data": {
+      "quote": "Your why is your strongest asset. We make sure people can see it.",
+      "attribution": "Bequest Digital",
+      "eyebrow": "2 Spots Left — Year-End"
+    },
+    "alt": "Quote card reading 'Your why is your strongest asset. We make sure people can see it.' with an eyebrow label noting two spots remain before year-end.",
+    "files": [
+      "2026-10-16.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-10-11T16:13:15.520Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

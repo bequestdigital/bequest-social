@@ -1,0 +1,61 @@
+{
+  "id": "2026-10-12",
+  "date": "2026-10-12",
+  "week": 13,
+  "weekTheme": "Year-End (Speak Directly to the Niche)",
+  "type": "TIP",
+  "hook": "Nearly a third of annual giving happens in December. Your year-end campaign starts now — not Thanksgiving week.",
+  "direction": "Year-end giving timeline for ministries and nonprofits: October = plan and segment, November = warm the list with impact stories, December = the ask series. Timeline graphic.",
+  "facebook": {
+    "text": "Nearly a third of annual giving happens in December. Your year-end campaign starts now — not Thanksgiving week.\n\nHere's the timeline that works:\n\nOctober: Plan your campaign and segment your donor list. Who gave last year? Who lapsed? Who's new?\n\nNovember: Warm the list. Share impact stories. Let donors see what their giving actually did.\n\nDecember: Make the ask — clearly, more than once, without apology.\n\nMost ministries and nonprofits wait too long and then rush the ask. The ones that plan in October show up in December with credibility already built. Start now."
+  },
+  "instagram": {
+    "text": "Nearly a third of annual giving happens in December.\n\nThat means your year-end campaign starts in October — not the week before Thanksgiving.\n\nHere's the three-month timeline:\n\nOctober → Plan and segment your donor list\nNovember → Warm the list with real impact stories\nDecember → The ask series\n\nThe ministries and nonprofits that do this well aren't more talented. They just started earlier. Save this and get moving.",
+    "hashtags": [
+      "nonprofitleadership",
+      "ministrymarketing",
+      "nonprofitmarketing",
+      "churchcommunications"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Nearly 1/3 of annual giving happens in December. Your year-end campaign starts now.\n\nOctober: plan + segment\nNovember: impact stories\nDecember: the ask\n\nWait until Thanksgiving and you're already behind. #nonprofitmarketing"
+    ]
+  },
+  "image": {
+    "template": "diagram",
+    "data": {
+      "mode": "columns",
+      "title": "Year-End Giving Timeline",
+      "columns": {
+        "left": {
+          "label": "Month",
+          "items": [
+            "October",
+            "November",
+            "December"
+          ]
+        },
+        "right": {
+          "label": "Your Job",
+          "items": [
+            "Plan campaign + segment donors",
+            "Warm list with impact stories",
+            "Make the ask — clearly, repeatedly"
+          ]
+        }
+      }
+    },
+    "alt": "A three-row timeline diagram showing October as the planning and segmentation phase, November as the impact storytelling phase, and December as the ask series for year-end nonprofit giving campaigns.",
+    "files": [
+      "2026-10-12.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-10-11T16:12:54.303Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
