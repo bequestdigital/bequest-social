@@ -1,6 +1,6 @@
 {
   "brand": "fgc",
-  "updated_at": "2026-10-20T11:21:24.342Z",
+  "updated_at": "2026-10-20T11:23:17.856Z",
   "sample": {
     "scored": 0,
     "matured": 12,
@@ -12,7 +12,7 @@
       "fb"
     ],
     "sufficient": false,
-    "reason": "reads blocked by permissions on fb (pages_read_user_content (read the Page's own posts: reactions, comments, shares) and read_insights (impressions, reach, clicks))"
+    "reason": "reads blocked by permissions on fb (pages_read_user_content (read the Page's own posts: reactions, comments, shares))"
   },
   "weights": {
     "type": {

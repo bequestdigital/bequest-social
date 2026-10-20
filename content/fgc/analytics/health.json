@@ -1,10 +1,15 @@
 {
-  "at": "2026-10-20T11:21:24.091Z",
+  "at": "2026-10-20T11:23:17.602Z",
   "posts_checked": 13,
   "channels": {
     "fb": {
       "ok": 0,
       "permission": 13,
+      "other": 0
+    },
+    "fb_insights": {
+      "ok": 0,
+      "permission": 0,
       "other": 0
     },
     "ig": {
@@ -27,6 +32,6 @@
     "fb"
   ],
   "scope_fix": {
-    "fb": "pages_read_user_content (read the Page's own posts: reactions, comments, shares) and read_insights (impressions, reach, clicks)"
+    "fb": "pages_read_user_content (read the Page's own posts: reactions, comments, shares)"
   }
 }

@@ -95,9 +95,38 @@
           "clicks": null
         }
       }
+    },
+    {
+      "at": "2026-10-20T11:23:03.776Z",
+      "age_days": 20,
+      "channels": {
+        "fb": {
+          "error": true
+        },
+        "ig": {
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0,
+          "engagement": 0,
+          "reach": null,
+          "views": null,
+          "total_interactions": null
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 0,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 0,
+          "impressions": 3,
+          "clicks": null
+        }
+      }
     }
   ],
-  "fetched_at": "2026-10-20T11:21:07.087Z",
+  "fetched_at": "2026-10-20T11:23:03.776Z",
   "age_days_at_fetch": 20,
   "matured": true
 }
