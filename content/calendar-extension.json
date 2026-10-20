@@ -1,0 +1,50 @@
+{
+  "posts": [
+    {
+      "id": "2026-10-26",
+      "date": "2026-10-26",
+      "weekday": "Mon",
+      "week": 14,
+      "weekTheme": "Finish Strong, Start Ready",
+      "type": "POV",
+      "hook": "Planning season isn't about picking tactics. It's about deciding what you actually believe your organization can do.",
+      "direction": "Angle: most orgs open a blank planning doc and immediately jump to channels and budgets — skipping the conviction layer that makes any plan hold. Cover: why strategy without belief collapses under pressure; why mission-driven orgs have an advantage here if they use it. Graphic: quote card — pull the core conviction as a bold centered statement.",
+      "planned": {
+        "at": "2026-10-20T11:23:19.892Z",
+        "model": "claude-sonnet-4-6",
+        "strategy_updated_at": "2026-10-20T11:21:24.219Z"
+      }
+    },
+    {
+      "id": "2026-10-28",
+      "date": "2026-10-28",
+      "weekday": "Wed",
+      "week": 14,
+      "weekTheme": "Finish Strong, Start Ready",
+      "type": "TIP",
+      "hook": "3 questions to answer before you write a single word of your 2027 marketing plan.",
+      "direction": "Angle: most plans start with tactics; these three questions force clarity on audience, message, and goal first. Cover: Who are we actually trying to reach? What one thing do we want them to do? What does success look like in plain language? Frame as pre-work, not extra work. Graphic: tip card with a numbered list — one question per row, brief annotation under each.",
+      "planned": {
+        "at": "2026-10-20T11:23:19.892Z",
+        "model": "claude-sonnet-4-6",
+        "strategy_updated_at": "2026-10-20T11:21:24.219Z"
+      }
+    },
+    {
+      "id": "2026-10-30",
+      "date": "2026-10-30",
+      "weekday": "Fri",
+      "week": 14,
+      "weekTheme": "Finish Strong, Start Ready",
+      "type": "ASK",
+      "hook": "If you want 2027 to feel different, the work starts before the calendar flips. We can help you build the plan.",
+      "direction": "Angle: soft close on the planning-season theme — not pressure, but an honest invitation. Cover: name the specific help offered (clarity on message, channel selection, a plan that fits the org's actual capacity). End with a low-friction CTA — DM or link to a discovery call. Graphic: quote card with the hook as the hero line and a one-line CTA beneath.",
+      "planned": {
+        "at": "2026-10-20T11:23:19.892Z",
+        "model": "claude-sonnet-4-6",
+        "strategy_updated_at": "2026-10-20T11:21:24.219Z"
+      }
+    }
+  ],
+  "updated_at": "2026-10-20T11:23:19.892Z"
+}

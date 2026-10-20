@@ -1,0 +1,44 @@
+{
+  "id": "2026-10-30",
+  "date": "2026-10-30",
+  "week": 14,
+  "weekTheme": "Finish Strong, Start Ready",
+  "type": "ASK",
+  "hook": "If you want 2027 to feel different, the work starts before the calendar flips. We can help you build the plan.",
+  "direction": "Angle: soft close on the planning-season theme — not pressure, but an honest invitation. Cover: name the specific help offered (clarity on message, channel selection, a plan that fits the org's actual capacity). End with a low-friction CTA — DM or link to a discovery call. Graphic: quote card with the hook as the hero line and a one-line CTA beneath.",
+  "facebook": {
+    "text": "If you want 2027 to feel different, the work starts before the calendar flips. We can help you build the plan.\n\nHere's what that actually looks like: getting clear on your message, choosing the right channels for your organization's real capacity, and building a plan you can follow through on — not one that looks good in a deck and falls apart in February.\n\nIf you're leading a church, nonprofit, or small business and you want to head into the new year with a clear direction, we'd love to talk. No pressure — just an honest conversation about where you are and where you want to go.\n\nDrop us a DM or book a free discovery call at the link below."
+  },
+  "instagram": {
+    "text": "If you want 2027 to feel different, the work starts before the calendar flips.\n\nThat's not a warning — it's just how planning works. The organizations that head into a new year with clarity didn't find it in January.\n\nHere's what we help with:\n— Getting your message clear\n— Choosing channels that fit your actual capacity\n— Building a plan you'll still be following in March\n\nIf that sounds useful, we'd love to talk. Link in bio to book a free discovery call, or send us a DM.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "ministrymarketing",
+      "faithbasedbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "If you want 2027 to feel different, the work starts before the calendar flips. Clear message, right channels, a plan that fits your actual capacity. We can help. DM us or grab a free discovery call."
+    ]
+  },
+  "image": {
+    "template": "quote-card",
+    "data": {
+      "quote": "If you want 2027 to feel different, the work starts before the calendar flips.",
+      "attribution": null,
+      "eyebrow": "Finish Strong, Start Ready"
+    },
+    "alt": "Quote card with the text 'If you want 2027 to feel different, the work starts before the calendar flips.' on a simple, clean background with a one-line call to action beneath inviting viewers to book a discovery call.",
+    "files": [
+      "2026-10-30.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-10-20T11:24:10.425Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

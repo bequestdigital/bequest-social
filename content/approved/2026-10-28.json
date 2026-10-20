@@ -1,0 +1,49 @@
+{
+  "id": "2026-10-28",
+  "date": "2026-10-28",
+  "week": 14,
+  "weekTheme": "Finish Strong, Start Ready",
+  "type": "TIP",
+  "hook": "3 questions to answer before you write a single word of your 2027 marketing plan.",
+  "direction": "Angle: most plans start with tactics; these three questions force clarity on audience, message, and goal first. Cover: Who are we actually trying to reach? What one thing do we want them to do? What does success look like in plain language? Frame as pre-work, not extra work. Graphic: tip card with a numbered list — one question per row, brief annotation under each.",
+  "facebook": {
+    "text": "3 questions to answer before you write a single word of your 2027 marketing plan.\n\nMost plans start with tactics — platforms, posting schedules, ad budgets. That's backwards. Before any of that, you need clarity on three things:\n\n1) Who are we actually trying to reach?\n2) What one thing do we want them to do?\n3) What does success look like in plain language?\n\nThese aren't extra work. They're the pre-work that makes everything else faster and sharper. Skip them and you'll spend next year busy but directionless."
+  },
+  "instagram": {
+    "text": "3 questions to answer before you write a single word of your 2027 marketing plan.\n\nMost plans start with tactics. That's backwards.\n\nBefore platforms, schedules, or budgets — get clear on these three:\n\n1) Who are we actually trying to reach?\n2) What one thing do we want them to do?\n3) What does success look like in plain language?\n\nThis is pre-work, not extra work. Answer these first and the rest of the plan writes itself.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "smallbusinessmarketing",
+      "ministrymarketing",
+      "churchcommunications"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Before you write a single word of your 2027 marketing plan, answer these 3 questions: Who are we trying to reach? What one thing do we want them to do? What does success look like in plain language? Pre-work, not extra work."
+    ]
+  },
+  "image": {
+    "template": "tip-card",
+    "data": {
+      "eyebrow": "Finish Strong, Start Ready",
+      "title": "Answer These Before You Plan",
+      "items": [
+        "Who are we actually trying to reach?",
+        "What one thing do we want them to do?",
+        "What does success look like in plain language?"
+      ]
+    },
+    "alt": "Tip card listing three planning questions to answer before writing a 2027 marketing plan, with a brief annotation under each question.",
+    "files": [
+      "2026-10-28.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-10-20T11:23:58.986Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
