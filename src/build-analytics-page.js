@@ -65,6 +65,7 @@ function brandSection(b) {
     strategy
       ? `<div class="strategy">
     <h3>Current strategy <small>updated ${esc(strategy.updated_at)}</small></h3>
+    ${strategy.data_quality && !strategy.data_quality.sufficient ? `<p class="warn"><strong>Data incomplete, strategy held neutral.</strong> ${esc(strategy.data_quality.reason || '')}</p>` : ''}
     <ul>${(strategy.guidance || []).map((g) => `<li>${esc(g)}</li>`).join('')}</ul>
     ${
       strategy.coach_notes
@@ -113,6 +114,7 @@ h4{font-size:13px;margin:0 0 6px;color:#556}
 .note{font-size:12px;color:#778;margin:12px 0 0}
 .strategy{background:#fff;border-radius:10px;padding:14px 18px;margin:18px 0;box-shadow:0 1px 4px rgba(0,0,0,.08);font-size:14px;line-height:1.5}
 .strategy ul{margin:6px 0 10px;padding-left:20px}
+.warn{background:#fdf3e4;border-left:4px solid #e09b3d;padding:8px 12px;border-radius:6px}
 .tables{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:14px 0}
 .tbl{background:#fff;border-radius:10px;padding:12px 14px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
 table{width:100%;border-collapse:collapse;font-size:13px}
