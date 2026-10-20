@@ -136,9 +136,31 @@
           "clicks": null
         }
       }
+    },
+    {
+      "at": "2026-10-20T16:00:36.059Z",
+      "age_days": 53,
+      "channels": {
+        "fb": {
+          "error": true
+        },
+        "ig": {
+          "error": true
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 0,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 0,
+          "impressions": 6,
+          "clicks": null
+        }
+      }
     }
   ],
-  "fetched_at": "2026-10-20T15:55:57.542Z",
+  "fetched_at": "2026-10-20T16:00:36.059Z",
   "age_days_at_fetch": 53,
   "matured": true
 }
