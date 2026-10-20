@@ -291,7 +291,7 @@ export async function main() {
   // permission error means the token lacks a scope, not that the posts did
   // badly; strategy.js reads this to refuse to steer on partial data.
   const blank = () => ({ ok: 0, permission: 0, other: 0 });
-  const health = { fb: blank(), ig: blank(), ig_insights: blank(), x: blank() };
+  const health = { fb: blank(), fb_insights: blank(), ig: blank(), ig_insights: blank(), x: blank() };
   if (xBatch.error) health.x = { ...blank(), permission: /402|403|429|credit/i.test(xBatch.error) ? targets.length : 0, other: /402|403|429|credit/i.test(xBatch.error) ? 0 : targets.length };
 
   let fetched = 0;
@@ -341,11 +341,20 @@ export async function main() {
       }
     }
 
+    const isPermission = (msg) => /\(#10\)|requires the '|does not have permission|OAuthException/i.test(msg || '') && !/does not exist/i.test(msg || '');
     for (const [k, v] of Object.entries(channels)) {
-      const msg = v.error || v.last_error || v.insights_error || '';
-      if (/\(#10\)|permission|OAuthException/i.test(msg)) health[k === 'ig' && !v.error ? 'ig_insights' : k].permission += 1;
-      else if (v.error) health[k].other += 1;
-      else health[k].ok += 1;
+      const baseErr = v.error || v.last_error;
+      if (baseErr) {
+        health[k][isPermission(baseErr) ? 'permission' : 'other'] += 1;
+        continue;
+      }
+      health[k].ok += 1;
+      // Base read fine; insights are a separate scope, tracked separately.
+      if (k === 'fb' || k === 'ig') {
+        const bucket = health[`${k}_insights`] || (health[`${k}_insights`] = blank());
+        if (v.insights_error) bucket[isPermission(v.insights_error) ? 'permission' : 'other'] += 1;
+        else bucket.ok += 1;
+      }
     }
 
     rec.channels = channels;
@@ -364,7 +373,8 @@ export async function main() {
 
   const blocked = Object.entries(health).filter(([, h]) => h.permission > 0 && h.ok === 0 && h.permission + h.other > 0).map(([k]) => k);
   const SCOPE_FIX = {
-    fb: "pages_read_user_content (read the Page's own posts: reactions, comments, shares) and read_insights (impressions, reach, clicks)",
+    fb: "pages_read_user_content (read the Page's own posts: reactions, comments, shares)",
+    fb_insights: 'read_insights (impressions, reach, clicks)',
     ig_insights: 'instagram_manage_insights (reach, saves, shares, views)',
     ig: 'instagram_basic',
     x: 'X read credits on the Bequest Digital developer account (reads are pay-per-call)',
