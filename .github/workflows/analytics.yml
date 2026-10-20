@@ -134,6 +134,30 @@ jobs:
           git diff --cached --quiet || git commit -m "Rebuild pages [skip ci]"
           git push || (git pull --rebase -X theirs origin main && node src/build-preview.js && node src/build-analytics-page.js && git add -A docs/ && (git diff --cached --quiet || git commit -m "Rebuild pages [skip ci]") && git push) || echo "::warning::Pages push failed; analytics are committed. Next run refreshes the pages."
 
+      # One issue, not one per run: if any channel's reads are blocked by
+      # permissions and no open analytics-health issue exists, open it with the
+      # exact scope fix from content/analytics/health.json.
+      - name: Health issue when reads are blocked
+        if: steps.gate.outputs.go == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BLOCKED=$(node -p "try{require('./content/analytics/health.json').blocked.join(', ')}catch(e){''}")
+          if [ -z "$BLOCKED" ]; then echo "No blocked channels."; exit 0; fi
+          OPEN=$(gh issue list --label analytics-health --state open --json number --jq 'length')
+          if [ "$OPEN" != "0" ]; then echo "Health issue already open; blocked: $BLOCKED"; exit 0; fi
+          node -e "
+            const h=require('./content/analytics/health.json');
+            const L=['Analytics reads are blocked on: **'+h.blocked.join(', ')+'** ('+h.posts_checked+' posts checked '+h.at+').','',
+              'Until this is fixed the Tue/Fri run collects what it can, but strategy.json stays neutral and the Sunday planner gets no performance lean.','',
+              '**Fix:**'];
+            for (const [k,v] of Object.entries(h.scope_fix)) L.push('- '+k+': '+v);
+            L.push('','For Meta scopes: Business Settings → System Users → Bequest Publisher → Generate token → app Bequest Social Publisher → add the scopes above → paste into the META_ACCESS_TOKEN secret (pbpaste | tr -d \"\\\\n\" | gh secret set META_ACCESS_TOKEN). Then: gh workflow run analytics.yml -f days=90');
+            require('fs').writeFileSync('health.md', L.join('\n'));
+          "
+          gh issue create --title "Analytics: reads blocked on $BLOCKED" --label analytics-health --label automation --body-file health.md || node src/notify.js issue --title "Analytics: reads blocked on $BLOCKED" --body-file health.md || true
+
       - name: Digest issue (Fridays)
         if: steps.gate.outputs.go == 'true' && steps.gate.outputs.digest == 'true'
         env:

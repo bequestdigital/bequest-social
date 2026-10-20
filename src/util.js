@@ -58,14 +58,14 @@ export function nextMonday(iso) {
 
 // ---- resilience ----
 
-export async function retry(fn, { attempts = 3, baseMs = 2000, label = 'operation' } = {}) {
+export async function retry(fn, { attempts = 3, baseMs = 2000, label = 'operation', shouldRetry = () => true } = {}) {
   let last;
   for (let i = 1; i <= attempts; i++) {
     try {
       return await fn(i);
     } catch (e) {
       last = e;
-      if (i < attempts) {
+      if (i < attempts && shouldRetry(e)) {
         const wait = baseMs * 2 ** (i - 1);
         console.warn(`[retry] ${label}: attempt ${i} failed (${e.message}); retrying in ${wait}ms`);
         await new Promise((r) => setTimeout(r, wait));

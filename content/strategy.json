@@ -1,61 +1,36 @@
 {
   "brand": "bequest",
-  "updated_at": "2026-10-20T11:17:25.643Z",
+  "updated_at": "2026-10-20T11:20:28.418Z",
   "sample": {
-    "scored": 32,
+    "scored": 0,
     "matured": 32,
     "total": 32
   },
+  "data_quality": {
+    "usable_channels": [],
+    "blocked": [
+      "fb",
+      "ig_insights"
+    ],
+    "sufficient": false,
+    "reason": "reads blocked by permissions on fb, ig_insights (pages_read_user_content + read_insights; instagram_manage_insights)"
+  },
   "weights": {
     "type": {
-      "POV": 2,
-      "WHY": 1.55,
-      "ASK": 1.31,
-      "PROOF": 0,
-      "TIP": 0.98
+      "PROOF": 0
     },
     "template": {
-      "diagram": 2,
-      "stat-card": 0,
-      "quote-card": 1.36,
-      "carousel": 1.15,
-      "tip-card": 0.81
+      "stat-card": 0
     }
   },
-  "best_weekday": "Mon",
+  "best_weekday": null,
   "guidance": [
-    "POV posts outperform TIP posts (28.51 vs 0.97, n=10/14). Lean the week toward POV; keep TIP but make it earn its slot.",
-    "diagram graphics score 22.18 vs 0.66 for tip-card. Prefer diagram where the content allows.",
-    "Mon posts do best (28.53); Wed weakest (0.81). Put the strongest hook of the week on Mon.",
-    "Hooks that are \"statement\" beat \"question\" (11.32 vs 1.38).",
-    "Hooks that are \"addresses_you\" beat \"impersonal\" (16.68 vs 0.87).",
-    "Hooks that are \"plain_hook\" beat \"contrast_hook\" (11.27 vs 1.65)."
+    "Analytics are incomplete, so no performance lean is applied. Keep a balanced TIP/POV mix with one WHY or ASK, vary the graphic, and write the best hook you can."
   ],
-  "coach_notes": {
-    "reading": "POV posts on diagram templates are driving nearly all meaningful engagement, with the top post outscoring everything else by a wide margin. TIP posts, especially on tip-card templates, are consistently the weakest performers regardless of hook. Monday is the only day with reliable signal, and long statement hooks addressed directly to 'you' outperform shorter or question-based hooks across the board.",
-    "instructions": [
-      "Shift the weekly mix toward at least two POV posts built on diagram templates, and cut tip-card posts entirely for now since they have produced the lowest scores across multiple weeks.",
-      "Write every hook in second person and let it run long, at least fifteen words, making a direct claim or observation rather than opening with a question."
-    ],
-    "test_next": "Publish one POV post on a non-Monday day, Wednesday or Friday, using the same diagram template and long second-person hook style, to learn whether Monday itself is driving the score or whether the post type is doing the work.",
-    "model": "claude-sonnet-4-6",
-    "at": "2026-10-20T11:17:25.643Z"
-  },
+  "coach_notes": null,
   "operator_notes": null,
-  "top_hooks": [
-    "Your donor is the hero. Your church is the guide. Get those backwards and the story falls apart.",
-    "People don't give to what you do. They give to why you do it.",
-    "Your organization has a stronger 'why' than any Fortune 500 brand. Your marketing should act like it.",
-    "Nearly a third of annual giving happens in December. Your year-end campaign starts now — not Thanksgiving week.",
-    "Not sure what marketing help you need? Take the 5-minute diagnostic."
-  ],
-  "bottom_hooks": [
-    "Subject lines that get opened — without clickbait.",
-    "Consistency beats brilliance. A B+ brand applied everywhere outperforms an A+ brand applied nowhere.",
-    "Reviews are the new word of mouth. Here's how to get more without begging.",
-    "4 marks of a logo that will outlive the trend cycle.",
-    "Automate the repeatable. Keep the relational."
-  ],
+  "top_hooks": [],
+  "bottom_hooks": [],
   "evidence_gated": {
     "types": [
       "PROOF"

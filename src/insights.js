@@ -102,8 +102,15 @@ async function negotiate(key, objectId, candidates, token, support) {
     }
     return values;
   };
-  const known = support[key];
-  let metrics = Array.isArray(known) && known.length ? known : candidates;
+  // support[key] = { metrics: [...], checked_at } (older files stored a bare array).
+  const known = Array.isArray(support[key]) ? { metrics: support[key] } : support[key];
+  const fresh = known?.checked_at && Date.now() - Date.parse(known.checked_at) < 7 * 86400000;
+  if (known && known.metrics?.length === 0 && fresh) {
+    // Every metric was rejected within the last week (usually a token without
+    // read_insights / instagram_manage_insights). Don't re-probe on every post.
+    return { values: {}, metrics: [], error: known.error || 'no supported metrics (cached)' };
+  }
+  let metrics = known?.metrics?.length ? known.metrics : candidates;
   try {
     return { values: await tryMetrics(metrics), metrics };
   } catch (e) {
@@ -119,9 +126,12 @@ async function negotiate(key, objectId, candidates, token, support) {
         if (inner.retryable) throw inner;
       }
     }
-    if (!ok.length) throw e;
-    support[key] = ok;
+    support[key] = { metrics: ok, checked_at: new Date().toISOString(), ...(ok.length ? {} : { error: e.message }) };
     writeJSON(SUPPORT_FILE, support);
+    if (!ok.length) {
+      console.log(`::warning title=No ${key} insight metrics accepted::${e.message} — base fields (reactions/comments/likes/shares) still collected; remembered for 7 days`);
+      throw e;
+    }
     console.log(`  metric set for ${key} renegotiated -> ${ok.join(',')}`);
     return { values, metrics: ok };
   }
@@ -129,7 +139,7 @@ async function negotiate(key, objectId, candidates, token, support) {
 
 async function fetchFacebook(postId, token, support) {
   const fields = 'permalink_url,created_time,shares,reactions.summary(total_count).limit(0),comments.summary(total_count).limit(0)';
-  const base = await retry(() => graphGet(`/${postId}`, { fields }, token), { label: `fb ${postId}`, attempts: 3 });
+  const base = await retry(() => graphGet(`/${postId}`, { fields }, token), { label: `fb ${postId}`, attempts: 3, shouldRetry: (e) => e.retryable });
   let insights = { values: {}, metrics: [] };
   try {
     insights = await negotiate('fb_post', postId, FB_POST_METRICS, token, support);
@@ -157,7 +167,7 @@ async function fetchFacebook(postId, token, support) {
 
 async function fetchInstagram(mediaId, token, support) {
   const fields = 'like_count,comments_count,media_type,media_product_type,permalink,timestamp';
-  const base = await retry(() => graphGet(`/${mediaId}`, { fields }, token), { label: `ig ${mediaId}`, attempts: 3 });
+  const base = await retry(() => graphGet(`/${mediaId}`, { fields }, token), { label: `ig ${mediaId}`, attempts: 3, shouldRetry: (e) => e.retryable });
   const key = base.media_type === 'CAROUSEL_ALBUM' ? 'ig_carousel' : 'ig_media';
   let insights = { values: {}, metrics: [] };
   try {
@@ -277,6 +287,13 @@ export async function main() {
   const xBatch = xIds.length ? await fetchXBatch(xIds) : { data: {} };
   if (xBatch.error) console.log(`::warning title=X metrics unavailable::${xBatch.error}`);
 
+  // Per-channel read health for this run. A channel whose every read is a
+  // permission error means the token lacks a scope, not that the posts did
+  // badly; strategy.js reads this to refuse to steer on partial data.
+  const blank = () => ({ ok: 0, permission: 0, other: 0 });
+  const health = { fb: blank(), ig: blank(), ig_insights: blank(), x: blank() };
+  if (xBatch.error) health.x = { ...blank(), permission: /402|403|429|credit/i.test(xBatch.error) ? targets.length : 0, other: /402|403|429|credit/i.test(xBatch.error) ? 0 : targets.length };
+
   let fetched = 0;
   for (const p of targets) {
     const age = daysBetween(p.date, today);
@@ -324,6 +341,13 @@ export async function main() {
       }
     }
 
+    for (const [k, v] of Object.entries(channels)) {
+      const msg = v.error || v.last_error || v.insights_error || '';
+      if (/\(#10\)|permission|OAuthException/i.test(msg)) health[k === 'ig' && !v.error ? 'ig_insights' : k].permission += 1;
+      else if (v.error) health[k].other += 1;
+      else health[k].ok += 1;
+    }
+
     rec.channels = channels;
     rec.fetched_at = at;
     rec.age_days_at_fetch = age;
@@ -337,6 +361,18 @@ export async function main() {
     );
   }
   console.log(`Done: ${fetched} record(s) written to ${path.relative(process.cwd(), ANALYTICS_POSTS)}`);
+
+  const blocked = Object.entries(health).filter(([, h]) => h.permission > 0 && h.ok === 0 && h.permission + h.other > 0).map(([k]) => k);
+  const SCOPE_FIX = {
+    fb: "pages_read_user_content (read the Page's own posts: reactions, comments, shares) and read_insights (impressions, reach, clicks)",
+    ig_insights: 'instagram_manage_insights (reach, saves, shares, views)',
+    ig: 'instagram_basic',
+    x: 'X read credits on the Bequest Digital developer account (reads are pay-per-call)',
+  };
+  writeJSON(path.join(ANALYTICS, 'health.json'), { at: new Date().toISOString(), posts_checked: targets.length, channels: health, blocked, scope_fix: Object.fromEntries(blocked.map((b) => [b, SCOPE_FIX[b]])) });
+  for (const b of blocked) {
+    console.log(`::error title=${b} reads blocked by permissions::Every ${b} read this run was a permission error. Fix: ${SCOPE_FIX[b]}. For Meta scopes, regenerate the Bequest Publisher system-user token in Business Settings with those scopes added and update the META_ACCESS_TOKEN secret.`);
+  }
 }
 
 function compact(channels) {

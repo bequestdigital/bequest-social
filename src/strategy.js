@@ -98,16 +98,22 @@ export function buildSummary(records) {
     };
   }
 
+  // A channel only contributes to scores when its typical post has something
+  // to compare against (a median of 0 likes or 4 impressions turns one post
+  // with 114 impressions into a 28x "win"). Ratios are capped at 5x so a single
+  // outlier cannot own a bucket.
+  const CAP = 5;
+  const scorable = Object.fromEntries(channels.map((ch) => [ch, medians[ch].n >= 8 && (medians[ch].engagement >= 2 || medians[ch].reach >= 25)]));
   const scored = matured.map((r) => {
     const per = {};
     for (const ch of channels) {
       const c = r.channels?.[ch];
-      if (!c || c.error) continue;
+      if (!c || c.error || !scorable[ch]) continue;
       const m = medians[ch];
       const ratios = [];
-      if (m.engagement > 0 && typeof c.engagement === 'number') ratios.push(c.engagement / m.engagement);
+      if (m.engagement >= 2 && typeof c.engagement === 'number') ratios.push(Math.min(CAP, c.engagement / m.engagement));
       const reach = reachOf(c);
-      if (m.reach > 0 && typeof reach === 'number') ratios.push(reach / m.reach);
+      if (m.reach >= 25 && typeof reach === 'number') ratios.push(Math.min(CAP, reach / m.reach));
       if (ratios.length) per[ch] = round(mean(ratios));
     }
     const score = round(mean(Object.values(per)));
@@ -151,6 +157,7 @@ export function buildSummary(records) {
     posts_matured: matured.length,
     posts_scored: ranked.length,
     channel_medians: medians,
+    channels_scored: channels.filter((ch) => scorable[ch]),
     channel_coverage: Object.fromEntries(
       channels.map((ch) => [ch, { ok: records.filter((r) => r.channels?.[ch] && !r.channels[ch].error).length, error: records.filter((r) => r.channels?.[ch]?.error).length }])
     ),
@@ -293,6 +300,9 @@ export function buildDigest(summary, strategy) {
   L.push('', '**Bottom posts**');
   for (const p of summary.bottom_posts) L.push(`- ${p.date} ${p.type}/${p.template} · score ${p.score} · "${p.hook}"`);
   L.push('');
+  if (strategy?.data_quality && !strategy.data_quality.sufficient) {
+    L.push(`⚠️ **Data incomplete — strategy held neutral.** ${strategy.data_quality.reason}`, '');
+  }
   if (strategy) {
     L.push('**Rule-based guidance**');
     for (const g of strategy.guidance) L.push(`- ${g}`);
@@ -323,6 +333,47 @@ export async function main() {
   console.log(`[${BRAND}] summary: ${summary.posts_scored} scored of ${summary.posts_total}; medians ${JSON.stringify(summary.channel_medians)}`);
 
   const previous = fs.existsSync(STRATEGY_FILE) ? readJSON(STRATEGY_FILE) : {};
+
+  // Data-quality gate. Steering needs at least one channel where reach was
+  // actually read for a decent sample; likes alone (what an under-scoped token
+  // returns) are not a basis for moving weights, and the first live run showed
+  // the coach will happily narrate a 2.0 weight off exactly that.
+  const health = fs.existsSync(path.join(ANALYTICS, 'health.json')) ? readJSON(path.join(ANALYTICS, 'health.json')) : null;
+  // Facebook or Instagram must be readable; X alone (a handful of impressions per post) is not a basis.
+  const usable = Object.entries(summary.channel_medians)
+    .filter(([ch, m]) => ['fb', 'ig'].includes(ch) && m.n >= 8 && m.reach > 0)
+    .map(([ch]) => ch);
+  const quality = {
+    usable_channels: usable,
+    blocked: health?.blocked || [],
+    sufficient: usable.length > 0 && summary.posts_scored >= 8,
+  };
+  if (!quality.sufficient) {
+    const why = quality.blocked.length
+      ? `reads blocked by permissions on ${quality.blocked.join(', ')} (${Object.values(health?.scope_fix || {}).join('; ')})`
+      : `only ${summary.posts_scored} scored posts / no channel with reach data`;
+    console.log(`::warning title=Strategy held neutral::Analytics are incomplete: ${why}. Weights stay at 1.0 and no coaching notes are written until real reach/engagement data is available.`);
+    const neutral = (buckets, pinned) => Object.fromEntries([...Object.keys(buckets), ...pinned].map((k) => [k, pinned.includes(k) ? 0 : 1]));
+    const strategy = {
+      brand: BRAND,
+      updated_at: new Date().toISOString(),
+      sample: { scored: summary.posts_scored, matured: summary.posts_matured, total: summary.posts_total },
+      data_quality: { ...quality, reason: why },
+      weights: { type: neutral(summary.by_type, EVIDENCE_GATED_TYPES), template: neutral(summary.by_template, EVIDENCE_GATED_TEMPLATES) },
+      best_weekday: null,
+      guidance: ['Analytics are incomplete, so no performance lean is applied. Keep a balanced TIP/POV mix with one WHY or ASK, vary the graphic, and write the best hook you can.'],
+      coach_notes: null,
+      operator_notes: previous.operator_notes || null,
+      top_hooks: [],
+      bottom_hooks: [],
+      evidence_gated: { types: EVIDENCE_GATED_TYPES, templates: EVIDENCE_GATED_TEMPLATES },
+    };
+    writeJSON(STRATEGY_FILE, strategy);
+    console.log(`strategy written: neutral (data insufficient)`);
+    if (opts.digest) console.log('\n' + buildDigest(summary, strategy));
+    return;
+  }
+
   const guidance = ruleGuidance(summary);
   let coachNotes = previous.coach_notes || null;
   if (opts.coach && BRAND === 'bequest') {
@@ -337,6 +388,7 @@ export async function main() {
     brand: BRAND,
     updated_at: new Date().toISOString(),
     sample: { scored: summary.posts_scored, matured: summary.posts_matured, total: summary.posts_total },
+    data_quality: quality,
     weights: {
       type: weightsFrom(summary.by_type, EVIDENCE_GATED_TYPES),
       template: weightsFrom(summary.by_template, EVIDENCE_GATED_TEMPLATES),
