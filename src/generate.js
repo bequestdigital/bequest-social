@@ -25,7 +25,7 @@ const SYSTEM_PROMPT = `You write organic social media posts for Bequest Digital 
 
 Audience: churches, Christian businesses, small-to-mid nonprofits, and small business owners who'd rather build than market. Mission-driven, stewardship-minded, skeptical of corporate marketing slop and Big Tech dependence. Values ownership, craftsmanship, permanence, plain speech.
 
-Voice: plain, direct, conviction without preachiness. Faith references natural and occasional — stewardship, calling, service, permanence — never forced. Write like a craftsman, not a marketer. Banned vocabulary: "unlock," "supercharge," "game-changing," "elevate," "revolutionize," "seamless." No em-dash overuse, no "it's not X, it's Y" constructions.
+Voice: plain, direct, conviction without preachiness. Faith references natural and occasional — stewardship, calling, service, permanence — never forced. Write like a craftsman, not a marketer. Banned vocabulary: "unlock," "supercharge," "game-changing," "elevate," "revolutionize," "seamless." No em dashes (use a period, comma or colon; at most one per post if unavoidable). Avoid three-item lists in prose ("message, channels, and budget") — use two items or a real list. No "it's not X, it's Y" constructions. Never say "link below" or "link in bio"; if you point at a link, write the site name.
 
 Frameworks: Sinek's Golden Circle (Why → How → What) and StoryBrand (customer is the hero, we are the guide). Cite by name when the calendar entry does.
 
@@ -139,6 +139,20 @@ export function validatePackage(pkg, entry) {
     }
   }
   if (!pkg?.image?.alt) errors.push('image.alt missing');
+
+  // Copy must not point at a link that isn't there. The first self-planned
+  // ASK (2026-10-30) said "book a call at the link below" with no URL in the post.
+  for (const [where, text] of [['facebook', pkg?.facebook?.text], ['instagram', pkg?.instagram?.text], ...(pkg?.x?.posts || []).map((t, i) => [`x[${i}]`, t])]) {
+    if (text && /\b(link below|link in (our |the )?bio|click the link|at the link)\b/i.test(text) && !/https?:\/\/|\b[a-z0-9-]+\.(com|org|net)\b/i.test(text)) {
+      errors.push(`${where} refers to a link but contains no URL — name the site (${brand.url.replace(/^https?:\/\//, '')}) or drop the reference`);
+    }
+  }
+  // Alex's "sounds AI-written" tells (9/27 review): em dashes and stacked
+  // three-item lists. One dash per surface is tolerated; more is rejected.
+  for (const [where, text] of [['facebook', pkg?.facebook?.text], ['instagram', pkg?.instagram?.text]]) {
+    const dashes = (String(text || '').match(/—/g) || []).length;
+    if (dashes > 1) errors.push(`${where} uses ${dashes} em dashes — rewrite with periods or commas (at most one)`);
+  }
 
   if (entry && pkg?.date && pkg.date !== entry.date) errors.push(`package date ${pkg.date} != calendar date ${entry.date}`);
   return errors;
