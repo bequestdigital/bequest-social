@@ -40,7 +40,10 @@ const SUPPORT_FILE = path.join(ANALYTICS, 'metric-support.json');
 const MAX_SNAPSHOTS = 8;
 
 // Candidate metric sets. Order matters only for readability.
-const FB_POST_METRICS = ['post_impressions', 'post_impressions_unique', 'post_engaged_users', 'post_clicks'];
+// Probed live 2026-10-20 against v21.0: post_impressions, post_impressions_unique and
+// post_engaged_users now return "(#100) must be a valid insights metric" (Meta's
+// Nov-2025 / Jun-2026 Media Views migration). These four are what still answers.
+const FB_POST_METRICS = ['post_media_view', 'post_total_media_view_unique', 'post_clicks', 'post_reactions_by_type_total'];
 const IG_MEDIA_METRICS = ['reach', 'views', 'saved', 'shares', 'total_interactions', 'impressions'];
 
 function parseArgs() {
@@ -157,9 +160,8 @@ async function fetchFacebook(postId, token, support) {
     comments,
     shares,
     engagement: reactions + comments + shares,
-    impressions: v.post_impressions ?? null,
-    reach: v.post_impressions_unique ?? null,
-    engaged_users: v.post_engaged_users ?? null,
+    views: v.post_media_view ?? v.post_impressions ?? null,
+    reach: v.post_total_media_view_unique ?? v.post_impressions_unique ?? null,
     clicks: v.post_clicks ?? null,
     ...(insights.error ? { insights_error: insights.error } : {}),
   };
@@ -341,7 +343,10 @@ export async function main() {
       }
     }
 
-    const isPermission = (msg) => /\(#10\)|requires the '|does not have permission|OAuthException/i.test(msg || '') && !/does not exist/i.test(msg || '');
+    // (#10) and "requires the '...' permission" are scope/task problems. (#100) "must
+    // be a valid insights metric" is a retired metric name, which is handled by
+    // negotiate() and must not read as a permission failure.
+    const isPermission = (msg) => /\(#10\)|requires the '|does not have permission/i.test(msg || '') && !/does not exist|valid insights metric/i.test(msg || '');
     for (const [k, v] of Object.entries(channels)) {
       const baseErr = v.error || v.last_error;
       if (baseErr) {
