@@ -77,7 +77,13 @@ jobs:
         run: |
           for i in 1 2 3 4; do
             OUT=$(curl -s "https://graph.facebook.com/v21.0/me?access_token=$META_ACCESS_TOKEN")
-            if echo "$OUT" | grep -q '"id"'; then echo "token ok"; exit 0; fi
+            if echo "$OUT" | grep -q '"id"'; then
+              echo "token ok"
+              # Page tasks the system user holds (CREATE_CONTENT = can publish, ANALYZE = can read insights).
+              curl -s "https://graph.facebook.com/v21.0/me/accounts?fields=name,tasks&access_token=$META_ACCESS_TOKEN" \
+                | node -e "const d=JSON.parse(require('fs').readFileSync(0));for(const p of d.data||[])console.log('page tasks:',p.name,'=>',(p.tasks||[]).join(','))" || true
+              exit 0
+            fi
             if echo "$OUT" | grep -q '"is_transient":true'; then echo "transient Meta error, retry $i"; sleep 20; continue; fi
             echo "::error title=Meta token rejected::$OUT"; exit 1
           done
