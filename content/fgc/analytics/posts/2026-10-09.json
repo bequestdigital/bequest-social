@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-09",
+  "type": null,
+  "template": null,
+  "weekday": 5,
+  "hook": null,
+  "week_theme": null,
+  "image_count": 1,
+  "published_at": "2026-10-09T18:36:17.992Z",
+  "channels": {
+    "fb": {
+      "error": "Graph GET /105187522086021_1125919180030745: {\"message\":\"(#10) This endpoint requires the 'pages_read_user_content' permission or the 'Page Public Content Access' feature. Refer to https://developers.facebook.com/docs/apps/review/login-permissions#manage-pages and https://developers.facebook.com/docs/apps/review/feature#reference-PAGES_ACCESS "
+    }
+  },
+  "snapshots": [
+    {
+      "at": "2026-10-20T11:16:45.192Z",
+      "age_days": 11,
+      "channels": {
+        "fb": {
+          "error": true
+        }
+      }
+    }
+  ],
+  "fetched_at": "2026-10-20T11:16:45.192Z",
+  "age_days_at_fetch": 11,
+  "matured": true
+}

@@ -1,0 +1,74 @@
+{
+  "date": "2026-08-19",
+  "type": "POV",
+  "template": "quote-card",
+  "weekday": 3,
+  "hook": "The most expensive marketing is the cheap kind you have to redo.",
+  "week_theme": "Setting Your Marketing Budget",
+  "image_count": 1,
+  "published_at": "2026-08-19T13:36:51.427Z",
+  "channels": {
+    "fb": {
+      "error": "Graph GET /996611156867180_122126204637264758: {\"message\":\"(#10) This endpoint requires the 'pages_read_user_content' permission or the 'Page Public Content Access' feature. Refer to https://developers.facebook.com/docs/apps/review/login-permissions#manage-pages and https://developers.facebook.com/docs/apps/review/feature#reference-PAGES_ACCESS "
+    },
+    "ig": {
+      "permalink": "https://www.instagram.com/p/DcOT4zwoPZh/",
+      "created_time": "2026-08-19T13:37:03+0000",
+      "media_type": "IMAGE",
+      "likes": 0,
+      "comments": 0,
+      "saved": 0,
+      "shares": 0,
+      "engagement": 0,
+      "reach": null,
+      "views": null,
+      "total_interactions": null,
+      "insights_error": "Graph GET /18403273537085985/insights: {\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AidhUqT4WxIqtdwRzeqUpmu\"}"
+    },
+    "x": {
+      "created_time": "2026-08-19T13:37:07.000Z",
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "bookmarks": 0,
+      "engagement": 0,
+      "impressions": 5,
+      "clicks": null
+    }
+  },
+  "snapshots": [
+    {
+      "at": "2026-10-20T11:12:29.175Z",
+      "age_days": 62,
+      "channels": {
+        "fb": {
+          "error": true
+        },
+        "ig": {
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0,
+          "engagement": 0,
+          "reach": null,
+          "views": null,
+          "total_interactions": null
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 0,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 0,
+          "impressions": 5,
+          "clicks": null
+        }
+      }
+    }
+  ],
+  "fetched_at": "2026-10-20T11:12:29.175Z",
+  "age_days_at_fetch": 62,
+  "matured": true
+}

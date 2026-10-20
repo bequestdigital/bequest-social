@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-14",
+  "type": "TIP",
+  "template": "diagram",
+  "weekday": 3,
+  "hook": "The year-end email sequence that outperforms one big appeal.",
+  "week_theme": "Year-End (Speak Directly to the Niche)",
+  "image_count": 1,
+  "published_at": "2026-10-14T17:41:14.152Z",
+  "channels": {
+    "fb": {
+      "error": "Graph GET /996611156867180_122131057527264758: {\"message\":\"(#10) This endpoint requires the 'pages_read_user_content' permission or the 'Page Public Content Access' feature. Refer to https://developers.facebook.com/docs/apps/review/login-permissions#manage-pages and https://developers.facebook.com/docs/apps/review/feature#reference-PAGES_ACCESS "
+    },
+    "ig": {
+      "permalink": "https://www.instagram.com/p/Dee8XzCmOlm/",
+      "created_time": "2026-10-14T17:41:26+0000",
+      "media_type": "IMAGE",
+      "likes": 1,
+      "comments": 0,
+      "saved": 0,
+      "shares": 0,
+      "engagement": 1,
+      "reach": null,
+      "views": null,
+      "total_interactions": null,
+      "insights_error": "Graph GET /18086041082694997/insights: {\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AGCVLfLPdeOUcoEFoszUJzd\"}"
+    },
+    "x": {
+      "created_time": "2026-10-14T17:41:30.000Z",
+      "likes": 0,
+      "reposts": 0,
+      "replies": 1,
+      "quotes": 0,
+      "bookmarks": 0,
+      "engagement": 1,
+      "impressions": 2,
+      "clicks": null
+    }
+  },
+  "snapshots": [
+    {
+      "at": "2026-10-20T11:15:31.006Z",
+      "age_days": 6,
+      "channels": {
+        "fb": {
+          "error": true
+        },
+        "ig": {
+          "likes": 1,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0,
+          "engagement": 1,
+          "reach": null,
+          "views": null,
+          "total_interactions": null
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 1,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 1,
+          "impressions": 2,
+          "clicks": null
+        }
+      }
+    }
+  ],
+  "fetched_at": "2026-10-20T11:15:31.006Z",
+  "age_days_at_fetch": 6,
+  "matured": true
+}

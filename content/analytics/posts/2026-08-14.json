@@ -1,0 +1,74 @@
+{
+  "date": "2026-08-14",
+  "type": "TIP",
+  "template": "diagram",
+  "weekday": 5,
+  "hook": "Search ads catch demand. Social ads create it. Know which one your mission needs.",
+  "week_theme": "Should You Run Google Ads?",
+  "image_count": 1,
+  "published_at": "2026-08-14T14:09:04.241Z",
+  "channels": {
+    "fb": {
+      "error": "Graph GET /996611156867180_122125652895264758: {\"message\":\"(#10) This endpoint requires the 'pages_read_user_content' permission or the 'Page Public Content Access' feature. Refer to https://developers.facebook.com/docs/apps/review/login-permissions#manage-pages and https://developers.facebook.com/docs/apps/review/feature#reference-PAGES_ACCESS "
+    },
+    "ig": {
+      "permalink": "https://www.instagram.com/p/DcBfmW3D0ko/",
+      "created_time": "2026-08-14T14:09:11+0000",
+      "media_type": "IMAGE",
+      "likes": 1,
+      "comments": 0,
+      "saved": 0,
+      "shares": 0,
+      "engagement": 1,
+      "reach": null,
+      "views": null,
+      "total_interactions": null,
+      "insights_error": "Graph GET /17885837385459015/insights: {\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AUQm2gvkPuIsHh0bR7yfbiB\"}"
+    },
+    "x": {
+      "created_time": "2026-08-14T14:09:15.000Z",
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "bookmarks": 0,
+      "engagement": 0,
+      "impressions": 6,
+      "clicks": null
+    }
+  },
+  "snapshots": [
+    {
+      "at": "2026-10-20T11:12:03.250Z",
+      "age_days": 67,
+      "channels": {
+        "fb": {
+          "error": true
+        },
+        "ig": {
+          "likes": 1,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0,
+          "engagement": 1,
+          "reach": null,
+          "views": null,
+          "total_interactions": null
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 0,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 0,
+          "impressions": 6,
+          "clicks": null
+        }
+      }
+    }
+  ],
+  "fetched_at": "2026-10-20T11:12:03.250Z",
+  "age_days_at_fetch": 67,
+  "matured": true
+}

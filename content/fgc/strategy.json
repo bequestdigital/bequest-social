@@ -1,0 +1,33 @@
+{
+  "brand": "fgc",
+  "updated_at": "2026-10-20T11:17:25.829Z",
+  "sample": {
+    "scored": 0,
+    "matured": 12,
+    "total": 13
+  },
+  "weights": {
+    "type": {
+      "PROOF": 0
+    },
+    "template": {
+      "stat-card": 0
+    }
+  },
+  "best_weekday": null,
+  "guidance": [
+    "No bucket shows a clear, well-sampled gap yet. Keep the mix balanced and let the sample grow."
+  ],
+  "coach_notes": null,
+  "operator_notes": null,
+  "top_hooks": [],
+  "bottom_hooks": [],
+  "evidence_gated": {
+    "types": [
+      "PROOF"
+    ],
+    "templates": [
+      "stat-card"
+    ]
+  }
+}

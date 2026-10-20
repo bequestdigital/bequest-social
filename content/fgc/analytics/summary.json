@@ -1,0 +1,53 @@
+{
+  "brand": "fgc",
+  "built_at": "2026-10-20T11:17:25.826Z",
+  "metrics_fetched_at": "2026-10-20T11:17:11.034Z",
+  "posts_total": 13,
+  "posts_matured": 12,
+  "posts_scored": 0,
+  "channel_medians": {
+    "fb": {
+      "n": 0,
+      "engagement": null,
+      "reach": null
+    },
+    "ig": {
+      "n": 0,
+      "engagement": null,
+      "reach": null
+    },
+    "x": {
+      "n": 0,
+      "engagement": null,
+      "reach": null
+    }
+  },
+  "channel_coverage": {
+    "fb": {
+      "ok": 0,
+      "error": 13
+    },
+    "ig": {
+      "ok": 0,
+      "error": 0
+    },
+    "x": {
+      "ok": 0,
+      "error": 0
+    }
+  },
+  "by_type": {},
+  "by_template": {},
+  "by_weekday": {},
+  "by_hook_feature": {
+    "question": {},
+    "second_person": {},
+    "names_framework": {},
+    "contrast": {},
+    "length": {}
+  },
+  "top_posts": [],
+  "bottom_posts": [],
+  "recent": [],
+  "scoring": "score = mean over channels of mean(engagement/median_engagement, reach/median_reach); medians over matured posts (>=3 days old). 1.0 = typical."
+}

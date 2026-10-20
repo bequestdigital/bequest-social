@@ -1,0 +1,74 @@
+{
+  "date": "2026-08-05",
+  "type": "TIP",
+  "template": "carousel",
+  "weekday": 3,
+  "hook": "7 conversion killers hiding on your website right now.",
+  "week_theme": "Conversion (Stewarding the Traffic You Have)",
+  "image_count": 9,
+  "published_at": "2026-08-05T15:13:13.471Z",
+  "channels": {
+    "fb": {
+      "error": "Graph GET /996611156867180_122124589611264758: {\"message\":\"(#10) This endpoint requires the 'pages_read_user_content' permission or the 'Page Public Content Access' feature. Refer to https://developers.facebook.com/docs/apps/review/login-permissions#manage-pages and https://developers.facebook.com/docs/apps/review/feature#reference-PAGES_ACCESS "
+    },
+    "ig": {
+      "permalink": "https://www.instagram.com/p/Dbqb63AEVKJ/",
+      "created_time": "2026-08-05T15:14:29+0000",
+      "media_type": "CAROUSEL_ALBUM",
+      "likes": 1,
+      "comments": 0,
+      "saved": 0,
+      "shares": 0,
+      "engagement": 1,
+      "reach": null,
+      "views": null,
+      "total_interactions": null,
+      "insights_error": "Graph GET /18129383470631605/insights: {\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AC0tZTAh_qHNodQ9JSW-adL\"}"
+    },
+    "x": {
+      "created_time": "2026-08-05T15:14:35.000Z",
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "bookmarks": 0,
+      "engagement": 0,
+      "impressions": 7,
+      "clicks": null
+    }
+  },
+  "snapshots": [
+    {
+      "at": "2026-10-20T11:11:32.225Z",
+      "age_days": 76,
+      "channels": {
+        "fb": {
+          "error": true
+        },
+        "ig": {
+          "likes": 1,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0,
+          "engagement": 1,
+          "reach": null,
+          "views": null,
+          "total_interactions": null
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 0,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 0,
+          "impressions": 7,
+          "clicks": null
+        }
+      }
+    }
+  ],
+  "fetched_at": "2026-10-20T11:11:32.225Z",
+  "age_days_at_fetch": 76,
+  "matured": true
+}

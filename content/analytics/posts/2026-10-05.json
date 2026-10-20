@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-05",
+  "type": "WHY",
+  "template": "diagram",
+  "weekday": 1,
+  "hook": "People don't buy from businesses or give to organizations. They trust people. Everything else is a tiebreaker.",
+  "week_theme": "Trust Is the Currency",
+  "image_count": 1,
+  "published_at": "2026-10-06T18:42:05.905Z",
+  "channels": {
+    "fb": {
+      "error": "Graph GET /996611156867180_122130320409264758: {\"message\":\"(#10) This endpoint requires the 'pages_read_user_content' permission or the 'Page Public Content Access' feature. Refer to https://developers.facebook.com/docs/apps/review/login-permissions#manage-pages and https://developers.facebook.com/docs/apps/review/feature#reference-PAGES_ACCESS "
+    },
+    "ig": {
+      "permalink": "https://www.instagram.com/p/DeKc-ohlh4L/",
+      "created_time": "2026-10-06T18:42:18+0000",
+      "media_type": "IMAGE",
+      "likes": 1,
+      "comments": 0,
+      "saved": 0,
+      "shares": 0,
+      "engagement": 1,
+      "reach": null,
+      "views": null,
+      "total_interactions": null,
+      "insights_error": "Graph GET /18117149455785859/insights: {\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"A1y82BDrYqRD4GY0aYX6Kue\"}"
+    },
+    "x": {
+      "created_time": "2026-10-06T18:42:23.000Z",
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "bookmarks": 0,
+      "engagement": 0,
+      "impressions": 4,
+      "clicks": null
+    }
+  },
+  "snapshots": [
+    {
+      "at": "2026-10-20T11:15:02.670Z",
+      "age_days": 15,
+      "channels": {
+        "fb": {
+          "error": true
+        },
+        "ig": {
+          "likes": 1,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0,
+          "engagement": 1,
+          "reach": null,
+          "views": null,
+          "total_interactions": null
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 0,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 0,
+          "impressions": 4,
+          "clicks": null
+        }
+      }
+    }
+  ],
+  "fetched_at": "2026-10-20T11:15:02.670Z",
+  "age_days_at_fetch": 15,
+  "matured": true
+}
