@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-20T11:21:16.099Z",
+  "posts_checked": 19,
+  "channels": {
+    "fb": {
+      "ok": 0,
+      "permission": 19,
+      "other": 0
+    },
+    "ig": {
+      "ok": 0,
+      "permission": 1,
+      "other": 0
+    },
+    "ig_insights": {
+      "ok": 0,
+      "permission": 18,
+      "other": 0
+    },
+    "x": {
+      "ok": 19,
+      "permission": 0,
+      "other": 0
+    }
+  },
+  "blocked": [
+    "fb",
+    "ig",
+    "ig_insights"
+  ],
+  "scope_fix": {
+    "fb": "pages_read_user_content (read the Page's own posts: reactions, comments, shares) and read_insights (impressions, reach, clicks)",
+    "ig": "instagram_basic",
+    "ig_insights": "instagram_manage_insights (reach, saves, shares, views)"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "ig_media": {
+    "metrics": [],
+    "checked_at": "2026-10-20T11:20:52.024Z",
+    "error": "Graph GET /18110796764025497/insights: {\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AmfWThsJ0WfDXdii3RAP7UJ\"}"
+  },
+  "ig_carousel": {
+    "metrics": [],
+    "checked_at": "2026-10-20T11:20:57.652Z",
+    "error": "Graph GET /18008640896761910/insights: {\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"ASNVIRIzTpHKFxSjoXMRX_o\"}"
+  }
+}

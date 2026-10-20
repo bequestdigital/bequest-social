@@ -1,10 +1,18 @@
 {
   "brand": "fgc",
-  "updated_at": "2026-10-20T11:17:25.829Z",
+  "updated_at": "2026-10-20T11:21:24.342Z",
   "sample": {
     "scored": 0,
     "matured": 12,
     "total": 13
+  },
+  "data_quality": {
+    "usable_channels": [],
+    "blocked": [
+      "fb"
+    ],
+    "sufficient": false,
+    "reason": "reads blocked by permissions on fb (pages_read_user_content (read the Page's own posts: reactions, comments, shares) and read_insights (impressions, reach, clicks))"
   },
   "weights": {
     "type": {
@@ -16,7 +24,7 @@
   },
   "best_weekday": null,
   "guidance": [
-    "No bucket shows a clear, well-sampled gap yet. Keep the mix balanced and let the sample grow."
+    "Analytics are incomplete, so no performance lean is applied. Keep a balanced TIP/POV mix with one WHY or ASK, vary the graphic, and write the best hook you can."
   ],
   "coach_notes": null,
   "operator_notes": null,

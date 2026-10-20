@@ -21,9 +21,18 @@
           "error": true
         }
       }
+    },
+    {
+      "at": "2026-10-20T11:21:23.639Z",
+      "age_days": 1,
+      "channels": {
+        "fb": {
+          "error": true
+        }
+      }
     }
   ],
-  "fetched_at": "2026-10-20T11:17:11.034Z",
+  "fetched_at": "2026-10-20T11:21:23.639Z",
   "age_days_at_fetch": 1,
   "matured": false
 }
