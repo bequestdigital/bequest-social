@@ -37,6 +37,7 @@ const GRAPH = 'https://graph.facebook.com/v21.0';
 export const ANALYTICS = path.join(CONTENT, 'analytics');
 export const ANALYTICS_POSTS = path.join(ANALYTICS, 'posts');
 const SUPPORT_FILE = path.join(ANALYTICS, 'metric-support.json');
+const probedThisRun = new Set();
 const MAX_SNAPSHOTS = 8;
 
 // Candidate metric sets. Order matters only for readability.
@@ -107,12 +108,14 @@ async function negotiate(key, objectId, candidates, token, support) {
   };
   // support[key] = { metrics: [...], checked_at } (older files stored a bare array).
   const known = Array.isArray(support[key]) ? { metrics: support[key] } : support[key];
-  const fresh = known?.checked_at && Date.now() - Date.parse(known.checked_at) < 7 * 86400000;
-  if (known && known.metrics?.length === 0 && fresh) {
-    // Every metric was rejected within the last week (usually a token without
-    // read_insights / instagram_manage_insights). Don't re-probe on every post.
-    return { values: {}, metrics: [], error: known.error || 'no supported metrics (cached)' };
+  if (known && known.metrics?.length === 0 && probedThisRun.has(key)) {
+    // Every metric was rejected earlier in THIS run (usually a token or asset
+    // task without insights access). Don't re-probe on every post, but do
+    // re-probe once per run so a permission fix is picked up the next time
+    // the job runs, not a week later (that lag hid the 10/20 IG fix).
+    return { values: {}, metrics: [], error: known.error || 'no supported metrics (cached this run)' };
   }
+  probedThisRun.add(key);
   let metrics = known?.metrics?.length ? known.metrics : candidates;
   try {
     return { values: await tryMetrics(metrics), metrics };
