@@ -63,9 +63,24 @@
           "clicks": null
         }
       }
+    },
+    {
+      "at": "2026-10-20T15:56:10.719Z",
+      "age_days": 22,
+      "channels": {
+        "fb": {
+          "reactions": 0,
+          "comments": 0,
+          "shares": 0,
+          "engagement": 0,
+          "views": null,
+          "reach": null,
+          "clicks": null
+        }
+      }
     }
   ],
-  "fetched_at": "2026-10-20T15:50:39.885Z",
+  "fetched_at": "2026-10-20T15:56:10.719Z",
   "age_days_at_fetch": 22,
   "matured": true
 }
