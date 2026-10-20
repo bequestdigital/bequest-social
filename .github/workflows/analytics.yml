@@ -1,0 +1,165 @@
+# Tuesdays + Fridays 7:00am ET: pull post metrics from Facebook, Instagram and X,
+# score every post, rebuild each brand's strategy file, and publish the
+# performance page. Friday's run also opens a digest issue.
+#
+# This is the "learn" half of the loop. The "act" half is Sunday's
+# generate-weekly.yml, which plans the coming week from content/strategy.json
+# and writes copy with the same guidance in its prompt.
+#
+# DST handled the same way as the other workflows: both UTC candidates fire and
+# the gate keeps only the slot matching the current ET offset.
+name: Analytics
+
+on:
+  schedule:
+    - cron: '0 11 * * 2,5' # 7am EDT
+    - cron: '0 12 * * 2,5' # 7am EST
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'Refresh metrics for posts published within this many days (posts never fetched are always included)'
+        required: false
+        default: '28'
+      digest:
+        description: 'Open the digest issue even if today is not Friday'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: analytics
+  cancel-in-progress: false
+
+jobs:
+  analytics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: DST gate
+        id: gate
+        run: |
+          ZONE=$(TZ=America/New_York date +%Z)
+          SCHED="${{ github.event.schedule }}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] \
+            || { [ "$ZONE" = "EDT" ] && [ "$SCHED" = "0 11 * * 2,5" ]; } \
+            || { [ "$ZONE" = "EST" ] && [ "$SCHED" = "0 12 * * 2,5" ]; }; then
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Cron slot '$SCHED' doesn't match zone $ZONE — the other DST candidate runs. Exiting."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          fi
+          DOW=$(TZ=America/New_York date +%u)
+          if [ "$DOW" = "5" ] || [ "${{ inputs.digest }}" = "true" ]; then
+            echo "digest=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "digest=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.go == 'true'
+
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.go == 'true'
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.gate.outputs.go == 'true'
+        run: npm ci
+
+      - name: Meta token preflight
+        if: steps.gate.outputs.go == 'true'
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+        run: |
+          for i in 1 2 3 4; do
+            OUT=$(curl -s "https://graph.facebook.com/v21.0/me?access_token=$META_ACCESS_TOKEN")
+            if echo "$OUT" | grep -q '"id"'; then echo "token ok"; exit 0; fi
+            if echo "$OUT" | grep -q '"is_transient":true'; then echo "transient Meta error, retry $i"; sleep 20; continue; fi
+            echo "::error title=Meta token rejected::$OUT"; exit 1
+          done
+          echo "::warning::Meta preflight kept returning transient errors; proceeding."
+
+      - name: Collect metrics — Bequest
+        if: steps.gate.outputs.go == 'true'
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          IG_BUSINESS_ACCOUNT_ID: ${{ secrets.IG_BUSINESS_ACCOUNT_ID }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+        run: node src/insights.js --days "${{ inputs.days || '28' }}" 2>&1 | tee run.log
+
+      - name: Collect metrics — Florida Glass
+        if: steps.gate.outputs.go == 'true'
+        env:
+          BRAND: fgc
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FGC_PAGE_ID }}
+        run: node src/insights.js --days "${{ inputs.days || '28' }}" 2>&1 | tee -a run.log || echo "::warning::FGC metrics failed; Bequest results are unaffected"
+
+      - name: Score + strategy — Bequest (with coaching pass)
+        if: steps.gate.outputs.go == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node src/strategy.js --digest 2>&1 | tee -a run.log | tee digest.txt
+
+      - name: Score — Florida Glass (report only)
+        if: steps.gate.outputs.go == 'true'
+        env:
+          BRAND: fgc
+        run: node src/strategy.js --no-coach 2>&1 | tee -a run.log || echo "::warning::FGC scoring failed"
+
+      - name: Commit analytics + strategy, then the pages
+        if: steps.gate.outputs.go == 'true'
+        run: |
+          git config user.name "bequest-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A content/
+          if git diff --cached --quiet; then
+            echo "No analytics changes to commit."
+          else
+            git commit -m "Analytics $(TZ=America/New_York date +%Y-%m-%d) [skip ci]"
+            git push || (git pull --rebase origin main && git push)
+          fi
+          git pull --rebase origin main || git rebase --abort || true
+          node src/build-preview.js || true
+          node src/build-analytics-page.js || true
+          git add -A docs/
+          git diff --cached --quiet || git commit -m "Rebuild pages [skip ci]"
+          git push || (git pull --rebase -X theirs origin main && node src/build-preview.js && node src/build-analytics-page.js && git add -A docs/ && (git diff --cached --quiet || git commit -m "Rebuild pages [skip ci]") && git push) || echo "::warning::Pages push failed; analytics are committed. Next run refreshes the pages."
+
+      - name: Digest issue (Fridays)
+        if: steps.gate.outputs.go == 'true' && steps.gate.outputs.digest == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # strategy.js --digest prints the markdown after a blank line following the "strategy written" line.
+          awk 'found{print} /^strategy written:/{found=1}' digest.txt > digest.md
+          echo "" >> digest.md
+          echo "Full page: https://bequestdigital.github.io/bequest-social/analytics.html" >> digest.md
+          node src/notify.js issue --title "Performance digest — week of $(TZ=America/New_York date +%Y-%m-%d)" --body-file digest.md || true
+
+      - name: Open issue on failure
+        if: failure()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node src/notify.js issue \
+            --title "Analytics run failed ($(date +%Y-%m-%d))" \
+            --body "The Tue/Fri analytics run failed. Log: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} — re-run with: gh workflow run analytics.yml" || true
+
+      - name: Upload run log
+        if: always() && steps.gate.outputs.go == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: analytics-log-${{ github.run_id }}
+          path: |
+            run.log
+            digest.txt
+          if-no-files-found: ignore

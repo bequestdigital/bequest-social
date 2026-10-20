@@ -14,6 +14,7 @@ import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import brand from '../brand.config.js';
 import { CONTENT, QUEUE, ROOT, readJSON, writeJSON, todayET, addDays, retry, xLength, fixNumberedLists } from './util.js';
+import { mergedCalendarPosts } from './plan.js';
 
 const MODEL = process.env.MODEL || 'claude-sonnet-4-6';
 const TOKEN_BUDGET = Number(process.env.TOKEN_BUDGET || 150000);
@@ -106,6 +107,12 @@ export function validatePackage(pkg, entry) {
       else if (!['columns', 'circles'].includes(data.mode)) errors.push('diagram needs mode columns|circles');
     }
     if (tmpl === 'stat-card' && (!data.stat || !data.context)) errors.push('stat-card needs data.stat and data.context');
+    // A stat card is a number on a 1080px canvas. Without an evidence file the
+    // number came from the model, which is the 2026-09-23 failure in a
+    // different template.
+    if (tmpl === 'stat-card' && entry?.date && !readEvidence(entry.date)) {
+      errors.push('stat-card needs content/evidence/<date>.json — pick quote-card, tip-card, carousel or diagram instead');
+    }
 
     // Copy must not promise an interaction the asset can't deliver. Only the
     // carousel template renders multiple frames; every other template is one
@@ -151,6 +158,15 @@ export function readEvidence(date) {
   return fs.existsSync(f) ? readJSON(f) : null;
 }
 
+// ---- performance strategy ----
+// Written by src/strategy.js from the Tue/Fri analytics run. Optional: a repo
+// with no analytics yet generates exactly as before.
+export const STRATEGY = path.join(CONTENT, 'strategy.json');
+
+export function readStrategy() {
+  return fs.existsSync(STRATEGY) ? readJSON(STRATEGY) : null;
+}
+
 // ---- Anthropic call ----
 let tokensUsed = 0;
 
@@ -169,6 +185,24 @@ Approved IG hashtag list: ${JSON.stringify(brand.hashtags)}
 
 ${SCHEMA_INSTRUCTIONS}`;
   const evidence = readEvidence(entry.date);
+  const strategy = readStrategy();
+  if (strategy) {
+    user += `\n\nPerformance guidance from our own post analytics (shape tone, length, hook style and graphic choice with it; it
+never licenses a fact, figure, client name or result the calendar entry and evidence do not supply):
+${JSON.stringify(
+      {
+        guidance: strategy.guidance,
+        coach_instructions: strategy.coach_notes?.instructions || null,
+        operator_notes: strategy.operator_notes || null,
+        template_weights: strategy.weights?.template || null,
+      },
+      null,
+      1
+    )}`;
+  }
+  if (!evidence) {
+    user += `\n\nThis date has no verified evidence file: do not choose the stat-card template, and do not state any statistic, percentage, dollar figure, study or client result.`;
+  }
   if (evidence) {
     user += `\n\nVerified evidence for this post (human-supplied, permission-cleared). Every figure, quote, client
 reference and outcome in your copy must come from this object verbatim. Do not add, round, embellish or
@@ -256,7 +290,9 @@ function parseArgs() {
 
 async function main() {
   const opts = parseArgs();
-  const calendar = readJSON(path.join(CONTENT, 'calendar.json'));
+  // Hand-written calendar first, then the planner's continuation
+  // (content/calendar-extension.json) for dates the calendar doesn't cover.
+  const calendar = { posts: mergedCalendarPosts() };
 
   let targets;
   if (opts.date) {

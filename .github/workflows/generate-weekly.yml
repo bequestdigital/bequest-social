@@ -62,6 +62,16 @@ jobs:
         if: steps.gate.outputs.go == 'true'
         run: node src/parse-calendar.js 2>&1 | tee run.log
 
+      # The hand-written calendar ended 2026-10-16. For any posting day in the
+      # coming week it doesn't cover, the planner writes an entry to
+      # content/calendar-extension.json using content/strategy.json (what has
+      # performed). Dates the calendar does cover are left alone.
+      - name: Plan the coming week where the calendar has no entry
+        if: steps.gate.outputs.go == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node src/plan.js --week-of "${{ inputs.week_of }}" 2>&1 | tee -a run.log
+
       - name: Generate posts + render images
         if: steps.gate.outputs.go == 'true'
         env:
@@ -78,8 +88,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           WEEK=$(node -p "require('./manifest.json').week_of || ''")
+          git config user.name "bequest-bot"
+          git config user.email "actions@users.noreply.github.com"
           if [ -z "$WEEK" ]; then
             echo "No posts generated for this window — nothing to approve."
+            # The planner may still have written calendar entries; keep them.
+            git add -A content/calendar-extension.json 2>/dev/null || true
+            git diff --cached --quiet || (git commit -m "Plan calendar entries [skip ci]" && (git push || (git pull --rebase origin main && git push)))
             exit 0
           fi
           # Build the FYI body while packages are still in content/queue/ (image

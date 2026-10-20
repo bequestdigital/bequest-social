@@ -121,7 +121,7 @@ footer{text-align:center;font-size:12px;color:#99a;padding:30px}
 <header>
   <h1>Upcoming Social Posts</h1>
   <p>Everything queued for auto-publish, exactly as it will appear. Updates automatically after every generation and publish run. Last built: ${now} ET.</p>
-  <nav>${BRANDS.map((b) => `<a href="#${b.key}">${b.name}</a>`).join('')}</nav>
+  <nav>${BRANDS.map((b) => `<a href="#${b.key}">${b.name}</a>`).join('')}<a href="./analytics.html">Performance</a></nav>
 </header>
 <main>
 ${BRANDS.map(brandSection).join('\n')}

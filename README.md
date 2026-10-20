@@ -119,6 +119,53 @@ Re-runs never double-post — successful platform IDs are checked before anythin
 
 ---
 
+## The learning loop (analytics → strategy → next week's posts)
+
+The hand-written Q3 calendar ran out on 2026-10-16. From then on the pipeline plans
+its own weeks, steered by how the published posts actually performed.
+
+**Tuesday + Friday 7am ET — `analytics.yml`**
+
+1. `src/insights.js` pulls every published post's numbers: Facebook (reactions,
+   comments, shares, impressions/reach, clicks), Instagram (likes, comments, saves,
+   shares, reach, views) and X (likes, reposts, replies, bookmarks, impressions).
+   Posts younger than 28 days are re-fetched each run and keep a short snapshot
+   history; older posts are fetched once. Records live in
+   `content/<brand>/analytics/posts/<date>.json`. Meta drops insight metrics without
+   notice, so the collector probes metric-by-metric on failure and remembers the
+   surviving set in `analytics/metric-support.json`. X reads are pay-per-call and
+   fail soft (a warning, never a failed run).
+2. `src/strategy.js` scores each matured post (≥3 days old) against the channel
+   medians — 1.0 is a typical post — rolls up by type, graphic template, weekday
+   and hook style (`analytics/summary.json`), and writes `content/strategy.json`:
+   type/template weights (shrunk toward 1.0 on thin samples), rule-based guidance,
+   and **coach notes** from a Claude pass over the summary. The coach may shape tone,
+   mix, template and hook style; it is forbidden from introducing figures or client
+   claims, and its output is rejected if it contains a percentage or dollar figure.
+   `operator_notes` in `strategy.json` is a human/Claude Code instruction that code
+   never overwrites — the place to steer the pipeline by hand.
+3. The performance page is rebuilt at
+   https://bequestdigital.github.io/bequest-social/analytics.html and, on Fridays, a
+   **Performance digest** issue is opened.
+
+**Sunday 6am ET — `generate-weekly.yml`**
+
+4. `src/plan.js` fills any Mon/Wed/Fri in the coming week that the calendar doesn't
+   cover, writing entries to `content/calendar-extension.json` in the parser's
+   format. It reads `strategy.json` for the type/template mix and the coach's
+   instructions. Types are WHY/TIP/POV/ASK only; PROOF (and any stat graphic) is
+   allowed only on a date that already has `content/evidence/<date>.json`. Hooks
+   and directions are rejected if they carry a percentage, dollar figure or
+   research claim, or repeat a hook already used. Hand-written calendar entries
+   always win over planned ones.
+5. `src/generate.js` merges calendar + extension, and injects the strategy guidance
+   into the copywriting prompt. A `stat-card` now fails validation unless the date
+   has an evidence file.
+
+Run by hand: `gh workflow run analytics.yml` (add `-f digest=true` for the issue);
+`gh workflow run generate-weekly.yml -f week_of=<a Sunday>` plans + generates that week.
+Review with judgment: the `bequest-social-performance-review` skill (Claude Code).
+
 ## Loading next quarter's calendar
 
 1. Drop the new markdown calendar in the repo root (any `*calendar*.md` name; same table format: `## Week N (…) — Theme: …` headings and `| Mon 7/20 | TYPE | **"Hook"** | Direction |` rows). Remove or rename the old one so only the current quarter matches `*calendar*`.
