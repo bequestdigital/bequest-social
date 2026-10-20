@@ -1,7 +1,7 @@
 {
   "fb_post": {
     "metrics": [],
-    "checked_at": "2026-10-20T15:50:39.133Z",
-    "error": "Graph GET /105187522086021_1109587594997237/insights: {\"message\":\"Permissions error\",\"type\":\"OAuthException\",\"code\":200,\"error_subcode\":1504029,\"is_transient\":false,\"error_user_title\":\"User doesn't have enough permissions to load insights\",\"error_user_msg\":\"You do not have enough permission to view the metric.\",\"fbtrace_id\":\"ArMYiQuHIcbtnEf0QAn6tEq\"}"
+    "checked_at": "2026-10-20T16:02:30.157Z",
+    "error": "Graph GET /105187522086021_1109587594997237/insights: {\"message\":\"Permissions error\",\"type\":\"OAuthException\",\"code\":200,\"error_subcode\":1504029,\"is_transient\":false,\"error_user_title\":\"User doesn't have enough permissions to load insights\",\"error_user_msg\":\"You do not have enough permission to view the metric.\",\"fbtrace_id\":\"A3KJWSN6oideoZL8noB66Lu\"}"
   }
 }

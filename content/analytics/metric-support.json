@@ -1,1 +1,22 @@
-{}
+{
+  "ig_media": {
+    "metrics": [
+      "reach",
+      "views",
+      "saved",
+      "shares",
+      "total_interactions"
+    ],
+    "checked_at": "2026-10-20T16:01:52.687Z"
+  },
+  "ig_carousel": {
+    "metrics": [
+      "reach",
+      "views",
+      "saved",
+      "shares",
+      "total_interactions"
+    ],
+    "checked_at": "2026-10-20T16:01:58.339Z"
+  }
+}

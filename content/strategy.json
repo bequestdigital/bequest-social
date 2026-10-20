@@ -1,6 +1,6 @@
 {
   "brand": "bequest",
-  "updated_at": "2026-10-20T16:00:45.887Z",
+  "updated_at": "2026-10-20T16:02:32.251Z",
   "sample": {
     "scored": 0,
     "matured": 32,
@@ -8,13 +8,12 @@
   },
   "data_quality": {
     "usable_channels": [
-      "fb"
+      "fb",
+      "ig"
     ],
-    "blocked": [
-      "ig_insights"
-    ],
+    "blocked": [],
     "sufficient": false,
-    "reason": "reads blocked by permissions on ig_insights (instagram_manage_insights (reach, saves, shares, views))"
+    "reason": "only 0 scored posts / no channel with reach data"
   },
   "weights": {
     "type": {

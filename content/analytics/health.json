@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-20T16:00:42.729Z",
+  "at": "2026-10-20T16:02:26.299Z",
   "posts_checked": 31,
   "channels": {
     "fb": {
@@ -18,8 +18,8 @@
       "other": 1
     },
     "ig_insights": {
-      "ok": 0,
-      "permission": 30,
+      "ok": 30,
+      "permission": 0,
       "other": 0
     },
     "x": {
@@ -28,10 +28,6 @@
       "other": 0
     }
   },
-  "blocked": [
-    "ig_insights"
-  ],
-  "scope_fix": {
-    "ig_insights": "instagram_manage_insights (reach, saves, shares, views)"
-  }
+  "blocked": [],
+  "scope_fix": {}
 }

@@ -28,10 +28,9 @@
       "saved": 0,
       "shares": 0,
       "engagement": 0,
-      "reach": null,
-      "views": null,
-      "total_interactions": null,
-      "insights_error": "Graph GET /18110796764025497/insights: {\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id\":\"AmfWThsJ0WfDXdii3RAP7UJ\"}"
+      "reach": 4,
+      "views": 11,
+      "total_interactions": 0
     },
     "x": {
       "created_time": "2026-08-26T13:45:34.000Z",
@@ -237,9 +236,44 @@
           "clicks": null
         }
       }
+    },
+    {
+      "at": "2026-10-20T16:02:08.172Z",
+      "age_days": 55,
+      "channels": {
+        "fb": {
+          "reactions": 0,
+          "comments": 0,
+          "shares": 0,
+          "engagement": 0,
+          "views": 2,
+          "reach": 2,
+          "clicks": 0
+        },
+        "ig": {
+          "likes": 0,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0,
+          "engagement": 0,
+          "reach": 4,
+          "views": 11,
+          "total_interactions": 0
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 1,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 1,
+          "impressions": 6,
+          "clicks": null
+        }
+      }
     }
   ],
-  "fetched_at": "2026-10-20T16:00:35.656Z",
+  "fetched_at": "2026-10-20T16:02:08.172Z",
   "age_days_at_fetch": 55,
   "matured": true
 }
