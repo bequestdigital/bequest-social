@@ -119,6 +119,38 @@ Re-runs never double-post — successful platform IDs are checked before anythin
 
 ---
 
+## The ig-native template family (added 10/20/26)
+
+`image.template: "ig-native"` renders through **Poaster's** public render surface
+(poaster.co/render — our own product) instead of a local HTML template: the
+graphic looks like a person made it with Instagram's native text tools rather
+than a designed brand card. Presets available to the model (menu + rules live
+in `src/generate.js`, brand row + preset list in `brand.config.js`):
+
+| preset | feel | best for |
+|---|---|---|
+| editorialSerif | tracked serif caps on cream | POV, quiet authority |
+| solidCard | flat forest card, bold caps | announcements, WHY |
+| memeCaps | huge compressed caps (<=48 chars) | punchlines, blunt questions |
+| typewriter | lowercase mono | wry TIP/POV observations |
+| whitePanel | stacked chat-style pills | conversational lines |
+| script | handwritten accent | personal notes |
+| pollCard | poll look-alike | ASK **only** |
+
+Guard rails:
+- **pollCard is a visual look-alike — nothing is tappable.** Validation requires
+  the caption to invite answers *in the comments* and rejects tap/vote/slide
+  language. (Real interactive polls only exist as Instagram Story stickers,
+  which no third-party API can create.)
+- Numbers on an ig-native graphic need `content/evidence/<date>.json`, same as
+  stat-card.
+- The planner may schedule at most one ig-native post per week; the learning
+  loop scores it like any other template (`by_template` roll-up), so the data
+  decides whether it earns more slots.
+- If poaster.co is unreachable from the runner (2 attempts), the package
+  **degrades to a quote-card** built from the same text (`image.degraded_from`
+  records it) — the schedule never starves on a render dependency.
+
 ## The learning loop (analytics → strategy → next week's posts)
 
 The hand-written Q3 calendar ran out on 2026-10-16. From then on the pipeline plans

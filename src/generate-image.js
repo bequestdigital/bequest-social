@@ -61,6 +61,36 @@ function dotsHtml(total, active) {
 
 // Each builder returns [{ suffix, html }] — one entry per rendered image.
 const builders = {
+  // IG Native — rendered by Poaster's public /render surface (our own
+  // product) instead of a local HTML template. The builder returns a
+  // poasterPayload; renderPackage() navigates to the render URL, waits for
+  // window.__renderReady, and screenshots the stage. Presets are the
+  // Instagram-native styles (poll look is VISUAL ONLY — validation forces
+  // the caption to ask for comments, never taps).
+  'ig-native'(pkg) {
+    const d = pkg.image.data;
+    return [
+      {
+        suffix: '',
+        poasterPayload: {
+          brandId: null,
+          brandRow: brand.poaster.brandRow,
+          postType: 'igNative',
+          aspectId: 'square',
+          density: 'standard',
+          props: {
+            preset: d.preset,
+            text: d.text,
+            sub: d.sub || '',
+            nativeness: typeof d.nativeness === 'number' ? d.nativeness : 1,
+            align: 'auto',
+          },
+        },
+      },
+    ];
+  },
+
+
   'quote-card'(pkg) {
     const d = pkg.image.data;
     return [
@@ -191,8 +221,64 @@ const builders = {
   },
 };
 
+// Drive Poaster's render surface for one payload; writes a 1080x1080 JPEG.
+// Two attempts — poaster.co occasionally cold-starts. Throws on failure; the
+// caller downgrades the package to quote-card so the schedule never starves.
+async function renderViaPoaster(page, payload, outPath) {
+  const url =
+    brand.poaster.renderBase +
+    '/render?p=' +
+    Buffer.from(JSON.stringify(payload)).toString('base64url');
+  let lastErr;
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const resp = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
+      if (!resp || resp.status() >= 400) throw new Error(`render surface HTTP ${resp ? resp.status() : 'none'}`);
+      await page.waitForFunction('window.__renderReady === true', { timeout: 45000 });
+      const renderError = await page.evaluate(() => window.__renderError);
+      if (renderError) throw new Error(`poaster render: ${renderError}`);
+      const el = await page.$('#stage > *');
+      if (!el) throw new Error('poaster render: empty stage');
+      await el.screenshot({ path: outPath, type: 'jpeg', quality: 92 });
+      return;
+    } catch (e) {
+      lastErr = e;
+      console.log(`  ::warning:: poaster render attempt ${attempt} failed: ${e.message}`);
+    }
+  }
+  throw lastErr;
+}
+
 async function renderPackage(browser, pkgPath) {
-  const pkg = readJSON(pkgPath);
+  let probePage;
+  let pkg = readJSON(pkgPath);
+  // ig-native depends on poaster.co being reachable from the runner. If it
+  // isn't, degrade to a quote-card built from the same copy rather than
+  // failing the whole run — the learning loop will simply see a quote-card.
+  if (pkg.image.template === 'ig-native') {
+    try {
+      await renderViaPoaster(
+        await browser.newPage().then(async (p) => { await p.setViewport({ width: 1120, height: 1200 }); probePage = p; return p; }),
+        builders['ig-native'](pkg)[0].poasterPayload,
+        path.join(path.dirname(pkgPath), path.basename(pkgPath, '.json') + '.jpg')
+      );
+      await probePage.close();
+      pkg.image.files = [path.basename(pkgPath, '.json') + '.jpg'];
+      writeJSON(pkgPath, pkg);
+      console.log(`  rendered ${path.relative(ROOT, pkgPath).replace('.json', '.jpg')} (poaster ig-native)`);
+      return;
+    } catch (e) {
+      console.log(`  ::warning:: ig-native render failed twice (${e.message}) — degrading to quote-card`);
+      const d = pkg.image.data;
+      pkg.image = {
+        template: 'quote-card',
+        data: { quote: d.text, attribution: d.sub || null, eyebrow: pkg.weekTheme || '' },
+        alt: pkg.image.alt,
+        degraded_from: 'ig-native',
+      };
+      writeJSON(pkgPath, pkg);
+    }
+  }
   const builder = builders[pkg.image.template];
   if (!builder) throw new Error(`${pkgPath}: unknown template "${pkg.image.template}"`);
 

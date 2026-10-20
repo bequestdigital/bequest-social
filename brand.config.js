@@ -30,6 +30,36 @@ export default {
       'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;600;700&display=swap',
   },
 
+  // Poaster render surface (our own product, poaster.co) — used by the
+  // ig-native template family in generate-image.js. The brandRow mirrors the
+  // palette/fonts above in Poaster's brand-row shape; keep the two in sync.
+  poaster: {
+    renderBase: 'https://poaster.co',
+    presets: ['editorialSerif', 'solidCard', 'memeCaps', 'typewriter', 'whitePanel', 'script', 'pollCard'],
+    brandRow: {
+      id: 'bequest-social',
+      label: 'Bequest Digital',
+      family: 'editorial',
+      wordmark: 'Bequest Digital',
+      eyebrow: 'Bequest Digital',
+      site_host: 'mybequestdigital.com',
+      site_url: 'https://mybequestdigital.com',
+      medallion_url: null,
+      fallback_hero_url: null,
+      fallback_heroes: [],
+      colors: {
+        primary: '#153325', gold: '#CBA84D', charcoal: '#0D2118',
+        ink: '#0D2118', paper: '#F6F4EE', paperWarm: '#F6F4EE',
+        __fonts: {
+          headline: 'Cormorant Garamond', body: 'Source Sans 3', source: 'google',
+          headlineSource: 'google', bodySource: 'google',
+          googleFamilies: ['Cormorant Garamond', 'Source Sans 3'], faces: [], unavailable: [],
+        },
+      },
+      allowed_post_types: ['igNative'],
+    },
+  },
+
   // IG hashtag pool. Generation may ONLY choose from this list (base set comes
   // from the calendar's Standing Notes; the rest are approved extensions).
   hashtags: [

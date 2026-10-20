@@ -40,12 +40,14 @@ const SCHEMA_INSTRUCTIONS = `Return a JSON object with exactly this shape:
   "facebook": { "text": "<post copy, hook as the first line, no hashtags, typically 60-150 words>" },
   "instagram": { "text": "<caption adapted for IG, no hashtags inline>", "hashtags": ["3-5 tags WITHOUT # signs, chosen ONLY from the approved list"] },
   "x": { "posts": ["<single post <=270 chars>"] },
-  "image": { "template": "<one of: quote-card | tip-card | carousel | diagram | stat-card>", "data": { ... }, "alt": "<one-sentence image description>" }
+  "image": { "template": "<one of: quote-card | tip-card | carousel | diagram | stat-card | ig-native>", "data": { ... }, "alt": "<one-sentence image description>" }
 }
 
 X rules: one post of <=270 characters by default. Use a 2-3 item thread (array of 2-3 strings, each <=270 chars) only when the content genuinely warrants it. Hashtags: at most one, or none.
 
-Image template selection: honor any graphic named in the calendar entry's Direction (e.g. "carousel" -> carousel, "quote card" -> quote-card, "stat card" -> stat-card, "diagram"/"wireframe"/"side-by-side"/"comparison" -> diagram, "checklist"/"numbered list"/"template card" -> tip-card).
+Image template selection: honor any graphic named in the calendar entry's Direction (e.g. "carousel" -> carousel, "quote card" -> quote-card, "stat card" -> stat-card, "diagram"/"wireframe"/"side-by-side"/"comparison" -> diagram, "checklist"/"numbered list"/"template card" -> tip-card), "ig-native"/"native look"/"IG-style" -> ig-native).
+
+ig-native is the Instagram-native look (rendered by our Poaster engine): the graphic reads like a person made it with Instagram's own text tools - casual, current, platform-native - instead of a designed brand card. Use it when the direction names it, or when the post is a short punchy line that would feel over-dressed on a formal card (at most ONE ig-native post per week unless directions say otherwise). Pick the preset by message: editorialSerif (restrained tracked caps, quiet authority), solidCard (bold flat brand-color card, announcements), memeCaps (huge compressed caps, punchlines and blunt questions), typewriter (lowercase mono, wry observations and quotes), whitePanel (stacked chat-style pills, conversational lines), script (handwritten warmth, personal notes), pollCard (ASK posts ONLY - renders a NON-interactive poll VISUAL; the caption MUST invite answers in the comments and must NEVER say tap, vote or slide, or treat the poll as if it works).
 
 Image data schemas (keep image text SHORT — it must fit a 1080x1080 graphic):
 - quote-card:  { "quote": "<=140 chars", "attribution": "<string or null>", "eyebrow": "<=30 chars, e.g. the week theme>" }
@@ -55,7 +57,8 @@ Image data schemas (keep image text SHORT — it must fit a 1080x1080 graphic):
                  "columns": { "left": {"label": "<=25", "items": ["2-5 x <=45 chars"]}, "right": {"label": "<=25", "items": ["2-5 x <=45 chars"]} }  // for mode=columns
                  "circles": [{"label": "WHY", "sub": "<=35"}, {"label": "HOW", "sub": "<=35"}, {"label": "WHAT", "sub": "<=35"}]  // for mode=circles, inner->outer
                }
-- stat-card:   { "eyebrow": "<=30 chars", "stat": "<=12 chars, the big number/figure", "label": "<=45 chars", "context": "<=140 chars" }`;
+- stat-card:   { "eyebrow": "<=30 chars", "stat": "<=12 chars, the big number/figure", "label": "<=45 chars", "context": "<=140 chars" }
+- ig-native:   { "preset": "<editorialSerif|solidCard|memeCaps|typewriter|whitePanel|script|pollCard>", "text": "<the on-image line; <=48 chars for memeCaps, <=90 for editorialSerif/solidCard, <=140 otherwise>", "sub": "<small second line or poll option, <=60 chars, or null>" }`;
 
 // ---- validation ----
 export function validatePackage(pkg, entry) {
@@ -88,7 +91,7 @@ export function validatePackage(pkg, entry) {
 
   const tmpl = pkg?.image?.template;
   const data = pkg?.image?.data;
-  const templates = ['quote-card', 'tip-card', 'carousel', 'diagram', 'stat-card'];
+  const templates = ['quote-card', 'tip-card', 'carousel', 'diagram', 'stat-card', 'ig-native'];
   if (!templates.includes(tmpl)) {
     errors.push(`image.template must be one of ${templates.join(', ')}`);
   } else if (!data || typeof data !== 'object') {
@@ -107,6 +110,30 @@ export function validatePackage(pkg, entry) {
       else if (!['columns', 'circles'].includes(data.mode)) errors.push('diagram needs mode columns|circles');
     }
     if (tmpl === 'stat-card' && (!data.stat || !data.context)) errors.push('stat-card needs data.stat and data.context');
+    if (tmpl === 'ig-native') {
+      const presets = ['editorialSerif', 'solidCard', 'memeCaps', 'typewriter', 'whitePanel', 'script', 'pollCard'];
+      if (!presets.includes(data.preset)) errors.push(`ig-native preset must be one of ${presets.join(', ')}`);
+      if (!data.text || typeof data.text !== 'string') {
+        errors.push('ig-native needs data.text');
+      } else {
+        const cap = data.preset === 'memeCaps' ? 48 : ['editorialSerif', 'solidCard'].includes(data.preset) ? 90 : 140;
+        if (data.text.length > cap) errors.push(`ig-native ${data.preset} text is ${data.text.length} chars (max ${cap})`);
+      }
+      // The poll preset renders a LOOK-ALIKE - nothing is tappable. It only
+      // makes sense on an ASK, and the caption has to route the interaction
+      // to the comments instead of pretending the sticker works.
+      if (data.preset === 'pollCard') {
+        if (entry?.type && entry.type !== 'ASK') errors.push('ig-native pollCard is for ASK posts only');
+        const copy = [pkg?.facebook?.text, pkg?.instagram?.text, ...(pkg?.x?.posts || [])].join('\n');
+        if (!/comment/i.test(copy)) errors.push('pollCard posts must invite answers in the comments (the poll visual is not interactive)');
+        const bad = copy.match(/\b(tap|vote above|vote now|slide the|use the poll)\b/i);
+        if (bad) errors.push(`pollCard copy says "${bad[1]}" but the poll visual is not interactive`);
+      }
+      // Same discipline as stat-card: numbers on a graphic need evidence.
+      if (entry?.date && !readEvidence(entry.date) && /[%$]|\b\d+(\.\d+)?x\b/.test(`${data.text} ${data.sub || ''}`)) {
+        errors.push('ig-native graphic contains a figure but the date has no evidence file');
+      }
+    }
     // A stat card is a number on a 1080px canvas. Without an evidence file the
     // number came from the model, which is the 2026-09-23 failure in a
     // different template.
@@ -215,7 +242,7 @@ ${JSON.stringify(
     )}`;
   }
   if (!evidence) {
-    user += `\n\nThis date has no verified evidence file: do not choose the stat-card template, and do not state any statistic, percentage, dollar figure, study or client result.`;
+    user += `\n\nThis date has no verified evidence file: do not choose the stat-card template, do not put any figure on an ig-native graphic, and do not state any statistic, percentage, dollar figure, study or client result.`;
   }
   if (evidence) {
     user += `\n\nVerified evidence for this post (human-supplied, permission-cleared). Every figure, quote, client

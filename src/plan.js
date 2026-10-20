@@ -152,7 +152,7 @@ export async function planWeek(base, { force = false } = {}) {
 Rules you cannot break:
 - Post types: ${TYPES.join(', ')}${evidence.length ? `, plus PROOF only on ${evidence.join(', ')}` : ''}. Never PROOF, testimonial, case study, client result or "their words" on any other date.
 - Hooks and directions must contain no numbers presented as facts: no percentages, dollar figures, benchmarks, studies, surveys or "research shows". Counts in a title ("3 questions") are fine.
-- Each direction must name the graphic: quote card, tip card (checklist / numbered list), carousel, or diagram (wireframe / side-by-side / comparison). Never a stat card or stat graphic unless the date has evidence.
+- Each direction must name the graphic: quote card, tip card (checklist / numbered list), carousel, diagram (wireframe / side-by-side / comparison), or ig-native (Instagram-native look - casual, like a person typed it in the app; best for short punchy lines, wry observations and ASK questions; at most one ig-native per week). Never a stat card or stat graphic unless the date has evidence.
 - No hook may restate a hook already used (list provided). Vary the angle, not just the words.
 - Keep the audience register: churches, Christian businesses, small-to-mid nonprofits, owners who'd rather build than market. Plain speech, ownership, craftsmanship, permanence, stewardship. Faith natural, never performative. Never partisan.
 Return ONLY a JSON object: {"weekTheme": "<3-6 words>", "posts": [{"date": "YYYY-MM-DD", "type": "...", "hook": "<=140 chars, the first line of the post>", "direction": "<=400 chars: angle, what to cover, and the graphic>"}]}`;
