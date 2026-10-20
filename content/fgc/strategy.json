@@ -1,6 +1,6 @@
 {
   "brand": "fgc",
-  "updated_at": "2026-10-20T11:23:17.856Z",
+  "updated_at": "2026-10-20T15:50:43.557Z",
   "sample": {
     "scored": 0,
     "matured": 12,
@@ -8,11 +8,9 @@
   },
   "data_quality": {
     "usable_channels": [],
-    "blocked": [
-      "fb"
-    ],
+    "blocked": [],
     "sufficient": false,
-    "reason": "reads blocked by permissions on fb (pages_read_user_content (read the Page's own posts: reactions, comments, shares))"
+    "reason": "only 0 scored posts / no channel with reach data"
   },
   "weights": {
     "type": {

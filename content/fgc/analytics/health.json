@@ -1,16 +1,16 @@
 {
-  "at": "2026-10-20T11:23:17.602Z",
+  "at": "2026-10-20T15:50:43.293Z",
   "posts_checked": 13,
   "channels": {
     "fb": {
-      "ok": 0,
-      "permission": 13,
+      "ok": 13,
+      "permission": 0,
       "other": 0
     },
     "fb_insights": {
       "ok": 0,
       "permission": 0,
-      "other": 0
+      "other": 13
     },
     "ig": {
       "ok": 0,
@@ -28,10 +28,6 @@
       "other": 0
     }
   },
-  "blocked": [
-    "fb"
-  ],
-  "scope_fix": {
-    "fb": "pages_read_user_content (read the Page's own posts: reactions, comments, shares)"
-  }
+  "blocked": [],
+  "scope_fix": {}
 }

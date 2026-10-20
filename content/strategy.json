@@ -1,19 +1,20 @@
 {
   "brand": "bequest",
-  "updated_at": "2026-10-20T11:23:17.733Z",
+  "updated_at": "2026-10-20T15:50:43.431Z",
   "sample": {
     "scored": 0,
     "matured": 32,
     "total": 32
   },
   "data_quality": {
-    "usable_channels": [],
+    "usable_channels": [
+      "fb"
+    ],
     "blocked": [
-      "fb",
       "ig_insights"
     ],
     "sufficient": false,
-    "reason": "reads blocked by permissions on fb, ig_insights (pages_read_user_content (read the Page's own posts: reactions, comments, shares); instagram_manage_insights (reach, saves, shares, views))"
+    "reason": "reads blocked by permissions on ig_insights (instagram_manage_insights (reach, saves, shares, views))"
   },
   "weights": {
     "type": {

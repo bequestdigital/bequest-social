@@ -9,7 +9,16 @@
   "published_at": "2026-09-28T19:54:54.609Z",
   "channels": {
     "fb": {
-      "error": "Graph GET /105187522086021_1115645897724740: {\"message\":\"(#10) This endpoint requires the 'pages_read_user_content' permission or the 'Page Public Content Access' feature. Refer to https://developers.facebook.com/docs/apps/review/login-permissions#manage-pages and https://developers.facebook.com/docs/apps/review/feature#reference-PAGES_ACCESS "
+      "permalink": "https://www.facebook.com/1136471152308881/posts/1115645897724740",
+      "created_time": "2026-09-28T19:54:49+0000",
+      "reactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "engagement": 0,
+      "views": null,
+      "reach": null,
+      "clicks": null,
+      "insights_error": "Graph GET /105187522086021_1109587594997237/insights: {\"message\":\"Permissions error\",\"type\":\"OAuthException\",\"code\":200,\"error_subcode\":1504029,\"is_transient\":false,\"error_user_title\":\"User doesn't have enough permissions to load insights\",\"error_user_msg\":\"You do not have enough permission to view the metric.\",\"fbtrace_id\":\"ArMYiQuHIcbtnEf0QAn6tEq\"}"
     }
   },
   "snapshots": [
@@ -39,9 +48,24 @@
           "error": true
         }
       }
+    },
+    {
+      "at": "2026-10-20T15:50:39.885Z",
+      "age_days": 22,
+      "channels": {
+        "fb": {
+          "reactions": 0,
+          "comments": 0,
+          "shares": 0,
+          "engagement": 0,
+          "views": null,
+          "reach": null,
+          "clicks": null
+        }
+      }
     }
   ],
-  "fetched_at": "2026-10-20T11:23:13.845Z",
+  "fetched_at": "2026-10-20T15:50:39.885Z",
   "age_days_at_fetch": 22,
   "matured": true
 }

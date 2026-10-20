@@ -1,39 +1,37 @@
 {
-  "at": "2026-10-20T11:23:11.413Z",
-  "posts_checked": 19,
+  "at": "2026-10-20T15:50:34.032Z",
+  "posts_checked": 31,
   "channels": {
     "fb": {
-      "ok": 0,
-      "permission": 18,
+      "ok": 30,
+      "permission": 0,
       "other": 1
     },
     "fb_insights": {
-      "ok": 0,
+      "ok": 30,
       "permission": 0,
       "other": 0
     },
     "ig": {
-      "ok": 18,
+      "ok": 30,
       "permission": 0,
       "other": 1
     },
     "ig_insights": {
       "ok": 0,
-      "permission": 18,
+      "permission": 30,
       "other": 0
     },
     "x": {
-      "ok": 19,
+      "ok": 31,
       "permission": 0,
       "other": 0
     }
   },
   "blocked": [
-    "fb",
     "ig_insights"
   ],
   "scope_fix": {
-    "fb": "pages_read_user_content (read the Page's own posts: reactions, comments, shares)",
     "ig_insights": "instagram_manage_insights (reach, saves, shares, views)"
   }
 }
