@@ -349,9 +349,12 @@ export async function main() {
     sufficient: usable.length > 0 && summary.posts_scored >= 8,
   };
   if (!quality.sufficient) {
+    const m = summary.channel_medians;
     const why = quality.blocked.length
       ? `reads blocked by permissions on ${quality.blocked.join(', ')} (${Object.values(health?.scope_fix || {}).join('; ')})`
-      : `only ${summary.posts_scored} scored posts / no channel with reach data`;
+      : usable.length && !summary.posts_scored
+        ? `the typical post reaches too few people to rank (median reach FB ${m.fb?.reach ?? '—'}, IG ${m.ig?.reach ?? '—'}; median engagement FB ${m.fb?.engagement ?? '—'}, IG ${m.ig?.engagement ?? '—'}). Scoring needs a median of at least 25 reach or 2 engagements on a channel. This is a distribution problem, not a copy problem.`
+        : `only ${summary.posts_scored} scored posts / no channel with reach data`;
     console.log(`::warning title=Strategy held neutral::Analytics are incomplete: ${why}. Weights stay at 1.0 and no coaching notes are written until real reach/engagement data is available.`);
     const neutral = (buckets, pinned) => Object.fromEntries([...Object.keys(buckets), ...pinned].map((k) => [k, pinned.includes(k) ? 0 : 1]));
     const strategy = {

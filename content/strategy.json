@@ -1,6 +1,6 @@
 {
   "brand": "bequest",
-  "updated_at": "2026-10-20T16:02:32.251Z",
+  "updated_at": "2026-10-20T16:03:06.738Z",
   "sample": {
     "scored": 0,
     "matured": 32,
@@ -13,7 +13,7 @@
     ],
     "blocked": [],
     "sufficient": false,
-    "reason": "only 0 scored posts / no channel with reach data"
+    "reason": "the typical post reaches too few people to rank (median reach FB 1, IG 4; median engagement FB 0, IG 1). Scoring needs a median of at least 25 reach or 2 engagements on a channel. This is a distribution problem, not a copy problem."
   },
   "weights": {
     "type": {
