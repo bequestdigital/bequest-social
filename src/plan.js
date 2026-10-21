@@ -22,7 +22,7 @@
 //   - Hand-written calendar entries always win over planned ones for a date.
 import fs from 'node:fs';
 import path from 'node:path';
-import { CONTENT, PUBLISHED, readJSON, writeJSON, todayET, addDays, weekdayOf, nextMonday, retry } from './util.js';
+import { CONTENT, QUEUE, APPROVED, PUBLISHED, readJSON, writeJSON, todayET, addDays, weekdayOf, nextMonday, retry } from './util.js';
 
 const MODEL = process.env.MODEL || 'claude-sonnet-4-6';
 export const EXTENSION_FILE = path.join(CONTENT, 'calendar-extension.json');
@@ -32,6 +32,13 @@ const EVIDENCE_DIR = path.join(CONTENT, 'evidence');
 const POST_DAYS = [1, 3, 5]; // Mon / Wed / Fri
 const TYPES = ['WHY', 'TIP', 'POV', 'ASK'];
 const TEMPLATES = ['quote-card', 'tip-card', 'carousel', 'diagram'];
+// Product promotion: Poaster (poaster.co) is Bequest's own tool, and Alex
+// (10/21/26) wants it on the schedule about a quarter of the time. The planner
+// holds the trailing share of POASTER posts near this target; the copy facts
+// come only from content/poaster-facts.json (generate.js injects and enforces it).
+const PROMO_TYPE = 'POASTER';
+const PROMO_TARGET_SHARE = 0.25;
+const POASTER_FACTS_FILE = path.join(CONTENT, 'poaster-facts.json');
 const WEEKDAY = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 function parseArgs() {
@@ -78,6 +85,30 @@ function evidenceDates(dates) {
   return dates.filter((d) => fs.existsSync(path.join(EVIDENCE_DIR, `${d}.json`)));
 }
 
+// How many POASTER slots this week keeps the trailing share near the target:
+// exactly one while the share of the last 12 committed posts (published,
+// approved, queued or planned) sits under 25%, none once it is at or over.
+// At three posts a week this oscillates around one promo post most weeks.
+export function poasterQuota() {
+  const posts = new Map();
+  for (const dir of [PUBLISHED, APPROVED, QUEUE]) {
+    if (!fs.existsSync(dir)) continue;
+    for (const f of fs.readdirSync(dir).filter((f) => f.endsWith('.json')).sort()) {
+      try {
+        const p = readJSON(path.join(dir, f));
+        if (p.date && p.type) posts.set(p.date, p.type);
+      } catch {
+        /* skip */
+      }
+    }
+  }
+  for (const p of loadExtension().posts || []) if (!posts.has(p.date)) posts.set(p.date, p.type);
+  const recent = [...posts.entries()].sort((a, b) => a[0].localeCompare(b[0])).slice(-12);
+  if (!recent.length) return 0;
+  const share = recent.filter(([, t]) => t === PROMO_TYPE).length / recent.length;
+  return share < PROMO_TARGET_SHARE ? 1 : 0;
+}
+
 function calendarVoice() {
   const cal = fs.existsSync(CALENDAR_FILE) ? readJSON(CALENDAR_FILE) : {};
   const header = (cal.meta?.headerLines || []).join('\n');
@@ -85,21 +116,23 @@ function calendarVoice() {
   return { header, notes: typeof notes === 'string' ? notes : JSON.stringify(notes) };
 }
 
-function validatePlan(plan, dates, evidence) {
+function validatePlan(plan, dates, evidence, promoCount = 0) {
   const errors = [];
   if (!plan?.weekTheme || typeof plan.weekTheme !== 'string') errors.push('weekTheme missing');
   if (!Array.isArray(plan?.posts) || plan.posts.length !== dates.length) errors.push(`expected ${dates.length} posts`);
+  const promoPosts = (plan?.posts || []).filter((p) => p.type === PROMO_TYPE).length;
+  if (promoPosts !== promoCount) errors.push(`week must contain exactly ${promoCount} ${PROMO_TYPE} post(s), got ${promoPosts}`);
   const banned = /\b\d+(\.\d+)?\s?%|\$\s?\d|\b(study|survey|research|statistic|stat\b|data shows|according to)\b/i;
   for (const [i, p] of (plan?.posts || []).entries()) {
     if (p.date !== dates[i]) errors.push(`post ${i} date ${p.date} should be ${dates[i]}`);
-    const allowed = evidence.includes(p.date) ? [...TYPES, 'PROOF'] : TYPES;
+    const allowed = [...TYPES, ...(evidence.includes(p.date) ? ['PROOF'] : []), ...(promoCount ? [PROMO_TYPE] : [])];
     if (!allowed.includes(p.type)) errors.push(`post ${p.date}: type ${p.type} not allowed (${allowed.join('/')})`);
     if (!p.hook?.trim() || p.hook.length > 140) errors.push(`post ${p.date}: hook missing or >140 chars`);
     if (!p.direction?.trim() || p.direction.length > 400) errors.push(`post ${p.date}: direction missing or >400 chars`);
     const text = `${p.hook} ${p.direction}`;
     if (banned.test(text)) errors.push(`post ${p.date}: contains a figure or research claim (${text.match(banned)[0]})`);
     if (!evidence.includes(p.date) && /\bstat\s?(card|graphic)\b/i.test(p.direction)) errors.push(`post ${p.date}: stat graphic needs evidence`);
-    if (!TEMPLATES.some((t) => new RegExp(t.replace('-', '[ -]?'), 'i').test(p.direction)) && !/\b(wireframe|side-by-side|comparison|checklist|numbered list|quote)\b/i.test(p.direction)) {
+    if (!TEMPLATES.some((t) => new RegExp(t.replace('-', '[ -]?'), 'i').test(p.direction)) && !/\b(wireframe|side-by-side|comparison|checklist|numbered list|quote|ig[ -]?native)\b/i.test(p.direction)) {
       errors.push(`post ${p.date}: direction must name the graphic (${TEMPLATES.join(', ')})`);
     }
   }
@@ -147,10 +180,15 @@ export async function planWeek(base, { force = false } = {}) {
   const strategy = fs.existsSync(STRATEGY_FILE) ? readJSON(STRATEGY_FILE) : null;
   const evidence = evidenceDates(dates);
   const voice = calendarVoice();
+  const facts = fs.existsSync(POASTER_FACTS_FILE) ? readJSON(POASTER_FACTS_FILE) : null;
+  const promoCount = facts ? poasterQuota() : 0; // no verified facts file → no product post
 
   const system = `You plan the coming week of organic social posts for Bequest Digital LLC, a two-person digital marketing agency. You continue an existing 13-week calendar in its exact format and editorial voice. You produce hooks and directions only; a separate writer turns them into copy and a separate renderer makes the graphic.
 Rules you cannot break:
-- Post types: ${TYPES.join(', ')}${evidence.length ? `, plus PROOF only on ${evidence.join(', ')}` : ''}. Never PROOF, testimonial, case study, client result or "their words" on any other date.
+- Post types: ${TYPES.join(', ')}${evidence.length ? `, plus PROOF only on ${evidence.join(', ')}` : ''}${promoCount ? ', plus POASTER (see below)' : ''}. Never PROOF, testimonial, case study, client result or "their words" on any other date.
+${promoCount
+    ? `- Exactly ${promoCount} post this week is type POASTER: a product post for Poaster (poaster.co), the social-graphics tool Bequest built and sells. Promote it plainly to this same audience. Ground every product angle in the facts provided; never invent users, results or timelines, and keep prices and dollar figures OUT of the hook and direction (the copywriter adds specifics from the verified facts file). Graphic for a POASTER post: quote card, tip card or ig-native.`
+    : '- Do not plan posts about Poaster this week: its share of the schedule is already at target.'}
 - Hooks and directions must contain no numbers presented as facts: no percentages, dollar figures, benchmarks, studies, surveys or "research shows". Counts in a title ("3 questions") are fine.
 - Each direction must name the graphic: quote card, tip card (checklist / numbered list), carousel, diagram (wireframe / side-by-side / comparison), or ig-native (Instagram-native look - casual, like a person typed it in the app; best for short punchy lines, wry observations and ASK questions; at most one ig-native per week). Never a stat card or stat graphic unless the date has evidence.
 - No hook may restate a hook already used (list provided). Vary the angle, not just the words.
@@ -170,7 +208,10 @@ Week ${weekNo} dates (${dates.map((d) => `${WEEKDAY[weekdayOf(d)]} ${d}`).join('
 Performance strategy from our own analytics (follow it; sample sizes are small, so treat it as a lean, not a law):
 ${strategy ? JSON.stringify({ weights: strategy.weights, guidance: strategy.guidance, coach_notes: strategy.coach_notes, operator_notes: strategy.operator_notes, top_hooks: strategy.top_hooks, bottom_hooks: strategy.bottom_hooks }, null, 1) : 'none yet — keep a balanced TIP/POV mix with one WHY or ASK.'}
 
-Hooks already used (do not repeat):
+${promoCount && facts ? `Verified Poaster product facts (for choosing the POASTER angle only; no prices in hooks or directions):
+${JSON.stringify({ what_it_does: facts.what_it_does, claims: facts.claims }, null, 1)}
+
+` : ''}Hooks already used (do not repeat):
 ${recentHooks().map((h) => `- ${h}`).join('\n')}
 
 Plan the three posts. Use the type weights to choose the mix (higher weight = more of it), the template weights to choose graphics, and the coach instructions to shape hooks. ASK posts should not exceed one per week.`;
@@ -179,7 +220,7 @@ Plan the three posts. Use the type weights to choose the mix (higher weight = mo
   let plan;
   for (let attempt = 1; attempt <= 3; attempt++) {
     plan = await askClaude(prompt, system, errors);
-    errors = validatePlan(plan, dates, evidence);
+    errors = validatePlan(plan, dates, evidence, promoCount);
     if (!errors.length) break;
     console.log(`  plan attempt ${attempt} rejected: ${errors.join(' | ')}`);
   }

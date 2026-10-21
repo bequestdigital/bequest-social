@@ -1,0 +1,29 @@
+{
+  "_source": "poaster.co landing page (social-image-generator/src/pages/Landing.jsx), verified 2026-10-21. Update this file when the landing page's pricing or claims change — generate.js rejects any POASTER figure that is not in allowed_figures.",
+  "product": "Poaster",
+  "owner": "Built and sold by Bequest Digital (our own product).",
+  "url": "https://poaster.co",
+  "try_url": "https://poaster.co/try",
+  "what_it_does": "Turns a link or a few words into polished, perfectly-branded social images in every size you need. Paste a website link and it pulls the brand on its own (colors, fonts, logo). No designer required.",
+  "claims": [
+    "On-brand social graphics in seconds. No designer required.",
+    "3 free downloads before you even sign up. No account or card needed to try.",
+    "Lifetime free plan: one brand, all templates, 10 exports a day. Free downloads carry a small 'Made with Poaster' mark; paid plans remove it.",
+    "Solo plan $19/mo, or $15/mo billed annually ($180/yr). 14-day free trial.",
+    "Agency plan $49/mo, or $39/mo billed annually ($468/yr). 14-day free trial.",
+    "14-day free trial on paid plans. Cancel anytime. No credit card to start.",
+    "Template families include an Instagram-native look (IG Native) alongside designed brand cards."
+  ],
+  "video": {
+    "public_url": "https://poaster.co/promo/poaster-promo.mp4",
+    "duration_seconds": 40.6,
+    "aspect": "4:5 (1080x1350)",
+    "description": "Phone-frame walkthrough: paste a link, the brand loads, pick a post type, generate, download. Ends on 'Try 3 free at poaster.co. No signup.'"
+  },
+  "allowed_figures": ["$19", "$15", "$49", "$39", "$180", "$468"],
+  "never_claim": [
+    "User counts, client results, revenue, growth figures, or testimonials (none are cleared for publication).",
+    "That the poll graphic or any sticker is interactive.",
+    "Competitor pricing (it changes; the site's comparison table carries its own as-of date)."
+  ]
+}

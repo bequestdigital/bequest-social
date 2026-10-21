@@ -151,6 +151,50 @@ Guard rails:
   **degrades to a quote-card** built from the same text (`image.degraded_from`
   records it) — the schedule never starves on a render dependency.
 
+## Poaster promotion — the POASTER post type (added 10/21/26)
+
+Alex's standing direction (10/21/26): **Bequest promotes Poaster about 25% of the
+time.** How it's enforced:
+
+- **`POASTER` is a fifth planner type** next to WHY/TIP/POV/ASK. Each Sunday,
+  `plan.js → poasterQuota()` computes the share of POASTER posts across the last
+  12 committed posts (published + approved + queued + planned). Under 25% → the
+  planner is required to schedule exactly one POASTER post that week; at or over
+  → it is forbidden from scheduling any. At three posts a week this oscillates
+  around the 25% mark (one promo post most weeks, none roughly every fourth).
+- **`content/poaster-facts.json` is the only factual source.** It mirrors the
+  poaster.co landing page (pricing, free-tier terms, the try-it flow) with an
+  as-of date. The planner gets it for angles (no prices in hooks/directions);
+  `generate.js` injects it verbatim into POASTER copywriting; `validatePackage`
+  rejects any `$`/`%` figure not in its `allowed_figures`, and rejects POASTER
+  copy that never names poaster.co. **When the landing page's pricing or claims
+  change, update this file** — a rejected figure is a cheap failure, a published
+  stale figure is not.
+- POASTER graphics: quote card, tip card, or ig-native (the last one is Poaster
+  rendering its own ad — fair dogfooding).
+
+## Video posts (added 10/21/26)
+
+A package may carry `video: { url, file?, duration_seconds? }` next to the usual
+`image.files` (which then hold a **thumbnail frame** used as the fallback).
+Hand-authored only — the API writer can never select the `promo-video` template.
+
+- **Facebook**: binary upload to `graph-video.facebook.com/<page>/videos`. On
+  failure (scope, spec) it falls back to the thumbnail photo post and records a
+  `note` in `results.fb`.
+- **Instagram**: Reel container from the public `video.url` (`share_to_feed`,
+  container polled up to 5 min). On container failure it falls back to the
+  thumbnail image post.
+- **X**: chunked v1.1 video upload; tier-blocked (402/403) → text-only, other
+  failures → thumbnail image.
+- The launch asset lives at `https://poaster.co/promo/poaster-promo.mp4`
+  (committed in the social-image-generator repo, served by Vercel with range
+  support) so this public repo doesn't carry multi-MB binaries; `publish.js`
+  downloads it at publish time for the binary uploads.
+- First use: the **2026-10-23 Poaster launch post** (40s, 4:5 phone demo).
+  Verified beforehand via an unpublished FB video test (2026-10-21, FB-only,
+  `published=false`).
+
 ## The learning loop (analytics → strategy → next week's posts)
 
 The hand-written Q3 calendar ran out on 2026-10-16. From then on the pipeline plans

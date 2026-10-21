@@ -1,0 +1,49 @@
+{
+  "id": "2026-10-27",
+  "date": "2026-10-27",
+  "weekday": "Tue",
+  "week": 14,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "Your website already knows your brand. Your social graphics should too.",
+  "direction": "Second Poaster post: the how-it-works. Tip card with the 3-step flow (paste your link at poaster.co, the brand kit builds itself, download every size). Caption covers the free tier: lifetime free plan, one brand, all templates, 10 exports a day, small Made with Poaster mark that paid plans remove. Graphic: tip card, numbered.",
+  "facebook": {
+    "text": "Your website already knows your brand. Your social graphics should too.\n\nThat's why we built Poaster here at Bequest. Paste your site link and it picks up your colors and type on its own. From there, every graphic matches your brand, in every size each platform wants.\n\nThere's a free plan that stays free: one brand, all the templates, 10 exports a day. Free downloads include a small Made with Poaster mark, which paid plans remove.\n\nStart at poaster.co. You get 3 downloads before you even make an account."
+  },
+  "instagram": {
+    "text": "Your website already knows your brand. Your social graphics should too.\n\nPoaster reads your site and builds your brand kit on its own. Pick a post type and get graphics that match your brand, in every size each platform wants.\n\nThe free plan stays free: one brand, all the templates, 10 exports a day. Paid plans remove the small Made with Poaster mark.\n\nStart at poaster.co. 3 downloads before you even make an account.",
+    "hashtags": [
+      "marketingtools",
+      "churchcommunications",
+      "socialmediamarketing",
+      "nonprofitmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Your website already knows your brand. Your social graphics should too. Poaster reads your site and turns it into on-brand graphics, sized for every platform. Free plan: one brand, 10 exports a day. 3 downloads before you even sign up. https://poaster.co"
+    ]
+  },
+  "image": {
+    "template": "tip-card",
+    "data": {
+      "eyebrow": "Poaster, by Bequest",
+      "title": "On-brand graphics in 3 steps",
+      "items": [
+        "Paste your website link at poaster.co",
+        "Your brand kit builds itself",
+        "Download every size you need"
+      ]
+    },
+    "alt": "Numbered tip card titled 'On-brand graphics in 3 steps': paste your website link at poaster.co, your brand kit builds itself, download every size you need.",
+    "files": [
+      "2026-10-27.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-10-21T09:05:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster how-it-works post (Alex 10/21/26: promote Poaster ~25% of the schedule). Captions ran the ChatGPT humanizing pass 10/21 and were diffed for fact drift; claims verified against content/poaster-facts.json."
+  }
+}

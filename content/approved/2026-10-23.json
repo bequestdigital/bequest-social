@@ -1,0 +1,49 @@
+{
+  "id": "2026-10-23",
+  "date": "2026-10-23",
+  "weekday": "Fri",
+  "week": 13,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "We make social graphics for clients all week. The tool we wanted didn't exist, so we built it.",
+  "direction": "Launch post for Poaster (poaster.co), Bequest's own social-graphics tool. The 40-second demo video is the asset: paste a link, the brand loads, finished graphics come out. CTA: 3 free downloads at poaster.co, no account needed. Graphic: promo video (4:5) with the hook frame as thumbnail fallback.",
+  "facebook": {
+    "text": "We make social graphics for clients all week. The tool we wanted didn't exist, so we built it.\n\nPoaster works the way busy teams actually work. Paste your website link and it picks up your brand on its own, right down to the fonts. Pick a post type and it hands you polished graphics in every size you need. No design software, no template rabbit hole.\n\nThe video shows the whole workflow on a phone, start to finish, in about 40 seconds.\n\nTry it at poaster.co. 3 free downloads before you even sign up, no account or card needed."
+  },
+  "instagram": {
+    "text": "We make social graphics for clients all week. The tool we wanted didn't exist, so we built it.\n\nPoaster turns your website into finished social graphics. Paste your link and it picks up your brand on its own, right down to the fonts. Pick a post type and download every size you need.\n\nThis video shows the whole process on a phone, in about 40 seconds.\n\nTry it free at poaster.co. 3 downloads before you even sign up, no account or card needed.",
+    "hashtags": [
+      "socialmediamarketing",
+      "smallbusinessmarketing",
+      "contentmarketing",
+      "marketingtools"
+    ]
+  },
+  "x": {
+    "posts": [
+      "We make social graphics for clients all week. The tool we wanted didn't exist, so we built it. Poaster picks up your brand from your site link and hands you finished graphics in every size. 3 free downloads, no signup. https://poaster.co/try"
+    ]
+  },
+  "image": {
+    "template": "promo-video",
+    "data": {
+      "source": "poaster-promo-4x5-v5",
+      "hook_frame": "Stop designing. Just paste."
+    },
+    "alt": "Demo video of Poaster on a phone: a pasted website link becomes branded social graphics, ending on 'Try 3 free at poaster.co. No signup.'",
+    "files": [
+      "2026-10-23.jpg"
+    ]
+  },
+  "video": {
+    "url": "https://poaster.co/promo/poaster-promo.mp4",
+    "duration_seconds": 40.6,
+    "aspect": "4:5 (1080x1350)"
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-10-21T09:05:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster launch post (Alex 10/21/26: promote Poaster ~25% of the schedule). Captions ran the ChatGPT humanizing pass 10/21 and were diffed for fact drift; claims verified against content/poaster-facts.json. Video hosted at poaster.co/promo/poaster-promo.mp4; thumbnail is the 1.5s hook frame."
+  }
+}

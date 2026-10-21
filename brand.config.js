@@ -71,5 +71,9 @@ export default {
     'churchcommunications',
     'nonprofitleadership',
     'faithbasedbusiness',
+    // Added 10/21/26 for POASTER product posts (poaster.co promotion).
+    'socialmediamarketing',
+    'contentmarketing',
+    'marketingtools',
   ],
 };

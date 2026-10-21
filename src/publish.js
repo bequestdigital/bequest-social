@@ -21,12 +21,37 @@
 //      IMAGE_BASE_URL (optional override for the public image host IG fetches from),
 //      GITHUB_TOKEN + GITHUB_REPOSITORY (for failure issues; optional locally)
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { TwitterApi } from 'twitter-api-v2';
 import { APPROVED, PUBLISHED, ROOT, BRAND, readJSON, writeJSON, todayET, addDays, retry, xLength } from './util.js';
 import { openIssue } from './notify.js';
 
 const GRAPH = 'https://graph.facebook.com/v21.0';
+// Binary video uploads go to Meta's dedicated video host.
+const GRAPH_VIDEO = 'https://graph-video.facebook.com/v21.0';
+
+// A video package carries pkg.video = { file?, url?, duration_seconds? } next
+// to the usual image.files (which hold a thumbnail frame used as the fallback
+// post if a platform can't take the video). FB and X upload local bytes: use
+// content/approved/<file> when committed, otherwise download video.url — the
+// launch asset is hosted at poaster.co so this public repo doesn't carry
+// multi-MB binaries. IG ingests straight from the URL.
+async function localVideoPath(pkg) {
+  if (!pkg.video) return null;
+  if (pkg.video.file) {
+    const p = path.join(APPROVED, pkg.video.file);
+    if (fs.existsSync(p)) return p;
+  }
+  if (!pkg.video.url) throw new Error('video package has neither a local file nor a url');
+  const tmp = path.join(os.tmpdir(), `${BRAND}-video-${pkg.date}.mp4`);
+  if (!fs.existsSync(tmp)) {
+    const res = await fetch(pkg.video.url);
+    if (!res.ok) throw new Error(`video download ${res.status} from ${pkg.video.url}`);
+    fs.writeFileSync(tmp, Buffer.from(await res.arrayBuffer()));
+  }
+  return tmp;
+}
 
 function parseArgs() {
   const a = process.argv.slice(2);
@@ -105,7 +130,7 @@ async function resolvePageToken() {
 }
 
 // ---- Facebook: direct binary upload; multi-image posts use unpublished photos ----
-async function publishFacebook(pkg, imagePaths) {
+async function publishFacebook(pkg, imagePaths, videoPath) {
   const pageId = process.env.FB_PAGE_ID;
   const uploadPhoto = async (imgPath, published, message) => {
     const form = new FormData();
@@ -119,6 +144,28 @@ async function publishFacebook(pkg, imagePaths) {
   // meta.unpublished_test lets a connectivity check exercise auth + upload
   // without anything appearing on the page's feed.
   const visible = pkg.meta?.unpublished_test !== true;
+
+  // Video post. If the token can't publish video (scope or spec problem), the
+  // slot still goes out: fall back to the thumbnail photo post below.
+  if (videoPath) {
+    try {
+      const form = new FormData();
+      form.append('access_token', process.env.META_ACCESS_TOKEN);
+      form.append('description', pkg.facebook.text);
+      form.append('published', String(visible));
+      form.append('source', new Blob([fs.readFileSync(videoPath)], { type: 'video/mp4' }), path.basename(videoPath));
+      const res = await fetch(`${GRAPH_VIDEO}/${pageId}/videos`, { method: 'POST', body: form });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data.error) throw new Error(`Graph video API: ${JSON.stringify(data.error || data).slice(0, 400)}`);
+      return { id: data.id, video: true, ...(visible ? {} : { note: 'unpublished test — not visible on feed' }) };
+    } catch (e) {
+      if (!imagePaths.length) throw e;
+      console.warn(`::warning title=FB video fallback::${e.message.slice(0, 300)} — posting the thumbnail image instead`);
+      const res = await uploadPhoto(imagePaths[0], visible, pkg.facebook.text);
+      return { id: res.post_id || res.id, note: `video upload failed — posted thumbnail image (${e.message.slice(0, 160)})` };
+    }
+  }
+
   if (imagePaths.length === 1) {
     const res = await uploadPhoto(imagePaths[0], visible, pkg.facebook.text);
     return { id: res.post_id || res.id, ...(visible ? {} : { note: 'unpublished test — not visible on feed' }) };
@@ -132,20 +179,37 @@ async function publishFacebook(pkg, imagePaths) {
   return { id: res.id };
 }
 
-// ---- Instagram: containers from public image URLs, then publish ----
-async function waitForContainer(creationId) {
-  for (let i = 0; i < 20; i++) {
+// ---- Instagram: containers from public image/video URLs, then publish ----
+async function waitForContainer(creationId, tries = 20, delayMs = 3000) {
+  for (let i = 0; i < tries; i++) {
     const s = await graphCall(`/${creationId}`, { fields: 'status_code' }, { method: 'GET' });
     if (s.status_code === 'FINISHED') return;
     if (s.status_code === 'ERROR') throw new Error(`IG container ${creationId} errored`);
-    await new Promise((r) => setTimeout(r, 3000));
+    await new Promise((r) => setTimeout(r, delayMs));
   }
-  throw new Error(`IG container ${creationId} not ready after 60s`);
+  throw new Error(`IG container ${creationId} not ready after ${Math.round((tries * delayMs) / 1000)}s`);
 }
 
-async function publishInstagram(pkg, imageFiles) {
+async function publishInstagram(pkg, imageFiles, videoUrl) {
   const igId = process.env.IG_BUSINESS_ACCOUNT_ID;
   const caption = pkg.instagram.text + '\n\n' + pkg.instagram.hashtags.map((t) => '#' + t).join(' ');
+
+  // Video goes out as a Reel (the only video surface the IG API still offers;
+  // share_to_feed puts it on the grid). If the container is rejected — codec,
+  // aspect ratio, fetch failure — fall back to the thumbnail image post.
+  let note = null;
+  if (videoUrl) {
+    try {
+      const c = await graphCall(`/${igId}/media`, { media_type: 'REELS', video_url: videoUrl, caption, share_to_feed: 'true' });
+      await waitForContainer(c.id, 60, 5000); // video transcodes take minutes, not seconds
+      const pub = await graphCall(`/${igId}/media_publish`, { creation_id: c.id });
+      return { id: pub.id, video: true };
+    } catch (e) {
+      if (!imageFiles.length) throw e;
+      note = `video reel failed — posted thumbnail image (${e.message.slice(0, 160)})`;
+      console.warn(`::warning title=IG video fallback::${e.message.slice(0, 300)} — posting the thumbnail image instead`);
+    }
+  }
 
   let creationId;
   if (imageFiles.length === 1) {
@@ -163,11 +227,11 @@ async function publishInstagram(pkg, imageFiles) {
   }
   await waitForContainer(creationId);
   const pub = await graphCall(`/${igId}/media_publish`, { creation_id: creationId });
-  return { id: pub.id };
+  return { id: pub.id, ...(note ? { note } : {}) };
 }
 
 // ---- X: media upload + single post or reply-chain thread ----
-async function publishX(pkg, imagePaths) {
+async function publishX(pkg, imagePaths, videoPath) {
   requireEnv(['X_API_KEY', 'X_API_SECRET', 'X_ACCESS_TOKEN', 'X_ACCESS_TOKEN_SECRET']);
   const client = new TwitterApi({
     appKey: process.env.X_API_KEY,
@@ -181,10 +245,14 @@ async function publishX(pkg, imagePaths) {
   // so the content and link still go out, rather than dropping X entirely.
   const mediaIds = [];
   let mediaSkipped = null;
-  for (const p of imagePaths.slice(0, 4)) {
+  // A video post uploads the video alone (chunked v1.1 upload, handled by the
+  // library); if that fails for a non-tier reason, try the thumbnail image.
+  const uploads = videoPath ? [videoPath] : imagePaths.slice(0, 4);
+  for (const p of uploads) {
     try {
       const id = await client.v1.uploadMedia(p);
-      if (pkg.image.alt) await client.v1.createMediaMetadata(id, { alt_text: { text: pkg.image.alt.slice(0, 1000) } });
+      // Alt text applies to images only — X rejects it on video.
+      if (p !== videoPath && pkg.image.alt) await client.v1.createMediaMetadata(id, { alt_text: { text: pkg.image.alt.slice(0, 1000) } });
       mediaIds.push(id);
     } catch (e) {
       const code = e?.code || e?.data?.status;
@@ -192,6 +260,17 @@ async function publishX(pkg, imagePaths) {
         mediaSkipped = `media upload not available on this X API tier (HTTP ${code}) — posted text-only`;
         console.warn(`X: ${mediaSkipped}`);
         mediaIds.length = 0;
+        break;
+      }
+      if (p === videoPath && imagePaths.length) {
+        console.warn(`X: video upload failed (${e.message?.slice(0, 160)}) — trying the thumbnail image`);
+        try {
+          mediaIds.push(await client.v1.uploadMedia(imagePaths[0]));
+          mediaSkipped = 'video dropped on X — posted thumbnail image';
+        } catch {
+          mediaSkipped = 'video and image both dropped on X — posted text-only';
+          mediaIds.length = 0;
+        }
         break;
       }
       throw e;
@@ -314,6 +393,12 @@ function validate(pkg, imagePaths, opts) {
   for (const p of imagePaths) {
     if (!fs.existsSync(p)) errors.push(`image missing: ${p}`);
   }
+  if (pkg.video) {
+    if (!pkg.video.file && !pkg.video.url) errors.push('pkg.video needs a file or a url');
+    if (pkg.video.file && !fs.existsSync(path.join(APPROVED, pkg.video.file))) {
+      errors.push(`video missing: ${pkg.video.file}`);
+    }
+  }
   // Channel sections are optional per brand (e.g. FGC is Facebook-only) —
   // validate only what the package carries.
   if (!pkg.facebook?.text) errors.push('package has no facebook.text');
@@ -353,6 +438,18 @@ async function publishOne(date, opts) {
     process.env.META_ACCESS_TOKEN = await resolvePageToken();
   }
 
+  // Video packages: FB and X need local bytes. If the asset can't be fetched,
+  // those platforms fall back to the thumbnail image; IG still gets the URL.
+  let videoPath = null;
+  if (pkg.video && !opts.dryRun) {
+    try {
+      videoPath = await localVideoPath(pkg);
+    } catch (e) {
+      console.warn(`::warning title=video asset::${e.message} — FB/X will fall back to the thumbnail image`);
+    }
+  }
+  const videoUrl = pkg.video ? pkg.video.url || (pkg.video.file ? publicImageUrl(pkg.video.file) : null) : null;
+
   // Brands without a channel section skip that platform entirely.
   const brandOnly = opts.only.filter((k) =>
     (k === 'fb' && pkg.facebook) || (k === 'ig' && pkg.instagram) || (k === 'x' && pkg.x) || (k === 'li' && (pkg.linkedin || pkg.facebook))
@@ -361,9 +458,9 @@ async function publishOne(date, opts) {
 
   pkg.results = pkg.results || {};
   const platforms = [
-    { key: 'fb', name: 'Facebook', env: ['META_ACCESS_TOKEN', 'FB_PAGE_ID'], fn: () => publishFacebook(pkg, imagePaths) },
-    { key: 'ig', name: 'Instagram', env: ['META_ACCESS_TOKEN', 'IG_BUSINESS_ACCOUNT_ID'], fn: () => publishInstagram(pkg, imageFiles) },
-    { key: 'x', name: 'X', env: ['X_API_KEY'], fn: () => publishX(pkg, imagePaths) },
+    { key: 'fb', name: 'Facebook', env: ['META_ACCESS_TOKEN', 'FB_PAGE_ID'], fn: () => publishFacebook(pkg, imagePaths, videoPath) },
+    { key: 'ig', name: 'Instagram', env: ['META_ACCESS_TOKEN', 'IG_BUSINESS_ACCOUNT_ID'], fn: () => publishInstagram(pkg, imageFiles, videoUrl) },
+    { key: 'x', name: 'X', env: ['X_API_KEY'], fn: () => publishX(pkg, imagePaths, videoPath) },
     { key: 'li', name: 'LinkedIn', env: ['LINKEDIN_ACCESS_TOKEN', 'LINKEDIN_ORG_ID'], fn: () => publishLinkedIn(pkg, imagePaths) },
   ].filter((p) => opts.only.includes(p.key));
 
@@ -387,7 +484,7 @@ async function publishOne(date, opts) {
       continue;
     }
     if (opts.dryRun) {
-      console.log(`${platform.name}: [dry-run] would publish ${imageFiles.length} image(s)`);
+      console.log(`${platform.name}: [dry-run] would publish ${imageFiles.length} image(s)${pkg.video ? ` + video (${pkg.video.file || pkg.video.url})` : ''}`);
       continue;
     }
     try {
@@ -412,7 +509,8 @@ async function publishOne(date, opts) {
     pkg.meta.status = 'published';
     writeJSON(file, pkg);
     fs.renameSync(file, path.join(PUBLISHED, `${pkg.date}.json`));
-    for (const f of imageFiles) fs.renameSync(path.join(APPROVED, f), path.join(PUBLISHED, f));
+    const assets = [...imageFiles, ...(pkg.video?.file && fs.existsSync(path.join(APPROVED, pkg.video.file)) ? [pkg.video.file] : [])];
+    for (const f of assets) fs.renameSync(path.join(APPROVED, f), path.join(PUBLISHED, f));
     console.log(`All platforms published — moved to content/published/${pkg.date}.json`);
   } else {
     const failedKeys = failures.map((f) => f.key).join(',');

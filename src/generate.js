@@ -92,7 +92,12 @@ export function validatePackage(pkg, entry) {
   const tmpl = pkg?.image?.template;
   const data = pkg?.image?.data;
   const templates = ['quote-card', 'tip-card', 'carousel', 'diagram', 'stat-card', 'ig-native'];
-  if (!templates.includes(tmpl)) {
+  // 'promo-video' is reserved for hand-authored packages: the API writer
+  // cannot produce a video, so it may never select this template.
+  if (tmpl === 'promo-video') {
+    if (pkg?.meta?.generator !== 'hand-authored-local') errors.push('promo-video template is hand-authored only');
+    if (!pkg?.video?.url && !pkg?.video?.file) errors.push('promo-video needs pkg.video.url or pkg.video.file');
+  } else if (!templates.includes(tmpl)) {
     errors.push(`image.template must be one of ${templates.join(', ')}`);
   } else if (!data || typeof data !== 'object') {
     errors.push('image.data missing');
@@ -130,7 +135,9 @@ export function validatePackage(pkg, entry) {
         if (bad) errors.push(`pollCard copy says "${bad[1]}" but the poll visual is not interactive`);
       }
       // Same discipline as stat-card: numbers on a graphic need evidence.
-      if (entry?.date && !readEvidence(entry.date) && /[%$]|\b\d+(\.\d+)?x\b/.test(`${data.text} ${data.sub || ''}`)) {
+      // POASTER posts carry their own verified source (poaster-facts.json);
+      // the figure-allowlist check below still constrains the values.
+      if (entry?.date && !readEvidence(entry.date) && !(entry?.type === 'POASTER' && readPoasterFacts()) && /[%$]|\b\d+(\.\d+)?x\b/.test(`${data.text} ${data.sub || ''}`)) {
         errors.push('ig-native graphic contains a figure but the date has no evidence file');
       }
     }
@@ -181,6 +188,35 @@ export function validatePackage(pkg, entry) {
     if (dashes > 1) errors.push(`${where} uses ${dashes} em dashes — rewrite with periods or commas (at most one)`);
   }
 
+  // POASTER product posts are grounded in content/poaster-facts.json: every
+  // dollar figure or percentage on any surface must appear in its
+  // allowed_figures, and the copy has to name poaster.co (a product post that
+  // never says where to find the product is a wasted slot).
+  if (entry?.type === 'POASTER') {
+    const facts = readPoasterFacts();
+    if (!facts) {
+      errors.push('POASTER post but content/poaster-facts.json is missing');
+    } else {
+      const allowed = new Set((facts.allowed_figures || []).map(String));
+      const surfaces = [
+        ['facebook', pkg?.facebook?.text],
+        ['instagram', pkg?.instagram?.text],
+        ...(pkg?.x?.posts || []).map((t, i) => [`x[${i}]`, t]),
+        ['image', JSON.stringify(pkg?.image?.data || {})],
+      ];
+      for (const [where, text] of surfaces) {
+        for (const m of String(text || '').matchAll(/\$\s?\d+(?:\.\d+)?|\b\d+(?:\.\d+)?\s?%/g)) {
+          if (!allowed.has(m[0].replace(/\s/g, ''))) {
+            errors.push(`POASTER figure "${m[0]}" in ${where} is not in poaster-facts.json allowed_figures`);
+          }
+        }
+      }
+      for (const [where, text] of [['facebook', pkg?.facebook?.text], ['instagram', pkg?.instagram?.text]]) {
+        if (text && !/poaster\.co/i.test(text)) errors.push(`${where} text must name poaster.co`);
+      }
+    }
+  }
+
   if (entry && pkg?.date && pkg.date !== entry.date) errors.push(`package date ${pkg.date} != calendar date ${entry.date}`);
   return errors;
 }
@@ -197,6 +233,16 @@ export const EVIDENCE = path.join(CONTENT, 'evidence');
 export function readEvidence(date) {
   const f = path.join(EVIDENCE, `${date}.json`);
   return fs.existsSync(f) ? readJSON(f) : null;
+}
+
+// ---- Poaster product facts ----
+// POASTER posts promote our own tool (poaster.co). Like PROOF evidence, the
+// model gets no license to invent: every claim and figure comes from this
+// human-maintained file, and validatePackage rejects figures outside it.
+export const POASTER_FACTS_FILE = path.join(CONTENT, 'poaster-facts.json');
+
+export function readPoasterFacts() {
+  return fs.existsSync(POASTER_FACTS_FILE) ? readJSON(POASTER_FACTS_FILE) : null;
 }
 
 // ---- performance strategy ----
@@ -241,7 +287,11 @@ ${JSON.stringify(
       1
     )}`;
   }
-  if (!evidence) {
+  const poasterFacts = entry.type === 'POASTER' ? readPoasterFacts() : null;
+  if (poasterFacts) {
+    user += `\n\nThis is a POASTER product post: it promotes Poaster (poaster.co), the social-graphics tool Bequest Digital built and sells. Write it the way Bequest talks: plainly, as a tool we built because our own client work needed it. The Facebook and Instagram text must each name poaster.co (Instagram captions cannot carry links, so write the address out). Every product claim, price and figure must come from this verified facts object word-for-word; do not add, round or infer anything else, and client results, statistics and percentages stay off-limits (this is a product post, not a PROOF post):\n${JSON.stringify(poasterFacts, null, 2)}`;
+  }
+  if (!evidence && !poasterFacts) {
     user += `\n\nThis date has no verified evidence file: do not choose the stat-card template, do not put any figure on an ig-native graphic, and do not state any statistic, percentage, dollar figure, study or client result.`;
   }
   if (evidence) {
@@ -286,7 +336,7 @@ async function generateOne(entry) {
   const body = await retry(
     async () => {
       const pkg = await callClaude(entry, errors);
-      errors = validatePackage(pkg, null);
+      errors = validatePackage(pkg, entry);
       if (errors.length) throw new Error(`validation: ${errors.join('; ')}`);
       return pkg;
     },
