@@ -1,7 +1,7 @@
 {
   "brand": "bequest",
-  "built_at": "2026-10-20T16:03:06.736Z",
-  "metrics_fetched_at": "2026-10-20T16:02:25.316Z",
+  "built_at": "2026-10-23T15:38:06.165Z",
+  "metrics_fetched_at": "2026-10-23T15:37:58.090Z",
   "posts_total": 32,
   "posts_matured": 32,
   "posts_scored": 0,
@@ -19,7 +19,7 @@
     "x": {
       "n": 31,
       "engagement": 0,
-      "reach": 4
+      "reach": 5
     }
   },
   "channels_scored": [],

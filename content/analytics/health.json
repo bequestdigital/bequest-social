@@ -1,29 +1,29 @@
 {
-  "at": "2026-10-20T16:02:26.299Z",
-  "posts_checked": 31,
+  "at": "2026-10-23T15:37:59.116Z",
+  "posts_checked": 8,
   "channels": {
     "fb": {
-      "ok": 30,
+      "ok": 8,
       "permission": 0,
-      "other": 1
+      "other": 0
     },
     "fb_insights": {
-      "ok": 30,
+      "ok": 8,
       "permission": 0,
       "other": 0
     },
     "ig": {
-      "ok": 30,
+      "ok": 8,
       "permission": 0,
-      "other": 1
+      "other": 0
     },
     "ig_insights": {
-      "ok": 30,
+      "ok": 8,
       "permission": 0,
       "other": 0
     },
     "x": {
-      "ok": 31,
+      "ok": 8,
       "permission": 0,
       "other": 0
     }

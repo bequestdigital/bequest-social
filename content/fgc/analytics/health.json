@@ -1,16 +1,16 @@
 {
-  "at": "2026-10-20T16:02:32.148Z",
-  "posts_checked": 13,
+  "at": "2026-10-23T15:38:06.036Z",
+  "posts_checked": 12,
   "channels": {
     "fb": {
-      "ok": 13,
+      "ok": 12,
       "permission": 0,
       "other": 0
     },
     "fb_insights": {
       "ok": 0,
       "permission": 0,
-      "other": 13
+      "other": 12
     },
     "ig": {
       "ok": 0,
