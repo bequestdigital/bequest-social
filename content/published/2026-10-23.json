@@ -41,9 +41,31 @@
     "aspect": "4:5 (1080x1350)"
   },
   "meta": {
-    "status": "queued",
+    "status": "published",
     "generated_at": "2026-10-21T09:05:00.000Z",
     "generator": "hand-authored-local",
     "notes": "Poaster launch post (Alex 10/21/26: promote Poaster ~25% of the schedule). Captions ran the ChatGPT humanizing pass 10/21 and were diffed for fact drift; claims verified against content/poaster-facts.json. Video hosted at poaster.co/promo/poaster-promo.mp4; thumbnail is the 1.5s hook frame."
+  },
+  "results": {
+    "fb": {
+      "ok": true,
+      "id": "1119300157488445",
+      "video": true,
+      "at": "2026-10-23T17:36:27.771Z"
+    },
+    "ig": {
+      "ok": true,
+      "id": "18105286358373025",
+      "video": true,
+      "at": "2026-10-23T17:37:04.916Z"
+    },
+    "x": {
+      "ok": true,
+      "id": "2113686201521623403",
+      "thread_ids": [
+        "2113686201521623403"
+      ],
+      "at": "2026-10-23T17:37:15.685Z"
+    }
   }
 }
