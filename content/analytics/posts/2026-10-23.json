@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-23",
+  "type": "POASTER",
+  "template": "promo-video",
+  "weekday": 5,
+  "hook": "We make social graphics for clients all week. The tool we wanted didn't exist, so we built it.",
+  "week_theme": "Meet Poaster",
+  "image_count": 1,
+  "published_at": "2026-10-23T17:36:27.771Z",
+  "channels": {
+    "fb": {
+      "error": "Graph GET /1119300157488445: {\"message\":\"(#100) Tried accessing nonexisting field (shares)\",\"type\":\"OAuthException\",\"code\":100,\"fbtrace_id\":\"A0flnKzsQ6BqOn0460Tmii6\"}"
+    },
+    "ig": {
+      "permalink": "https://www.instagram.com/reel/De2G_FRj5x8/",
+      "created_time": "2026-10-23T17:36:59+0000",
+      "media_type": "VIDEO",
+      "likes": 3,
+      "comments": 0,
+      "saved": 0,
+      "shares": 0,
+      "engagement": 3,
+      "reach": 16,
+      "views": 20,
+      "total_interactions": 4
+    },
+    "x": {
+      "created_time": "2026-10-23T17:37:15.000Z",
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "bookmarks": 0,
+      "engagement": 0,
+      "impressions": 7,
+      "clicks": null
+    }
+  },
+  "snapshots": [
+    {
+      "at": "2026-10-27T16:11:27.705Z",
+      "age_days": 4,
+      "channels": {
+        "fb": {
+          "error": true
+        },
+        "ig": {
+          "likes": 3,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0,
+          "engagement": 3,
+          "reach": 16,
+          "views": 20,
+          "total_interactions": 4
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 0,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 0,
+          "impressions": 7,
+          "clicks": null
+        }
+      }
+    }
+  ],
+  "fetched_at": "2026-10-27T16:11:27.705Z",
+  "age_days_at_fetch": 4,
+  "matured": true
+}

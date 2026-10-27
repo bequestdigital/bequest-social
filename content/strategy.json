@@ -1,10 +1,10 @@
 {
   "brand": "bequest",
-  "updated_at": "2026-10-23T15:38:06.169Z",
+  "updated_at": "2026-10-27T16:11:36.270Z",
   "sample": {
     "scored": 0,
-    "matured": 32,
-    "total": 32
+    "matured": 33,
+    "total": 34
   },
   "data_quality": {
     "usable_channels": [
