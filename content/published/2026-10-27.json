@@ -41,9 +41,29 @@
     ]
   },
   "meta": {
-    "status": "queued",
+    "status": "published",
     "generated_at": "2026-10-21T09:05:00.000Z",
     "generator": "hand-authored-local",
     "notes": "Poaster how-it-works post (Alex 10/21/26: promote Poaster ~25% of the schedule). Captions ran the ChatGPT humanizing pass 10/21 and were diffed for fact drift; claims verified against content/poaster-facts.json."
+  },
+  "results": {
+    "fb": {
+      "ok": true,
+      "id": "996611156867180_122132175951264758",
+      "at": "2026-10-27T18:28:47.291Z"
+    },
+    "ig": {
+      "ok": true,
+      "id": "18111354434181928",
+      "at": "2026-10-27T18:29:02.657Z"
+    },
+    "x": {
+      "ok": true,
+      "id": "2115148788750753854",
+      "thread_ids": [
+        "2115148788750753854"
+      ],
+      "at": "2026-10-27T18:29:03.712Z"
+    }
   }
 }
