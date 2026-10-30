@@ -2,7 +2,7 @@
   "id": "2026-10-30",
   "date": "2026-10-30",
   "facebook": {
-    "text": "Happy Halloween from the Florida Glass family! \ud83c\udf83 Have a safe and fun weekend, SW Florida."
+    "text": "Happy Halloween from the Florida Glass family! 🎃 Have a safe and fun weekend, SW Florida."
   },
   "image": {
     "files": [
@@ -12,8 +12,15 @@
   },
   "meta": {
     "brand": "fgc",
-    "status": "approved",
+    "status": "published",
     "source": "batch-v2 (Tyler photos, 9/15)",
     "generator": "claude-session"
+  },
+  "results": {
+    "fb": {
+      "ok": true,
+      "id": "105187522086021_1146176368005026",
+      "at": "2026-10-30T18:20:47.769Z"
+    }
   }
 }
