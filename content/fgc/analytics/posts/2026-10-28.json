@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-28",
+  "type": null,
+  "template": null,
+  "weekday": 3,
+  "hook": null,
+  "week_theme": null,
+  "image_count": 1,
+  "published_at": "2026-10-28T18:35:18.198Z",
+  "channels": {
+    "fb": {
+      "permalink": "https://www.facebook.com/1136471152308881/posts/1144215441534452",
+      "created_time": "2026-10-28T18:35:13+0000",
+      "reactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "engagement": 0,
+      "views": null,
+      "reach": null,
+      "clicks": null,
+      "insights_error": "Graph GET /105187522086021_1119501570672506/insights: {\"message\":\"Permissions error\",\"type\":\"OAuthException\",\"code\":200,\"error_subcode\":1504029,\"is_transient\":false,\"error_user_title\":\"User doesn't have enough permissions to load insights\",\"error_user_msg\":\"You do not have enough permission to view the metric.\",\"fbtrace_id\":\"Ardz9bMzfhoI8xa0Ff8bXaF\"}"
+    }
+  },
+  "snapshots": [
+    {
+      "at": "2026-10-30T16:56:16.210Z",
+      "age_days": 2,
+      "channels": {
+        "fb": {
+          "reactions": 0,
+          "comments": 0,
+          "shares": 0,
+          "engagement": 0,
+          "views": null,
+          "reach": null,
+          "clicks": null
+        }
+      }
+    }
+  ],
+  "fetched_at": "2026-10-30T16:56:16.210Z",
+  "age_days_at_fetch": 2,
+  "matured": false
+}

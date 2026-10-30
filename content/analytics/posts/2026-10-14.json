@@ -29,7 +29,7 @@
       "shares": 0,
       "engagement": 1,
       "reach": 12,
-      "views": 24,
+      "views": 25,
       "total_interactions": 2
     },
     "x": {
@@ -40,40 +40,11 @@
       "quotes": 0,
       "bookmarks": 0,
       "engagement": 1,
-      "impressions": 5,
+      "impressions": 6,
       "clicks": null
     }
   },
   "snapshots": [
-    {
-      "at": "2026-10-20T11:21:13.659Z",
-      "age_days": 6,
-      "channels": {
-        "fb": {
-          "error": true
-        },
-        "ig": {
-          "likes": 1,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0,
-          "engagement": 1,
-          "reach": null,
-          "views": null,
-          "total_interactions": null
-        },
-        "x": {
-          "likes": 0,
-          "reposts": 0,
-          "replies": 1,
-          "quotes": 0,
-          "bookmarks": 0,
-          "engagement": 1,
-          "impressions": 2,
-          "clicks": null
-        }
-      }
-    },
     {
       "at": "2026-10-20T11:23:09.295Z",
       "age_days": 6,
@@ -312,9 +283,44 @@
           "clicks": null
         }
       }
+    },
+    {
+      "at": "2026-10-30T16:56:00.734Z",
+      "age_days": 16,
+      "channels": {
+        "fb": {
+          "reactions": 0,
+          "comments": 0,
+          "shares": 0,
+          "engagement": 0,
+          "views": 1,
+          "reach": 1,
+          "clicks": 0
+        },
+        "ig": {
+          "likes": 1,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0,
+          "engagement": 1,
+          "reach": 12,
+          "views": 25,
+          "total_interactions": 2
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 1,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 1,
+          "impressions": 6,
+          "clicks": null
+        }
+      }
     }
   ],
-  "fetched_at": "2026-10-27T16:11:25.197Z",
-  "age_days_at_fetch": 13,
+  "fetched_at": "2026-10-30T16:56:00.734Z",
+  "age_days_at_fetch": 16,
   "matured": true
 }
