@@ -1,0 +1,72 @@
+{
+  "id": "2026-11-05",
+  "date": "2026-11-05",
+  "weekday": "Thu",
+  "week": 15,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "Your graphic is done. The resizing isn't.",
+  "facebook": {
+    "text": "Your graphic is done. The resizing isn't.\n\nSquare for the feed, story for the top of the app, wide for the link preview. One finished idea turns into three rounds of layout work, and ten minutes a graphic quietly becomes hours a month.\n\nPoaster takes that chore off your plate. Paste a link or type a few words, and it builds the square, story, and wide versions together, in your brand, ready for their placements. The message stays consistent across sizes instead of getting rebuilt each time.\n\nSwipe through for the short version. Try it free at poaster.co, no account needed for the first 3 downloads."
+  },
+  "instagram": {
+    "text": "Your graphic is done. The resizing isn't.\n\nOne finished idea turns into three rounds of layout work, and ten minutes a graphic quietly becomes hours a month.\n\nPoaster builds the square, story, and wide versions together, in your brand, ready for their placements. Swipe through for the short version.\n\nTry it free at poaster.co. No account needed for the first 3 downloads.",
+    "hashtags": [
+      "socialmediamarketing",
+      "contentmarketing",
+      "marketingtools"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Your graphic is done. The resizing isn't. Square, story, and wide can turn one idea into three rounds of layout work. Poaster builds all three at once, in your brand. First 3 downloads free, no account: https://poaster.co/try"
+    ]
+  },
+  "direction": "Poaster carousel from the HeyCatch slideshow: the resizing chore and how Poaster builds square, story, and wide together. Six 4:5 slides, pre-rendered.",
+  "image": {
+    "template": "carousel",
+    "data": {
+      "cover": {
+        "title": "Your graphic is done. The resizing isn't",
+        "subtitle": "Square, story, and wide versions can turn one finished idea into three rounds of manual layout work"
+      },
+      "slides": [
+        {
+          "title": "Start with the formats, not the canvas",
+          "body": "When you create each size separately, you repeat spacing, cropping, and text adjustments for the same post"
+        },
+        {
+          "title": "Ten minutes disappears one format at a time",
+          "body": "A few extra minutes per graphic can quietly become hours each month when every channel needs a different shape"
+        },
+        {
+          "title": "Generate every layout together",
+          "body": "One prompt can produce square, story, and wide versions at the same time, ready for their placements"
+        },
+        {
+          "title": "Keep the message consistent across sizes",
+          "body": "Each format should adapt the layout, not force you to rethink the headline, colors, and hierarchy"
+        }
+      ],
+      "end": {
+        "title": "Your bottleneck is fixable",
+        "subtitle": "Stop treating manual resizing as a permanent task and reclaim the time for planning, publishing, and growth"
+      }
+    },
+    "alt": "Six-slide carousel of lifestyle photos with white caption boxes: starting with 'Your graphic is done. The resizing isn't' and ending with 'Your bottleneck is fixable', about generating square, story, and wide graphics together.",
+    "files": [
+      "2026-11-05-1.jpg",
+      "2026-11-05-2.jpg",
+      "2026-11-05-3.jpg",
+      "2026-11-05-4.jpg",
+      "2026-11-05-5.jpg",
+      "2026-11-05-6.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-10-31T20:00:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster promo from HeyCatch-generated assets (Alex 10/31/26). Captions humanized + diffed; claims checked against content/poaster-facts.json. Thursday slot keeps the week at 25% Poaster."
+  }
+}

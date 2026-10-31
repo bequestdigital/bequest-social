@@ -1,0 +1,67 @@
+{
+  "id": "2026-12-03",
+  "date": "2026-12-03",
+  "weekday": "Thu",
+  "week": 19,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "Stop calling resizing part of the job.",
+  "facebook": {
+    "text": "Stop calling resizing part of the job.\n\nYou already solved the message and the design once. Rebuilding square, story, and wide versions adds labor without adding strategy, and dragging text and logos into new dimensions is a pile of tiny decisions that pull you away from actual marketing work.\n\nPoaster generates everything together. One input produces every format you need at once, so a solo marketer gets the time back and the graphics still match.\n\nSwipe for the five-slide version. poaster.co is free to try, 3 downloads before you create an account."
+  },
+  "instagram": {
+    "text": "Stop calling resizing part of the job.\n\nYou already solved the message and the design once. Rebuilding every size adds labor without adding strategy.\n\nPoaster generates everything together: one input, every format at once, and they still match. Swipe for the five-slide version.\n\npoaster.co is free to try, 3 downloads before you create an account.",
+    "hashtags": [
+      "socialmediamarketing",
+      "contentmarketing",
+      "marketingtools"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Stop calling resizing part of the job. You solved the message and design once; rebuilding square, story, and wide adds labor, not strategy. Poaster generates every format from one input. Free to try at https://poaster.co"
+    ]
+  },
+  "direction": "Poaster carousel from the HeyCatch slideshow: 'stop calling resizing part of the job' through 'generate everything together'. Five 4:5 slides, pre-rendered.",
+  "image": {
+    "template": "carousel",
+    "data": {
+      "cover": {
+        "title": "stop calling resizing part of the job",
+        "subtitle": ""
+      },
+      "slides": [
+        {
+          "title": "it's repetitive",
+          "body": "you already solved the message and design once; rebuilding square, story, and wide versions adds labor without adding strategy"
+        },
+        {
+          "title": "the clock is lying",
+          "body": "those ten minutes per graphic quietly become hours each month when every platform demands another canvas and another round of adjustments"
+        },
+        {
+          "title": "manual control costs",
+          "body": "dragging text, logos, and images into new dimensions creates tiny decisions that drain attention from campaigns, customers, and actual marketing work"
+        }
+      ],
+      "end": {
+        "title": "generate everything together",
+        "subtitle": "one input should produce every needed format at once, giving solo marketers their time back without sacrificing consistency or polish"
+      }
+    },
+    "alt": "Five-slide carousel of art and interior photos with white caption boxes: 'stop calling resizing part of the job', 'it's repetitive', 'the clock is lying', 'manual control costs', 'generate everything together'.",
+    "files": [
+      "2026-12-03-1.jpg",
+      "2026-12-03-2.jpg",
+      "2026-12-03-3.jpg",
+      "2026-12-03-4.jpg",
+      "2026-12-03-5.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-10-31T20:00:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster promo from HeyCatch-generated assets (Alex 10/31/26). Captions humanized + diffed; claims checked against content/poaster-facts.json. Thursday slot keeps the week at 25% Poaster."
+  }
+}

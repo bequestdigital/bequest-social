@@ -1,5 +1,5 @@
 {
-  "_source": "poaster.co landing page (social-image-generator/src/pages/Landing.jsx), verified 2026-10-21. Update this file when the landing page's pricing or claims change — generate.js rejects any POASTER figure that is not in allowed_figures.",
+  "_source": "poaster.co landing page (social-image-generator/src/pages/Landing.jsx), verified 2026-10-30. Update this file when the landing page's pricing or claims change — generate.js rejects any POASTER figure that is not in allowed_figures.",
   "product": "Poaster",
   "owner": "Built and sold by Bequest Digital (our own product).",
   "url": "https://poaster.co",
@@ -12,7 +12,8 @@
     "Solo plan $19/mo, or $15/mo billed annually ($180/yr). 14-day free trial.",
     "Agency plan $49/mo, or $39/mo billed annually ($468/yr). 14-day free trial.",
     "14-day free trial on paid plans. Cancel anytime. No credit card to start.",
-    "Template families include an Instagram-native look (IG Native) alongside designed brand cards."
+    "Template families include an Instagram-native look (IG Native) alongside designed brand cards.",
+    "AI brand pull (added 10/30/26): the app screenshots your live site and has Claude pick the real logo, colors, typefaces, and template style. Free accounts get 2 pulls, Solo 10 a month, Agency 50 a month; the quick non-AI import is unlimited."
   ],
   "video": {
     "public_url": "https://poaster.co/promo/poaster-promo.mp4",
@@ -20,7 +21,14 @@
     "aspect": "4:5 (1080x1350)",
     "description": "Phone-frame walkthrough: paste a link, the brand loads, pick a post type, generate, download. Ends on 'Try 3 free at poaster.co. No signup.'"
   },
-  "allowed_figures": ["$19", "$15", "$49", "$39", "$180", "$468"],
+  "allowed_figures": [
+    "$19",
+    "$15",
+    "$49",
+    "$39",
+    "$180",
+    "$468"
+  ],
   "never_claim": [
     "User counts, client results, revenue, growth figures, or testimonials (none are cleared for publication).",
     "That the poll graphic or any sticker is interactive.",

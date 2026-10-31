@@ -1,0 +1,48 @@
+{
+  "id": "2026-11-19",
+  "date": "2026-11-19",
+  "weekday": "Thu",
+  "week": 17,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "No designer on the team? That's who Poaster was built for.",
+  "facebook": {
+    "text": "No designer on the team? That's who Poaster was built for.\n\nSave your colors, logo, and fonts once. After that, any idea you type or any link you paste comes out as a polished social graphic in your brand, without second-guessing every choice. One input, and every format is ready to post.\n\nIt's the tool we built for our own client work at Bequest. Try it at poaster.co, 3 downloads free before you sign up."
+  },
+  "instagram": {
+    "text": "No designer on the team? That's who Poaster was built for.\n\nSave your colors, logo, and fonts once. After that, any idea you type or link you paste comes out as a polished graphic in your brand, every format ready to post.\n\nWe built it for our own client work at Bequest. Try it at poaster.co, 3 downloads free before you sign up.",
+    "hashtags": [
+      "smallbusinessmarketing",
+      "contentmarketing",
+      "marketingtools",
+      "nonprofitmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "No designer on the team? Save your colors, logo, and fonts once, and Poaster turns any idea into a polished, on-brand graphic in every format. Built for our own client work. 3 free downloads at https://poaster.co/try"
+    ]
+  },
+  "direction": "Poaster clip from HeyCatch (6s, 9:16): office scene with on-screen text 'No designer on the team? Save your colors, logo, and fonts once...' Solo-marketer angle.",
+  "image": {
+    "template": "promo-video",
+    "data": {
+      "source": "heycatch wall-of-text 564ea3e0"
+    },
+    "alt": "Short vertical clip of an office with on-screen text: 'No designer on the team? Save your colors, logo, and fonts once, then turn any idea into polished social graphics without second-guessing every choice. One input, consistent branding across every format, ready to post.'",
+    "files": [
+      "2026-11-19.jpg"
+    ]
+  },
+  "video": {
+    "url": "https://poaster.co/promo/poaster-no-designer.mp4",
+    "duration_seconds": 6.0,
+    "aspect": "9:16 (1080x1920)"
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-10-31T20:00:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster promo from HeyCatch-generated assets (Alex 10/31/26). Captions humanized + diffed; claims checked against content/poaster-facts.json. Thursday slot keeps the week at 25% Poaster."
+  }
+}

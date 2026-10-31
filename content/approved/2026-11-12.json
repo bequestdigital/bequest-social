@@ -1,0 +1,47 @@
+{
+  "id": "2026-11-12",
+  "date": "2026-11-12",
+  "weekday": "Thu",
+  "week": 16,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "POV: realizing every client's colors, logo, and fonts are already handled.",
+  "facebook": {
+    "text": "POV: realizing every client's colors, logo, and fonts are already handled.\n\nThat's the agency version of Poaster. Save each client's brand kit once, or let it read the kit off their website. From then on every graphic you make for them comes out in their colors and type without you touching a swatch.\n\nSwitch clients in a click and export square, story, and wide together. You hand off finished files instead of design hours.\n\npoaster.co, with 3 free downloads before you even sign up."
+  },
+  "instagram": {
+    "text": "POV: realizing every client's colors, logo, and fonts are already handled.\n\nSave each client's brand kit once, or let Poaster read it off their website. Every graphic after that comes out in their colors and type without you touching a swatch.\n\nSwitch clients in a click and export square, story, and wide together.\n\npoaster.co, with 3 free downloads before you even sign up.",
+    "hashtags": [
+      "marketingtools",
+      "socialmediamarketing",
+      "smallbusinessmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "POV: every client's colors, logo, and fonts are already handled. Poaster saves each brand kit once (or reads it off their site) and every graphic comes out on-brand. Square, story, wide, together. https://poaster.co"
+    ]
+  },
+  "direction": "Poaster clip from HeyCatch (9s, 9:16): a startled dog with 'POV: realizing every client's colors, logo, and fonts are already handled.' Agency angle: brand kits saved once.",
+  "image": {
+    "template": "promo-video",
+    "data": {
+      "source": "heycatch green-screen d4782728"
+    },
+    "alt": "Short vertical clip of a startled brown dog in front of a city skyline with the caption 'POV: realizing every client's colors, logo, and fonts are already handled.'",
+    "files": [
+      "2026-11-12.jpg"
+    ]
+  },
+  "video": {
+    "url": "https://poaster.co/promo/poaster-clients-handled.mp4",
+    "duration_seconds": 9.4,
+    "aspect": "9:16 (1080x1920)"
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-10-31T20:00:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster promo from HeyCatch-generated assets (Alex 10/31/26). Captions humanized + diffed; claims checked against content/poaster-facts.json. Thursday slot keeps the week at 25% Poaster."
+  }
+}
