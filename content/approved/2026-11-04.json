@@ -1,0 +1,49 @@
+{
+  "id": "2026-11-04",
+  "date": "2026-11-04",
+  "week": 15,
+  "weekTheme": "Clarity Before the Calendar Turns",
+  "type": "TIP",
+  "hook": "Before you plan next year's content, audit this year's message first.",
+  "direction": "Angle: a quick self-audit before 2027 planning locks in. Cover: three checkpoints — does your homepage say who you help and how, does your social bio match your current mission, does your call to action tell people exactly what to do next. Frame as a checklist anyone can run in an hour. Graphic: tip card with a numbered checklist, three items, clean layout.",
+  "facebook": {
+    "text": "Before you plan next year's content, audit this year's message first.\n\nBefore 2027 planning locks in, run this quick check on what you already have:\n\n1) Does your homepage say clearly who you help and how?\n2) Does your social bio still match your current mission?\n3) Does your call to action tell people exactly what to do next?\n\nThat's it. One hour, three checkpoints. Most organizations find at least one of these is out of date before they ever open a planning doc. Fix the foundation before you build on it."
+  },
+  "instagram": {
+    "text": "Before you plan next year's content, audit this year's message first.\n\nOne hour. Three checkpoints.\n\n1) Homepage: does it say who you help and how?\n2) Social bio: does it still match your actual mission?\n3) Call to action: does it tell people exactly what to do next?\n\nMost organizations find something broken before they ever open a planning doc. Clean the foundation before you build on it.",
+    "hashtags": [
+      "churchcommunications",
+      "nonprofitmarketing",
+      "christianbusiness",
+      "contentmarketing",
+      "ministrymarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Before you plan 2027 content, audit what you already have. Homepage, bio, call to action. One hour. Three checkpoints. Fix the foundation before you build on it."
+    ]
+  },
+  "image": {
+    "template": "tip-card",
+    "data": {
+      "eyebrow": "Clarity Before You Plan",
+      "title": "Message Audit: Run This Before Year-End",
+      "items": [
+        "Homepage: who you help and how",
+        "Social bio: still matches your mission?",
+        "Call to action: tells people what to do next"
+      ]
+    },
+    "alt": "Tip card titled 'Message Audit: Run This Before Year-End' listing three numbered checkpoints: homepage clarity, social bio alignment, and call to action.",
+    "files": [
+      "2026-11-04.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-01T17:05:03.713Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

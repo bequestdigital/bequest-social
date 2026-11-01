@@ -1,0 +1,45 @@
+{
+  "id": "2026-11-06",
+  "date": "2026-11-06",
+  "week": 15,
+  "weekTheme": "Clarity Before the Calendar Turns",
+  "type": "POV",
+  "hook": "A new year doesn't fix a foggy message. It just gives you more months to repeat the same confusion.",
+  "direction": "Angle: contrarian take on the 'fresh start' instinct — new tactics on top of an unclear foundation don't compound, they clutter. Cover: the temptation to rebrand or pivot vs. the discipline of sharpening what you already have. Audience: owners and ministry leaders who feel the itch to overhaul. Graphic: ig-native — short, punchy, wry observation style.",
+  "facebook": {
+    "text": "A new year doesn't fix a foggy message. It just gives you more months to repeat the same confusion.\n\nEvery January, owners and ministry leaders feel the itch. New logo. New platform. New campaign. And underneath all of it, the same unclear answer to the same basic question: what are we actually saying, and who is it for?\n\nNew tactics on top of a muddy foundation don't compound. They clutter. The discipline isn't overhauling. It's sharpening what you already have until it's sharp enough to cut through."
+  },
+  "instagram": {
+    "text": "A new year doesn't fix a foggy message. It just gives you more months to repeat the same confusion.\n\nThe itch to rebrand is real. New look, new platform, new energy. But if the message underneath is still blurry, you're just decorating the problem.\n\nThe work before the calendar turns isn't a pivot. It's a sharpen. Get clear on what you're saying and who it's for. Then the tactics have something to build on.",
+    "hashtags": [
+      "churchcommunications",
+      "nonprofitleadership",
+      "christianbusiness",
+      "smallbusinessmarketing",
+      "ministrymarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "A new year doesn't fix a foggy message. It just gives you more months to repeat the same confusion. Sharpen before you overhaul. #smallbusinessmarketing"
+    ]
+  },
+  "image": {
+    "template": "ig-native",
+    "data": {
+      "preset": "typewriter",
+      "text": "a new year doesn't fix a foggy message.\n\nit just gives you more months to repeat the same confusion.",
+      "sub": "sharpen before you overhaul."
+    },
+    "alt": "Typewriter-style text on a plain background reading: a new year doesn't fix a foggy message. it just gives you more months to repeat the same confusion. with a small second line: sharpen before you overhaul.",
+    "files": [
+      "2026-11-06.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-01T17:05:14.187Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

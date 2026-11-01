@@ -44,7 +44,52 @@
         "model": "claude-sonnet-4-6",
         "strategy_updated_at": "2026-10-20T11:21:24.219Z"
       }
+    },
+    {
+      "id": "2026-11-02",
+      "date": "2026-11-02",
+      "weekday": "Mon",
+      "week": 15,
+      "weekTheme": "Clarity Before the Calendar Turns",
+      "type": "WHY",
+      "hook": "Most organizations don't have a marketing problem. They have a clarity problem.",
+      "direction": "Angle: the real bottleneck isn't budget or tactics — it's not knowing what you're actually trying to say. Cover: unclear mission = unclear message = ignored content. Clarity is the foundation; everything else is decoration. Speak to churches and nonprofits who feel stuck. Graphic: quote card — bold central line, clean background, Bequest wordmark.",
+      "planned": {
+        "at": "2026-11-01T17:04:14.735Z",
+        "model": "claude-sonnet-4-6",
+        "strategy_updated_at": "2026-10-30T16:56:16.477Z"
+      }
+    },
+    {
+      "id": "2026-11-04",
+      "date": "2026-11-04",
+      "weekday": "Wed",
+      "week": 15,
+      "weekTheme": "Clarity Before the Calendar Turns",
+      "type": "TIP",
+      "hook": "Before you plan next year's content, audit this year's message first.",
+      "direction": "Angle: a quick self-audit before 2027 planning locks in. Cover: three checkpoints — does your homepage say who you help and how, does your social bio match your current mission, does your call to action tell people exactly what to do next. Frame as a checklist anyone can run in an hour. Graphic: tip card with a numbered checklist, three items, clean layout.",
+      "planned": {
+        "at": "2026-11-01T17:04:14.735Z",
+        "model": "claude-sonnet-4-6",
+        "strategy_updated_at": "2026-10-30T16:56:16.477Z"
+      }
+    },
+    {
+      "id": "2026-11-06",
+      "date": "2026-11-06",
+      "weekday": "Fri",
+      "week": 15,
+      "weekTheme": "Clarity Before the Calendar Turns",
+      "type": "POV",
+      "hook": "A new year doesn't fix a foggy message. It just gives you more months to repeat the same confusion.",
+      "direction": "Angle: contrarian take on the 'fresh start' instinct — new tactics on top of an unclear foundation don't compound, they clutter. Cover: the temptation to rebrand or pivot vs. the discipline of sharpening what you already have. Audience: owners and ministry leaders who feel the itch to overhaul. Graphic: ig-native — short, punchy, wry observation style.",
+      "planned": {
+        "at": "2026-11-01T17:04:14.735Z",
+        "model": "claude-sonnet-4-6",
+        "strategy_updated_at": "2026-10-30T16:56:16.477Z"
+      }
     }
   ],
-  "updated_at": "2026-10-20T11:23:19.892Z"
+  "updated_at": "2026-11-01T17:04:14.735Z"
 }

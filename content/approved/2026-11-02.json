@@ -1,0 +1,44 @@
+{
+  "id": "2026-11-02",
+  "date": "2026-11-02",
+  "week": 15,
+  "weekTheme": "Clarity Before the Calendar Turns",
+  "type": "WHY",
+  "hook": "Most organizations don't have a marketing problem. They have a clarity problem.",
+  "direction": "Angle: the real bottleneck isn't budget or tactics — it's not knowing what you're actually trying to say. Cover: unclear mission = unclear message = ignored content. Clarity is the foundation; everything else is decoration. Speak to churches and nonprofits who feel stuck. Graphic: quote card — bold central line, clean background, Bequest wordmark.",
+  "facebook": {
+    "text": "Most organizations don't have a marketing problem. They have a clarity problem.\n\nIf you're not sure what you're actually trying to say, no budget or tactic will fix that. Unclear mission produces unclear messages. Unclear messages produce content nobody reads.\n\nThis is where churches and nonprofits get stuck most often. Not for lack of effort. For lack of a clear foundation.\n\nClarity comes first. Everything else is decoration."
+  },
+  "instagram": {
+    "text": "Most organizations don't have a marketing problem. They have a clarity problem.\n\nUnclear mission. Unclear message. Ignored content.\n\nIf you're a church or nonprofit that feels stuck, the bottleneck probably isn't your budget or your posting schedule. It's not knowing what you're actually trying to say.\n\nClarity is the foundation. Everything else is decoration.",
+    "hashtags": [
+      "churchcommunications",
+      "nonprofitleadership",
+      "ministrymarketing",
+      "churchmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Most orgs don't have a marketing problem. They have a clarity problem. Unclear mission → unclear message → ignored content. Fix the foundation first. #churchcommunications"
+    ]
+  },
+  "image": {
+    "template": "quote-card",
+    "data": {
+      "quote": "Unclear mission. Unclear message. Ignored content. Clarity is the foundation.",
+      "attribution": null,
+      "eyebrow": "Clarity Before the Calendar Turns"
+    },
+    "alt": "Quote card with bold text reading 'Unclear mission. Unclear message. Ignored content. Clarity is the foundation.' on a clean background with the Bequest Digital wordmark.",
+    "files": [
+      "2026-11-02.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-01T17:04:38.437Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
