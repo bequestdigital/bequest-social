@@ -46,35 +46,6 @@
   },
   "snapshots": [
     {
-      "at": "2026-10-20T11:23:07.008Z",
-      "age_days": 13,
-      "channels": {
-        "fb": {
-          "error": true
-        },
-        "ig": {
-          "likes": 1,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0,
-          "engagement": 1,
-          "reach": null,
-          "views": null,
-          "total_interactions": null
-        },
-        "x": {
-          "likes": 0,
-          "reposts": 0,
-          "replies": 0,
-          "quotes": 0,
-          "bookmarks": 0,
-          "engagement": 0,
-          "impressions": 4,
-          "clicks": null
-        }
-      }
-    },
-    {
       "at": "2026-10-20T15:50:28.372Z",
       "age_days": 13,
       "channels": {
@@ -318,9 +289,44 @@
           "clicks": null
         }
       }
+    },
+    {
+      "at": "2026-11-03T18:57:38.893Z",
+      "age_days": 27,
+      "channels": {
+        "fb": {
+          "reactions": 0,
+          "comments": 0,
+          "shares": 0,
+          "engagement": 0,
+          "views": 1,
+          "reach": 1,
+          "clicks": 0
+        },
+        "ig": {
+          "likes": 1,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0,
+          "engagement": 1,
+          "reach": 2,
+          "views": 4,
+          "total_interactions": 1
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 0,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 0,
+          "impressions": 7,
+          "clicks": null
+        }
+      }
     }
   ],
-  "fetched_at": "2026-10-30T16:55:58.539Z",
-  "age_days_at_fetch": 23,
+  "fetched_at": "2026-11-03T18:57:38.893Z",
+  "age_days_at_fetch": 27,
   "matured": true
 }

@@ -1,23 +1,23 @@
 {
   "brand": "bequest",
-  "built_at": "2026-10-30T16:56:16.474Z",
-  "metrics_fetched_at": "2026-10-30T16:56:07.200Z",
-  "posts_total": 36,
-  "posts_matured": 35,
+  "built_at": "2026-11-03T18:57:55.955Z",
+  "metrics_fetched_at": "2026-11-03T18:57:49.686Z",
+  "posts_total": 38,
+  "posts_matured": 37,
   "posts_scored": 0,
   "channel_medians": {
     "fb": {
-      "n": 32,
+      "n": 34,
       "engagement": 0,
       "reach": 1
     },
     "ig": {
-      "n": 34,
+      "n": 36,
       "engagement": 1,
       "reach": 5
     },
     "x": {
-      "n": 34,
+      "n": 36,
       "engagement": 0,
       "reach": 6
     }
@@ -25,15 +25,15 @@
   "channels_scored": [],
   "channel_coverage": {
     "fb": {
-      "ok": 33,
+      "ok": 35,
       "error": 3
     },
     "ig": {
-      "ok": 35,
+      "ok": 37,
       "error": 1
     },
     "x": {
-      "ok": 35,
+      "ok": 37,
       "error": 1
     }
   },
