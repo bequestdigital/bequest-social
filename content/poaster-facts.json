@@ -1,5 +1,5 @@
 {
-  "_source": "poaster.co landing page (social-image-generator/src/pages/Landing.jsx), verified 2026-10-30. Update this file when the landing page's pricing or claims change — generate.js rejects any POASTER figure that is not in allowed_figures.",
+  "_source": "poaster.co landing page (social-image-generator/src/pages/Landing.jsx), verified 2026-11-05. Update this file when the landing page's pricing or claims change — generate.js rejects any POASTER figure that is not in allowed_figures.",
   "product": "Poaster",
   "owner": "Built and sold by Bequest Digital (our own product).",
   "url": "https://poaster.co",
@@ -13,7 +13,10 @@
     "Agency plan $49/mo, or $39/mo billed annually ($468/yr). 14-day free trial.",
     "14-day free trial on paid plans. Cancel anytime. No credit card to start.",
     "Template families include an Instagram-native look (IG Native) alongside designed brand cards.",
-    "AI brand pull (added 10/30/26): the app screenshots your live site and has Claude pick the real logo, colors, typefaces, and template style. Free accounts get 2 pulls, Solo 10 a month, Agency 50 a month; the quick non-AI import is unlimited."
+    "AI brand pull (added 10/30/26): the app screenshots your live site and has Claude pick the real logo, colors, typefaces, and template style. Free accounts get 2 pulls, Solo 10 a month, Agency 50 a month; the quick non-AI import is unlimited.",
+    "Free photo search inside the generator (added 11/5/26): a 'Find a free photo' button searches public-domain and CC0 photos (via Openverse) and drops the pick straight into the graphic. No credit required. Works on the free /try page too.",
+    "Every export size shows the platforms it fits (Instagram feed, Stories, LinkedIn, X, Pinterest, link previews), and the share buttons under each size are limited to the platforms where that size posts well.",
+    "AI captions never use em dashes (rule added 11/5/26)."
   ],
   "video": {
     "public_url": "https://poaster.co/promo/poaster-promo.mp4",
