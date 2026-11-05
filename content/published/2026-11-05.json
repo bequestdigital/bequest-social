@@ -64,9 +64,29 @@
     ]
   },
   "meta": {
-    "status": "queued",
+    "status": "published",
     "generated_at": "2026-10-31T20:00:00.000Z",
     "generator": "hand-authored-local",
     "notes": "Poaster promo from HeyCatch-generated assets (Alex 10/31/26). Captions humanized + diffed; claims checked against content/poaster-facts.json. Thursday slot keeps the week at 25% Poaster."
+  },
+  "results": {
+    "fb": {
+      "ok": true,
+      "id": "996611156867180_122133149985264758",
+      "at": "2026-11-05T20:51:10.518Z"
+    },
+    "ig": {
+      "ok": true,
+      "id": "18103943873642117",
+      "at": "2026-11-05T20:52:03.207Z"
+    },
+    "x": {
+      "ok": true,
+      "id": "2118446281920274584",
+      "thread_ids": [
+        "2118446281920274584"
+      ],
+      "at": "2026-11-05T20:52:07.423Z"
+    }
   }
 }
