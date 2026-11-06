@@ -28,8 +28,8 @@
       "saved": 0,
       "shares": 0,
       "engagement": 2,
-      "reach": 18,
-      "views": 31,
+      "reach": 21,
+      "views": 35,
       "total_interactions": 3
     },
     "x": {
@@ -45,41 +45,6 @@
     }
   },
   "snapshots": [
-    {
-      "at": "2026-10-20T15:50:32.843Z",
-      "age_days": 4,
-      "channels": {
-        "fb": {
-          "reactions": 0,
-          "comments": 0,
-          "shares": 0,
-          "engagement": 0,
-          "views": 0,
-          "reach": 0,
-          "clicks": 0
-        },
-        "ig": {
-          "likes": 2,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0,
-          "engagement": 2,
-          "reach": null,
-          "views": null,
-          "total_interactions": null
-        },
-        "x": {
-          "likes": 0,
-          "reposts": 0,
-          "replies": 0,
-          "quotes": 0,
-          "bookmarks": 0,
-          "engagement": 0,
-          "impressions": 3,
-          "clicks": null
-        }
-      }
-    },
     {
       "at": "2026-10-20T15:56:07.974Z",
       "age_days": 4,
@@ -324,9 +289,44 @@
           "clicks": null
         }
       }
+    },
+    {
+      "at": "2026-11-06T18:47:36.543Z",
+      "age_days": 21,
+      "channels": {
+        "fb": {
+          "reactions": 0,
+          "comments": 0,
+          "shares": 0,
+          "engagement": 0,
+          "views": 2,
+          "reach": 1,
+          "clicks": 0
+        },
+        "ig": {
+          "likes": 2,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0,
+          "engagement": 2,
+          "reach": 21,
+          "views": 35,
+          "total_interactions": 3
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 0,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 0,
+          "impressions": 11,
+          "clicks": null
+        }
+      }
     }
   ],
-  "fetched_at": "2026-11-03T18:57:42.899Z",
-  "age_days_at_fetch": 18,
+  "fetched_at": "2026-11-06T18:47:36.543Z",
+  "age_days_at_fetch": 21,
   "matured": true
 }
