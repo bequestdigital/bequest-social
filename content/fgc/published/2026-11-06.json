@@ -12,8 +12,15 @@
   },
   "meta": {
     "brand": "fgc",
-    "status": "approved",
+    "status": "published",
     "source": "batch-v2 (Tyler photos, 9/15)",
     "generator": "claude-session"
+  },
+  "results": {
+    "fb": {
+      "ok": true,
+      "id": "105187522086021_1153553333933996",
+      "at": "2026-11-06T20:08:20.852Z"
+    }
   }
 }
