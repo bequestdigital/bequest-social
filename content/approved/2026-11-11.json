@@ -1,0 +1,45 @@
+{
+  "id": "2026-11-11",
+  "date": "2026-11-11",
+  "week": 16,
+  "weekTheme": "Local Presence, Real Trust",
+  "type": "POV",
+  "hook": "Being known in your neighborhood matters more than being seen by strangers on the internet.",
+  "direction": "Angle: local trust over broad reach. Argue that mission-driven orgs often chase followers in distant markets while neighbors don't know they exist. Real presence — search results, map listings, word of mouth — outlasts any campaign. Craft beats volume. Graphic: quote card, single strong line centered.",
+  "facebook": {
+    "text": "Being known in your neighborhood matters more than being seen by strangers on the internet.\n\nA lot of mission-driven organizations spend real energy chasing followers in cities they'll never serve, while the people two blocks away have no idea they exist.\n\nLocal trust is built differently. It's your name showing up when someone searches nearby. It's your map listing with a real address and real hours. It's a neighbor recommending you because they've seen you show up.\n\nThat kind of presence doesn't come from volume. It comes from craft and consistency, applied close to home."
+  },
+  "instagram": {
+    "text": "Being known in your neighborhood matters more than being seen by strangers on the internet.\n\nMission-driven orgs often chase reach in distant markets while neighbors don't know they exist.\n\nLocal trust is built on search results, map listings, and word of mouth. Those things outlast any campaign. Craft beats volume, every time.",
+    "hashtags": [
+      "nonprofitmarketing",
+      "christianbusiness",
+      "ministrymarketing",
+      "churchcommunications",
+      "faithbasedbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Your neighbors not knowing you exist is a bigger problem than your follower count. Local trust — search results, map listings, word of mouth — outlasts any campaign. Craft beats volume."
+    ]
+  },
+  "image": {
+    "template": "quote-card",
+    "data": {
+      "quote": "Being known in your neighborhood matters more than being seen by strangers on the internet.",
+      "attribution": null,
+      "eyebrow": "Local Presence, Real Trust"
+    },
+    "alt": "Quote card with the line 'Being known in your neighborhood matters more than being seen by strangers on the internet' centered on a simple background with the eyebrow text 'Local Presence, Real Trust'.",
+    "files": [
+      "2026-11-11.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-08T16:59:31.428Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

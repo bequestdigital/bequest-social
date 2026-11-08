@@ -1,0 +1,51 @@
+{
+  "id": "2026-11-09",
+  "date": "2026-11-09",
+  "week": 16,
+  "weekTheme": "Local Presence, Real Trust",
+  "type": "TIP",
+  "hook": "Your Google Business profile is free real estate. Most organizations leave it half-empty.",
+  "direction": "Angle: local visibility as stewardship of what you already have. Cover the five fields most organizations skip — hours, description, services/ministry categories, Q&A, and a recent post. Frame it as finishing the work, not chasing an algorithm. Graphic: tip card (numbered list, five items).",
+  "facebook": {
+    "text": "Your Google Business profile is free real estate. Most organizations leave it half-empty.\n\nIf someone searches for your church, ministry, or business and finds a blank profile, that's not a neutral impression. It's a missed one.\n\nFive fields most organizations skip:\n\n1) Hours (including special or seasonal hours)\n2) Description (what you do and who you serve, in plain language)\n3) Services or ministry categories\n4) Q&A (you can seed your own questions and answer them)\n5) A recent post\n\nNone of this requires a budget. It requires finishing the work. You already have the profile. Fill it out."
+  },
+  "instagram": {
+    "text": "Your Google Business profile is free real estate. Most organizations leave it half-empty.\n\nFive fields worth finishing today:\n\n1) Hours\n2) Description\n3) Services or ministry categories\n4) Q&A\n5) A recent post\n\nThis isn't about chasing an algorithm. It's stewardship of what you already have. The profile exists. Make it do its job.",
+    "hashtags": [
+      "churchmarketing",
+      "nonprofitmarketing",
+      "ministrymarketing",
+      "christianbusiness",
+      "smallbusinessmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Your Google Business profile is free real estate. Hours, description, categories, Q&A, a recent post. Five fields. Most organizations skip all of them. Finish the work."
+    ]
+  },
+  "image": {
+    "template": "tip-card",
+    "data": {
+      "eyebrow": "Local Presence, Real Trust",
+      "title": "5 Google Business Fields Worth Finishing",
+      "items": [
+        "1. Hours (including seasonal changes)",
+        "2. Description — plain, specific, honest",
+        "3. Services or ministry categories",
+        "4. Q&A — seed your own questions",
+        "5. A recent post"
+      ]
+    },
+    "alt": "Tip card listing five commonly skipped Google Business profile fields: hours, description, services or ministry categories, Q&A, and a recent post.",
+    "files": [
+      "2026-11-09.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-08T16:59:20.842Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

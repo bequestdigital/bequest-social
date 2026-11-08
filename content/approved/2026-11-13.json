@@ -1,0 +1,44 @@
+{
+  "id": "2026-11-13",
+  "date": "2026-11-13",
+  "week": 16,
+  "weekTheme": "Local Presence, Real Trust",
+  "type": "ASK",
+  "hook": "Does your online presence match what you actually do for your community? Let's find out.",
+  "direction": "Angle: gentle audit invitation. Ask the audience to honestly compare their digital footprint to their real-world reputation. CTA: DM or comment 'audit' and we'll take a look together. Keeps the ownership/craftsmanship tone — no pressure, just an honest question. Graphic: ig-native (casual, short, typed-in-app feel).",
+  "facebook": {
+    "text": "Does your online presence match what you actually do for your community? Let's find out.\n\nHere's an honest question worth sitting with: if someone found you online for the first time, would they get an accurate picture of who you are and what you actually do for the people around you?\n\nNot a polished version. The real one.\n\nWe do informal audits like this all the time. No pitch, no pressure. Just a fresh set of eyes comparing what your digital footprint says to what your real-world reputation already is.\n\nComment 'audit' below or send us a DM and we'll take a look together."
+  },
+  "instagram": {
+    "text": "Does your online presence match what you actually do for your community?\n\nHonest question. Worth sitting with.\n\nIf someone found you online for the first time, would they get an accurate picture of who you are? Not a polished version. The real one.\n\nWe do informal audits like this regularly. No pitch, no pressure. Just a fresh set of eyes on your digital footprint compared to your actual reputation.\n\nComment 'audit' or DM us and we'll take a look together.",
+    "hashtags": [
+      "churchcommunications",
+      "nonprofitleadership",
+      "faithbasedbusiness",
+      "smallbusinessmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Does your online presence match what you actually do for your community? Honest question. Comment 'audit' or DM us and we'll take a look together. No pitch, just fresh eyes. #churchmarketing"
+    ]
+  },
+  "image": {
+    "template": "ig-native",
+    "data": {
+      "preset": "pollCard",
+      "text": "Does your online presence match your real-world reputation?",
+      "sub": "Comment 'audit' and we'll take a look together."
+    },
+    "alt": "A casual Instagram-native graphic posing the question: does your online presence match your real-world reputation, with an invitation to comment 'audit' for a free informal review.",
+    "files": [
+      "2026-11-13.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-08T16:59:41.422Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
