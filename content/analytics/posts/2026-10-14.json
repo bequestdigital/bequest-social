@@ -40,46 +40,11 @@
       "quotes": 0,
       "bookmarks": 0,
       "engagement": 1,
-      "impressions": 6,
+      "impressions": 8,
       "clicks": null
     }
   },
   "snapshots": [
-    {
-      "at": "2026-10-20T15:56:07.412Z",
-      "age_days": 6,
-      "channels": {
-        "fb": {
-          "reactions": 0,
-          "comments": 0,
-          "shares": 0,
-          "engagement": 0,
-          "views": 0,
-          "reach": 0,
-          "clicks": 0
-        },
-        "ig": {
-          "likes": 1,
-          "comments": 0,
-          "saved": 0,
-          "shares": 0,
-          "engagement": 1,
-          "reach": null,
-          "views": null,
-          "total_interactions": null
-        },
-        "x": {
-          "likes": 0,
-          "reposts": 0,
-          "replies": 1,
-          "quotes": 0,
-          "bookmarks": 0,
-          "engagement": 1,
-          "impressions": 2,
-          "clicks": null
-        }
-      }
-    },
     {
       "at": "2026-10-20T16:00:41.912Z",
       "age_days": 6,
@@ -324,9 +289,44 @@
           "clicks": null
         }
       }
+    },
+    {
+      "at": "2026-11-10T19:13:51.084Z",
+      "age_days": 27,
+      "channels": {
+        "fb": {
+          "reactions": 0,
+          "comments": 0,
+          "shares": 0,
+          "engagement": 0,
+          "views": 1,
+          "reach": 1,
+          "clicks": 0
+        },
+        "ig": {
+          "likes": 1,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0,
+          "engagement": 1,
+          "reach": 14,
+          "views": 27,
+          "total_interactions": 2
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 1,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 1,
+          "impressions": 8,
+          "clicks": null
+        }
+      }
     }
   ],
-  "fetched_at": "2026-11-06T18:47:35.566Z",
-  "age_days_at_fetch": 23,
+  "fetched_at": "2026-11-10T19:13:51.084Z",
+  "age_days_at_fetch": 27,
   "matured": true
 }

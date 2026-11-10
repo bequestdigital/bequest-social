@@ -18,7 +18,7 @@
       "views": null,
       "reach": null,
       "clicks": null,
-      "insights_error": "Graph GET /105187522086021_1125919180030745/insights: {\"message\":\"Permissions error\",\"type\":\"OAuthException\",\"code\":200,\"error_subcode\":1504029,\"is_transient\":false,\"error_user_title\":\"User doesn't have enough permissions to load insights\",\"error_user_msg\":\"You do not have enough permission to view the metric.\",\"fbtrace_id\":\"A8voNXqg7q3W3Ltkf_oFSld\"}"
+      "insights_error": "Graph GET /105187522086021_1130792606210069/insights: {\"message\":\"Permissions error\",\"type\":\"OAuthException\",\"code\":200,\"error_subcode\":1504029,\"is_transient\":false,\"error_user_title\":\"User doesn't have enough permissions to load insights\",\"error_user_msg\":\"You do not have enough permission to view the metric.\",\"fbtrace_id\":\"AYWX5iqyT5-VMFAHG57f2Wb\"}"
     }
   },
   "snapshots": [
@@ -81,9 +81,24 @@
           "clicks": null
         }
       }
+    },
+    {
+      "at": "2026-11-10T19:14:11.540Z",
+      "age_days": 18,
+      "channels": {
+        "fb": {
+          "reactions": 0,
+          "comments": 0,
+          "shares": 0,
+          "engagement": 0,
+          "views": null,
+          "reach": null,
+          "clicks": null
+        }
+      }
     }
   ],
-  "fetched_at": "2026-11-06T18:47:48.038Z",
-  "age_days_at_fetch": 14,
+  "fetched_at": "2026-11-10T19:14:11.540Z",
+  "age_days_at_fetch": 18,
   "matured": true
 }
