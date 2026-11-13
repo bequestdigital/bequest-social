@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-11",
+  "type": "POV",
+  "template": "quote-card",
+  "weekday": 3,
+  "hook": "Being known in your neighborhood matters more than being seen by strangers on the internet.",
+  "week_theme": "Local Presence, Real Trust",
+  "image_count": 1,
+  "published_at": "2026-11-12T00:25:48.451Z",
+  "channels": {
+    "fb": {
+      "permalink": "https://www.facebook.com/122131559427264758/posts/122133631083264758",
+      "created_time": "2026-11-12T00:25:44+0000",
+      "reactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "engagement": 0,
+      "views": 1,
+      "reach": 1,
+      "clicks": 0
+    },
+    "ig": {
+      "permalink": "https://www.instagram.com/p/Dfnw7T2nyin/",
+      "created_time": "2026-11-12T00:25:55+0000",
+      "media_type": "IMAGE",
+      "likes": 2,
+      "comments": 0,
+      "saved": 0,
+      "shares": 1,
+      "engagement": 3,
+      "reach": 71,
+      "views": 114,
+      "total_interactions": 4
+    },
+    "x": {
+      "created_time": "2026-11-12T00:25:59.000Z",
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "bookmarks": 0,
+      "engagement": 0,
+      "impressions": 1,
+      "clicks": null
+    }
+  },
+  "snapshots": [
+    {
+      "at": "2026-11-13T19:07:06.620Z",
+      "age_days": 2,
+      "channels": {
+        "fb": {
+          "reactions": 0,
+          "comments": 0,
+          "shares": 0,
+          "engagement": 0,
+          "views": 1,
+          "reach": 1,
+          "clicks": 0
+        },
+        "ig": {
+          "likes": 2,
+          "comments": 0,
+          "saved": 0,
+          "shares": 1,
+          "engagement": 3,
+          "reach": 71,
+          "views": 114,
+          "total_interactions": 4
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 0,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 0,
+          "impressions": 1,
+          "clicks": null
+        }
+      }
+    }
+  ],
+  "fetched_at": "2026-11-13T19:07:06.620Z",
+  "age_days_at_fetch": 2,
+  "matured": false
+}

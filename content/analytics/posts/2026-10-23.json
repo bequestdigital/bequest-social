@@ -9,7 +9,7 @@
   "published_at": "2026-10-23T17:36:27.771Z",
   "channels": {
     "fb": {
-      "error": "Graph GET /1119300157488445: {\"message\":\"(#100) Tried accessing nonexisting field (shares)\",\"type\":\"OAuthException\",\"code\":100,\"fbtrace_id\":\"AIQpn0cHlLTL4F8xt9nQO1x\"}"
+      "error": "Graph GET /1119300157488445: {\"message\":\"(#100) Tried accessing nonexisting field (shares)\",\"type\":\"OAuthException\",\"code\":100,\"fbtrace_id\":\"AhOr44u5B3pttyH9lyijF0C\"}"
     },
     "ig": {
       "permalink": "https://www.instagram.com/reel/De2G_FRj5x8/",
@@ -32,7 +32,7 @@
       "quotes": 0,
       "bookmarks": 0,
       "engagement": 0,
-      "impressions": 12,
+      "impressions": 13,
       "clicks": null
     }
   },
@@ -181,9 +181,38 @@
           "clicks": null
         }
       }
+    },
+    {
+      "at": "2026-11-13T19:06:54.915Z",
+      "age_days": 21,
+      "channels": {
+        "fb": {
+          "error": true
+        },
+        "ig": {
+          "likes": 3,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0,
+          "engagement": 3,
+          "reach": 18,
+          "views": 23,
+          "total_interactions": 4
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 0,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 0,
+          "impressions": 13,
+          "clicks": null
+        }
+      }
     }
   ],
-  "fetched_at": "2026-11-10T19:13:54.461Z",
-  "age_days_at_fetch": 18,
+  "fetched_at": "2026-11-13T19:06:54.915Z",
+  "age_days_at_fetch": 21,
   "matured": true
 }

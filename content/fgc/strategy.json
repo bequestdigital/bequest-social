@@ -1,10 +1,10 @@
 {
   "brand": "fgc",
-  "updated_at": "2026-11-10T19:14:13.828Z",
+  "updated_at": "2026-11-13T19:07:14.771Z",
   "sample": {
     "scored": 0,
-    "matured": 21,
-    "total": 22
+    "matured": 22,
+    "total": 23
   },
   "data_quality": {
     "usable_channels": [],

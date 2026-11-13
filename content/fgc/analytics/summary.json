@@ -1,13 +1,13 @@
 {
   "brand": "fgc",
-  "built_at": "2026-11-10T19:14:13.826Z",
-  "metrics_fetched_at": "2026-11-10T19:14:13.271Z",
-  "posts_total": 22,
-  "posts_matured": 21,
+  "built_at": "2026-11-13T19:07:14.769Z",
+  "metrics_fetched_at": "2026-11-13T19:07:14.248Z",
+  "posts_total": 23,
+  "posts_matured": 22,
   "posts_scored": 0,
   "channel_medians": {
     "fb": {
-      "n": 21,
+      "n": 22,
       "engagement": 0,
       "reach": null
     },
@@ -25,7 +25,7 @@
   "channels_scored": [],
   "channel_coverage": {
     "fb": {
-      "ok": 22,
+      "ok": 23,
       "error": 0
     },
     "ig": {
