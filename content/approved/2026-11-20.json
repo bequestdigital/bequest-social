@@ -1,0 +1,44 @@
+{
+  "id": "2026-11-20",
+  "date": "2026-11-20",
+  "week": 17,
+  "weekTheme": "Trust Before the Ask",
+  "type": "POV",
+  "hook": "A year-end campaign won't save a message that was unclear all year.",
+  "direction": "Angle: orgs scramble to launch giving campaigns in November without fixing the foggy message underneath. Contrarian take: the campaign is downstream of the clarity. If people don't know what you do or why it matters, urgency won't close the gap. Cover: what to fix first. Graphic: ig-native — short, wry, like a note typed in the app.",
+  "facebook": {
+    "text": "A year-end campaign won't save a message that was unclear all year.\n\nEvery November, organizations scramble to build giving campaigns. New graphics, urgent copy, countdown timers. And underneath it all: a message nobody could explain clearly in March.\n\nThe campaign is downstream of the clarity. Urgency doesn't close a gap that confusion opened. If people don't know what you do or why it matters, a deadline won't change that.\n\nFix the message first. Who you serve, why it matters, what you're asking people to join. Then build the campaign on top of something solid."
+  },
+  "instagram": {
+    "text": "A year-end campaign won't save a message that was unclear all year.\n\nEvery November, orgs scramble: new graphics, urgent copy, countdown timers. But the campaign sits on top of whatever clarity (or fog) was already there.\n\nIf people couldn't explain what you do in March, a deadline won't fix that in December.\n\nFix the message first. Who you serve. Why it matters. What you're asking people to join. Then build the campaign on something solid.",
+    "hashtags": [
+      "nonprofitmarketing",
+      "churchcommunications",
+      "ministrymarketing",
+      "nonprofitleadership"
+    ]
+  },
+  "x": {
+    "posts": [
+      "A year-end campaign won't save a message that was unclear all year. Urgency doesn't close a gap that confusion opened. Fix the message first, then build the campaign on top of it."
+    ]
+  },
+  "image": {
+    "template": "ig-native",
+    "data": {
+      "preset": "typewriter",
+      "text": "the campaign is downstream of the clarity.\n\nfix the message first.",
+      "sub": "urgency won't close a gap confusion opened."
+    },
+    "alt": "Typewriter-style text on a plain background reading: 'the campaign is downstream of the clarity. fix the message first.' with a smaller line below: 'urgency won't close a gap confusion opened.'",
+    "files": [
+      "2026-11-20.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-15T17:39:17.193Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

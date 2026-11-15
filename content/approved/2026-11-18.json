@@ -1,0 +1,49 @@
+{
+  "id": "2026-11-18",
+  "date": "2026-11-18",
+  "week": 17,
+  "weekTheme": "Trust Before the Ask",
+  "type": "TIP",
+  "hook": "3 things your donor page should say before it asks for anything.",
+  "direction": "Angle: most donation pages skip straight to the ask and lose people who needed one more reason to believe. Cover: (1) who you serve and why it matters, (2) what a gift actually does, (3) why you specifically can be trusted with it. Frame as a quick self-audit. Graphic: tip card as a numbered checklist.",
+  "facebook": {
+    "text": "3 things your donor page should say before it asks for anything.\n\nMost donation pages skip straight to the button. That's the problem. People who are close to giving just need one more reason to believe, and a bare ask doesn't give them one.\n\nRun a quick audit on your page. Does it tell visitors:\n\n1) Who you serve and why it matters\n2) What a gift actually does (specifically)\n3) Why you, specifically, can be trusted with it\n\nIf any of those are missing, the ask lands in a vacuum. Fix the page first. Then ask."
+  },
+  "instagram": {
+    "text": "3 things your donor page should say before it asks for anything.\n\nMost pages skip straight to the button. That's where they lose people who were almost ready to give.\n\nQuick self-audit. Check whether your page answers:\n\n1) Who you serve and why it matters\n2) What a gift actually does\n3) Why you can be trusted with it\n\nAll three have to be there before the ask earns its place.",
+    "hashtags": [
+      "nonprofitmarketing",
+      "ministrymarketing",
+      "nonprofitleadership",
+      "faithbasedbusiness",
+      "churchcommunications"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Most donor pages skip straight to the ask. Before the button, your page needs to say: who you serve, what a gift does, and why you can be trusted with it. Quick audit. Fix those first."
+    ]
+  },
+  "image": {
+    "template": "tip-card",
+    "data": {
+      "eyebrow": "Donor Page Audit",
+      "title": "Say these 3 things before you ask",
+      "items": [
+        "1. Who you serve and why it matters",
+        "2. What a gift actually does",
+        "3. Why you can be trusted with it"
+      ]
+    },
+    "alt": "A numbered checklist tip card titled 'Say these 3 things before you ask,' listing: who you serve and why it matters, what a gift actually does, and why you can be trusted with it.",
+    "files": [
+      "2026-11-18.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-15T17:39:06.832Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "2026-11-16",
+  "date": "2026-11-16",
+  "week": 17,
+  "weekTheme": "Trust Before the Ask",
+  "type": "WHY",
+  "hook": "People give to organizations they trust. Trust is built long before the donation page loads.",
+  "direction": "Angle: year-end giving season is weeks away, but trust isn't built in a campaign — it's built in the ordinary posts, the clear message, the consistent presence. Cover: why trust is the real currency of year-end appeals, and how mission-driven orgs already have the raw material. Graphic: quote card with the hook as the pull quote.",
+  "facebook": {
+    "text": "People give to organizations they trust. Trust is built long before the donation page loads.\n\nYear-end giving season is weeks away. But if you're waiting for a campaign to build trust, you're already behind.\n\nTrust gets built in the ordinary posts. The clear, consistent message. The steady presence that shows up whether or not there's an ask attached.\n\nHere's the good news: mission-driven organizations already have the raw material. You have a real story, a real reason you exist, and real people whose lives reflect your work. That's not nothing. That's everything a donor needs to say yes.\n\nThe campaign doesn't create trust. It just gives trust somewhere to go."
+  },
+  "instagram": {
+    "text": "People give to organizations they trust. Trust is built long before the donation page loads.\n\nYear-end giving season is close. But trust doesn't get built in a campaign. It gets built in the ordinary posts, the clear message, the consistent presence that shows up week after week with nothing to sell.\n\nIf your organization has a real mission and you've been showing up honestly, you already have what donors need to say yes. The appeal just gives that trust somewhere to land.",
+    "hashtags": [
+      "nonprofitleadership",
+      "ministrymarketing",
+      "churchcommunications",
+      "faithbasedbusiness"
+    ]
+  },
+  "x": {
+    "posts": [
+      "People give to organizations they trust. Trust is built long before the donation page loads. Year-end appeals don't create trust — they just give it somewhere to go. Start there. #nonprofitleadership"
+    ]
+  },
+  "image": {
+    "template": "quote-card",
+    "data": {
+      "quote": "People give to organizations they trust. Trust is built long before the donation page loads.",
+      "attribution": null,
+      "eyebrow": "Trust Before the Ask"
+    },
+    "alt": "Quote card with the text: People give to organizations they trust. Trust is built long before the donation page loads, on a clean background with the eyebrow label Trust Before the Ask.",
+    "files": [
+      "2026-11-16.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-15T17:38:55.429Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
