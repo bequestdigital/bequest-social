@@ -1,0 +1,67 @@
+{
+  "id": "2027-01-07",
+  "date": "2027-01-07",
+  "weekday": "Thu",
+  "week": 24,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "the client handoff shouldn't reset your workflow",
+  "facebook": {
+    "text": "The client handoff shouldn't reset your workflow.\n\nImport each client's approved colors, logo, and fonts once and keep the kit ready. When a new brief arrives, choose that client's kit instead of hunting through folders. Paste the link or prompt, and Poaster builds the square, story, and wide graphics with their branding applied. More client content without a nightly design shift or another hire.\n\nSwipe for the five-slide version. poaster.co is free to try, 3 downloads before you sign up."
+  },
+  "instagram": {
+    "text": "The client handoff shouldn't reset your workflow.\n\nImport each client's approved colors, logo, and fonts once and keep the kit ready. When a new brief arrives, choose that client's kit, paste the link or prompt, and Poaster builds every format with their branding applied.\n\nSwipe for the five-slide version. poaster.co is free to try, 3 downloads before you sign up.",
+    "hashtags": [
+      "marketingtools",
+      "socialmediamarketing",
+      "contentmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "The client handoff shouldn't reset your workflow. Import each client's brand kit once, pick it when the brief lands, and Poaster builds square, story, and wide with their branding applied. https://poaster.co"
+    ]
+  },
+  "direction": "Poaster carousel from a HeyCatch slideshow (heycatch slideshow 8384ac95), 5 pre-rendered 4:5 slides; neutral stock imagery, no faces.",
+  "image": {
+    "template": "carousel",
+    "data": {
+      "cover": {
+        "title": "the client handoff shouldn't reset your workflow",
+        "subtitle": ""
+      },
+      "slides": [
+        {
+          "title": "save the identity",
+          "body": "import each client's approved colors, logo, and fonts once, then keep that complete brand kit ready for every future request"
+        },
+        {
+          "title": "switch without searching",
+          "body": "when a new brief arrives, choose the client's saved kit instead of hunting through folders for the correct files and guidelines"
+        },
+        {
+          "title": "generate the deliverables",
+          "body": "paste the link or prompt into Poaster and create square, story, and wide graphics with the selected client's branding applied automatically"
+        }
+      ],
+      "end": {
+        "title": "scale without another hire",
+        "subtitle": "once every account has a reusable brand kit, you can handle more client content without a dedicated designer"
+      }
+    },
+    "alt": "Five-slide carousel of laptops and desks (figures seen from behind only) with white caption boxes: 'the client handoff shouldn't reset your workflow', 'save the identity', 'switch without searching', 'generate the deliverables', 'scale without another hire'.",
+    "files": [
+      "2027-01-07-1.jpg",
+      "2027-01-07-2.jpg",
+      "2027-01-07-3.jpg",
+      "2027-01-07-4.jpg",
+      "2027-01-07-5.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-17T23:59:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster promo from the HeyCatch Videos deck reviewed 11/17/26 (7 of 20 cards kept; every card showing a face or a fabricated first-person testimonial rejected). Captions drafted, humanized, diffed; claims checked against content/poaster-facts.json. Tue/Thu Poaster slots per Alex 11/10 (post more). HeyCatch subscription cancelled 11/17, access ends 11/23."
+  }
+}

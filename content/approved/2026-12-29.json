@@ -1,0 +1,47 @@
+{
+  "id": "2026-12-29",
+  "date": "2026-12-29",
+  "weekday": "Tue",
+  "week": 23,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "me when Poaster remembers which client owns these colors, fonts, and logos",
+  "facebook": {
+    "text": "Me when Poaster remembers which client owns these colors, fonts, and logos.\n\nEvery client brand lives in its own kit. Pick the kit, paste the link, and the graphic comes out in that client's colors, fonts, and logo. No digging through folders first.\n\nTry it at poaster.co, 3 downloads free before you sign up."
+  },
+  "instagram": {
+    "text": "Me when Poaster remembers which client owns these colors, fonts, and logos.\n\nEvery client brand lives in its own kit. Pick the kit, paste the link, and the graphic comes out in that client's colors, fonts, and logo.\n\nTry it at poaster.co, 3 downloads free before you sign up.",
+    "hashtags": [
+      "marketingtools",
+      "smallbusinessmarketing",
+      "contentmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Me when Poaster remembers which client owns these colors, fonts, and logos. Each client brand in its own kit. Pick it, paste the link, done. 3 free downloads at https://poaster.co/try"
+    ]
+  },
+  "direction": "Poaster clip from HeyCatch (5 s, 9:16): crying-cat meme with on-screen text 'me when Poaster remembers which client owns these colors, fonts, and logos'. Agency angle.",
+  "image": {
+    "template": "promo-video",
+    "data": {
+      "source": "heycatch green-screen f6a3635d"
+    },
+    "alt": "Short vertical meme clip of a crying cat holding a phone over a blue background, on-screen text: 'me when Poaster remembers which client owns these colors, fonts, and logos'.",
+    "files": [
+      "2026-12-29.jpg"
+    ]
+  },
+  "video": {
+    "url": "https://poaster.co/promo/poaster-brand-memory.mp4",
+    "duration_seconds": 5.2,
+    "aspect": "9:16 (1080x1920)"
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-17T23:59:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster promo from the HeyCatch Videos deck reviewed 11/17/26 (7 of 20 cards kept; every card showing a face or a fabricated first-person testimonial rejected). Captions drafted, humanized, diffed; claims checked against content/poaster-facts.json. Tue/Thu Poaster slots per Alex 11/10 (post more). HeyCatch subscription cancelled 11/17, access ends 11/23."
+  }
+}

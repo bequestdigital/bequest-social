@@ -1,0 +1,67 @@
+{
+  "id": "2026-12-08",
+  "date": "2026-12-08",
+  "weekday": "Tue",
+  "week": 20,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "don't sign up until it earns it",
+  "direction": "Poaster carousel from a HeyCatch slideshow (e6bcaf00), 5 pre-rendered 4:5 slides; neutral stock imagery, Poaster feature angle.",
+  "facebook": {
+    "text": "A tool should earn the sign-up. Poaster lets you make three finished graphics before it asks for an email. Paste a link, download the set, and judge the output on your own post, not a demo. Swipe for the five-step test. poaster.co, no account needed for the first 3 downloads."
+  },
+  "instagram": {
+    "text": "A tool should earn the sign-up. Poaster lets you make three finished graphics before it asks for an email. Paste a link, download the set, and judge the output on your own post. Swipe for the five-step test. poaster.co",
+    "hashtags": [
+      "marketingtools",
+      "socialmediamarketing",
+      "contentmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "A tool should earn the sign-up. Make three finished, on-brand graphics before Poaster asks for an email, then decide. https://poaster.co/try"
+    ]
+  },
+  "image": {
+    "template": "carousel",
+    "data": {
+      "cover": {
+        "title": "don't sign up until it earns it",
+        "subtitle": ""
+      },
+      "slides": [
+        {
+          "title": "start with proof",
+          "body": "use the three free no-sign-up downloads to generate real graphics before giving away your email or committing to another tool"
+        },
+        {
+          "title": "test the output",
+          "body": "check whether the design actually looks polished, keeps your message readable, and works across the formats you publish most"
+        },
+        {
+          "title": "watch your time",
+          "body": "a useful test should show finished branded graphics quickly, not leave you rebuilding layouts and resizing every version yourself"
+        }
+      ],
+      "end": {
+        "title": "then decide",
+        "subtitle": "if the downloads make your workflow easier and the results look publishable, creating an account becomes a choice based on evidence"
+      }
+    },
+    "alt": "Five-slide carousel of dark lifestyle photos with white caption boxes: 'don't sign up until it earns it', 'start with proof', 'test the output', 'watch your time', 'then decide'.",
+    "files": [
+      "2026-12-08-1.jpg",
+      "2026-12-08-2.jpg",
+      "2026-12-08-3.jpg",
+      "2026-12-08-4.jpg",
+      "2026-12-08-5.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-10T16:30:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster promo from HeyCatch deck reviewed 11/10/26 (6 of 20 ideas kept; people, political and remix cards rejected). Captions humanized; claims checked against content/poaster-facts.json. Second weekly Poaster slot per Alex 11/10 (post more). Rescheduled 11/17 -> 12/08 on 11/17/26: the 11/10 package was never committed or pushed, so it did not publish."
+  }
+}

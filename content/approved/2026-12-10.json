@@ -1,0 +1,67 @@
+{
+  "id": "2026-12-10",
+  "date": "2026-12-10",
+  "weekday": "Thu",
+  "week": 20,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "unpopular opinion: blank canvases are slowing your marketing down",
+  "direction": "Poaster carousel from a HeyCatch slideshow (74c40c08), 5 pre-rendered 4:5 slides; neutral stock imagery, Poaster feature angle.",
+  "facebook": {
+    "text": "Unpopular opinion: the blank canvas is what slows marketing down. Your link already holds the headline, the context, and the call to action. Paste it into Poaster and get square, story, and wide graphics in your brand. Swipe for the short version. Free to try at poaster.co."
+  },
+  "instagram": {
+    "text": "Unpopular opinion: the blank canvas is what slows marketing down. Your link already holds the headline, the context, and the call to action. Paste it into Poaster and get square, story, and wide graphics in your brand. Swipe for the short version. Free to try at poaster.co.",
+    "hashtags": [
+      "contentmarketing",
+      "socialmediamarketing",
+      "marketingtools"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Unpopular opinion: the blank canvas is what slows marketing down. The link is the brief. Paste it, get every size in your brand. https://poaster.co/try"
+    ]
+  },
+  "image": {
+    "template": "carousel",
+    "data": {
+      "cover": {
+        "title": "unpopular opinion: blank canvases are slowing your marketing down",
+        "subtitle": ""
+      },
+      "slides": [
+        {
+          "title": "canva and adobe express make you design every post from zero",
+          "body": ""
+        },
+        {
+          "title": "but your link already contains the headline, context, and call to action",
+          "body": ""
+        },
+        {
+          "title": "paste it into poaster and get on-brand square, story, and wide graphics",
+          "body": ""
+        }
+      ],
+      "end": {
+        "title": "stop treating every post like a design project when the link is the brief",
+        "subtitle": ""
+      }
+    },
+    "alt": "Five-slide carousel of paintings and interiors: unpopular opinion, blank canvases are slowing your marketing down; your link already contains the headline, context, and call to action; paste it into Poaster.",
+    "files": [
+      "2026-12-10-1.jpg",
+      "2026-12-10-2.jpg",
+      "2026-12-10-3.jpg",
+      "2026-12-10-4.jpg",
+      "2026-12-10-5.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-10T16:30:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster promo from HeyCatch deck reviewed 11/10/26 (6 of 20 ideas kept; people, political and remix cards rejected). Captions humanized; claims checked against content/poaster-facts.json. Second weekly Poaster slot per Alex 11/10 (post more)."
+  }
+}

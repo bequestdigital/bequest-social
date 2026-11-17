@@ -1,0 +1,66 @@
+{
+  "id": "2027-01-12",
+  "date": "2027-01-12",
+  "weekday": "Tue",
+  "week": 25,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "your link is the brief",
+  "facebook": {
+    "text": "Your link is the brief.\n\nInstead of rebuilding the idea on a blank canvas in Canva or Adobe Express, paste the page link and let the content guide the design. Poaster turns that one input into square, story, and wide graphics together, with your saved colors, fonts, and logo applied automatically. Link to on-brand graphics in seconds. The leftover time goes to reviewing the message instead of adjusting layouts.\n\nSwipe for the four-slide version. poaster.co, 3 downloads free before you create an account."
+  },
+  "instagram": {
+    "text": "Your link is the brief.\n\nInstead of rebuilding the idea on a blank canvas, paste the page link and let the content guide the design. Poaster turns that one input into square, story, and wide graphics together, with your saved colors, fonts, and logo applied automatically.\n\nSwipe for the four-slide version. poaster.co, 3 downloads free before you create an account.",
+    "hashtags": [
+      "contentmarketing",
+      "marketingtools",
+      "socialmediamarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Your link is the brief. Paste the page link, and Poaster turns it into square, story, and wide graphics with your saved brand applied. No blank canvas. 3 free downloads at https://poaster.co/try"
+    ]
+  },
+  "direction": "Poaster carousel from a HeyCatch slideshow (heycatch slideshow 02856428 (slide 3 dropped: identifiable person)), 4 pre-rendered 4:5 slides; neutral stock imagery, no faces.",
+  "image": {
+    "template": "carousel",
+    "data": {
+      "cover": {
+        "title": "your link is the brief",
+        "subtitle": ""
+      },
+      "slides": [
+        {
+          "title": "skip the blank canvas",
+          "body": "instead of rebuilding the idea in canva or adobe express, paste the page link and let the content guide the design"
+        },
+        {
+          "title": "brand decisions disappear",
+          "body": "your saved colors, fonts, and logo apply automatically, replacing repeated design choices with a dependable workflow for every post"
+        },
+        {
+          "title": "publish before perfection",
+          "body": "you move from link to on-brand graphics in seconds, leaving more time to review the message instead of adjusting layouts"
+        }
+      ],
+      "end": {
+        "title": "stop designing the same idea",
+        "subtitle": "paste the link into poaster, get every essential format at once, and leave the freeform canvas behind"
+      }
+    },
+    "alt": "Four-slide carousel of interiors and a still-life painting with white caption boxes: 'your link is the brief', 'skip the blank canvas', 'brand decisions disappear', 'publish before perfection'.",
+    "files": [
+      "2027-01-12-1.jpg",
+      "2027-01-12-2.jpg",
+      "2027-01-12-3.jpg",
+      "2027-01-12-4.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-17T23:59:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster promo from the HeyCatch Videos deck reviewed 11/17/26 (7 of 20 cards kept; every card showing a face or a fabricated first-person testimonial rejected). Captions drafted, humanized, diffed; claims checked against content/poaster-facts.json. Tue/Thu Poaster slots per Alex 11/10 (post more). HeyCatch subscription cancelled 11/17, access ends 11/23."
+  }
+}

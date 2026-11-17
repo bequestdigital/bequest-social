@@ -1,0 +1,67 @@
+{
+  "id": "2026-12-01",
+  "date": "2026-12-01",
+  "weekday": "Tue",
+  "week": 19,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "the client switch is where hours disappear",
+  "direction": "Poaster carousel from a HeyCatch slideshow (c763533f), 5 pre-rendered 4:5 slides; neutral stock imagery, Poaster feature angle.",
+  "facebook": {
+    "text": "The client switch is where agency hours go. New account, new colors, new fonts, and the same post becomes brand detective work again. Poaster keeps each client's kit saved, so you pick the brand and generate. Swipe for the five slides. poaster.co handles unlimited brands on the Agency plan."
+  },
+  "instagram": {
+    "text": "The client switch is where agency hours go. New account, new colors, new fonts, and the same post becomes brand detective work again. Poaster keeps each client's kit saved, so you pick the brand and generate. Swipe for the five slides. poaster.co",
+    "hashtags": [
+      "marketingtools",
+      "socialmediamarketing",
+      "contentmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "The client switch is where agency hours go. Save each client's brand kit once in Poaster, pick the brand, generate. https://poaster.co/try"
+    ]
+  },
+  "image": {
+    "template": "carousel",
+    "data": {
+      "cover": {
+        "title": "the client switch is where hours disappear",
+        "subtitle": ""
+      },
+      "slides": [
+        {
+          "title": "same task, new rules",
+          "body": "every account brings different colors, logos, and fonts, so one simple post becomes another round of brand detective work"
+        },
+        {
+          "title": "save the identity once",
+          "body": "import each client's approved colors, logo, and fonts once, then keep that brand ready whenever new content needs creating"
+        },
+        {
+          "title": "stop rebuilding the basics",
+          "body": "choose the right client identity and generate consistent graphics without hunting through old files or second-guessing which version belongs"
+        }
+      ],
+      "end": {
+        "title": "scale without another hire",
+        "subtitle": "when brand rules apply automatically, you can handle more client content, clear the nightly backlog, and protect your creative time"
+      }
+    },
+    "alt": "Five-slide carousel of art and interior photos: the client switch is where hours disappear, same task new rules, save the identity once, stop rebuilding the basics, scale without another hire.",
+    "files": [
+      "2026-12-01-1.jpg",
+      "2026-12-01-2.jpg",
+      "2026-12-01-3.jpg",
+      "2026-12-01-4.jpg",
+      "2026-12-01-5.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-10T16:30:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster promo from HeyCatch deck reviewed 11/10/26 (6 of 20 ideas kept; people, political and remix cards rejected). Captions humanized; claims checked against content/poaster-facts.json. Second weekly Poaster slot per Alex 11/10 (post more)."
+  }
+}

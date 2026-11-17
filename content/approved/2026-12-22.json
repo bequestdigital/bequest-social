@@ -1,0 +1,67 @@
+{
+  "id": "2026-12-22",
+  "date": "2026-12-22",
+  "weekday": "Tue",
+  "week": 22,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "the format tax is real",
+  "facebook": {
+    "text": "The format tax is real.\n\nOne idea turns into three files: square, story, and wide. Then the small edits start. Text size, spacing, crops, logo placement. Every post quietly costs another ten to twenty minutes.\n\nPoaster makes all three from one link or prompt, with your saved brand kit applied. The resizing drops out of the workflow and the minutes go back to planning content.\n\nSwipe for the five-slide version. poaster.co is free to try, 3 downloads before you create an account."
+  },
+  "instagram": {
+    "text": "The format tax is real.\n\nOne idea turns into three files: square, story, and wide. Then the small edits start, and every post quietly costs another ten to twenty minutes.\n\nPoaster makes all three from one link or prompt, with your saved brand kit applied. Swipe for the five-slide version.\n\npoaster.co is free to try, 3 downloads before you create an account.",
+    "hashtags": [
+      "socialmediamarketing",
+      "contentmarketing",
+      "marketingtools"
+    ]
+  },
+  "x": {
+    "posts": [
+      "The format tax is real: one idea, three files, and ten to twenty minutes of small edits per post. Poaster turns one link or prompt into square, story, and wide at once, brand kit applied. Free to try at https://poaster.co"
+    ]
+  },
+  "direction": "Poaster carousel from a HeyCatch slideshow (heycatch slideshow 57d47f21), 5 pre-rendered 4:5 slides; neutral stock imagery, no faces.",
+  "image": {
+    "template": "carousel",
+    "data": {
+      "cover": {
+        "title": "the format tax is real",
+        "subtitle": ""
+      },
+      "slides": [
+        {
+          "title": "one idea, three files",
+          "body": "square, story, and wide layouts turn one finished graphic into multiple production tasks when you build each version separately"
+        },
+        {
+          "title": "watch the small edits",
+          "body": "changing text size, spacing, crops, and logo placement feels minor until every post costs another ten to twenty minutes"
+        },
+        {
+          "title": "generate them together",
+          "body": "poaster turns one link or prompt into finished square, story, and wide graphics while keeping your saved brand kit consistent"
+        }
+      ],
+      "end": {
+        "title": "buy back your time",
+        "subtitle": "remove resizing from the workflow and spend those recovered minutes planning stronger content"
+      }
+    },
+    "alt": "Five-slide carousel of dim restaurant and interior photos with white caption boxes: 'the format tax is real', 'one idea, three files', 'watch the small edits', 'generate them together', 'buy back your time'.",
+    "files": [
+      "2026-12-22-1.jpg",
+      "2026-12-22-2.jpg",
+      "2026-12-22-3.jpg",
+      "2026-12-22-4.jpg",
+      "2026-12-22-5.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-17T23:59:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster promo from the HeyCatch Videos deck reviewed 11/17/26 (7 of 20 cards kept; every card showing a face or a fabricated first-person testimonial rejected). Captions drafted, humanized, diffed; claims checked against content/poaster-facts.json. Tue/Thu Poaster slots per Alex 11/10 (post more). HeyCatch subscription cancelled 11/17, access ends 11/23."
+  }
+}

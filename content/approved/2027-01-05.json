@@ -1,0 +1,67 @@
+{
+  "id": "2027-01-05",
+  "date": "2027-01-05",
+  "weekday": "Tue",
+  "week": 24,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "the no-designer brand check",
+  "facebook": {
+    "text": "The no-designer brand check.\n\nSave the rules once: approved colors, fonts, and logo together in one brand kit. After that you stop debating layouts and focus on whether the message is clear. Posts made by different people still feel like one brand. Before you publish, you check the headline, spacing, and logo. The brand part is already handled in every format.\n\nSwipe for the five-slide version. poaster.co, 3 downloads free before you create an account."
+  },
+  "instagram": {
+    "text": "The no-designer brand check.\n\nSave the rules once: approved colors, fonts, and logo together in one brand kit. After that you stop debating layouts and focus on whether the message is clear. Posts made by different people still feel like one brand.\n\nSwipe for the five-slide version. poaster.co, 3 downloads free before you create an account.",
+    "hashtags": [
+      "smallbusinessmarketing",
+      "marketingtools",
+      "contentmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "The no-designer brand check: save your colors, fonts, and logo once, stop debating layouts, and review only the headline and spacing before you publish. Poaster handles the brand part. https://poaster.co"
+    ]
+  },
+  "direction": "Poaster carousel from a HeyCatch slideshow (heycatch slideshow 1459a6c6), 5 pre-rendered 4:5 slides; neutral stock imagery, no faces.",
+  "image": {
+    "template": "carousel",
+    "data": {
+      "cover": {
+        "title": "the no-designer brand check",
+        "subtitle": ""
+      },
+      "slides": [
+        {
+          "title": "save the rules",
+          "body": "store your approved colors, fonts, and logo together so every new graphic starts with the right visual direction"
+        },
+        {
+          "title": "remove the guesswork",
+          "body": "when brand choices are already set, you stop debating layouts and focus on whether the message is clear"
+        },
+        {
+          "title": "trust the consistency",
+          "body": "reusing the same visual system makes separate posts feel connected, even when different people create them"
+        }
+      ],
+      "end": {
+        "title": "review, then publish",
+        "subtitle": "check the headline, spacing, and logo once, knowing the brand foundation is already handled"
+      }
+    },
+    "alt": "Five-slide carousel of interiors and paintings with white caption boxes: 'the no-designer brand check', 'save the rules', 'remove the guesswork', 'trust the consistency', 'review, then publish'.",
+    "files": [
+      "2027-01-05-1.jpg",
+      "2027-01-05-2.jpg",
+      "2027-01-05-3.jpg",
+      "2027-01-05-4.jpg",
+      "2027-01-05-5.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-17T23:59:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster promo from the HeyCatch Videos deck reviewed 11/17/26 (7 of 20 cards kept; every card showing a face or a fabricated first-person testimonial rejected). Captions drafted, humanized, diffed; claims checked against content/poaster-facts.json. Tue/Thu Poaster slots per Alex 11/10 (post more). HeyCatch subscription cancelled 11/17, access ends 11/23."
+  }
+}

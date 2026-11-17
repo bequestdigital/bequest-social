@@ -1,0 +1,67 @@
+{
+  "id": "2027-01-14",
+  "date": "2027-01-14",
+  "weekday": "Thu",
+  "week": 25,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "manual resizing is a hidden bottleneck in your content workflow",
+  "facebook": {
+    "text": "Manual resizing is a hidden bottleneck in your content workflow.\n\nSquare, story, and wide layouts repeat the same spacing decisions, and those extra ten minutes multiply across every post you publish. Generate every format together instead of rebuilding one graphic three times. Measure marketing time by ideas shipped, not by layouts adjusted.\n\nPoaster makes the three formats from one link or prompt. Swipe for the five slides. poaster.co is free to try, 3 downloads before you sign up."
+  },
+  "instagram": {
+    "text": "Manual resizing is a hidden bottleneck in your content workflow.\n\nSquare, story, and wide layouts repeat the same spacing decisions, and those extra ten minutes multiply across every post you publish. Poaster makes all three from one link or prompt.\n\nSwipe for the five slides. poaster.co is free to try, 3 downloads before you sign up.",
+    "hashtags": [
+      "socialmediamarketing",
+      "marketingtools",
+      "smallbusinessmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Manual resizing is a hidden bottleneck. Three layouts, the same spacing decisions, ten extra minutes per post. Poaster makes square, story, and wide from one link or prompt. https://poaster.co"
+    ]
+  },
+  "direction": "Poaster carousel from a HeyCatch slideshow (heycatch slideshow 74b89be2), 5 pre-rendered 4:5 slides; neutral stock imagery, no faces.",
+  "image": {
+    "template": "carousel",
+    "data": {
+      "cover": {
+        "title": "manual resizing is a hidden bottleneck in your content workflow",
+        "subtitle": ""
+      },
+      "slides": [
+        {
+          "title": "the repeat",
+          "body": "square, story, and wide layouts repeat the same spacing decisions"
+        },
+        {
+          "title": "the math",
+          "body": "those extra ten minutes multiply across every post you publish"
+        },
+        {
+          "title": "the fix",
+          "body": "generate every format together instead of rebuilding one graphic repeatedly"
+        }
+      ],
+      "end": {
+        "title": "the measure",
+        "subtitle": "measure marketing time by ideas shipped, not layouts manually adjusted"
+      }
+    },
+    "alt": "Five-slide carousel of night city and restaurant photos with white caption boxes: 'manual resizing is a hidden bottleneck in your content workflow', 'square, story, and wide layouts repeat the same spacing decisions', 'those extra ten minutes multiply across every post you publish', 'generate every format together instead of rebuilding one graphic repeatedly', 'measure marketing time by ideas shipped, not layouts manually adjusted'.",
+    "files": [
+      "2027-01-14-1.jpg",
+      "2027-01-14-2.jpg",
+      "2027-01-14-3.jpg",
+      "2027-01-14-4.jpg",
+      "2027-01-14-5.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-17T23:59:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster promo from the HeyCatch Videos deck reviewed 11/17/26 (7 of 20 cards kept; every card showing a face or a fabricated first-person testimonial rejected). Captions drafted, humanized, diffed; claims checked against content/poaster-facts.json. Tue/Thu Poaster slots per Alex 11/10 (post more). HeyCatch subscription cancelled 11/17, access ends 11/23."
+  }
+}

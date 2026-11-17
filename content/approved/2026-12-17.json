@@ -1,0 +1,82 @@
+{
+  "id": "2026-12-17",
+  "date": "2026-12-17",
+  "weekday": "Thu",
+  "week": 21,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "your client roster shouldn't live in your head",
+  "direction": "Poaster carousel from a HeyCatch slideshow (1adf0cae), 8 pre-rendered 4:5 slides; neutral stock imagery, Poaster feature angle.",
+  "facebook": {
+    "text": "Your client roster should not live in your head. Import each client's brand once, pick the saved kit when a brief comes in, and let Poaster build the graphic around that identity. Eight slides on running several brands from one account. poaster.co, and the Agency plan covers unlimited brands."
+  },
+  "instagram": {
+    "text": "Your client roster should not live in your head. Import each client's brand once, pick the saved kit when a brief comes in, and let Poaster build the graphic around that identity. Eight slides on running several brands from one account. poaster.co",
+    "hashtags": [
+      "marketingtools",
+      "socialmediamarketing",
+      "contentmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Your client roster should not live in your head. Import each client brand once; Poaster builds every post around the saved kit. https://poaster.co/try"
+    ]
+  },
+  "image": {
+    "template": "carousel",
+    "data": {
+      "cover": {
+        "title": "your client roster shouldn't live in your head",
+        "subtitle": ""
+      },
+      "slides": [
+        {
+          "title": "Import each client once",
+          "body": "save their approved colors, logo, and fonts in a dedicated Poaster brand kit so the right identity is ready whenever you create"
+        },
+        {
+          "title": "Pick the saved kit",
+          "body": "when a client sends a new brief, select their saved kit instead of searching through folders or remembering which rules belong to whom"
+        },
+        {
+          "title": "Give Poaster the content",
+          "body": "paste a link or short prompt and let it build the graphic around that client's visual identity without starting from a blank canvas"
+        },
+        {
+          "title": "Keep every deliverable aligned",
+          "body": "the saved kit carries the right colors, logo, and fonts into each graphic so client work stays recognizable even when you're managing several accounts"
+        },
+        {
+          "title": "Scale the workload, not the team",
+          "body": "generate polished social graphics faster across your client roster and spend your time on strategy, approvals, and relationships instead of repetitive design work"
+        },
+        {
+          "title": "Turn the nightly backlog into a repeatable system",
+          "body": "Poaster helps freelancers and lean agencies move from one client brand to the next without hiring a designer just to keep production moving"
+        }
+      ],
+      "end": {
+        "title": "One account, one saved identity, fewer production decisions",
+        "subtitle": "With Poaster, import each client brand once and keep creating on-brand content as your roster grows"
+      }
+    },
+    "alt": "Eight-slide carousel of dark interior and night photos: your client roster shouldn't live in your head; import each client once; pick the saved kit; give Poaster the content; keep every deliverable aligned; scale the workload, not the team.",
+    "files": [
+      "2026-12-17-1.jpg",
+      "2026-12-17-2.jpg",
+      "2026-12-17-3.jpg",
+      "2026-12-17-4.jpg",
+      "2026-12-17-5.jpg",
+      "2026-12-17-6.jpg",
+      "2026-12-17-7.jpg",
+      "2026-12-17-8.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-10T16:30:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster promo from HeyCatch deck reviewed 11/10/26 (6 of 20 ideas kept; people, political and remix cards rejected). Captions humanized; claims checked against content/poaster-facts.json. Second weekly Poaster slot per Alex 11/10 (post more)."
+  }
+}

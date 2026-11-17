@@ -1,0 +1,67 @@
+{
+  "id": "2026-12-15",
+  "date": "2026-12-15",
+  "weekday": "Tue",
+  "week": 21,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "meet poaster, the no-designer way to make every post look branded",
+  "direction": "Poaster carousel from a HeyCatch slideshow (6310093a), 5 pre-rendered 4:5 slides; neutral stock imagery, Poaster feature angle.",
+  "facebook": {
+    "text": "No designer on the team? Poaster keeps your colors, logo, and fonts in one brand kit and applies them to every graphic, so you publish without second-guessing the look. Paste a link or type a few words and the post is built. Swipe for how it works. Start free at poaster.co."
+  },
+  "instagram": {
+    "text": "No designer on the team? Poaster keeps your colors, logo, and fonts in one brand kit and applies them to every graphic, so you publish without second-guessing the look. Paste a link or type a few words and the post is built. Swipe for how it works. Start free at poaster.co.",
+    "hashtags": [
+      "smallbusinessmarketing",
+      "marketingtools",
+      "nonprofitmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "No designer on the team? Save your colors, logo, and fonts once and Poaster applies them to every post. Start free: https://poaster.co/try"
+    ]
+  },
+  "image": {
+    "template": "carousel",
+    "data": {
+      "cover": {
+        "title": "meet poaster, the no-designer way to make every post look branded",
+        "subtitle": ""
+      },
+      "slides": [
+        {
+          "title": "save it once",
+          "body": "your colors, logo, and fonts stay together in a brand kit, so every new graphic starts with the right visual identity"
+        },
+        {
+          "title": "skip the guesswork",
+          "body": "poaster applies those saved brand rules automatically, helping solo marketers create polished graphics without debating every design decision"
+        },
+        {
+          "title": "just add content",
+          "body": "paste a link or short prompt and get finished social graphics that look consistent, even when nobody on your team designs"
+        }
+      ],
+      "end": {
+        "title": "trust every post",
+        "subtitle": "when the brand kit handles the visual details, you can publish confidently instead of second-guessing whether your content looks professional"
+      }
+    },
+    "alt": "Five-slide carousel of office and desk photos: meet Poaster, the no-designer way to make every post look branded; save it once; skip the guesswork; just add content; trust every post.",
+    "files": [
+      "2026-12-15-1.jpg",
+      "2026-12-15-2.jpg",
+      "2026-12-15-3.jpg",
+      "2026-12-15-4.jpg",
+      "2026-12-15-5.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-10T16:30:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster promo from HeyCatch deck reviewed 11/10/26 (6 of 20 ideas kept; people, political and remix cards rejected). Captions humanized; claims checked against content/poaster-facts.json. Second weekly Poaster slot per Alex 11/10 (post more)."
+  }
+}

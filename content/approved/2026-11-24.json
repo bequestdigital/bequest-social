@@ -1,0 +1,77 @@
+{
+  "id": "2026-11-24",
+  "date": "2026-11-24",
+  "weekday": "Tue",
+  "week": 18,
+  "weekTheme": "Meet Poaster",
+  "type": "POASTER",
+  "hook": "The fastest way to leave Canva without designing from scratch",
+  "direction": "Poaster carousel from a HeyCatch slideshow (6ebe631f), 7 pre-rendered 4:5 slides; neutral stock imagery, Poaster feature angle.",
+  "facebook": {
+    "text": "Leaving Canva does not have to mean starting every post from scratch. Paste the link, and Poaster reads the headline and image, applies your saved colors and fonts, and hands back square, story, and wide versions together. Swipe through the seven steps. Try it free at poaster.co."
+  },
+  "instagram": {
+    "text": "Leaving Canva does not have to mean starting every post from scratch. Paste the link, and Poaster reads the headline and image, applies your saved colors and fonts, and hands back square, story, and wide versions together. Swipe through the seven steps. Free to try at poaster.co.",
+    "hashtags": [
+      "socialmediamarketing",
+      "marketingtools",
+      "smallbusinessmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Leaving Canva without starting from scratch: paste the link, get square, story, and wide back in your brand. Free to try: https://poaster.co/try"
+    ]
+  },
+  "image": {
+    "template": "carousel",
+    "data": {
+      "cover": {
+        "title": "The fastest way to leave Canva without designing from scratch",
+        "subtitle": ""
+      },
+      "slides": [
+        {
+          "title": "Paste the link instead of opening another blank canvas",
+          "body": ""
+        },
+        {
+          "title": "Poaster reads the page and turns the idea into a finished branded graphic",
+          "body": ""
+        },
+        {
+          "title": "Your saved colors, fonts, and logo stay in place automatically",
+          "body": ""
+        },
+        {
+          "title": "Square, story, and wide versions arrive together",
+          "body": ""
+        },
+        {
+          "title": "One link becomes a complete set ready for every social placement",
+          "body": ""
+        }
+      ],
+      "end": {
+        "title": "POV: Poaster turns the link into on-brand graphics",
+        "subtitle": ""
+      }
+    },
+    "alt": "Seven-slide carousel of laptop and desk photos: the fastest way to leave Canva without designing from scratch, paste the link, Poaster builds the branded graphic, saved colors and fonts stay in place, square, story, and wide arrive together.",
+    "files": [
+      "2026-11-24-1.jpg",
+      "2026-11-24-2.jpg",
+      "2026-11-24-3.jpg",
+      "2026-11-24-4.jpg",
+      "2026-11-24-5.jpg",
+      "2026-11-24-6.jpg",
+      "2026-11-24-7.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-10T16:30:00.000Z",
+    "generator": "hand-authored-local",
+    "notes": "Poaster promo from HeyCatch deck reviewed 11/10/26 (6 of 20 ideas kept; people, political and remix cards rejected). Captions humanized; claims checked against content/poaster-facts.json. Second weekly Poaster slot per Alex 11/10 (post more)."
+  }
+}
