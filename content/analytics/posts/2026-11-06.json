@@ -34,13 +34,13 @@
     },
     "x": {
       "created_time": "2026-11-06T20:07:52.000Z",
-      "likes": 0,
+      "likes": 1,
       "reposts": 0,
       "replies": 0,
       "quotes": 0,
       "bookmarks": 0,
-      "engagement": 0,
-      "impressions": 36,
+      "engagement": 1,
+      "impressions": 37,
       "clicks": null
     }
   },
@@ -114,9 +114,44 @@
           "clicks": null
         }
       }
+    },
+    {
+      "at": "2026-11-17T20:23:51.837Z",
+      "age_days": 11,
+      "channels": {
+        "fb": {
+          "reactions": 1,
+          "comments": 0,
+          "shares": 0,
+          "engagement": 1,
+          "views": 2,
+          "reach": 2,
+          "clicks": 0
+        },
+        "ig": {
+          "likes": 2,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0,
+          "engagement": 2,
+          "reach": 17,
+          "views": 28,
+          "total_interactions": 3
+        },
+        "x": {
+          "likes": 1,
+          "reposts": 0,
+          "replies": 0,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 1,
+          "impressions": 37,
+          "clicks": null
+        }
+      }
     }
   ],
-  "fetched_at": "2026-11-13T19:07:04.269Z",
-  "age_days_at_fetch": 7,
+  "fetched_at": "2026-11-17T20:23:51.837Z",
+  "age_days_at_fetch": 11,
   "matured": true
 }

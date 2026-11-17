@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-16",
+  "type": "WHY",
+  "template": "quote-card",
+  "weekday": 1,
+  "hook": "People give to organizations they trust. Trust is built long before the donation page loads.",
+  "week_theme": "Trust Before the Ask",
+  "image_count": 1,
+  "published_at": "2026-11-16T23:03:52.522Z",
+  "channels": {
+    "fb": {
+      "permalink": "https://www.facebook.com/122131559427264758/posts/122134028553264758",
+      "created_time": "2026-11-16T23:03:48+0000",
+      "reactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "engagement": 0,
+      "views": 1,
+      "reach": 1,
+      "clicks": 0
+    },
+    "ig": {
+      "permalink": "https://www.instagram.com/p/Df0fhmVl6bH/",
+      "created_time": "2026-11-16T23:04:02+0000",
+      "media_type": "IMAGE",
+      "likes": 2,
+      "comments": 0,
+      "saved": 0,
+      "shares": 0,
+      "engagement": 2,
+      "reach": 8,
+      "views": 14,
+      "total_interactions": 3
+    },
+    "x": {
+      "created_time": "2026-11-16T23:04:05.000Z",
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "bookmarks": 0,
+      "engagement": 0,
+      "impressions": 50,
+      "clicks": 3
+    }
+  },
+  "snapshots": [
+    {
+      "at": "2026-11-17T20:23:56.659Z",
+      "age_days": 1,
+      "channels": {
+        "fb": {
+          "reactions": 0,
+          "comments": 0,
+          "shares": 0,
+          "engagement": 0,
+          "views": 1,
+          "reach": 1,
+          "clicks": 0
+        },
+        "ig": {
+          "likes": 2,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0,
+          "engagement": 2,
+          "reach": 8,
+          "views": 14,
+          "total_interactions": 3
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 0,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 0,
+          "impressions": 50,
+          "clicks": 3
+        }
+      }
+    }
+  ],
+  "fetched_at": "2026-11-17T20:23:56.659Z",
+  "age_days_at_fetch": 1,
+  "matured": false
+}
