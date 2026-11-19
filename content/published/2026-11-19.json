@@ -36,13 +36,35 @@
   },
   "video": {
     "url": "https://poaster.co/promo/poaster-no-designer.mp4",
-    "duration_seconds": 6.0,
+    "duration_seconds": 6,
     "aspect": "9:16 (1080x1920)"
   },
   "meta": {
-    "status": "queued",
+    "status": "published",
     "generated_at": "2026-10-31T20:00:00.000Z",
     "generator": "hand-authored-local",
     "notes": "Poaster promo from HeyCatch-generated assets (Alex 10/31/26). Captions humanized + diffed; claims checked against content/poaster-facts.json. Thursday slot keeps the week at 25% Poaster."
+  },
+  "results": {
+    "fb": {
+      "ok": true,
+      "id": "2263428111182845",
+      "video": true,
+      "at": "2026-11-19T21:52:52.047Z"
+    },
+    "ig": {
+      "ok": true,
+      "id": "18108022427002319",
+      "video": true,
+      "at": "2026-11-19T21:53:27.257Z"
+    },
+    "x": {
+      "ok": true,
+      "id": "2123535165158793330",
+      "thread_ids": [
+        "2123535165158793330"
+      ],
+      "at": "2026-11-19T21:53:31.611Z"
+    }
   }
 }
