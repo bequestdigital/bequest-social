@@ -29,7 +29,7 @@
       "shares": 0,
       "engagement": 2,
       "reach": 19,
-      "views": 31,
+      "views": 32,
       "total_interactions": 3
     },
     "x": {
@@ -40,7 +40,7 @@
       "quotes": 0,
       "bookmarks": 0,
       "engagement": 0,
-      "impressions": 11,
+      "impressions": 12,
       "clicks": null
     }
   },
@@ -219,9 +219,44 @@
           "clicks": null
         }
       }
+    },
+    {
+      "at": "2026-11-20T19:32:28.089Z",
+      "age_days": 21,
+      "channels": {
+        "fb": {
+          "reactions": 1,
+          "comments": 0,
+          "shares": 0,
+          "engagement": 1,
+          "views": 5,
+          "reach": 2,
+          "clicks": 1
+        },
+        "ig": {
+          "likes": 2,
+          "comments": 0,
+          "saved": 0,
+          "shares": 0,
+          "engagement": 2,
+          "reach": 19,
+          "views": 32,
+          "total_interactions": 3
+        },
+        "x": {
+          "likes": 0,
+          "reposts": 0,
+          "replies": 0,
+          "quotes": 0,
+          "bookmarks": 0,
+          "engagement": 0,
+          "impressions": 12,
+          "clicks": null
+        }
+      }
     }
   ],
-  "fetched_at": "2026-11-17T20:23:46.942Z",
-  "age_days_at_fetch": 18,
+  "fetched_at": "2026-11-20T19:32:28.089Z",
+  "age_days_at_fetch": 21,
   "matured": true
 }

@@ -1,10 +1,10 @@
 {
   "brand": "bequest",
-  "updated_at": "2026-11-17T20:24:03.687Z",
+  "updated_at": "2026-11-20T19:32:45.241Z",
   "sample": {
     "scored": 0,
-    "matured": 45,
-    "total": 46
+    "matured": 46,
+    "total": 48
   },
   "data_quality": {
     "usable_channels": [
@@ -13,7 +13,7 @@
     ],
     "blocked": [],
     "sufficient": false,
-    "reason": "the typical post reaches too few people to rank (median reach FB 1, IG 7; median engagement FB 0, IG 1). Scoring needs a median of at least 25 reach or 2 engagements on a channel. This is a distribution problem, not a copy problem."
+    "reason": "the typical post reaches too few people to rank (median reach FB 1, IG 8; median engagement FB 0, IG 1). Scoring needs a median of at least 25 reach or 2 engagements on a channel. This is a distribution problem, not a copy problem."
   },
   "weights": {
     "type": {
