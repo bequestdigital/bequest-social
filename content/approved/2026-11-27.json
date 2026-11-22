@@ -1,0 +1,44 @@
+{
+  "id": "2026-11-27",
+  "date": "2026-11-27",
+  "week": 18,
+  "weekTheme": "Gratitude, Generosity, Year-End",
+  "type": "POV",
+  "hook": "Thanksgiving is the one day your audience is already thinking about gratitude. Most organizations say nothing.",
+  "direction": "Angle: a light, honest observation — not a guilt trip, just a nudge. Cover: the missed opportunity of staying quiet on a day when generosity and reflection are already in the air; a simple, genuine word of thanks from your organization costs nothing and builds more goodwill than a polished campaign. Graphic: ig-native — short, unhurried, like someone typed it on a holiday morning.",
+  "facebook": {
+    "text": "Thanksgiving is the one day your audience is already thinking about gratitude. Most organizations say nothing.\n\nNot because they don't care. Just because no one stopped to write two sentences.\n\nA simple, genuine word of thanks from your organization costs nothing to send and builds more goodwill than a polished campaign ever could. People remember who showed up on a quiet morning and said something real.\n\nHappy Thanksgiving from Bequest Digital. We're grateful for the organizations doing work that matters."
+  },
+  "instagram": {
+    "text": "Thanksgiving is the one day your audience is already thinking about gratitude. Most organizations say nothing.\n\nNot because they don't care. Just because no one stopped to write two sentences.\n\nA genuine word of thanks costs nothing. It builds more goodwill than a polished campaign. People remember who showed up on a quiet morning and said something real.\n\nHappy Thanksgiving from Bequest Digital. Grateful for the organizations doing work that matters.",
+    "hashtags": [
+      "churchcommunications",
+      "nonprofitleadership",
+      "faithbasedbusiness",
+      "ministrymarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Thanksgiving is the one day your audience is already thinking about gratitude. Most organizations say nothing. Two honest sentences today will do more than a polished campaign. Happy Thanksgiving."
+    ]
+  },
+  "image": {
+    "template": "ig-native",
+    "data": {
+      "preset": "script",
+      "text": "Your audience is already thinking about gratitude today. Say something.",
+      "sub": "Happy Thanksgiving. — Bequest Digital"
+    },
+    "alt": "Handwritten-style text on a warm background reading: Your audience is already thinking about gratitude today. Say something. With a small line below: Happy Thanksgiving. — Bequest Digital.",
+    "files": [
+      "2026-11-27.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-22T18:23:51.316Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

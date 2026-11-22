@@ -179,7 +179,52 @@
         "model": "claude-sonnet-4-6",
         "strategy_updated_at": "2026-11-13T19:07:14.693Z"
       }
+    },
+    {
+      "id": "2026-11-23",
+      "date": "2026-11-23",
+      "weekday": "Mon",
+      "week": 18,
+      "weekTheme": "Gratitude, Generosity, Year-End",
+      "type": "WHY",
+      "hook": "Generosity isn't a campaign. It's what happens when people already believe in what you're doing.",
+      "direction": "Angle: year-end giving is downstream of year-round trust — you can't manufacture it in November. Cover: the difference between organizations that scramble for year-end dollars and those that receive them naturally; the work of building belief happens in ordinary months. Graphic: quote card — pull the core line as the hero text, clean layout, mission-driven tone.",
+      "planned": {
+        "at": "2026-11-22T18:23:18.916Z",
+        "model": "claude-sonnet-4-6",
+        "strategy_updated_at": "2026-11-20T19:32:45.241Z"
+      }
+    },
+    {
+      "id": "2026-11-25",
+      "date": "2026-11-25",
+      "weekday": "Wed",
+      "week": 18,
+      "weekTheme": "Gratitude, Generosity, Year-End",
+      "type": "TIP",
+      "hook": "Before you send the year-end appeal, run it through these 3 questions.",
+      "direction": "Angle: most year-end appeals fail the reader before they ask anything — they lead with the organization's need, not the donor's role. Cover: (1) Does it name what changed because of giving? (2) Does it put the donor in the story, not the org? (3) Does the ask feel like an invitation or a transaction? Graphic: tip card (numbered list), one question per row, spare layout.",
+      "planned": {
+        "at": "2026-11-22T18:23:18.916Z",
+        "model": "claude-sonnet-4-6",
+        "strategy_updated_at": "2026-11-20T19:32:45.241Z"
+      }
+    },
+    {
+      "id": "2026-11-27",
+      "date": "2026-11-27",
+      "weekday": "Fri",
+      "week": 18,
+      "weekTheme": "Gratitude, Generosity, Year-End",
+      "type": "POV",
+      "hook": "Thanksgiving is the one day your audience is already thinking about gratitude. Most organizations say nothing.",
+      "direction": "Angle: a light, honest observation — not a guilt trip, just a nudge. Cover: the missed opportunity of staying quiet on a day when generosity and reflection are already in the air; a simple, genuine word of thanks from your organization costs nothing and builds more goodwill than a polished campaign. Graphic: ig-native — short, unhurried, like someone typed it on a holiday morning.",
+      "planned": {
+        "at": "2026-11-22T18:23:18.916Z",
+        "model": "claude-sonnet-4-6",
+        "strategy_updated_at": "2026-11-20T19:32:45.241Z"
+      }
     }
   ],
-  "updated_at": "2026-11-15T17:38:44.314Z"
+  "updated_at": "2026-11-22T18:23:18.916Z"
 }

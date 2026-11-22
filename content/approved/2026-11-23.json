@@ -1,0 +1,45 @@
+{
+  "id": "2026-11-23",
+  "date": "2026-11-23",
+  "week": 18,
+  "weekTheme": "Gratitude, Generosity, Year-End",
+  "type": "WHY",
+  "hook": "Generosity isn't a campaign. It's what happens when people already believe in what you're doing.",
+  "direction": "Angle: year-end giving is downstream of year-round trust — you can't manufacture it in November. Cover: the difference between organizations that scramble for year-end dollars and those that receive them naturally; the work of building belief happens in ordinary months. Graphic: quote card — pull the core line as the hero text, clean layout, mission-driven tone.",
+  "facebook": {
+    "text": "Generosity isn't a campaign. It's what happens when people already believe in what you're doing.\n\nEvery November, some organizations scramble. They write urgent appeals, set up giving pages, and hope the end of the year does the work that the rest of the year didn't.\n\nOther organizations simply receive. Their donors already know the mission. They've watched it play out in ordinary months, in consistent communication, in work that didn't need a deadline to feel urgent.\n\nThe difference isn't the November email. It's what happened in February, May, and August. Trust is built slowly, in the regular work of showing up and telling the truth about what you're doing and why it matters.\n\nYear-end giving is downstream of year-round belief. You can't manufacture that in a campaign."
+  },
+  "instagram": {
+    "text": "Generosity isn't a campaign. It's what happens when people already believe in what you're doing.\n\nSome organizations scramble every November. Others simply receive.\n\nThe difference isn't the appeal letter. It's what happened in the ordinary months: consistent presence, honest communication, work that spoke for itself before anyone asked for a dollar.\n\nYear-end giving is downstream of year-round trust. That trust gets built in February and June, not in a giving season push.\n\nIf you want donors who give naturally, start with the work of building belief. The rest follows.",
+    "hashtags": [
+      "nonprofitleadership",
+      "ministrymarketing",
+      "faithbasedbusiness",
+      "nonprofitmarketing",
+      "churchcommunications"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Generosity isn't a campaign. It's what happens when people already believe in what you're doing. Year-end giving is downstream of year-round trust. You can't manufacture that in November."
+    ]
+  },
+  "image": {
+    "template": "quote-card",
+    "data": {
+      "quote": "Generosity isn't a campaign. It's what happens when people already believe in what you're doing.",
+      "attribution": null,
+      "eyebrow": "Gratitude & Generosity"
+    },
+    "alt": "Quote card with the text 'Generosity isn't a campaign. It's what happens when people already believe in what you're doing.' on a clean, mission-driven layout.",
+    "files": [
+      "2026-11-23.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-22T18:23:31.256Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}

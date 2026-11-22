@@ -1,0 +1,49 @@
+{
+  "id": "2026-11-25",
+  "date": "2026-11-25",
+  "week": 18,
+  "weekTheme": "Gratitude, Generosity, Year-End",
+  "type": "TIP",
+  "hook": "Before you send the year-end appeal, run it through these 3 questions.",
+  "direction": "Angle: most year-end appeals fail the reader before they ask anything — they lead with the organization's need, not the donor's role. Cover: (1) Does it name what changed because of giving? (2) Does it put the donor in the story, not the org? (3) Does the ask feel like an invitation or a transaction? Graphic: tip card (numbered list), one question per row, spare layout.",
+  "facebook": {
+    "text": "Before you send the year-end appeal, run it through these 3 questions.\n\nMost appeals fail the reader before they ever get to the ask. They open with the organization's need instead of the donor's role. That's backwards.\n\nAsk yourself:\n1) Does it name what actually changed because of giving?\n2) Does it put the donor in the story, not your org?\n3) Does the ask feel like an invitation or a transaction?\n\nIf you can't answer yes to all three, the letter isn't ready. Donors give when they see themselves as the hero of the story. Your job is to show them that role clearly."
+  },
+  "instagram": {
+    "text": "Before you send the year-end appeal, run it through these 3 questions.\n\nMost appeals fail the reader before they ever ask anything. They lead with the organization's need instead of the donor's role.\n\nThree questions to check before you hit send:\n1) Does it name what changed because of giving?\n2) Does it put the donor in the story, not your org?\n3) Does the ask feel like an invitation or a transaction?\n\nDonors give when they see themselves as part of something that worked. Your letter either shows them that or it doesn't.",
+    "hashtags": [
+      "nonprofitmarketing",
+      "nonprofitleadership",
+      "ministrymarketing",
+      "churchcommunications",
+      "contentmarketing"
+    ]
+  },
+  "x": {
+    "posts": [
+      "Before you send the year-end appeal, ask: Does it name what changed? Does it put the donor in the story? Does the ask feel like an invitation? If not, it's not ready. #nonprofitmarketing"
+    ]
+  },
+  "image": {
+    "template": "tip-card",
+    "data": {
+      "eyebrow": "Year-End Appeal Check",
+      "title": "3 Questions Before You Hit Send",
+      "items": [
+        "1. Does it name what changed because of giving?",
+        "2. Does it put the donor in the story, not your org?",
+        "3. Does the ask feel like an invitation or a transaction?"
+      ]
+    },
+    "alt": "A spare tip card with three numbered questions to evaluate a year-end fundraising appeal before sending.",
+    "files": [
+      "2026-11-25.jpg"
+    ]
+  },
+  "meta": {
+    "status": "queued",
+    "generated_at": "2026-11-22T18:23:41.941Z",
+    "model": "claude-sonnet-4-6",
+    "generator": "api"
+  }
+}
