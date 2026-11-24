@@ -69,9 +69,29 @@
     ]
   },
   "meta": {
-    "status": "queued",
+    "status": "published",
     "generated_at": "2026-11-10T16:30:00.000Z",
     "generator": "hand-authored-local",
     "notes": "Poaster promo from HeyCatch deck reviewed 11/10/26 (6 of 20 ideas kept; people, political and remix cards rejected). Captions humanized; claims checked against content/poaster-facts.json. Second weekly Poaster slot per Alex 11/10 (post more)."
+  },
+  "results": {
+    "fb": {
+      "ok": true,
+      "id": "996611156867180_122134647129264758",
+      "at": "2026-11-24T23:18:08.147Z"
+    },
+    "ig": {
+      "ok": true,
+      "id": "18166320754546503",
+      "at": "2026-11-24T23:19:14.886Z"
+    },
+    "x": {
+      "ok": true,
+      "id": "2125368687863410735",
+      "thread_ids": [
+        "2125368687863410735"
+      ],
+      "at": "2026-11-24T23:19:17.631Z"
+    }
   }
 }
